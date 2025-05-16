@@ -1056,3 +1056,60 @@ print("Los gráficos se han mostrado en el notebook. Guarda cada gráfico manual
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# CELL ********************
+
+# Generar gráficos del Bloque 5 y mostrarlos en el notebook para guardarlos manualmente
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Configurar estilo visual
+sns.set_theme(style="whitegrid", palette="tab10", rc={'figure.figsize':(9,6)})
+sns.set(font_scale=0.7)
+
+# Cargar df_clean para generar los gráficos
+df_clean = spark.read.format("delta").load("Tables/df_clean").toPandas()
+
+# Variables numéricas y categóricas
+numeric_variables = ['CreditScore', 'Age', 'Tenure', 'Balance', 'EstimatedSalary']
+categorical_variables = ['Geography', 'Gender', 'NumOfProducts', 'HasCrCard', 'IsActiveMember']
+df_num_cols = df_clean[numeric_variables]
+
+# Crear boxplots para variables numéricas
+for col in df_num_cols.columns:
+    plt.figure(figsize=(9,6))
+    sns.boxplot(x=df_num_cols[col], color='green')
+    plt.title(f'Boxplot de {col}')
+    plt.xlabel(col)
+    plt.show()
+
+# Crear histogramas para variables numéricas
+for col in df_num_cols.columns:
+    plt.figure(figsize=(9,6))
+    df_num_cols[col].hist(bins=20, edgecolor='black')
+    plt.title(f'Histograma de {col}')
+    plt.xlabel(col)
+    plt.ylabel('Conteo')
+    plt.show()
+
+# Convertir Exited a string para evitar errores con sns.countplot
+df_clean['Exited'] = df_clean['Exited'].astype(str)
+
+# Visualizar distribución de Exited en variables categóricas
+for var in categorical_variables:
+    plt.figure(figsize=(9,6))
+    sns.countplot(x=var, hue=df_clean['Exited'], data=df_clean)
+    plt.title(f'Distribución de {var} por Exited')
+    plt.xlabel(var)
+    plt.ylabel('Conteo')
+    plt.show()
+
+print("Los gráficos se han mostrado en el notebook. Guarda cada gráfico manualmente haciendo clic derecho sobre ellos y seleccionando 'Guardar imagen como...' en tu máquina local (por ejemplo, en C:\\Users\\hello\\Downloads\\). Luego, súbelos a Files/Portafolio-de-Ciencia-de-Datos-en-Microsoft-Fabric/Ejercicio-1/results/ en Fabric.")
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
