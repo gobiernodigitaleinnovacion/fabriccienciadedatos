@@ -1,7 +1,12 @@
 Portafolio de Ciencia de Datos en Microsoft Fabric 📊
+
 Bienvenido a mi repositorio de proyectos de ciencia de datos realizados en Microsoft Fabric. Este portafolio contiene una colección de 8 ejercicios prácticos end-to-end que demuestran mis habilidades en análisis de datos, machine learning, series temporales y visualización. Cada proyecto abarca desde la carga y limpieza de datos hasta el modelado, evaluación y análisis de resultados, utilizando herramientas modernas de ciencia de datos en un entorno distribuido.
+
+
 🎯 Objetivo
 El objetivo de este portafolio es mostrar mi capacidad para resolver problemas de negocio reales mediante técnicas de ciencia de datos, aplicando un flujo completo que incluye exploración de datos, preprocesamiento, modelado, evaluación y visualización. Los proyectos cubren diversas áreas, como predicción de abandono, recomendación de productos, detección de fraudes, pronósticos de series temporales, clasificación de texto, modelado de uplift, detección de fallos y pronóstico de ventas.
+
+
 📂 Estructura del Repositorio
 Cada ejercicio sigue una estructura estándar para facilitar la navegación:
 
@@ -11,9 +16,11 @@ results/: Gráficas generadas (PNG), como visualizaciones de datos y resultados 
 Tablas Delta: Resultados almacenados en el lakehouse (si aplica).
 README.md: Descripción detallada de cada ejercicio.
 
+
 📈 Ejercicios
 1. Predicción de Abandono de Clientes
 Desarrollé un modelo de machine learning para predecir el abandono de clientes de un banco usando un dataset con 10,000 registros.
+
 
 Carga y limpieza: Cargué datos con Spark, eliminé duplicados y columnas irrelevantes (RowNumber, CustomerId, Surname).
 Visualización: Gráficos de barras e histogramas para explorar patrones de abandono por geografía, género, edad, etc.
