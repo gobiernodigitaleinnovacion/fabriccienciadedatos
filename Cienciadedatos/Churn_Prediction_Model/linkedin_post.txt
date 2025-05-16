@@ -1,0 +1,13 @@
+¡Nuevo proyecto de ciencia de datos! 🚀 Construí un modelo para predecir el abandono de clientes en Microsoft Fabric, usando Random Forest y LightGBM. Con SMOTE y MLflow, logré optimizar el rendimiento, destacando LightGBM con una precisión del 74% para la clase de abandono. Algunos hallazgos clave:
+
+- Tasa de abandono general: 20.37%.
+- Clientes en Alemania tienen la mayor tasa de abandono (32.51%).
+- Las mujeres tienen una tasa de abandono más alta (25.07%) que los hombres (16.46%).
+
+Explora el código, gráficos y análisis en mi GitHub: [enlace al repositorio].
+
+👤 Juan Heriberto Rosas Juárez  
+📧 juanheriberto.rosas@jhrjdata.com  
+🌐 https://www.linkedin.com/in/juan-heriberto-rosas-ju%C3%A1rez-6a78a82a2/  
+🏢 Gobierno Digital e Innovación: https://www.gobiernodigitaleinnovacion.com/  
+#DataScience #MicrosoftFabric #MachineLearning
