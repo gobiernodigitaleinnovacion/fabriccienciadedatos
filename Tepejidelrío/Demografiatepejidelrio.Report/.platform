@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Demografiatepejidelrio"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "57d87bf5-f31e-8dab-4a73-85849e377607"
+  }
+}

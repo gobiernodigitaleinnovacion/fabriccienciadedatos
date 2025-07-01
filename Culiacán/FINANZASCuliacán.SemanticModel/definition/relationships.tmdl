@@ -1,0 +1,17 @@
+relationship ea5ff546-34e4-b838-91a2-94968ac59ba2
+	fromColumn: 'HECHO EGRESOS-INGRESOS'.Año
+	toColumn: CALENDARIO.Fecha
+
+relationship 742ba058-fc3a-6288-8dc2-492d0b6179ae
+	fromColumn: 'HECHO EGRESOS-INGRESOS'.ID
+	toColumn: MUNICIPIO.ID
+
+relationship e780f913-10e8-bd8b-310f-d69e5e901697
+	fromColumn: MUNICIPIO.ID_ENTIDAD
+	toColumn: ENTIDAD.ID_ENTIDAD
+
+relationship b775d912-86ee-4f5e-a362-f6f6bd4f64e2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CALENDARIO.Fecha
+	toColumn: LocalDateTable_8f133d7c-133f-4f3d-8cf5-bebff4306552.Date
+

@@ -1,0 +1,125 @@
+table Hogar
+	lineageTag: fb2e025c-6dad-4a16-81a6-1afa4fa62c91
+
+	measure 'Población Hogares Censales_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000014,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 85262e20-cfe4-479c-80bb-6f46b671ad04
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hogares Censales_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000018,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 1307d1cd-8349-4c79-b1d2-73420bbcb63b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tamaño Promedio Hogares Censales_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000021,
+			    CensoHechos[Año] = 2020
+			)
+			
+			
+			```
+		lineageTag: 2f26db7b-e1b0-4354-a7ca-bd4670ff9785
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tamaño Promedio Hogares Censales' =
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000021
+			)
+		lineageTag: 26a6db65-40f6-460f-b57c-c49391e2df75
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hogares Jefatura Masculina' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000019
+			)
+			
+			```
+		lineageTag: 5363ed76-4811-448f-8ca9-2ae7ce6530c5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hogares Jefatura Femenina' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000020
+			)
+			
+			```
+		lineageTag: c2dd515d-0c07-485d-8359-ca4ebe4b5b31
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hogares Censales' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000018
+			)
+			
+			```
+		lineageTag: 8550c4f9-7189-410d-8509-dc4c0ee09549
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población Hogares Familiares' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000015
+			)
+			
+			```
+		lineageTag: 4b9150c1-34a5-4a31-aa1f-69c50ab5dd8b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población Hogares No Familiares' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000016
+			)
+			
+			```
+		lineageTag: 76e78bbc-e897-43f0-8e63-5fe65dd6ab87
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Hogar = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

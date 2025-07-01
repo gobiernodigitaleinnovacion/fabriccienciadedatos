@@ -1,0 +1,107 @@
+table CensoHechos
+	lineageTag: ed4d5c2c-78f5-45c4-a86c-bb321d6c4b60
+
+	column cve_entidad
+		dataType: string
+		lineageTag: c3507f4f-7a0f-4b9b-bf38-550bb16435a3
+		summarizeBy: none
+		sourceColumn: cve_entidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column desc_entidad
+		dataType: string
+		lineageTag: 8424013d-ffda-4ceb-9b56-ed20318b42e9
+		summarizeBy: none
+		sourceColumn: desc_entidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column cve_municipio
+		dataType: string
+		lineageTag: 604de8b9-a8b2-424d-a0d5-9c3d4b66007a
+		summarizeBy: none
+		sourceColumn: cve_municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column desc_municipio
+		dataType: string
+		lineageTag: 9b45ce0e-f436-4426-8fa6-a272c5993464
+		summarizeBy: none
+		sourceColumn: desc_municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_indicador
+		dataType: int64
+		formatString: 0
+		lineageTag: a8bb903e-443a-4b44-869d-09a69ea9280b
+		summarizeBy: none
+		sourceColumn: id_indicador
+
+		annotation SummarizationSetBy = Automatic
+
+	column indicador
+		dataType: string
+		lineageTag: 4cbd3c86-f65c-4e4d-b193-2ad76ee37283
+		summarizeBy: none
+		sourceColumn: indicador
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: af473182-8b99-421b-9fa0-9ae9724b46ac
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valor
+		dataType: double
+		lineageTag: 6c2c5dd0-17ca-4236-8ad0-7a659c745c85
+		summarizeBy: sum
+		sourceColumn: Valor
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MunicpioCompuestoID
+		dataType: string
+		lineageTag: d7a35d2a-3322-4e46-b16e-f1105092be1c
+		summarizeBy: none
+		sourceColumn: MunicpioCompuestoID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CensoHechos = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\InegiArchivos\Censo_Valor_Pivotado.csv"),[Delimiter=",", Columns=22, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"cve_entidad", Int64.Type}, {"desc_entidad", type text}, {"cve_municipio", Int64.Type}, {"desc_municipio", type text}, {"id_indicador", Int64.Type}, {"indicador", type text}, {"valor_1900", type number}, {"valor_1910", type number}, {"valor_1921", type number}, {"valor_1930", type number}, {"valor_1940", type number}, {"valor_1950", type number}, {"valor_1960", type number}, {"valor_1970", type number}, {"valor_1980", type number}, {"valor_1990", type number}, {"valor_1995", type number}, {"valor_2000", type number}, {"valor_2005", type number}, {"valor_2010", type number}, {"valor_2015", type number}, {"valor_2020", type number}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"valor_1900", "valor_1910", "valor_1921", "valor_1930", "valor_1940", "valor_1950", "valor_1960", "valor_1970", "valor_1980", "valor_1990", "valor_1995", "valor_2000", "valor_2005"}),
+				    #"Columna de anulación de dinamización" = Table.UnpivotOtherColumns(#"Columnas quitadas", {"cve_entidad", "desc_entidad", "cve_municipio", "desc_municipio", "id_indicador", "indicador"}, "Atributo", "Valor"),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columna de anulación de dinamización",{{"Atributo", "Año"}}),
+				    #"Dividir columna por delimitador" = Table.SplitColumn(#"Columnas con nombre cambiado", "Año", Splitter.SplitTextByDelimiter("_", QuoteStyle.Csv), {"Año.1", "Año.2"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Dividir columna por delimitador",{{"Año.1", type text}, {"Año.2", Int64.Type}}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado1",{"Año.1"}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas quitadas1",{{"Año.2", "Año"}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado1", "Personalizado", each Text.From([cve_entidad]) & "-" & Text.PadStart(Text.From([cve_municipio]), 5, "0")),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Personalizada agregada",{"Personalizado", "cve_entidad", "desc_entidad", "cve_municipio", "desc_municipio", "id_indicador", "indicador", "Año", "Valor"}),
+				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas reordenadas",{{"Personalizado", "MunicpioCompuestoID"}}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas con nombre cambiado2",{{"MunicpioCompuestoID", type text}, {"id_indicador", type text}, {"cve_entidad", type text}, {"cve_municipio", type text}}),
+				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado2", each ([Año] <> null and [Año] <> "")),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Filas filtradas",{{"id_indicador", Int64.Type}}),
+				    #"Filas filtradas1" = Table.SelectRows(#"Tipo cambiado3", each true)
+				in
+				    #"Filas filtradas1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,196 @@
+table Títulos
+	lineageTag: 9d42d29f-c7f5-492f-a7f3-b94e3a57dfea
+
+	measure MunicipioSeleccionado = ```
+			SELECTEDVALUE(DimMunicipio[Municipio])
+			
+			```
+		lineageTag: 61a57ac3-7666-4528-8b8a-ef1e8a240495
+
+	measure EstadoSeleccionado = ```
+			SELECTEDVALUE(DimEstado[Estado])
+			
+			```
+		lineageTag: a90f72d5-de6a-420e-b4fe-6ef5eec6db71
+
+	measure 'EstadoYMunicipio Población' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Población",
+			        "Municipio de " & Municipio & " Tema: Población"
+			    )
+			
+			```
+		lineageTag: c6009255-5e70-4290-85ab-095816472843
+
+	measure 'EstadoYMunicipio Infantil' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Infantil",
+			        "Municipio de " & Municipio & " Tema: Infantil"
+			    )
+			
+			```
+		lineageTag: 4d8f7387-9b1c-4419-a740-ae855875cf77
+
+	measure 'EstadoYMunicipio Hogar' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Hogar",
+			        "Municipio de " & Municipio & " Tema: Hogar"
+			    )
+			
+			```
+		lineageTag: b70e2081-20c7-474c-9c3a-11191cdf885d
+
+	measure 'EstadoYMunicipio vivienda' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Vivienda",
+			        "Municipio de " & Municipio & " Tema: Vivienda"
+			    )
+			
+			
+			```
+		lineageTag: 46e79151-6300-4e55-9ad4-6651a74a7e63
+
+	measure 'EstadoYMunicipio servicios públicos' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Servicios Públicos",
+			        "Municipio de " & Municipio & " Tema: Servicios Públicos"
+			    )
+			
+			```
+		lineageTag: 0c308af4-411f-4b0d-a203-23acfac5eab2
+
+	measure 'EstadoYMunicipio características de la vivienda' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Características de la Vivienda",
+			        "Municipio de " & Municipio & " Tema: Características de la Vivienda"
+			    )
+			
+			```
+		lineageTag: fcb02a1c-d37a-42ba-a74e-602a166e5576
+
+	measure 'EstadoYMunicipio educación' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Educación",
+			        "Municipio de " & Municipio & " Tema: Educación"
+			    )
+			
+			```
+		lineageTag: fd3cfeea-4aa3-48c5-bbd4-e1e3d2a9572d
+
+	measure 'EstadoYMunicipio salud' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Salud",
+			        "Municipio de " & Municipio & " Tema: Salud"
+			    )
+			
+			```
+		lineageTag: b3e1b354-794b-4e00-9c4d-06c2c86b379c
+
+	measure 'EstadoYMunicipio Personas con capacidades diferentes' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Personas con Capacidades Diferentes",
+			        "Municipio de " & Municipio & " Tema: Personas con Capacidades Diferentes"
+			    )
+			
+			```
+		lineageTag: 2832790a-d6a1-4b7d-ad53-49a8f860e1b3
+
+	measure 'EstadoYMunicipio Actividad Económica' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Actividad Económica",
+			        "Municipio de " & Municipio & " Tema: Actividad Económica"
+			    )
+			
+			```
+		lineageTag: 59a80a06-6307-40cb-8dba-ff24b31faab0
+
+	measure 'EstadoYMunicipio Lenguas' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Lenguas",
+			        "Municipio de " & Municipio & " Tema: Lenguas"
+			    )
+			
+			```
+		lineageTag: dc4912b1-e94e-4237-9539-780d2dff7966
+
+	measure 'EstadoYMunicipio Migración' = ```
+			
+			VAR Estado = SELECTEDVALUE(DimEstado[Estado], "Ningún Estado Seleccionado")
+			VAR Municipio = SELECTEDVALUE(DimMunicipio[Municipio], "Ningún Municipio Seleccionado")
+			RETURN 
+			    IF(
+			        Estado = "Ciudad de México",
+			        "Alcaldía de " & Municipio & " Tema: Migración",
+			        "Municipio de " & Municipio & " Tema: Migración"
+			    )
+			
+			```
+		lineageTag: fde965b5-0889-4f00-83ce-055ea7f17ac7
+
+	partition Títulos = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

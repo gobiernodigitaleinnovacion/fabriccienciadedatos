@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "DEMOGRAFÍAXoxocotla"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "87c9e206-e99f-8686-4f42-a69a717f9338"
+  }
+}

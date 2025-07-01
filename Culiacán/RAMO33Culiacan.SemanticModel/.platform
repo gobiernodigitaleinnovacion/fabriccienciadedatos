@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "RAMO33Culiacan"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cd1f2ca8-d459-8e65-4366-bfc508c0749f"
+  }
+}

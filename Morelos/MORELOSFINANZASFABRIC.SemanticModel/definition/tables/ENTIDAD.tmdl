@@ -1,0 +1,67 @@
+table ENTIDAD
+	lineageTag: 8b372af0-c01b-494f-87cc-8c8459b671b3
+
+	measure 'Municipio Seleccionado' = ```
+			
+			IF(
+			    HASONEVALUE('Entidad'[Entidad]),
+			    IF(
+			        VALUES('Entidad'[Entidad]) = "Ciudad de México",
+			        IF(
+			            HASONEVALUE('Municipio'[Municipio]),
+			            "Alcaldía de " & VALUES('Municipio'[Municipio]),
+			            "Varios Municipios"
+			        ),
+			        IF(
+			            HASONEVALUE('Municipio'[Municipio]),
+			            "Municipio de " & VALUES('Municipio'[Municipio]),
+			            "Varios Municipios"
+			        )
+			    ),
+			    "Seleccione una Entidad"
+			)
+			
+			```
+		lineageTag: b0de69cd-0d7d-4a90-8483-7f470f18bf43
+
+	column ID
+		dataType: string
+		lineageTag: d84bc1c2-da6f-4204-b945-0509674380af
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_ENTIDAD
+		dataType: string
+		lineageTag: 41571349-a017-45ea-b0fd-c9513200318c
+		summarizeBy: none
+		sourceColumn: ID_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENTIDAD
+		dataType: string
+		lineageTag: 21ebead6-84db-4957-a78f-0b14eda398c3
+		summarizeBy: none
+		sourceColumn: ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ENTIDAD = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\ingresos y gasto municipios\tc_entidad.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"ID_ENTIDAD", Int64.Type}, {"NOM_ENTIDAD", type text}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Tipo cambiado",{{"ID_ENTIDAD", type text}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Tipo cambiado1", "ID", each Text.PadStart([ID_ENTIDAD], 2, "0")),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"ID", type text}}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Tipo cambiado2",{"ID", "ID_ENTIDAD", "NOM_ENTIDAD"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas reordenadas",{{"NOM_ENTIDAD", "ENTIDAD"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+

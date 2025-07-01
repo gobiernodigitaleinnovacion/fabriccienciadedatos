@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "FINANZAS23Durango"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7eab8ca8-c733-9f97-4f9f-23fc2a32a0ed"
+  }
+}

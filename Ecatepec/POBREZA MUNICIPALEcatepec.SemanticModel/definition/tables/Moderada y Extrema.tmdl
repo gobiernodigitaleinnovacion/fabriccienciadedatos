@@ -1,0 +1,49 @@
+table 'Moderada y Extrema'
+	lineageTag: 047cc92e-e4c1-4dd2-acae-f118597de3c5
+
+	measure 'Pobreza Moderada Personas' = ```
+			
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    Pobreza[INDICADORES] IN {
+			        "POBREZA MODERADA PERSONAS 2010",
+			        "POBREZA MODERADA PERSONAS 2015",
+			        "POBREZA MODERADA PERSONAS 2020"
+			    } &&
+			    Pobreza[MUNICIPIO] <> "Estatal"
+			)
+			
+			```
+		lineageTag: 1cf64341-3972-4a41-8bb1-849c672d73eb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Pobreza Extrema Personas' = ```
+			
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    Pobreza[INDICADORES] IN {
+			        "POBREZA EXTREMA PERSONAS 2010",
+			        "POBREZA EXTREMA PERSONAS 2015",
+			        "POBREZA EXTREMA PERSONAS 2020"
+			    } &&
+			    Pobreza[MUNICIPIO] <> "Estatal"
+			)
+			
+			```
+		lineageTag: ef9b0e99-8880-468a-a326-1cd05a088471
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Moderada y Extrema' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

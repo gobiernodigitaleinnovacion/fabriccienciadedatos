@@ -1,0 +1,386 @@
+table FAIS
+	lineageTag: b76272bd-7f4e-485c-b427-50f2a18d1892
+
+	column FOLIO
+		dataType: string
+		lineageTag: 7a20aaec-8cc0-4bd6-b900-5373e7067b21
+		summarizeBy: none
+		sourceColumn: FOLIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CICLO DEL RECURSO'
+		dataType: string
+		lineageTag: b932f255-b59c-43a0-943c-87c9a0d7edd9
+		summarizeBy: none
+		sourceColumn: CICLO DEL RECURSO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RAMO
+		dataType: string
+		lineageTag: 98d7f38b-686d-4a73-b2c8-d48dde88f51a
+		summarizeBy: none
+		sourceColumn: RAMO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PROGRAMA PRESUPUESTARIO'
+		dataType: string
+		lineageTag: cc16e4df-88f2-40ad-9e25-73dcee309152
+		summarizeBy: none
+		sourceColumn: PROGRAMA PRESUPUESTARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column APROBADO
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 24a16bba-ff4d-4430-a7d4-e46226ede9cf
+		summarizeBy: sum
+		sourceColumn: APROBADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column 'MODIFICADO A'
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: f4e64725-bdaa-4772-8296-c024bc173d58
+		summarizeBy: sum
+		sourceColumn: MODIFICADO A
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column CONTRATISTA
+		dataType: string
+		lineageTag: 0e528213-1cd1-450d-bce6-5fcdc486926c
+		summarizeBy: none
+		sourceColumn: CONTRATISTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONVOCANTE
+		dataType: string
+		lineageTag: 193dbc1d-f020-4e91-a5a7-ae55f30cc3aa
+		summarizeBy: none
+		sourceColumn: CONVOCANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTOc
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: fe8cf031-a62e-4637-aa9d-a6cc30a6b3ec
+		summarizeBy: sum
+		sourceColumn: MONTOc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column 'MONTO MODIFICADOc'
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: d3c7db6b-d0ad-43a5-b056-b3a9bd6ed7e5
+		summarizeBy: sum
+		sourceColumn: MONTO MODIFICADOc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column CICLO
+		dataType: string
+		lineageTag: 9628c5e5-4056-4502-80df-6d48fbed1434
+		summarizeBy: none
+		sourceColumn: CICLO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TRIMESTRE DE AVANCE'
+		dataType: string
+		lineageTag: 2d8079db-2dab-4d34-a0fe-c33fe7a5ddfa
+		summarizeBy: none
+		sourceColumn: TRIMESTRE DE AVANCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'UNIDAD DE MEDIDA'
+		dataType: string
+		lineageTag: 04bd0247-cf6f-4ca1-931c-929f6f60111b
+		summarizeBy: none
+		sourceColumn: UNIDAD DE MEDIDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'META ORIGINAL'
+		dataType: double
+		lineageTag: f08e8c24-fe7c-41ed-9fe0-7c37d32ca86b
+		summarizeBy: sum
+		sourceColumn: META ORIGINAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'META MODIFICADAU'
+		dataType: double
+		lineageTag: 0a50b31f-4fe0-41eb-b81a-352b8a312c53
+		summarizeBy: sum
+		sourceColumn: META MODIFICADAU
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AVANCE
+		dataType: double
+		lineageTag: 07f3c33d-af06-41ab-b6eb-f6b987df63af
+		summarizeBy: sum
+		sourceColumn: AVANCE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PORCENTAJE
+		dataType: double
+		lineageTag: c3599d42-f2f3-4fc2-819b-bf7554fd4bae
+		summarizeBy: sum
+		sourceColumn: PORCENTAJE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOMBRE_ENTIDAD
+		dataType: string
+		lineageTag: cabeb006-1092-4ebc-9052-41b8d60a3c09
+		summarizeBy: none
+		sourceColumn: NOMBRE_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE_MUNICIPIO
+		dataType: string
+		lineageTag: 87824ee9-917d-4f15-96b7-cca6d9d3ab71
+		summarizeBy: none
+		sourceColumn: NOMBRE_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOCALIDAD
+		dataType: string
+		lineageTag: 0ee7f0c1-9b76-45d1-b1b0-24d82cfce232
+		summarizeBy: none
+		sourceColumn: LOCALIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column LONGITUD
+		dataType: string
+		lineageTag: 68288295-60de-40fa-8843-dba774b3d81d
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: LONGITUD
+
+		annotation SummarizationSetBy = Automatic
+
+	column LATITUD
+		dataType: string
+		lineageTag: 1b2e24be-1a05-4484-892e-efcc50cb31c4
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: LATITUD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_ENTIDAD_RESPONSABLE
+		dataType: string
+		lineageTag: 442d14d5-68dc-4a90-9523-9acdcd8b5454
+		summarizeBy: none
+		sourceColumn: ID_ENTIDAD_RESPONSABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_MUNICIPIO_RESPONSABLE
+		dataType: string
+		lineageTag: ed135bb8-49f4-4828-89a3-b91d2a0a84f9
+		summarizeBy: none
+		sourceColumn: ID_MUNICIPIO_RESPONSABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORIA
+		dataType: string
+		lineageTag: dd7d3654-f1c4-4c70-8d35-45ed4477f1e6
+		summarizeBy: none
+		sourceColumn: CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE
+		dataType: string
+		lineageTag: 7f3fe21b-7f17-44db-b8fd-3fac6f6bcce7
+		summarizeBy: none
+		sourceColumn: NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_PROGRAMA_PROYECTO
+		dataType: string
+		lineageTag: eb41a957-1380-4180-9e79-e92469437b73
+		summarizeBy: none
+		sourceColumn: TIPO_PROGRAMA_PROYECTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASIFICACION
+		dataType: string
+		lineageTag: 5189bd1e-0159-4664-8bbf-b945b3b81786
+		summarizeBy: none
+		sourceColumn: CLASIFICACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSTITUCION_EJECUTORA
+		dataType: string
+		lineageTag: be1f78a5-68c8-4875-accf-b340cb19b8b7
+		summarizeBy: none
+		sourceColumn: INSTITUCION_EJECUTORA
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUJERES
+		dataType: int64
+		formatString: 0
+		lineageTag: 429b4835-ee20-41b3-a229-846cc8d166ca
+		summarizeBy: sum
+		sourceColumn: MUJERES
+
+		annotation SummarizationSetBy = Automatic
+
+	column HOMBRES
+		dataType: int64
+		formatString: 0
+		lineageTag: e2598e47-26de-4d91-8abf-ae393810d146
+		summarizeBy: sum
+		sourceColumn: HOMBRES
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_INICIO
+		dataType: string
+		lineageTag: 0b21d481-ea41-4d4c-a5df-1c5aace10b31
+		summarizeBy: none
+		sourceColumn: FECHA_INICIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_TERMINO
+		dataType: string
+		lineageTag: 3d480061-879c-47fb-9baf-a518e96c51a5
+		summarizeBy: none
+		sourceColumn: FECHA_TERMINO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECAUDADO
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 5bc7b3f8-f7cb-4b6b-8e0a-aa83a10b8bc3
+		summarizeBy: sum
+		sourceColumn: RECAUDADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column COMPROMETIDO
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 0195a923-d800-4992-bc62-466c34751b32
+		summarizeBy: sum
+		sourceColumn: COMPROMETIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column DEVENGADO
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 08b8deaf-b5cf-4d5c-94c8-b5de210616f2
+		summarizeBy: sum
+		sourceColumn: DEVENGADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column EJERCIDO
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 09b6e66d-e5a2-4aec-863d-9fd52e519142
+		summarizeBy: sum
+		sourceColumn: EJERCIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column PAGADO
+		dataType: decimal
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: fb23e70a-4004-4a70-adeb-681badcac4d5
+		summarizeBy: sum
+		sourceColumn: PAGADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	column ESTATUS
+		dataType: string
+		lineageTag: 68224b02-e0ce-4dc1-8f8f-5310ee554957
+		summarizeBy: none
+		sourceColumn: ESTATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column AÑO
+		dataType: string
+		lineageTag: a2b97e87-3363-4506-89f3-7fbe6b0cc2a7
+		summarizeBy: none
+		sourceColumn: AÑO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRIMESTRE
+		dataType: string
+		lineageTag: a44c603f-0624-4dfe-a2bf-2e5a5cd0640e
+		summarizeBy: none
+		sourceColumn: TRIMESTRE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FAIS = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\Informes automatizados\Bases\Hacienda\Recursosfederalestransferidosdestinodelgatos\fais\FAIS_INTEGRADO\Basefais(ActualizarSiempre)\base_integrada_fais.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Sheet1_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"APROBADO", Currency.Type}, {"MODIFICADO A", Currency.Type}, {"CONTRATISTA", type text}, {"CONVOCANTE", type text}, {"MONTOc", Currency.Type}, {"MONTO MODIFICADOc", Currency.Type}, {"CICLO", type text}, {"TRIMESTRE DE AVANCE", type text}, {"UNIDAD DE MEDIDA", type text}, {"META ORIGINAL", type number}, {"META MODIFICADAU", type number}, {"AVANCE", type number}, {"PORCENTAJE", type number}, {"NOMBRE_ENTIDAD", type text}, {"NOMBRE_MUNICIPIO", type text}, {"LOCALIDAD", type text}, {"LONGITUD", type text}, {"LATITUD", type text}, {"ID_ENTIDAD_RESPONSABLE", type text}, {"ID_MUNICIPIO_RESPONSABLE", type text}, {"CATEGORIA", type text}, {"NOMBRE", type text}, {"TIPO_PROGRAMA_PROYECTO", type text}, {"CLASIFICACION", type text}, {"INSTITUCION_EJECUTORA", type text}, {"MUJERES", Int64.Type}, {"HOMBRES", Int64.Type}, {"FECHA_INICIO", type text}, {"FECHA_TERMINO", type text}, {"RECAUDADO", Currency.Type}, {"COMPROMETIDO", Currency.Type}, {"DEVENGADO", Currency.Type}, {"EJERCIDO", Currency.Type}, {"PAGADO", Currency.Type}, {"ESTATUS", type text}, {"AÑO", type text}, {"TRIMESTRE", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

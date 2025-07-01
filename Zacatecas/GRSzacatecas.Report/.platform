@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "GRSzacatecas"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "18b4c2bf-8b4e-9738-4be5-c2b3ee8def4a"
+  }
+}

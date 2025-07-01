@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "MorelosFAIS"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "94dc8201-0ab9-bc2d-41f1-81ac83bb120d"
+  }
+}

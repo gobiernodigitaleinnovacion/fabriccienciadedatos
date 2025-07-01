@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "CANASTA DICONSA PROFECO"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4c572bb9-ad56-a286-4d4f-4ce85d055d04"
+  }
+}

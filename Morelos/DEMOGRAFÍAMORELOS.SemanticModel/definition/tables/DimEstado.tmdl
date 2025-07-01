@@ -1,0 +1,34 @@
+table DimEstado
+	lineageTag: d1ddedcd-8784-4688-acf7-675dcb29a11e
+
+	column EstadoID
+		dataType: string
+		lineageTag: 2bb76432-7f96-4e74-83ae-8fc9bef6e10b
+		summarizeBy: none
+		sourceColumn: EstadoID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		lineageTag: 389de07c-7fa5-45b1-b8d3-1c50f0fedb79
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimEstado = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\\Users\\hello\\OneDrive - JHRJDATA\\JHRJDATA\\Bases\\InegiArchivos\\CensoHechos.csv"), [Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    DimEstado = Table.Distinct(Table.SelectColumns(PromotedHeaders, {"cve_entidad", "desc_entidad"})),
+				    RenameColumns = Table.RenameColumns(DimEstado,{{"cve_entidad", "EstadoID"}, {"desc_entidad", "Estado"}})
+				in
+				    RenameColumns
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

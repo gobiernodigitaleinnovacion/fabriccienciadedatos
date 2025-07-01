@@ -1,0 +1,451 @@
+table medidas
+	lineageTag: 18ad4daa-f499-4686-9947-7ae3b957d841
+
+	measure TotalGastosDiconsa = SUM('Canasta2025pormes'[PRECIO DICONSA ($)])
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 66dbae2f-a9c2-4b4d-b520-ccd25d162b55
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure TotalGastosProfeco = SUM('Canasta2025pormes'[PRECIO PROFECO ($)])
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 8f341792-6dae-4e16-b3ef-fa5dde5e3802
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure TotalAhorro =
+			
+			SUMX(
+			    'Canasta2025pormes',
+			    ('Canasta2025pormes'[PRECIO PROFECO ($)] - 'Canasta2025pormes'[PRECIO DICONSA ($)]
+			))
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 44c903d2-b784-419e-83cc-667b87e7d082
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure ConteoFilas = COUNTROWS('Canasta2025pormes')
+		formatString: 0
+		lineageTag: a9423234-cb2b-49d6-a64c-1c48918c9ba4
+
+	measure 'Diferencia Absoluta de PrecioDiferenciaPrecio' = ```
+			
+			SUMX(
+			    Canasta2025pormes,
+			    Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			)
+			
+			
+			```
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 3301021d-ca2a-4d4a-a54f-c15752a22ab2
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure PorcentajeAhorro = ```
+			
+			SUMX(
+			    Canasta2025pormes,
+			    DIVIDE(
+			        Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)],
+			        Canasta2025pormes[PRECIO DICONSA ($)],
+			        0
+			    ) * 100
+			)
+			
+			```
+		lineageTag: b3887621-3d9a-44e0-b003-d525729025fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AhorroPromedio =
+			
+			AVERAGE(Canasta2025pormes[MARGEN DE AHORRO (%)])
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 099faa72-6fce-4918-9fa3-fce9c9d36dcc
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure PrecioPromedioDICONSA =
+			
+			AVERAGE(Canasta2025pormes[PRECIO DICONSA ($)])
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 090eb9c0-e4a6-40f1-b463-6f13bdb622c9
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure PrecioPromedioPROFECO =
+			
+			AVERAGE(Canasta2025pormes[PRECIO PROFECO ($)])
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 42e2f402-5cff-4c10-b90e-d259eb6a9291
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure AhorroMesAnterior = ```
+			
+			CALCULATE(
+			    [AhorroPromedio],
+			    DATEADD(Fecha[FECHA], -1, MONTH)
+			)
+			
+			```
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: db53ec41-ac03-46ee-8561-7f4fec8d40ba
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure VariacionMensualAhorro = ```
+			
+			[AhorroPromedio] - [AhorroMesAnterior]
+			
+			```
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: f857a3c9-db89-465e-aaee-ff3a5fa7ca15
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure VariacionMensualPorcentual = ```
+			
+			DIVIDE([VariacionMensualAhorro], [AhorroMesAnterior], 0) * 100
+			
+			```
+		lineageTag: 10d1d07f-b824-48b9-8491-ec0b2772de38
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AhorroAcumuladoAño
+		lineageTag: d896b78c-6dad-4c84-9d3d-7a8133563aa5
+
+	measure TendenciaAhorro3Meses =
+			
+			CALCULATE(
+			    [AhorroPromedio],
+			    DATESINPERIOD(Fecha[FECHA], MAX(Fecha[FECHA]), -3, MONTH)
+			)
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 2758694d-0d30-40ca-88ed-9b5eddd66460
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure ClasificacionAhorro =
+			
+			VAR AhorroActual = AVERAGE(Canasta2025pormes[MARGEN DE AHORRO (%)])
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    AhorroActual < 0, "Más Caro en DICONSA",
+			    AhorroActual <= 25, "Ahorro Bajo (0-25%)",
+			    AhorroActual <= 50, "Ahorro Moderado (25-50%)",
+			    AhorroActual <= 100, "Ahorro Alto (50-100%)",
+			    "Ahorro Excepcional (>100%)"
+			)
+		lineageTag: 48d1e8db-f3f2-45b6-86a1-83b839cf36d2
+
+	measure ProductosAhorroBajo = ```
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Canasta2025pormes[PRODUCTO]),
+			    FILTER(
+			        Canasta2025pormes,
+			        Canasta2025pormes[MARGEN DE AHORRO (%)] >= 0 && 
+			        Canasta2025pormes[MARGEN DE AHORRO (%)] <= 25
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: 857b90a7-b385-4b24-bdfe-ad92c329a081
+
+	measure ProductosAhorroAlto =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Canasta2025pormes[PRODUCTO]),
+			    FILTER(
+			        Canasta2025pormes,
+			        Canasta2025pormes[MARGEN DE AHORRO (%)] > 50
+			    )
+			)
+		formatString: 0
+		lineageTag: 0b3b6fa4-8e47-48b7-a1b0-df9ca3069aca
+
+	measure Top10MayorAhorro =
+			
+			CALCULATE(
+			    [AhorroPromedio],
+			    TOPN(10, ALL(Productos[PRODUCTO]), [AhorroPromedio])
+			)
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 297472e9-5149-477a-b97d-5428d7427b50
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure TotalProductos =
+			
+			DISTINCTCOUNT(Canasta2025pormes[PRODUCTO])
+		formatString: 0
+		lineageTag: 5ec03dd6-c4f0-4140-a817-a2eb89df6d1a
+
+	measure IndiceBeneficioSocial = ```
+			
+			DIVIDE(
+			    [ProductosAhorroAlto],
+			    [TotalProductos],
+			    0
+			) * 100
+			
+			```
+		lineageTag: c99e5cc0-e8ab-4a14-bcbd-9a500eb5772a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure VariabilidadPrecios =
+			
+			VAR DesviacionDICONSA = STDEV.P(Canasta2025pormes[PRECIO DICONSA ($)])
+			VAR DesviacionPROFECO = STDEV.P(Canasta2025pormes[PRECIO PROFECO ($)])
+			RETURN DesviacionPROFECO - DesviacionDICONSA
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: b5f5b919-041c-486c-8309-0d6ce8fec321
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure VolatilidadProducto =
+			
+			VAR MaxPrecio = MAX(Canasta2025pormes[PRECIO PROFECO ($)])
+			VAR MinPrecio = MIN(Canasta2025pormes[PRECIO PROFECO ($)])
+			RETURN DIVIDE(MaxPrecio - MinPrecio, MinPrecio, 0) * 100
+		lineageTag: 1f75a399-e2e4-46c7-bafc-5db1fd43a21b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure EficienciaDICONSA =
+			
+			DIVIDE(
+			    COUNTROWS(
+			        FILTER(
+			            Canasta2025pormes,
+			            Canasta2025pormes[MARGEN DE AHORRO (%)] > 0
+			        )
+			    ),
+			    COUNTROWS(Canasta2025pormes),
+			    0
+			) * 100
+		lineageTag: 255be2e8-37c5-4299-a85a-e7f9e50bb2ca
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure DiferenciaAbsoluta =
+			
+			SUMX(
+			    Canasta2025pormes,
+			    Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			)
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 9655375f-52d4-4aa3-b20d-feea2d1a60e9
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure DiferenciaPrecioDiferencia = ```
+			
+			SUMX(
+			    Canasta2025pormes,
+			    Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			)
+			
+			```
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 9ae157cd-3e36-4986-8a09-d21f3540f261
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure DiferenciaPrecioDiferencia2 = ```
+			
+			SUMX(
+			    Canasta2025pormes,
+			    Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			)
+			
+			```
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: bac29160-7bc4-4dfc-b6ff-25a04121029f
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure AhorroTotalEstimadoNuevo =
+			
+			SUMX(
+			    Canasta2025pormes,
+			    Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			)
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 776e1909-0fb9-4f7a-a040-545269aaed9f
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure AhorroFamiliarMensualNuevo = ```
+			
+			SUMX(
+			    VALUES(Canasta2025pormes[PRODUCTO]),
+			    CALCULATE(
+			        AVERAGE(Canasta2025pormes[PRECIO PROFECO ($)]) - 
+			        AVERAGE(Canasta2025pormes[PRECIO DICONSA ($)])
+			    )
+			)
+			
+			```
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: b5dcf277-0468-4ab0-9f96-8441a3895f6b
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure 'Variabilidad de Precios (CORREGIDA)VariabilidadPreciosNuevo' =
+			
+			VAR DesviacionDICONSA = STDEV.P(Canasta2025pormes[PRECIO DICONSA ($)])
+			VAR DesviacionPROFECO = STDEV.P(Canasta2025pormes[PRECIO PROFECO ($)])
+			RETURN DesviacionPROFECO - DesviacionDICONSA
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 2b6c6971-df54-4359-a9dc-d4cf701e891f
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure AhorroPromedioPorProducto =
+			
+			AVERAGEX(
+			    Canasta2025pormes,
+			    Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			)
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 628724e3-c20b-40c4-a79b-5bf0ff1648fa
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure MaximoAhorroPesos =
+			
+			MAXX(
+			    Canasta2025pormes,
+			    Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			)
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: e2aff45d-2f50-47ab-9d0c-c52a223c9633
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure MinimoAhorroPesos = ```
+			
+			MINX(
+			    Canasta2025pormes,
+			    Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			)
+			
+			```
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: d7a5714c-9bb5-4c97-875b-e084cb24c101
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure TotalAhorroMesActual =
+			
+			CALCULATE(
+			    SUMX(
+			        Canasta2025pormes,
+			        Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			    ),
+			    FILTER(
+			        ALL(Fecha),
+			        Fecha[FECHA] = MAX(Fecha[FECHA])
+			    )
+			)
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: c37fac77-2136-423a-94ed-ad56afa86cbb
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure ProductosAhorroPositivo =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Canasta2025pormes[PRODUCTO]),
+			    FILTER(
+			        Canasta2025pormes,
+			        Canasta2025pormes[PRECIO PROFECO ($)] > Canasta2025pormes[PRECIO DICONSA ($)]
+			    )
+			)
+		formatString: 0
+		lineageTag: 0c061061-c2de-4462-8863-b81c99378b35
+
+	measure ProductosMasCarosDICONSA = ```
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Canasta2025pormes[PRODUCTO]),
+			    FILTER(
+			        Canasta2025pormes,
+			        Canasta2025pormes[PRECIO DICONSA ($)] > Canasta2025pormes[PRECIO PROFECO ($)]
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 885337bb-bb8c-4452-b50a-a39a3a5d15c1
+
+	measure PorcentajeProductosAhorro =
+			
+			DIVIDE(
+			    [ProductosAhorroPositivo],
+			    [TotalProductos],
+			    0
+			) * 1
+		lineageTag: df648639-fb8a-48c2-afcd-b5fe30f3b969
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AhorroMesAnteriorCorregido = ```
+			
+			VAR MesAnterior = EOMONTH(MAX(Fecha[FECHA]), -1)
+			RETURN
+			CALCULATE(
+			    SUMX(
+			        Canasta2025pormes,
+			        Canasta2025pormes[PRECIO PROFECO ($)] - Canasta2025pormes[PRECIO DICONSA ($)]
+			    ),
+			    Fecha[FECHA] <= MesAnterior && Fecha[FECHA] > EOMONTH(MesAnterior, -1)
+			)
+			
+			```
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 0b693686-386f-457c-bda8-067331b41816
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure TendenciaUltimos3Meses =
+			
+			CALCULATE(
+			    [DiferenciaAbsoluta],
+			    FILTER(
+			        ALL(Fecha),
+			        Fecha[FECHA] >= EOMONTH(MAX(Fecha[FECHA]), -3) &&
+			        Fecha[FECHA] <= MAX(Fecha[FECHA])
+			    )
+			)
+		formatString: \$#,0.###############;-\$#,0.###############;\$#,0.###############
+		lineageTag: 3117fcc0-436b-442c-bec4-12e9a8be3eb9
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-MX"}
+
+	measure ProductoSeleccionado =
+			
+			IF(
+			    HASONEVALUE(Productos[PRODUCTO]),
+			    SELECTEDVALUE(Productos[PRODUCTO]),
+			    "Todos los Productos"
+			)
+		lineageTag: 7ab5c632-e70b-4411-b5b6-6ccde569c4ac
+
+	partition medidas = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Columna1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

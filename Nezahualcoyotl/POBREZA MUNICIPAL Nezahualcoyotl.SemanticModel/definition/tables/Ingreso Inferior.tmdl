@@ -1,0 +1,55 @@
+table 'Ingreso Inferior'
+	lineageTag: 79f3a588-f98f-4c55-af14-40f3162cec76
+
+	measure 'Poblacion Ingreso Inferios LP Extrema' = ```
+			
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        Pobreza,
+			        Pobreza[INDICADORES] IN {
+			            "POBLACIÓN CON INGRESO INFERIOR A LA LINEA DE POBREZA EXTREMA POR INGRESO PERSONAS 2010",
+			            "POBLACIÓN CON INGRESO INFERIOR A LA LINEA DE POBREZA EXTREMA POR INGRESO PERSONAS 2015",
+			            "POBLACIÓN CON INGRESO INFERIOR A LA LINEA DE POBREZA EXTREMA POR INGRESO PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] <> "Estatal"
+			    )
+			)
+			
+			```
+		lineageTag: 286aec77-25ec-474e-8249-2de6db6d3552
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Poblacion Ingreso Inferior LPI' = ```
+			
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        Pobreza,
+			        Pobreza[INDICADORES] IN {
+			            "POBLACIÓN CON UN INGRESO INFERIOR A LA LINEA DE POBREZA POR INGRESO PERSONAS 2010",
+			            "POBLACIÓN CON UN INGRESO INFERIOR A LA LINEA DE POBREZA POR INGRESO PERSONAS 2015",
+			            "POBLACIÓN CON UN INGRESO INFERIOR A LA LINEA DE POBREZA POR INGRESO PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] <> "Estatal"
+			    )
+			)
+			
+			```
+		lineageTag: 0b1d0607-9a6c-479a-89b7-4c44db635a1e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Ingreso Inferior' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

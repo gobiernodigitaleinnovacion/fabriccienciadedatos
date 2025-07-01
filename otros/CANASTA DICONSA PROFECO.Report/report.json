@@ -1,0 +1,261 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.65\",\"type\":2},\"customTheme\":{\"name\":\"Solar\",\"version\":\"5.65\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          },
+          {
+            "name": "Solar",
+            "path": "BuiltInThemes/Solar.json",
+            "type": 201
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Canasta Básica",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "6db421ddaded5780178b",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"04dfd817b6019b231acd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":120.53962796028685,\"y\":236.0039031643511,\"z\":0,\"width\":268.99369607979804,\"height\":96.43170236822948,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Productos.PRODUCTO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Productos\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PRODUCTO\"},\"Name\":\"Productos.PRODUCTO\",\"NativeReferenceName\":\"PRODUCTO\"}]},\"syncGroup\":{\"groupName\":\"PRODUCTO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}},\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.43,
+          "width": 268.99,
+          "x": 120.54,
+          "y": 236.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"0eb401e6eb41f43f2be5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":255.13471752776437,\"y\":371.82423949782714,\"z\":3,\"width\":156.2452921294061,\"height\":89.00048285852245,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"medidas.ProductoSeleccionado\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"ProductoSeleccionado\"},\"Name\":\"medidas.ProductoSeleccionado\",\"NativeReferenceName\":\"ProductoSeleccionado\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 89.00,
+          "width": 156.25,
+          "x": 255.13,
+          "y": 371.82,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"5c592a952e395f817bbd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":611.1366489618541,\"y\":223.49010140028972,\"z\":5,\"width\":599.2699179140512,\"height\":270.9570255915017}}],\"singleVisual\":{\"visualType\":\"pageNavigator\",\"drillFilterOtherVisuals\":true,\"objects\":{\"pages\":[{\"properties\":{\"showPage\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"6db421ddaded5780178b\"}}],\"layout\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"text\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}}},\"selector\":{\"id\":\"default\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 270.96,
+          "width": 599.27,
+          "x": 611.14,
+          "y": 223.49,
+          "z": 5.00
+        },
+        {
+          "config": "{\"name\":\"9f9801831beff259b00d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":411.38000965717043,\"y\":579.4920328343795,\"z\":4,\"width\":199.75663930468372,\"height\":49.44471269917914}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'clearAllSlicers'\"}}}},\"selector\":{\"id\":\"default\"}},{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"text\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Borrar todas las segmentaciones'\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'ClearAllSlicers'\"}}},\"tooltipPlaceholderText\":{\"expr\":{\"Literal\":{\"Value\":\"'Borrar todas las segmentaciones de datos de esta página'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 49.44,
+          "width": 199.76,
+          "x": 411.38,
+          "y": 579.49,
+          "z": 4.00
+        },
+        {
+          "config": "{\"name\":\"bf08f778e2c6f3efed9b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":120.64509898599711,\"y\":43.51134717527764,\"z\":2,\"width\":1066.0280057943023,\"height\":89.00048285852245,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"EVOLUCIÓN DE LA CANASTA BÁSICA 2025\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"32pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 89.00,
+          "width": 1066.03,
+          "x": 120.65,
+          "y": 43.51,
+          "z": 2.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Nivel de Ahorro",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "94ae4b7e4202af8234a1",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"330dbbb7cc5c0b887c0f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":476.64703042008694,\"y\":128.55625301786577,\"z\":0,\"width\":775.293095123129,\"height\":421.2689521970063,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Canasta2025pormes.PRODUCTO\"},{\"queryRef\":\"medidas.PrecioPromedioPROFECO\"},{\"queryRef\":\"medidas.PrecioPromedioDICONSA\"},{\"queryRef\":\"medidas.ClasificacionAhorro\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Canasta2025pormes\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"PrecioPromedioPROFECO\"},\"Name\":\"medidas.PrecioPromedioPROFECO\",\"NativeReferenceName\":\"PrecioPromedioPROFECO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"PrecioPromedioDICONSA\"},\"Name\":\"medidas.PrecioPromedioDICONSA\",\"NativeReferenceName\":\"PrecioPromedioDICONSA\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"ClasificacionAhorro\"},\"Name\":\"medidas.ClasificacionAhorro\",\"NativeReferenceName\":\"ClasificacionAhorro\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"PRODUCTO\"},\"Name\":\"Canasta2025pormes.PRODUCTO\",\"NativeReferenceName\":\"PRODUCTO\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Canasta2025pormes\"}},\"Property\":\"PRODUCTO\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Canasta2025pormes\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"PRODUCTO\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"TotalAhorro\"}}}],\"Top\":15}}},\"Type\":2},{\"Name\":\"c\",\"Entity\":\"Canasta2025pormes\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"PRODUCTO\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+          "height": 421.27,
+          "width": 775.29,
+          "x": 476.65,
+          "y": 128.56,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"47d9673ffe95928ae43b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":77.13375181071946,\"y\":17.80009657170449,\"z\":4,\"width\":156.2452921294061,\"height\":89.00048285852245,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"medidas.ProductoSeleccionado\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"ProductoSeleccionado\"},\"Name\":\"medidas.ProductoSeleccionado\",\"NativeReferenceName\":\"ProductoSeleccionado\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 89.00,
+          "width": 156.25,
+          "x": 77.13,
+          "y": 17.80,
+          "z": 4.00
+        },
+        {
+          "config": "{\"name\":\"74b0631564d17bc84705\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.821256038647343,\"y\":15.458937198067634,\"z\":2,\"width\":100.48309178743962,\"height\":40.193236714975846}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.19,
+          "width": 100.48,
+          "x": 10.82,
+          "y": 15.46,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"993eabb4271aaf388126\",\"layouts\":[{\"id\":0,\"position\":{\"x\":170.04830917874398,\"y\":17.004830917874397,\"z\":3,\"width\":975.4589371980677,\"height\":78.84057971014494,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"CLASIFICADOR DE AHORRO\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"24pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 78.84,
+          "width": 975.46,
+          "x": 170.05,
+          "y": 17.00,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"99ffc20147df902e32b1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":172.06760019314342,\"z\":5,\"width\":391.6021245774988,\"height\":243.26798647996137,\"tabOrder\":4}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"ℹ️ INFORMACIÓN\",\"textStyle\":{\"fontSize\":\"13.3333px\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Esta clasificación automática evalúa qué tan conveniente es comprar cada producto en DICONSA comparado con precios PROFECO. Los porcentajes indican el ahorro real que obtiene el consumidor.\",\"textStyle\":{\"fontSize\":\"13.3333px\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Valores negativos = Más caro en DICONSA\",\"textStyle\":{\"fontSize\":\"13.3333px\"}}]},{\"textRuns\":[{\"value\":\"0-25% = Ahorro mínimo\",\"textStyle\":{\"fontSize\":\"13.3333px\"}}]},{\"textRuns\":[{\"value\":\"25-50% = Ahorro moderado  \",\"textStyle\":{\"fontSize\":\"13.3333px\"}}]},{\"textRuns\":[{\"value\":\"50-100% = Ahorro alto\",\"textStyle\":{\"fontSize\":\"13.3333px\"}}]},{\"textRuns\":[{\"value\":\">100% = Ahorro excepcional\",\"textStyle\":{\"fontSize\":\"13.3333px\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 243.27,
+          "width": 391.60,
+          "x": 0.00,
+          "y": 172.07,
+          "z": 5.00
+        },
+        {
+          "config": "{\"name\":\"bfb4545b4c6018412442\",\"layouts\":[{\"id\":0,\"position\":{\"x\":120.53962796028685,\"y\":236.0039031643511,\"z\":1,\"width\":268.99369607979804,\"height\":96.43170236822948,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Productos.PRODUCTO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Productos\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PRODUCTO\"},\"Name\":\"Productos.PRODUCTO\",\"NativeReferenceName\":\"PRODUCTO\"}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"PRODUCTO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}},\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.43,
+          "width": 268.99,
+          "x": 120.54,
+          "y": 236.00,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Evolución Productos Canasta Básica",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "e71856e89ce69f10342a",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"03a8aa25e40a875c919a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":842.5379043940126,\"y\":11.866731047802993,\"z\":1009,\"width\":217.55673587638822,\"height\":104.82279092225978}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"medidas.PrecioPromedioPROFECO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"PrecioPromedioPROFECO\"},\"Name\":\"medidas.PrecioPromedioPROFECO\",\"NativeReferenceName\":\"PrecioPromedioPROFECO\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 104.82,
+          "width": 217.56,
+          "x": 842.54,
+          "y": 11.87,
+          "z": 1009.00
+        },
+        {
+          "config": "{\"name\":\"2cf0fa6207af922eca31\",\"layouts\":[{\"id\":0,\"position\":{\"x\":484.5581844519556,\"y\":138.4451955577016,\"z\":1011,\"width\":753.5374215354901,\"height\":259.0902945436987,\"tabOrder\":7}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fecha.FECHA\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Canasta2025pormes.PRECIO DICONSA ($))\"},{\"queryRef\":\"Sum(Canasta2025pormes.PRECIO PROFECO ($))\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fecha\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Canasta2025pormes\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"FECHA\"},\"Name\":\"Fecha.FECHA\",\"NativeReferenceName\":\"FECHA\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"PRECIO DICONSA ($)\"}},\"Function\":0},\"Name\":\"Sum(Canasta2025pormes.PRECIO DICONSA ($))\",\"NativeReferenceName\":\"PRECIO DICONSA ($)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"PRECIO PROFECO ($)\"}},\"Function\":0},\"Name\":\"Sum(Canasta2025pormes.PRECIO PROFECO ($))\",\"NativeReferenceName\":\"Suma de PRECIO PROFECO ($)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"FECHA\"}}}]},\"columnProperties\":{\"Sum(Canasta2025pormes.PRECIO DICONSA ($))\":{\"displayName\":\"PRECIO DICONSA ($)\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 259.09,
+          "width": 753.54,
+          "x": 484.56,
+          "y": 138.45,
+          "z": 1011.00
+        },
+        {
+          "config": "{\"name\":\"4b0ee6027b76710b4b4f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":49.44471269917914,\"y\":9.888942539835828,\"z\":1014,\"width\":156.2452921294061,\"height\":89.00048285852245,\"tabOrder\":9}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"medidas.ProductoSeleccionado\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"ProductoSeleccionado\"},\"Name\":\"medidas.ProductoSeleccionado\",\"NativeReferenceName\":\"ProductoSeleccionado\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 89.00,
+          "width": 156.25,
+          "x": 49.44,
+          "y": 9.89,
+          "z": 1014.00
+        },
+        {
+          "config": "{\"name\":\"57e00dfbc48680a1cebb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":619.0478029937228,\"y\":9.888942539835828,\"z\":1008,\"width\":195.8010622887494,\"height\":106.80057943022695,\"tabOrder\":5}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"medidas.PrecioPromedioDICONSA\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"PrecioPromedioDICONSA\"},\"Name\":\"medidas.PrecioPromedioDICONSA\",\"NativeReferenceName\":\"PrecioPromedioDICONSA\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 106.80,
+          "width": 195.80,
+          "x": 619.05,
+          "y": 9.89,
+          "z": 1008.00
+        },
+        {
+          "config": "{\"name\":\"59c7ed60e55c68d92fff\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.666827619507483,\"y\":136.46740704973442,\"z\":1003,\"width\":415.3355866731048,\"height\":259.0902945436987,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fecha.FECHA\",\"active\":true}],\"Y\":[{\"queryRef\":\"medidas.TotalAhorro\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fecha\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"FECHA\"},\"Name\":\"Fecha.FECHA\",\"NativeReferenceName\":\"FECHA\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"TotalAhorro\"},\"Name\":\"medidas.TotalAhorro\",\"NativeReferenceName\":\"TotalAhorro\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"FECHA\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Ahorro por mes'\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 259.09,
+          "width": 415.34,
+          "x": 29.67,
+          "y": 136.47,
+          "z": 1003.00
+        },
+        {
+          "config": "{\"name\":\"6772b62dde80b4ed86cf\",\"layouts\":[{\"id\":0,\"position\":{\"x\":407.42443264123614,\"y\":9.888942539835828,\"z\":1007,\"width\":189.8676967648479,\"height\":106.80057943022695}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"medidas.MaximoAhorroPesos\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MaximoAhorroPesos\"},\"Name\":\"medidas.MaximoAhorroPesos\",\"NativeReferenceName\":\"MaximoAhorroPesos\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 106.80,
+          "width": 189.87,
+          "x": 407.42,
+          "y": 9.89,
+          "z": 1007.00
+        },
+        {
+          "config": "{\"name\":\"6b0eae3aa1d5ea85d495\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1083.8281023660068,\"y\":9.888942539835828,\"z\":1010,\"width\":154.26750362143892,\"height\":106.80057943022695,\"tabOrder\":6}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"medidas.TotalAhorro\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"TotalAhorro\"},\"Name\":\"medidas.TotalAhorro\",\"NativeReferenceName\":\"TotalAhorro\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 106.80,
+          "width": 154.27,
+          "x": 1083.83,
+          "y": 9.89,
+          "z": 1010.00
+        },
+        {
+          "config": "{\"name\":\"895ea0f1340771d34985\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":415.3355866731048,\"z\":1004,\"width\":1238.0956059874457,\"height\":278.86817962337034,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fecha.FECHA\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Canasta2025pormes.PRECIO PROFECO ($))\"},{\"queryRef\":\"Sum(Canasta2025pormes.PRECIO DICONSA ($))\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fecha\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Canasta2025pormes\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"FECHA\"},\"Name\":\"Fecha.FECHA\",\"NativeReferenceName\":\"FECHA\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"PRECIO PROFECO ($)\"}},\"Function\":0},\"Name\":\"Sum(Canasta2025pormes.PRECIO PROFECO ($))\",\"NativeReferenceName\":\"PRECIO PROFECO ($)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"PRECIO DICONSA ($)\"}},\"Function\":0},\"Name\":\"Sum(Canasta2025pormes.PRECIO DICONSA ($))\",\"NativeReferenceName\":\"Suma de PRECIO DICONSA ($)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"FECHA\"}}}]},\"columnProperties\":{\"Sum(Canasta2025pormes.PRECIO PROFECO ($))\":{\"displayName\":\"PRECIO PROFECO ($)\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 278.87,
+          "width": 1238.10,
+          "x": 0.00,
+          "y": 415.34,
+          "z": 1004.00
+        },
+        {
+          "config": "{\"name\":\"93ebdcc74288b99a2de6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":223.49010140028972,\"y\":7.911154031868662,\"z\":1005,\"width\":170.08981168517624,\"height\":108.77836793819411,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"medidas.TotalAhorroMesActual\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medidas\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"TotalAhorroMesActual\"},\"Name\":\"medidas.TotalAhorroMesActual\",\"NativeReferenceName\":\"TotalAhorroMesActual\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 108.78,
+          "width": 170.09,
+          "x": 223.49,
+          "y": 7.91,
+          "z": 1005.00
+        },
+        {
+          "config": "{\"name\":\"dc4608db52db8975f4a6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":120.53962796028685,\"y\":236.0039031643511,\"z\":1012,\"width\":268.99369607979804,\"height\":96.43170236822948,\"tabOrder\":8}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Productos.PRODUCTO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Productos\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"PRODUCTO\"},\"Name\":\"Productos.PRODUCTO\",\"NativeReferenceName\":\"PRODUCTO\"}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"PRODUCTO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}},\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.43,
+          "width": 268.99,
+          "x": 120.54,
+          "y": 236.00,
+          "z": 1012.00
+        },
+        {
+          "config": "{\"name\":\"ff28c293e078215b9891\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":1013}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1013.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "Solar"
+}

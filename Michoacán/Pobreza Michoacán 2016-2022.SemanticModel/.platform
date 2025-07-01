@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Pobreza Michoacán 2016-2022"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cc3afe5b-e4f6-b755-4cba-de4982452e13"
+  }
+}

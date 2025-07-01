@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "POBREZA MUNICIPAL_tepejidelrío"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9e4963f5-3ea6-a6f9-433e-bb08e2fc694a"
+  }
+}

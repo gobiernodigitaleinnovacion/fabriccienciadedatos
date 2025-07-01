@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "MORELOSPOBREZA"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4271e64e-6224-bd4e-46a4-87eb264ba7f1"
+  }
+}

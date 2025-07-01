@@ -1,0 +1,561 @@
+{
+  "config": "{\"version\":\"5.54\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU05\",\"version\":\"5.54\",\"type\":2},\"customTheme\":{\"name\":\"AccessibleOrchid\",\"version\":\"5.54\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "AccessibleOrchid",
+            "path": "BuiltInThemes/AccessibleOrchid.json",
+            "type": 201
+          },
+          {
+            "name": "CY24SU05",
+            "path": "BaseThemes/CY24SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Población con Ingreso Inferior a la Línea de Pobreza",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "0b20412d41985d7c2363",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0932f60068d093a5a021\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1179.7959367945823,\"y\":62.87313769751693,\"z\":6000,\"width\":66.57155756207675,\"height\":40.682618510158015,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Estas gráficas presentan la población con ingresos inferiores a la línea de pobreza y la población en pobreza extrema por ingresos en el municipio, con datos de los años 2010, 2015 y 2020. Las ''líneas de pobreza por ingresos'' determinan el nivel mínimo de ingresos necesario para cubrir las necesidades básicas de una persona, mientras que la ''pobreza extrema por ingresos'' se refiere a aquellos cuyos ingresos están significativamente por debajo de este umbral.'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.68,
+          "width": 66.57,
+          "x": 1179.80,
+          "y": 62.87,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"19cf91626735cb9a8ac8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":652.7711060948081,\"y\":223.75440180586907,\"z\":4000,\"width\":593.596388261851,\"height\":495.58826185101583,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"Ingreso Inferior.Poblacion Ingreso Inferios LP Extrema Municipio\"},{\"queryRef\":\"Ingreso Inferior.Poblacion Ingreso Inferior LPI Municipio\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"Ingreso Inferior\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"CALENDARIO\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Poblacion Ingreso Inferios LP Extrema\"},\"Name\":\"Ingreso Inferior.Poblacion Ingreso Inferios LP Extrema Municipio\",\"NativeReferenceName\":\"Poblacion Ingreso Inferios LP Extrema\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Poblacion Ingreso Inferior LPI\"},\"Name\":\"Ingreso Inferior.Poblacion Ingreso Inferior LPI Municipio\",\"NativeReferenceName\":\"Poblacion Ingreso Inferior LPI\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 495.59,
+          "width": 593.60,
+          "x": 652.77,
+          "y": 223.75,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"2232f96f864736f5eb5f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":384.1500586166472,\"z\":2000,\"width\":298.9847154327678,\"height\":79.7292574487381,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"MUNICIPIOS.MUNICIPIO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"},\"Name\":\"MUNICIPIOS.MUNICIPIO\",\"NativeReferenceName\":\"MUNICIPIO\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"MUNICIPIO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"20557dd870206b487bc8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MUNICIPIOS\"}},\"Property\":\"MUNICIPIO\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}],[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 79.73,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 384.15,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"25e5fad226fe227f033f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":47.11274303789069,\"height\":39.86462872436905,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'28f166906900bb2234b0'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 39.86,
+          "width": 47.11,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"45e1ffc213160604ffd9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":231.93965803269262,\"z\":1000,\"width\":298.9847154327678,\"height\":86.97737176225974,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"ESTADOS.ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"},\"Name\":\"ESTADOS.ENTIDAD\",\"NativeReferenceName\":\"ENTIDAD\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"11493fed4cb894ba44e7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ESTADOS\"}},\"Property\":\"ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 86.98,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 231.94,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"b4102b3423f5e780d099\",\"layouts\":[{\"id\":0,\"position\":{\"x\":103.55575620767495,\"y\":20.341309255079008,\"z\":5000,\"width\":1063.2957110609482,\"height\":166.42889390519187,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Títulos.Titulo Ingreso Inferior Linea\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Títulos\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Titulo Ingreso Inferior Linea\"},\"Name\":\"Títulos.Titulo Ingreso Inferior Linea\",\"NativeReferenceName\":\"Titulo Ingreso Inferior Linea\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 166.43,
+          "width": 1063.30,
+          "x": 103.56,
+          "y": 20.34,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"feef113341fbb087d960\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24.039729119638825,\"y\":223.75440180586907,\"z\":3000,\"width\":541.8185101580135,\"height\":495.58826185101583,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"Ingreso Inferior.Poblacion Ingreso Inferior LP Extrema Municipio\"},{\"queryRef\":\"Ingreso Inferior.Poblacion Ingreso Inferior LPI Municipio\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"Ingreso Inferior\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"CALENDARIO\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Poblacion Ingreso Inferios LP Extrema\"},\"Name\":\"Ingreso Inferior.Poblacion Ingreso Inferior LP Extrema Municipio\",\"NativeReferenceName\":\"Poblacion Ingreso Inferios LP Extrema\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Poblacion Ingreso Inferior LPI\"},\"Name\":\"Ingreso Inferior.Poblacion Ingreso Inferior LPI Municipio\",\"NativeReferenceName\":\"Poblacion Ingreso Inferior LPI\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 495.59,
+          "width": 541.82,
+          "x": 24.04,
+          "y": 223.75,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Principal",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "28f166906900bb2234b0",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"018d20d878ea729b8533\",\"layouts\":[{\"id\":0,\"position\":{\"x\":86.97737176225974,\"y\":23.556371518945344,\"z\":3000,\"width\":1079.969032714725,\"height\":123.21794332986795,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"PRINCIPALES INDICADORES DE POBREZA EN MÉXICO    2010-2020\",\"textStyle\":{\"fontFamily\":\"Segoe (Bold)\",\"fontSize\":\"28pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 123.22,
+          "width": 1079.97,
+          "x": 86.98,
+          "y": 23.56,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"64f8a0768004142d0bc6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":384.1500586166472,\"z\":1000,\"width\":298.9847154327678,\"height\":79.7292574487381,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"MUNICIPIOS.MUNICIPIO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"},\"Name\":\"MUNICIPIOS.MUNICIPIO\",\"NativeReferenceName\":\"MUNICIPIO\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}}]},\"syncGroup\":{\"groupName\":\"MUNICIPIO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"20557dd870206b487bc8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MUNICIPIOS\"}},\"Property\":\"MUNICIPIO\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}],[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 79.73,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 384.15,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"6cb645299808086c9041\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":231.93965803269262,\"z\":0,\"width\":298.9847154327678,\"height\":86.97737176225974,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"ESTADOS.ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"},\"Name\":\"ESTADOS.ENTIDAD\",\"NativeReferenceName\":\"ENTIDAD\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}}]},\"syncGroup\":{\"groupName\":\"ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"11493fed4cb894ba44e7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ESTADOS\"}},\"Property\":\"ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 86.98,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 231.94,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"88ec4ead9f9e6b752a6b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":626.9618881196222,\"y\":155.83445774071535,\"z\":2000,\"width\":614.2776880709594,\"height\":530.9243734654605,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"pageNavigator\",\"drillFilterOtherVisuals\":true,\"objects\":{\"layout\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"pages\":[{\"properties\":{\"showPage\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"28f166906900bb2234b0\"}}],\"shadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"text\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"18D\"}}}},\"selector\":{\"id\":\"default\"}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 530.92,
+          "width": 614.28,
+          "x": 626.96,
+          "y": 155.83,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"a9228d5ce80739ea534c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":427.638744497777,\"y\":666.8265168439913,\"z\":4000,\"width\":150.39837200557412,\"height\":39.86462872436905,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Fuente; CONEVAL\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 39.86,
+          "width": 150.40,
+          "x": 427.64,
+          "y": 666.83,
+          "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Población",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "41d5368b8f0eba5bb3a0",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"01188da2a510a81f585e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":110.53374328120508,\"y\":438.51091596805946,\"z\":2000,\"width\":1058.2246897741602,\"height\":255.49602955163797,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineStackedColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"medidas.Población Total Municipio\"}],\"Y2\":[{\"queryRef\":\"medidas.Población Total Estatal\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CALENDARIO\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Población\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Población Total Municipio\"},\"Name\":\"medidas.Población Total Municipio\",\"NativeReferenceName\":\"Población Total Municipio\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Población Total Estatal\"},\"Name\":\"medidas.Población Total Estatal\",\"NativeReferenceName\":\"Población Total Estatal\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 255.50,
+          "width": 1058.22,
+          "x": 110.53,
+          "y": 438.51,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"0141c34135c50eb57e2e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":17.797862170852525,\"y\":42.71486921004606,\"z\":0,\"width\":299.0040844703224,\"height\":103.22760059094463,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"ESTADOS.ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"},\"Name\":\"ESTADOS.ENTIDAD\",\"NativeReferenceName\":\"ENTIDAD\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"11493fed4cb894ba44e7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ESTADOS\"}},\"Property\":\"ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 103.23,
+          "width": 299.00,
+          "x": 17.80,
+          "y": 42.71,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"348d22692e419b519534\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1118.7720090293453,\"y\":29.587358916478554,\"z\":7000,\"width\":49.92866817155756,\"height\":40.682618510158015,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Se muestra la población total en el municipio, desglosada por los años 2010, 2015 y 2020. La población total incluye todas las personas que residen en el municipio, independientemente de su situación económica. Esta información es crucial para entender la magnitud de la población en el área y para planificar servicios y recursos municipales.'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.68,
+          "width": 49.93,
+          "x": 1118.77,
+          "y": 29.59,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"54853a396cc00a558ea6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":203.41309255079005,\"y\":12.944469525959368,\"z\":6000,\"width\":870.9778781038375,\"height\":73.96839729119638,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Títulos.Titulo Poblacion\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Títulos\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Titulo Poblacion\"},\"Name\":\"Títulos.Titulo Poblacion\",\"NativeReferenceName\":\"Titulo Poblacion\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 73.97,
+          "width": 870.98,
+          "x": 203.41,
+          "y": 12.94,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"657bfc78d6e084cf5498\",\"layouts\":[{\"id\":0,\"position\":{\"x\":683.134774049415,\"y\":101.47360038930303,\"z\":4000,\"width\":568.9769736114491,\"height\":295.36065827600703,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"MUNICIPIOS.MUNICIPIO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"},\"Name\":\"MUNICIPIOS.MUNICIPIO\",\"NativeReferenceName\":\"MUNICIPIO\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 295.36,
+          "width": 568.98,
+          "x": 683.13,
+          "y": 101.47,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"816c85eeeaff2e8bc335\",\"layouts\":[{\"id\":0,\"position\":{\"x\":17.797862170852525,\"y\":181.53819414269574,\"z\":1000,\"width\":299.0040844703224,\"height\":108.5669592422004,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"MUNICIPIOS.MUNICIPIO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"},\"Name\":\"MUNICIPIOS.MUNICIPIO\",\"NativeReferenceName\":\"MUNICIPIO\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"MUNICIPIO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"20557dd870206b487bc8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MUNICIPIOS\"}},\"Property\":\"MUNICIPIO\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}],[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 108.57,
+          "width": 299.00,
+          "x": 17.80,
+          "y": 181.54,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"c1ecb83881699b4130e1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":5000,\"width\":47.11274303789069,\"height\":39.86462872436905,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'28f166906900bb2234b0'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 39.86,
+          "width": 47.11,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"cc7e516fd5484da44887\",\"layouts\":[{\"id\":0,\"position\":{\"x\":59.79694308655357,\"y\":101.47360038930303,\"z\":3000,\"width\":543.6085735141233,\"height\":295.36065827600703,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"filledMap\",\"projections\":{\"Category\":[{\"queryRef\":\"ESTADOS.ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"},\"Name\":\"ESTADOS.ENTIDAD\",\"NativeReferenceName\":\"ENTIDAD\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'minColor'\"}}}},\"max\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'maxColor'\"}}}},\"nullColoringStrategy\":{\"strategy\":{\"expr\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 295.36,
+          "width": 543.61,
+          "x": 59.80,
+          "y": 101.47,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Población en Pobreza Moderada y Extrema",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "6678a8264d4d31e3b75c",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0145b9c7142a413d8263\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":231.93965803269262,\"z\":1000,\"width\":298.9847154327678,\"height\":86.97737176225974,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"ESTADOS.ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"},\"Name\":\"ESTADOS.ENTIDAD\",\"NativeReferenceName\":\"ENTIDAD\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"11493fed4cb894ba44e7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ESTADOS\"}},\"Property\":\"ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 86.98,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 231.94,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"0bbda2d0f28e9d827dd9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":47.11274303789069,\"height\":39.86462872436905,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'28f166906900bb2234b0'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 39.86,
+          "width": 47.11,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"b315e3b7008c332f70c4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":384.1500586166472,\"z\":2000,\"width\":298.9847154327678,\"height\":79.7292574487381,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"MUNICIPIOS.MUNICIPIO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"},\"Name\":\"MUNICIPIOS.MUNICIPIO\",\"NativeReferenceName\":\"MUNICIPIO\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"MUNICIPIO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"20557dd870206b487bc8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MUNICIPIOS\"}},\"Property\":\"MUNICIPIO\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}],[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 79.73,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 384.15,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"c620f574f6c82bd886fa\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24.039729119638825,\"y\":297.7227990970655,\"z\":3000,\"width\":569.5566591422122,\"height\":392.03250564334087,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Moderada y Extrema.Pobreza Extrema Personas Municipio\"},{\"queryRef\":\"Moderada y Extrema.Pobreza Moderada Personas Municipio\"}],\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Moderada y Extrema\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"CALENDARIO\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Pobreza Extrema Personas\"},\"Name\":\"Moderada y Extrema.Pobreza Extrema Personas Municipio\",\"NativeReferenceName\":\"Pobreza Extrema Personas\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Pobreza Moderada Personas\"},\"Name\":\"Moderada y Extrema.Pobreza Moderada Personas Municipio\",\"NativeReferenceName\":\"Pobreza Moderada Personas\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 392.03,
+          "width": 569.56,
+          "x": 24.04,
+          "y": 297.72,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"f10b324e14ce10be9679\",\"layouts\":[{\"id\":0,\"position\":{\"x\":109.10338600451468,\"y\":20.341309255079008,\"z\":5000,\"width\":1059.5972911963884,\"height\":159.03205417607222,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Títulos.Titulo Pobreza Moderada y Extrema\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Títulos\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Titulo Pobreza Moderada y Extrema\"},\"Name\":\"Títulos.Titulo Pobreza Moderada y Extrema\",\"NativeReferenceName\":\"Titulo Pobreza Moderada y Extrema\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 159.03,
+          "width": 1059.60,
+          "x": 109.10,
+          "y": 20.34,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"f189f889a03e835103c4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":680.5092550790067,\"y\":297.7227990970655,\"z\":4000,\"width\":569.5566591422122,\"height\":392.03250564334087,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Moderada y Extrema.Pobreza Extrema Personas Municipio\"},{\"queryRef\":\"Moderada y Extrema.Pobreza Moderada Personas Municipio\"}],\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Moderada y Extrema\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"CALENDARIO\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Pobreza Extrema Personas\"},\"Name\":\"Moderada y Extrema.Pobreza Extrema Personas Municipio\",\"NativeReferenceName\":\"Pobreza Extrema Personas\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Pobreza Moderada Personas\"},\"Name\":\"Moderada y Extrema.Pobreza Moderada Personas Municipio\",\"NativeReferenceName\":\"Pobreza Moderada Personas\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showGradientLegend\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 392.03,
+          "width": 569.56,
+          "x": 680.51,
+          "y": 297.72,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"f1cd43527b3bb9de7191\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1168.7006772009029,\"y\":79.51602708803611,\"z\":6000,\"width\":61.02392776523702,\"height\":40.682618510158015,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Estas gráficas muestran la cantidad de personas en pobreza moderada y extrema en el municipio, con datos para los años 2010, 2015 y 2020. La ''pobreza moderada'' se refiere a aquellos cuyos ingresos y condiciones de vida están justo por debajo del umbral de pobreza, mientras que la ''pobreza extrema'' se refiere a aquellos en las condiciones más severas de falta de ingresos y acceso a servicios básicos. Esta información es vital para identificar y focalizar las políticas de asistencia social'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.68,
+          "width": 61.02,
+          "x": 1168.70,
+          "y": 79.52,
+          "z": 6000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Población Carencias Promedio",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "6aff2dfffcd0def2a76a",
+      "ordinal": 6,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"47f6273d2d6243e5e1ee\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":384.1500586166472,\"z\":2000,\"width\":298.9847154327678,\"height\":79.7292574487381,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"MUNICIPIOS.MUNICIPIO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"},\"Name\":\"MUNICIPIOS.MUNICIPIO\",\"NativeReferenceName\":\"MUNICIPIO\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"MUNICIPIO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"20557dd870206b487bc8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MUNICIPIOS\"}},\"Property\":\"MUNICIPIO\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}],[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 79.73,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 384.15,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"5068af05512f07f48ecd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":826.5968397291197,\"y\":142.38916478555305,\"z\":4000,\"width\":369.84198645598195,\"height\":260.7386004514673,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Carencias Promedio.Carencias Promedio Municipio\"}],\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c1\",\"Entity\":\"CALENDARIO\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Carencias Promedio\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Carencias Promedio\"},\"Name\":\"Carencias Promedio.Carencias Promedio Municipio\",\"NativeReferenceName\":\"Carencias Promedio\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Carencias Promedio\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Carencias Promedio'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 260.74,
+          "width": 369.84,
+          "x": 826.60,
+          "y": 142.39,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"5532fbbd84eb70d593d2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1179.7959367945823,\"y\":49.92866817155756,\"z\":8000,\"width\":53.62708803611738,\"height\":44.38103837471783,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Se presenta el promedio de carencias sociales en el municipio, con datos para los años 2010, 2015 y 2020. El ''promedio de carencias'' es una medida que ayuda a entender la extensión y profundidad de la privación social entre los residentes. Un alto promedio indica que muchas personas enfrentan múltiples privaciones simultáneamente, lo que puede requerir intervenciones integrales.'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 44.38,
+          "width": 53.63,
+          "x": 1179.80,
+          "y": 49.93,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"843323341849d6ddc7fd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":826.5968397291197,\"y\":440.1119638826185,\"z\":6000,\"width\":369.84198645598195,\"height\":260.7386004514673,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Carencias Promedio.Poblacion Tres o Mas Carencias Sociales Municipio\"}],\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c1\",\"Entity\":\"CALENDARIO\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Carencias Promedio\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Poblacion Tres o Mas Carencias Sociales\"},\"Name\":\"Carencias Promedio.Poblacion Tres o Mas Carencias Sociales Municipio\",\"NativeReferenceName\":\"Poblacion Tres o Mas Carencias Sociales\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":7,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Población Tres o Mas Carencias Sociales'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 260.74,
+          "width": 369.84,
+          "x": 826.60,
+          "y": 440.11,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"a02e811b85ddb3e850e8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":231.93965803269262,\"z\":1000,\"width\":298.9847154327678,\"height\":86.97737176225974,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"ESTADOS.ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"},\"Name\":\"ESTADOS.ENTIDAD\",\"NativeReferenceName\":\"ENTIDAD\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"11493fed4cb894ba44e7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ESTADOS\"}},\"Property\":\"ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 86.98,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 231.94,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"aaeb2e6b15e2463c43ed\",\"layouts\":[{\"id\":0,\"position\":{\"x\":157.18284424379232,\"y\":440.1119638826185,\"z\":5000,\"width\":369.84198645598195,\"height\":260.7386004514673,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Carencias Promedio.Poblacion Al Menos Una Carencia Social Municipio\"}],\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c1\",\"Entity\":\"CALENDARIO\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Carencias Promedio\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Poblacion Al Menos Una Carencia Social\"},\"Name\":\"Carencias Promedio.Poblacion Al Menos Una Carencia Social Municipio\",\"NativeReferenceName\":\"Poblacion Al Menos Una Carencia Social\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":8,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Poblacion Al Menos Una Carencia Social'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 260.74,
+          "width": 369.84,
+          "x": 157.18,
+          "y": 440.11,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"ae10ff96d7b413e96a69\",\"layouts\":[{\"id\":0,\"position\":{\"x\":179.37336343115123,\"y\":20.341309255079008,\"z\":7000,\"width\":989.3273137697516,\"height\":98.00812641083522,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Títulos.Titulo Carencias Promedio\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Títulos\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Titulo Carencias Promedio\"},\"Name\":\"Títulos.Titulo Carencias Promedio\",\"NativeReferenceName\":\"Titulo Carencias Promedio\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 98.01,
+          "width": 989.33,
+          "x": 179.37,
+          "y": 20.34,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"be52b75fb2c808b3e996\",\"layouts\":[{\"id\":0,\"position\":{\"x\":157.18284424379232,\"y\":142.38916478555305,\"z\":3000,\"width\":369.84198645598195,\"height\":260.7386004514673,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Carencias Promedio.Pobreza Extrema Carencias Promedio Municipio\"}],\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c1\",\"Entity\":\"CALENDARIO\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Carencias Promedio\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Pobreza Extrema Carencias Promedio\"},\"Name\":\"Carencias Promedio.Pobreza Extrema Carencias Promedio Municipio\",\"NativeReferenceName\":\"Pobreza Extrema Carencias Promedio\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":4,\"Percent\":0}}}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":4,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Pobreza Extrema Carencias Promedio'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 260.74,
+          "width": 369.84,
+          "x": 157.18,
+          "y": 142.39,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"c2623adb6135a612c023\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":47.11274303789069,\"height\":39.86462872436905,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'28f166906900bb2234b0'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 39.86,
+          "width": 47.11,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Población No Pobre, Vulnerable y en Pobreza",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "d44a6d9170652aa7e89f",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0c75527e9d347192da70\",\"layouts\":[{\"id\":0,\"position\":{\"x\":658.3431935115578,\"y\":221.06727162196225,\"z\":4000,\"width\":621.9035333540916,\"height\":484.64748009430184,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"Pobreza (2).No Pobre y No Vulnerable\"},{\"queryRef\":\"Pobreza (2).Pobres\"},{\"queryRef\":\"Pobreza (2).Vulnerables por Carencia Social\"},{\"queryRef\":\"Pobreza (2).Vulnerables por Ingreso\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pobreza (2)\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"CALENDARIO\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"No Pobre y No Vulnerable\"},\"Name\":\"Pobreza (2).No Pobre y No Vulnerable\",\"NativeReferenceName\":\"No Pobre y No Vulnerable\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Pobres\"},\"Name\":\"Pobreza (2).Pobres\",\"NativeReferenceName\":\"Pobres\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Vulnerables por Carencia Social\"},\"Name\":\"Pobreza (2).Vulnerables por Carencia Social\",\"NativeReferenceName\":\"Vulnerables por Carencia Social\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Vulnerables por Ingreso\"},\"Name\":\"Pobreza (2).Vulnerables por Ingreso\",\"NativeReferenceName\":\"Vulnerables por Ingreso\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"No Pobre y No Vulnerable\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 484.65,
+          "width": 621.90,
+          "x": 658.34,
+          "y": 221.07,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"0cf2244eaabe71988da1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":99.85733634311512,\"y\":20.341309255079008,\"z\":5000,\"width\":1089.1846501128668,\"height\":96.1589164785553,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Títulos.Titulo Poblacion No Pobre\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Títulos\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Titulo Poblacion No Pobre\"},\"Name\":\"Títulos.Titulo Poblacion No Pobre\",\"NativeReferenceName\":\"Titulo Poblacion No Pobre\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 96.16,
+          "width": 1089.18,
+          "x": 99.86,
+          "y": 20.34,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"6886da88b147a11fe7e7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":231.93965803269262,\"z\":2000,\"width\":298.9847154327678,\"height\":86.97737176225974,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"ESTADOS.ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"},\"Name\":\"ESTADOS.ENTIDAD\",\"NativeReferenceName\":\"ENTIDAD\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"11493fed4cb894ba44e7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ESTADOS\"}},\"Property\":\"ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 86.98,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 231.94,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"6d4b40e61748e184ae19\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":384.1500586166472,\"z\":3000,\"width\":298.9847154327678,\"height\":79.7292574487381,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"MUNICIPIOS.MUNICIPIO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"},\"Name\":\"MUNICIPIOS.MUNICIPIO\",\"NativeReferenceName\":\"MUNICIPIO\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"MUNICIPIO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"20557dd870206b487bc8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MUNICIPIOS\"}},\"Property\":\"MUNICIPIO\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}],[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 79.73,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 384.15,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"7b72bc4964f80509411b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":47.11274303789069,\"height\":39.86462872436905,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'28f166906900bb2234b0'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 39.86,
+          "width": 47.11,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"9a0f8967dc755aeb2dba\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":221.06727162196225,\"z\":1000,\"width\":621.9035333540916,\"height\":484.64748009430184,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Pobreza (2).No Pobre y No Vulnerable Municipio\"},{\"queryRef\":\"Pobreza (2).Pobreza Personas Municipio\"},{\"queryRef\":\"Pobreza (2).Vulnerables por Carencia Social Municipio\"},{\"queryRef\":\"Pobreza (2).Vulnerables por Ingreso Municipio\"}],\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pobreza (2)\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"CALENDARIO\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"No Pobre y No Vulnerable\"},\"Name\":\"Pobreza (2).No Pobre y No Vulnerable Municipio\",\"NativeReferenceName\":\"No Pobre y No Vulnerable\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Pobres\"},\"Name\":\"Pobreza (2).Pobreza Personas Municipio\",\"NativeReferenceName\":\"Pobres\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Vulnerables por Carencia Social\"},\"Name\":\"Pobreza (2).Vulnerables por Carencia Social Municipio\",\"NativeReferenceName\":\"Vulnerables por Carencia Social\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Vulnerables por Ingreso\"},\"Name\":\"Pobreza (2).Vulnerables por Ingreso Municipio\",\"NativeReferenceName\":\"Vulnerables por Ingreso\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 484.65,
+          "width": 621.90,
+          "x": 0.00,
+          "y": 221.07,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"f8aa365b92d43bc434e7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1201.9864559819414,\"y\":48.07945823927765,\"z\":6000,\"width\":59.17471783295711,\"height\":40.682618510158015,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Esta gráfica presenta la distribución de la población en varias categorías en el municipio para los años 2010, 2015 y 2020: ''no pobre y no vulnerable'' incluye a aquellos con ingresos y condiciones de vida suficientes para satisfacer sus necesidades básicas; ''vulnerable por ingresos'' refiere a las personas en riesgo de caer en la pobreza debido a ingresos bajos o inestables; ''vulnerable por carencias'' incluye a aquellos con al menos una carencia social significativa; y ''pobre'' se refiere a aquellos cuyos ingresos y condiciones de vida están por debajo del umbral de pobreza. Esta clasificación ayuda a identificar los diferentes niveles de vulnerabilidad y pobreza en la población.'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.68,
+          "width": 59.17,
+          "x": 1201.99,
+          "y": 48.08,
+          "z": 6000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Población Carencias ",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "e3119c567f07b52a50ff",
+      "ordinal": 5,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0483f695357fa37ae5eb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":46.230248306997744,\"y\":221.90519187358916,\"z\":4000,\"width\":1233.4230248307,\"height\":497.43747178329573,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"Carencias.Rezago Educativo Personas Municipio\"},{\"queryRef\":\"Carencias.Carencias Acceso Servicios Salud Municipio\"},{\"queryRef\":\"Carencias.Carencias Acceso Servicios Basicos Vivienda Municipio\"},{\"queryRef\":\"Carencias.Carencias Acceso Seguridad Social Municipio\"},{\"queryRef\":\"Carencias.Carencias Acceso Alimentacion Municipio\"},{\"queryRef\":\"Carencias.Carencias Calidad Espacios Vivienda Municipio\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CALENDARIO\",\"Type\":0},{\"Name\":\"c1\",\"Entity\":\"Carencias\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Rezago Educativo Personas\"},\"Name\":\"Carencias.Rezago Educativo Personas Municipio\",\"NativeReferenceName\":\"Rezago Educativo Personas\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Acceso Servicios Salud\"},\"Name\":\"Carencias.Carencias Acceso Servicios Salud Municipio\",\"NativeReferenceName\":\"Carencias Acceso Servicios Salud\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Acceso Servicios Basicos Vivienda\"},\"Name\":\"Carencias.Carencias Acceso Servicios Basicos Vivienda Municipio\",\"NativeReferenceName\":\"Carencias Acceso Servicios Basicos Vivienda\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Acceso Seguridad Social\"},\"Name\":\"Carencias.Carencias Acceso Seguridad Social Municipio\",\"NativeReferenceName\":\"Carencias Acceso Seguridad Social\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Acceso Alimentacion\"},\"Name\":\"Carencias.Carencias Acceso Alimentacion Municipio\",\"NativeReferenceName\":\"Carencias Acceso Alimentacion\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Calidad Espacios Vivienda\"},\"Name\":\"Carencias.Carencias Calidad Espacios Vivienda Municipio\",\"NativeReferenceName\":\"Carencias Calidad Espacios Vivienda\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'RightCenter'\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 497.44,
+          "width": 1233.42,
+          "x": 46.23,
+          "y": 221.91,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"08ec69f269afa3cd92f6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":384.1500586166472,\"z\":3000,\"width\":298.9847154327678,\"height\":79.7292574487381,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"MUNICIPIOS.MUNICIPIO\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"},\"Name\":\"MUNICIPIOS.MUNICIPIO\",\"NativeReferenceName\":\"MUNICIPIO\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"MUNICIPIO\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"20557dd870206b487bc8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MUNICIPIOS\"}},\"Property\":\"MUNICIPIO\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MUNICIPIOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"MUNICIPIO\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}],[{\"Literal\":{\"Value\":\"'Culiacán'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 79.73,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 384.15,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"11fb821d064ffd479b54\",\"layouts\":[{\"id\":0,\"position\":{\"x\":57.984914508173155,\"y\":231.93965803269262,\"z\":2000,\"width\":298.9847154327678,\"height\":86.97737176225974,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"ESTADOS.ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"},\"Name\":\"ESTADOS.ENTIDAD\",\"NativeReferenceName\":\"ENTIDAD\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"11493fed4cb894ba44e7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"ESTADOS\"}},\"Property\":\"ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"ESTADOS\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sinaloa'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 86.98,
+          "width": 298.98,
+          "x": 57.98,
+          "y": 231.94,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"589f316ffa1a9c12df37\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1179.7959367945823,\"y\":75.8176072234763,\"z\":6000,\"width\":55.47629796839729,\"height\":40.682618510158015,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Muestra la cantidad de personas por carencia social en el municipio, desglosada por los años 2010, 2015 y 2020. Las ''carencias sociales'' incluyen aspectos como el acceso insuficiente a educación, servicios de salud, vivienda adecuada, y alimentación. Esta métrica es importante para evaluar la calidad de vida y el bienestar general de la población.'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.68,
+          "width": 55.48,
+          "x": 1179.80,
+          "y": 75.82,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"7d6dd19dfc71bfd6a6ad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":160.88126410835216,\"y\":40.682618510158015,\"z\":5000,\"width\":1005.9702031602709,\"height\":110.95259593679458,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Títulos.Titulo Poblacion Carencias\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Títulos\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Titulo Poblacion Carencias\"},\"Name\":\"Títulos.Titulo Poblacion Carencias\",\"NativeReferenceName\":\"Titulo Poblacion Carencias\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"24D\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 110.95,
+          "width": 1005.97,
+          "x": 160.88,
+          "y": 40.68,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"9940ecd3595af4c1db3b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":47.11274303789069,\"height\":39.86462872436905,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'28f166906900bb2234b0'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 39.86,
+          "width": 47.11,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"dcc54e0e5293bfd3eddf\",\"layouts\":[{\"id\":0,\"position\":{\"x\":46.230248306997744,\"y\":242.24650112866817,\"z\":0,\"width\":1233.4230248307,\"height\":477.0961625282167,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CALENDARIO.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"Carencias.Rezago Educativo Personas Municipio\"},{\"queryRef\":\"Carencias.Carencias Acceso Servicios Salud Municipio\"},{\"queryRef\":\"Carencias.Carencias Acceso Servicios Basicos Vivienda Municipio\"},{\"queryRef\":\"Carencias.Carencias Acceso Seguridad Social Municipio\"},{\"queryRef\":\"Carencias.Carencias Acceso Alimentacion Municipio\"},{\"queryRef\":\"Carencias.Carencias Calidad Espacios Vivienda Municipio\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c1\",\"Entity\":\"Carencias\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"CALENDARIO\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"CALENDARIO.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Rezago Educativo Personas\"},\"Name\":\"Carencias.Rezago Educativo Personas Municipio\",\"NativeReferenceName\":\"Rezago Educativo Personas\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Acceso Servicios Salud\"},\"Name\":\"Carencias.Carencias Acceso Servicios Salud Municipio\",\"NativeReferenceName\":\"Carencias Acceso Servicios Salud\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Acceso Servicios Basicos Vivienda\"},\"Name\":\"Carencias.Carencias Acceso Servicios Basicos Vivienda Municipio\",\"NativeReferenceName\":\"Carencias Acceso Servicios Basicos Vivienda\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Acceso Seguridad Social\"},\"Name\":\"Carencias.Carencias Acceso Seguridad Social Municipio\",\"NativeReferenceName\":\"Carencias Acceso Seguridad Social\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Acceso Alimentacion\"},\"Name\":\"Carencias.Carencias Acceso Alimentacion Municipio\",\"NativeReferenceName\":\"Carencias Acceso Alimentacion\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Carencias Calidad Espacios Vivienda\"},\"Name\":\"Carencias.Carencias Calidad Espacios Vivienda Municipio\",\"NativeReferenceName\":\"Carencias Calidad Espacios Vivienda\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Rezago Educativo Personas\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'RightCenter'\"}}},\"showGradientLegend\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 477.10,
+          "width": 1233.42,
+          "x": 46.23,
+          "y": 242.25,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "AccessibleOrchid"
+}

@@ -1,0 +1,66 @@
+table Población
+	lineageTag: df3c8eda-7244-41a4-a8bd-5824200d7050
+
+	measure 'Población Total Municipio' = ```
+			
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    Pobreza[INDICADORES] IN {
+			        "Población 2020",
+			        "Población 2015",
+			        "Población 2010"
+			    },
+			    Pobreza[MUNICIPIO] <> "Estatal"
+			)
+			
+			```
+		lineageTag: 8e07860e-44b4-4611-9584-870c567966ac
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población Total Estatal' = ```
+			
+			VAR EstadoCVE = LEFT(SELECTEDVALUE(Pobreza[CVE_MUNICIPIO]), 2)
+			VAR AnoSeleccionado= SELECTEDVALUE(Pobreza[AÑO])
+			RETURN
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        ALL(Pobreza),
+			        Pobreza[INDICADORES] IN {
+			            "Población 2020",
+			            "Población 2015",
+			            "Población 2010"
+			        } &&
+			        Pobreza[MUNICIPIO] = "Estatal" &&
+			        LEFT(Pobreza[CVE_MUNICIPIO], 2) = EstadoCVE &&
+			        Pobreza[AÑO] = AnoSeleccionado
+			    )
+			)
+			
+			```
+		lineageTag: 1cef1ee1-a3d9-4d61-bea7-ea4a24d048ef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Estado Seleccionado' = ```
+			
+			SELECTEDVALUE(Pobreza[CVE_ENTIDAD])
+			
+			```
+		lineageTag: 882ca300-e1ad-46c0-98aa-1530b1833fd5
+
+	partition Población = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

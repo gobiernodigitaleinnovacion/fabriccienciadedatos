@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "POBREZA MUNICIPAL Nezahualcoyotl"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "609e69c3-49e0-a59e-4a2d-be53bb40682a"
+  }
+}

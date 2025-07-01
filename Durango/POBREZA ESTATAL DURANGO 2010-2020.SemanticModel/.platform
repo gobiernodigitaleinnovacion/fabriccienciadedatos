@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "POBREZA ESTATAL DURANGO 2010-2020"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "46d8c600-1bc2-bbb3-4bfa-0531b8e756a9"
+  }
+}

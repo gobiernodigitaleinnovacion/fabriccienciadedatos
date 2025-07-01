@@ -1,0 +1,35 @@
+table Estados
+	lineageTag: 3643faf4-0430-473e-bbd2-ae89c1809566
+
+	column ID_ENTIDAD
+		dataType: int64
+		formatString: 0
+		lineageTag: 94929d13-7a84-4972-b753-72a1c4ff5dbe
+		summarizeBy: none
+		sourceColumn: ID_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_ENTIDAD
+		dataType: string
+		lineageTag: 44fabdb2-ab3d-431f-a75b-82924040dde4
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: NOM_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Estados = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\ingresos y gasto municipios\Estados.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"ID_ENTIDAD", Int64.Type}, {"NOM_ENTIDAD", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

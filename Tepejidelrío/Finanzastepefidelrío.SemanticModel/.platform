@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Finanzastepefidelrío"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "61ef5bd5-c4fe-83b6-47c0-ceef34f07343"
+  }
+}

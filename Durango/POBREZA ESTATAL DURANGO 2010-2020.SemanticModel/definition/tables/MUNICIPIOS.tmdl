@@ -1,0 +1,47 @@
+table MUNICIPIOS
+	lineageTag: b8520ab0-c9c4-4de4-97af-a2b300d40f8d
+
+	column CVE_MUNICIPIO
+		dataType: string
+		lineageTag: 891a7169-43e3-4221-b746-6b89dc96e2eb
+		summarizeBy: none
+		sourceColumn: CVE_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUNICIPIO
+		dataType: string
+		lineageTag: 808f722d-1cad-496b-9872-2382244596a2
+		summarizeBy: none
+		sourceColumn: MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_ENTIDAD
+		dataType: string
+		lineageTag: 3857eb4a-d1ea-40af-8bdf-a7e6cce45689
+		summarizeBy: none
+		sourceColumn: CVE_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENTIDAD
+		dataType: string
+		lineageTag: ff0ef41a-84ba-415c-b7b2-d42009562f75
+		summarizeBy: none
+		sourceColumn: ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MUNICIPIOS = m
+		mode: import
+		source =
+				let
+				    Origen = Table.Combine({#"Concentrado estatal", POBREZAMUNICIPAL}),
+				    #"Duplicados quitados" = Table.Distinct(Origen, {"CVE_MUNICIPIO"}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Duplicados quitados",{"AÑO", "INDICADORES", "VALOR"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

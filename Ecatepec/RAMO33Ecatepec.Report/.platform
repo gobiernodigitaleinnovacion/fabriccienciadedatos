@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "RAMO33Ecatepec"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8c381d78-96a4-9b1f-449c-85dc2311c1a0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "RAMO33_tepejidelrío"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8c75a4b6-884d-808a-45e6-b7469180d5dc"
+  }
+}

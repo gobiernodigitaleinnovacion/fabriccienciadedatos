@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "GRSEcatepec"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2ea47227-fc7f-9d4b-4b60-174f63e38b41"
+  }
+}

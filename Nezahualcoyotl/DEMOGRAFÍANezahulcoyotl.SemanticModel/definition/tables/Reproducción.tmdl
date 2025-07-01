@@ -1,0 +1,112 @@
+table Reproducción
+	lineageTag: de9ed12a-df8c-4bce-9db8-75aa2a2add5a
+
+	measure '% Hijos Fallecidos_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6207019023,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: da227c5e-543b-4667-bbf1-728fe35360a2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Hijos Fallecidos' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6207019023
+			)
+			
+			```
+		lineageTag: ab90929f-2fb5-47c5-a291-76c4105135fc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '0 a 4 Hombres' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000059
+			)
+			
+			```
+		lineageTag: b25c2161-3041-46d2-beab-9fd5b4d2bebe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '0 a 4 Mujeres' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000060
+			)
+			
+			```
+		lineageTag: a5a7cf1a-85c4-4777-962f-3fae0b2c09dc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '5 a 9 Hombres' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000089
+			)
+			
+			```
+		lineageTag: 3e2db7d0-f288-45cd-95dc-78affbbd589c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '5 a 9 Mujeres' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000090
+			)
+			
+			```
+		lineageTag: 8c8db24a-7bd6-4a1e-b85f-00b8734dfb9b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '10 a 14 Hombres' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000062
+			)
+			
+			```
+		lineageTag: d6466713-c87c-44a8-b043-ec3c88222833
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '10 a 14 Mujeres' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000063
+			)
+			
+			```
+		lineageTag: ca4900f7-0f71-4f33-8316-965018ef0c14
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Reproducción = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

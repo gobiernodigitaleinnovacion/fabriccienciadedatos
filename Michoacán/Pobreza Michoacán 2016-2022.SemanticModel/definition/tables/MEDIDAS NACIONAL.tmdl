@@ -1,0 +1,254 @@
+table 'MEDIDAS NACIONAL'
+	lineageTag: 157005fa-dfad-4990-a018-7d133dbe0332
+
+	measure 'Población con ingreso inferior a la línea de pobreza por ingresos Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población con ingreso inferior a la línea de pobreza por ingresos",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: f0008099-e2b8-4c64-afe9-2fe2f45007e7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población con ingreso inferior a la línea de pobreza extrema por ingresos Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población con ingreso inferior a la línea de pobreza extrema por ingresos",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: b9f43a26-d550-4811-ac60-63e590583068
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Carencia por acceso a la alimentación nutritiva y de calidad Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Carencia por acceso a la alimentación nutritiva y de calidad",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: 3d6eeda5-6111-468c-aaee-c01bd921c661
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Carencia por acceso a los servicios básicos en la vivienda Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Carencia por acceso a los servicios básicos en la vivienda",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: ce317ad8-a901-44be-b474-b639bd6451f8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Carencia por calidad y espacios de la vivienda Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Carencia por calidad y espacios de la vivienda",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: 8d62a50d-334e-43fa-9691-efe891407d6b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Carencia por acceso a la seguridad social Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Carencia por acceso a la seguridad social",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: f53ce94f-854b-4d8b-9e69-0185d64c8965
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Carencia por acceso a los servicios de salud Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Carencia por acceso a los servicios de salud",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: 6942d2cd-8466-4570-b12d-104fdd0039b9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Rezago educativo Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Rezago educativo",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: eef0879b-ad39-4312-8866-28e1b614eb23
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población con al menos tres carencias sociales Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población con al menos tres carencias sociales",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: f07ebb30-c118-4d97-b000-60b0ba7a54f4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población con al menos una carencia social Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población con al menos una carencia social",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: 0307d19c-6d9f-450e-beff-21f139fa7b09
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población no pobre y no vulnerable Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población no pobre y no vulnerable",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: c5f6c9fb-3f18-49b9-adb0-62686b2d1492
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población vulnerable por ingresos Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población vulnerable por ingresos",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: 73a7dbac-88ca-4fac-a3f5-d961bf62254a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población vulnerable por carencias sociales Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población vulnerable por carencias sociales",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: 22d5927c-2202-44b4-9cb0-24357f2cf08b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población en situación de pobreza extrema Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población en situación de pobreza extrema",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: fce157a9-adcb-4895-a520-32a15a49f0b6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población en situación de pobreza moderada Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población en situación de pobreza moderada",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: b2e04c3e-66a7-454e-ae41-41e09abf91f7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población en situación de pobreza Nacional 2022' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población en situación de pobreza",
+			    Pobreza[Año] = "2022",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: dc6e76ea-bff1-4400-9d60-f08720688795
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población en situación de pobreza moderada Nacional' = ```
+			
+			CALCULATE(
+			    VALUES(Pobreza[Valor]) * 1000000,
+			    Pobreza[Indicador] = "Población en situación de pobreza moderada",
+			    Pobreza[CVE_Entidad] = 00
+			)
+			
+			```
+		lineageTag: a3534f7f-1487-47e5-8e5e-18682beffbe0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'MEDIDAS NACIONAL' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

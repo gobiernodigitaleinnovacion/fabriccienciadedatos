@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "GRSCuliacán"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f2294bdb-d72b-bd4e-4719-49d2a38734fe"
+  }
+}

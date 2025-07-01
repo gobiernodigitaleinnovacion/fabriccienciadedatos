@@ -1,0 +1,170 @@
+table 'HECHO EGRESOS-INGRESOS (2)'
+	lineageTag: 0c8df917-cc96-4812-94e8-230e206f1f6f
+
+	column ID
+		dataType: string
+		lineageTag: eb031b1b-4055-4b1b-97b0-917d956a8e2d
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_ENTIDAD
+		dataType: string
+		lineageTag: 7cce3e9b-e2b0-4d04-a2ee-63802d62f403
+		summarizeBy: none
+		sourceColumn: ID_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_MUNICIPIO
+		dataType: string
+		lineageTag: b9e13b26-1382-44a0-ad02-84bb9f93564c
+		summarizeBy: none
+		sourceColumn: ID_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: 293b2537-1509-4732-97b6-810a6404adc8
+		summarizeBy: sum
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column COBERTURA
+		dataType: string
+		lineageTag: 18e1f6d1-7180-47ee-9d2f-3afafca2ff3b
+		summarizeBy: none
+		sourceColumn: COBERTURA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEMA
+		dataType: string
+		lineageTag: 6a20e7fd-aa87-4b32-8930-8bcf6b781016
+		summarizeBy: none
+		sourceColumn: TEMA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORIA
+		dataType: string
+		lineageTag: 54887fec-9065-47b2-b674-6c51621008b3
+		summarizeBy: none
+		sourceColumn: CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPCION_CATEGORIA
+		dataType: string
+		lineageTag: f330f3c1-e909-4070-a3e5-5c52b7747a1e
+		summarizeBy: none
+		sourceColumn: DESCRIPCION_CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALOR
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e0a3c5e-94f7-4ff6-abfd-40a81ceb8340
+		summarizeBy: sum
+		sourceColumn: VALOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTATUS
+		dataType: string
+		lineageTag: 9fcef838-53e8-4f53-96d0-31d17ad1603a
+		summarizeBy: none
+		sourceColumn: ESTATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ENTIDAD.ENTIDAD'
+		dataType: string
+		lineageTag: e393ed07-bc15-49c8-8334-5ff3af9c82e9
+		summarizeBy: none
+		sourceColumn: ENTIDAD.ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ENTIDAD.ID'
+		dataType: string
+		lineageTag: 6015ec4e-7566-4a14-a931-c47215e7beff
+		summarizeBy: none
+		sourceColumn: ENTIDAD.ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ENTIDAD.ID_ENTIDAD'
+		dataType: string
+		lineageTag: 23eab7b8-c81e-4161-89eb-d122e32f7017
+		summarizeBy: none
+		sourceColumn: ENTIDAD.ID_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MUNICIPIOS.ID'
+		dataType: string
+		lineageTag: e96ca90b-13fc-4d04-907d-9cd6ebfc18d3
+		summarizeBy: none
+		sourceColumn: MUNICIPIOS.ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MUNICIPIOS.ID_ENTIDAD'
+		dataType: string
+		lineageTag: 619578d9-970b-4bf3-99b9-52187ec1e14e
+		summarizeBy: none
+		sourceColumn: MUNICIPIOS.ID_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MUNICIPIOS.ID_MUNICIPIO'
+		dataType: string
+		lineageTag: cfe22461-a6c0-48e9-aed2-325751bf79fe
+		summarizeBy: none
+		sourceColumn: MUNICIPIOS.ID_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MUNICIPIOS.COBERTURA'
+		dataType: string
+		lineageTag: cecefc17-7bef-48db-af72-4ec056fe5da2
+		summarizeBy: none
+		sourceColumn: MUNICIPIOS.COBERTURA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'HECHO EGRESOS-INGRESOS (2)' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.Combine({Anexar2, Anexar1}),
+				    #"Columnas quitadas" = Table.RemoveColumns(Origen,{"Source.Name", "PROD_EST"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas", each true),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Filas filtradas",{{"AÑO", type text}}),
+				    #"Últimos caracteres insertados" = Table.AddColumn(#"Tipo cambiado", "Últimos caracteres", each Text.End([AÑO], 4), type text),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Últimos caracteres insertados",{{"Últimos caracteres", "AÑOS"}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"AÑOS", Int64.Type}}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado1",{"AÑO"}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas quitadas1",{"ID", "ID_ENTIDAD", "ID_MUNICIPIO", "AÑOS", "COBERTURA", "TEMA", "CATEGORIA", "DESCRIPCION_CATEGORIA", "VALOR", "ESTATUS"}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas",{{"AÑOS", "Año"}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Columnas con nombre cambiado1", {"ID_MUNICIPIO"}, MUNICIPIO, {"ID_MUNICIPIO"}, "MUNICIPIO", JoinKind.LeftOuter),
+				    #"Removed Columns" = Table.RemoveColumns(#"Merged Queries",{"MUNICIPIO"}),
+				    #"Merged Queries1" = Table.NestedJoin(#"Removed Columns", {"ID"}, MUNICIPIOS, {"ID"}, "MUNICIPIOS", JoinKind.LeftOuter),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Merged Queries1",{"MUNICIPIOS"}),
+				    #"Merged Queries2" = Table.NestedJoin(#"Removed Columns1", {"ID_ENTIDAD"}, ENTIDAD, {"ID_ENTIDAD"}, "ENTIDAD", JoinKind.LeftOuter),
+				    #"Expanded {0}" = Table.ExpandTableColumn(#"Merged Queries2", "ENTIDAD", {"ID", "ID_ENTIDAD", "ENTIDAD"}, {"ENTIDAD.ID", "ENTIDAD.ID_ENTIDAD", "ENTIDAD.ENTIDAD"}),
+				    #"Merged Queries3" = Table.NestedJoin(#"Expanded {0}", {"ID"}, MUNICIPIOS, {"ID"}, "MUNICIPIOS", JoinKind.LeftOuter),
+				    #"Expanded {0}1" = Table.ExpandTableColumn(#"Merged Queries3", "MUNICIPIOS", {"ID", "ID_ENTIDAD", "ID_MUNICIPIO", "COBERTURA"}, {"MUNICIPIOS.ID", "MUNICIPIOS.ID_ENTIDAD", "MUNICIPIOS.ID_MUNICIPIO", "MUNICIPIOS.COBERTURA"})
+				in
+				    #"Expanded {0}1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

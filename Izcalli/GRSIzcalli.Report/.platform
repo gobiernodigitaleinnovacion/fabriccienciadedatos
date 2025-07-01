@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "GRSIzcalli"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "91106e47-34a6-87fc-4088-2ec88126f64d"
+  }
+}

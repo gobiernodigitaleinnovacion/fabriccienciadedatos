@@ -1,0 +1,120 @@
+table EGRESOS
+	lineageTag: 2cf073bc-7632-467f-a307-b660bdd8b4f4
+
+	measure 'Egresos Totales' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Tema",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Total de egresos"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 6096c162-3300-41dd-8a92-c107e6048dba
+
+	measure TotalEgresosPorConcepto = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Concepto"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: a6671acf-dac4-4d26-824d-6e2180bf624d
+
+	measure TotalEgresosPorPartidaGenerica = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Partida Genérica"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 6e5c1007-4c1f-4c92-9410-7ee615fa39b0
+
+	measure TotalEgresosPorSubpartidaGenerica = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Subpartida Genérica"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 7db27262-bce7-44b3-94ea-9e6988f6f57d
+
+	measure Capítuloegresos =
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo"
+			)
+		formatString: 0
+		lineageTag: c6c10d89-9870-47d7-bad3-dd9ab974825c
+
+	measure Balance = EGRESOS[Egresos Totales]-INGRESOS[Ingresos Totales]
+		formatString: 0
+		lineageTag: f25fe15d-0347-4469-96a8-9f7c7cb4a5fb
+
+	measure 'Egresos 2023' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Tema",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Total de egresos",
+			    'HECHO EGRESOS-INGRESOS'[Año]= 2023
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3b90fe7d-7029-4ae2-9573-b45cfcea1ae0
+
+	measure 'Egresos Año Anterior' = ```
+			
+			CALCULATE(
+			    [Egresos Totales],
+			    PARALLELPERIOD('HECHO EGRESOS-INGRESOS'[Año], -1, YEAR)
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 53a73a79-827f-42bc-b6a5-c239b948ad71
+
+	measure 'Variación de Egresos en %' = ```
+			
+			IF(
+			    ISBLANK([Egresos Año Anterior]),
+			    BLANK(),
+			    DIVIDE([Egresos Totales] - [Egresos Año Anterior], [Egresos Año Anterior], 0)
+			)
+			
+			```
+		lineageTag: cd63cbd8-e48a-4981-9062-4c354aecd5c0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TOTAL = INGRESOS[Ingresos Totales]+EGRESOS[Egresos Totales]
+		formatString: 0
+		lineageTag: 3803362b-aabe-4408-b2f0-c5e7a9589e7a
+
+	partition EGRESOS = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,171 @@
+table INGRESOS-CAPÍTULO
+	lineageTag: 4570e18b-7899-4d86-b7d5-fc95d8faaf68
+
+	measure 'Ingresos Impuestos' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Impuestos"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: aace2c47-11b4-483a-b0d0-3cb8739d578e
+
+	measure 'Ingresos Derechos' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Derechos"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 4c951b72-08d2-48c5-9efd-d6ef07979ce9
+
+	measure 'Ingresos Productos' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Productos"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3683339b-3342-4821-afef-d9b22363e150
+
+	measure 'Ingresos Aprovechamientos' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Aprovechamientos"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 205c5e7c-33b0-4a6b-8fd4-92cdac4d7388
+
+	measure 'Ingresos Participaciones Federales' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Participaciones federales"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 6f589503-77e2-4402-a951-58dc1f99ad2e
+
+	measure 'Ingresos Aportaciones Federales' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Aportaciones federales"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 4ec36755-f80c-4896-97d1-c631246fb956
+
+	measure 'Ingresos Financiamiento' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Financiamiento"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 81253e24-f28a-4faa-87c3-72999a6f85ea
+
+	measure 'Ingresos Contribuciones de Mejoras' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Contribuciones de Mejoras"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d60a2cad-70de-4a1c-bbdc-79108061e61a
+
+	measure 'Ingresos Otros' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Otros ingresos"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 250e5a9e-cda3-4eea-83bb-14ec45056967
+
+	measure 'Ingresos Disponibilidad Inicial' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Disponibilidad inicial"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d022d6f7-3490-4ccb-8451-4bcc15cf18e8
+
+	measure 'Ingresos Cuotas y Aportaciones de Seguridad Social' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Cuotas y Aportaciones de Seguridad Social"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: fb7a404f-3658-42be-956e-4868c8e86dae
+
+	measure 'Ingresos Aportaciones Federales y Estatales' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Ingresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Aportaciones federales y estatales"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 9f0cca90-6a36-4c6f-ae48-5dfb6b04b31d
+
+	partition INGRESOS-CAPÍTULO = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

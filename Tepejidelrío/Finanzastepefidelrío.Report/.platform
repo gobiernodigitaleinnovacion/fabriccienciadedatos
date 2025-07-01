@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Finanzastepefidelrío"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "63ca1735-6454-8ad8-4f01-ed7ff30526d3"
+  }
+}

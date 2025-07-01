@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "FINANZAS MUNICIPALtaxco"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "04711b4a-950b-9eee-4dc0-54b9d4eaa056"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "GRSDurango"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "46efbbaf-60a6-8797-44cf-d62828a8b6c2"
+  }
+}

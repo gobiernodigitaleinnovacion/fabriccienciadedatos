@@ -1,0 +1,3527 @@
+cultureInfo es-ES
+
+	linguisticMetadata =
+			{
+			  "Version": "3.5.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "Fai": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fai": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.folio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "FOLIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "folio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sheet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "side": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "leaf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.ciclo_del_recurso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "CICLO DEL RECURSO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ciclo del recurso": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.ramo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "RAMO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ramo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.programa_presupuestario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "PROGRAMA PRESUPUESTARIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "programa presupuestario": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.aprobado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "APROBADO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "aprobado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.modificado_a": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "MODIFICADO A"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "modificado a": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.contratista": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "CONTRATISTA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "contratista": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.convocante": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "CONVOCANTE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "convocante": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.MONT_oc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "MONTOc"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "MONT oc": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MONTOc": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "oc": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.MONTO_MODIFICADOc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "MONTO MODIFICADOc"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "MONTO MODIFICADOc": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.ciclo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "CICLO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ciclo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.trimestre_de_avance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "TRIMESTRE DE AVANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre de avance": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.unidad_de_medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "UNIDAD DE MEDIDA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unidad de medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.meta_original": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "META ORIGINAL"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "meta original": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "original": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "novel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "singular": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "special": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "initial": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "fundamental": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "primary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "prime": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "meta archetype": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "meta exemplar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "meta template": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.meta_modificadau": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "META MODIFICADAU"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "meta modificadau": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.avance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "AVANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "avance": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.porcentaje": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "PORCENTAJE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "porcentaje": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.nombre_entidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "NOMBRE_ENTIDAD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "nombre entidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NOMBRE_ENTIDAD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.nombre_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "NOMBRE_MUNICIPIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre municipio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NOMBRE_MUNICIPIO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "MUNICIPIO": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.localidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "LOCALIDAD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "localidad": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.longitud": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "LONGITUD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "longitud": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.latitud": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "LATITUD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "latitud": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.id_entidad_responsable": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "ID_ENTIDAD_RESPONSABLE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id entidad responsable": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ID_ENTIDAD_RESPONSABLE": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification entidad responsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "identity entidad responsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "identifier entidad responsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "credential entidad responsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.id_municipio_responsable": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "ID_MUNICIPIO_RESPONSABLE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id municipio responsable": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ID_MUNICIPIO_RESPONSABLE": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification municipio responsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "identity municipio responsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "identifier municipio responsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "credential municipio responsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.categoria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "CATEGORIA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "categoria": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "NOMBRE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.tipo_programa_proyecto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "TIPO_PROGRAMA_PROYECTO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo programa proyecto": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TIPO_PROGRAMA_PROYECTO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.clasificacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "CLASIFICACION"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "clasificacion": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.institucion_ejecutora": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "INSTITUCION_EJECUTORA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "institucion ejecutora": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "INSTITUCION_EJECUTORA": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.mujere": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "MUJERES"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mujere": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.hombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "HOMBRES"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hombre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.fecha_inicio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "FECHA_INICIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha inicio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FECHA_INICIO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.fecha_termino": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "FECHA_TERMINO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha termino": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FECHA_TERMINO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.recaudado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "RECAUDADO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "recaudado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.comprometido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "COMPROMETIDO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "comprometido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.devengado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "DEVENGADO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "devengado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.ejercido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "EJERCIDO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ejercido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.pagado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "PAGADO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pagado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.estatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "ESTATUS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "estatus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.año": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "AÑO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "año": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "Fai.trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FAIS",
+			          "ConceptualProperty": "TRIMESTRE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "estado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "estados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "estado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "estado.id_entidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "estados",
+			          "ConceptualProperty": "ID_ENTIDAD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id entidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ID_ENTIDAD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "estado.nom_entidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "estados",
+			          "ConceptualProperty": "NOM_ENTIDAD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nom entidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NOM_ENTIDAD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "ENTIDAD": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipios"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "municipio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "municipio.id_entidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipios",
+			          "ConceptualProperty": "ID_ENTIDAD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id entidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ID_ENTIDAD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "municipio.id_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipios",
+			          "ConceptualProperty": "ID_MUNICIPIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id municipio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ID_MUNICIPIO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification municipio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity municipio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier municipio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential municipio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "municipio.nom_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipios",
+			          "ConceptualProperty": "NOM_MUNICIPIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nom municipio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NOM_MUNICIPIO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.cumplimiento_metas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "% Cumplimiento Metas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% cumplimiento metas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage cumplimiento meta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct cumplimiento meta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "medida.proyectos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "PROYECTOS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "proyectos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.porcentaje_ejecución": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "PORCENTAJE EJECUCIÓN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "porcentaje ejecución": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.costo_por_proyectos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Costo por proyectos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "costo por proyectos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.costo_por_beneficiario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Costo por Beneficiario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "costo por beneficiario": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.beneficiarios_mujeres": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Beneficiarios Mujeres"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "beneficiarios mujeres": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.beneficiarios_hombres": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Beneficiarios Hombres"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "beneficiarios hombres": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.beneficiarios": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Beneficiarios"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "beneficiarios": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.ejecución": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "% Ejecución"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% ejecución": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage ejecución": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "pct ejecución": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "Fai_has_medida_cumplimiento_metas": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "medida.cumplimiento_metas": {
+			          "Target": {
+			            "Entity": "medida.cumplimiento_metas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "medida.cumplimiento_metas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have__cumplimiento_metas"
+			        }
+			      ]
+			    },
+			    "municipio_has_nom_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "municipios"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "municipio": {
+			          "Target": {
+			            "Entity": "municipio"
+			          }
+			        },
+			        "municipio.nom_municipio": {
+			          "Target": {
+			            "Entity": "municipio.nom_municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Object": {
+			              "Role": "municipio.nom_municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_have_nom_municipios"
+			        }
+			      ]
+			    },
+			    "municipio_has_id_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "municipios"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "municipio": {
+			          "Target": {
+			            "Entity": "municipio"
+			          }
+			        },
+			        "municipio.id_municipio": {
+			          "Target": {
+			            "Entity": "municipio.id_municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Object": {
+			              "Role": "municipio.id_municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_have_id_municipios"
+			        }
+			      ]
+			    },
+			    "municipio_has_id_entidad": {
+			      "Binding": {
+			        "ConceptualEntity": "municipios"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "municipio": {
+			          "Target": {
+			            "Entity": "municipio"
+			          }
+			        },
+			        "municipio.id_entidad": {
+			          "Target": {
+			            "Entity": "municipio.id_entidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Object": {
+			              "Role": "municipio.id_entidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_have_id_entidads"
+			        }
+			      ]
+			    },
+			    "estado_has_nom_entidad": {
+			      "Binding": {
+			        "ConceptualEntity": "estados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "estado": {
+			          "Target": {
+			            "Entity": "estado"
+			          }
+			        },
+			        "estado.nom_entidad": {
+			          "Target": {
+			            "Entity": "estado.nom_entidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "estado"
+			            },
+			            "Object": {
+			              "Role": "estado.nom_entidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "estado_have_nom_entidads"
+			        }
+			      ]
+			    },
+			    "estado_has_id_entidad": {
+			      "Binding": {
+			        "ConceptualEntity": "estados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "estado": {
+			          "Target": {
+			            "Entity": "estado"
+			          }
+			        },
+			        "estado.id_entidad": {
+			          "Target": {
+			            "Entity": "estado.id_entidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "estado"
+			            },
+			            "Object": {
+			              "Role": "estado.id_entidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "estado_have_id_entidads"
+			        }
+			      ]
+			    },
+			    "Fai_has_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.trimestre": {
+			          "Target": {
+			            "Entity": "Fai.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_trimestres"
+			        }
+			      ]
+			    },
+			    "Fai_has_año": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.año": {
+			          "Target": {
+			            "Entity": "Fai.año"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_años"
+			        }
+			      ]
+			    },
+			    "Fai_has_estatus": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.estatus": {
+			          "Target": {
+			            "Entity": "Fai.estatus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.estatus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_estatuses"
+			        }
+			      ]
+			    },
+			    "Fai_has_pagado": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.pagado": {
+			          "Target": {
+			            "Entity": "Fai.pagado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.pagado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_pagados"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "Fai.pagado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "pagado_indicates_how_expensive_Fai_are"
+			        }
+			      ]
+			    },
+			    "Fai_has_ejercido": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.ejercido": {
+			          "Target": {
+			            "Entity": "Fai.ejercido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.ejercido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_ejercidos"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "Fai.ejercido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ejercido_indicates_how_expensive_Fai_are"
+			        }
+			      ]
+			    },
+			    "Fai_has_devengado": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.devengado": {
+			          "Target": {
+			            "Entity": "Fai.devengado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.devengado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_devengados"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "Fai.devengado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "devengado_indicates_how_expensive_Fai_are"
+			        }
+			      ]
+			    },
+			    "Fai_has_comprometido": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.comprometido": {
+			          "Target": {
+			            "Entity": "Fai.comprometido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.comprometido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_comprometidos"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "Fai.comprometido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "comprometido_indicates_how_expensive_Fai_are"
+			        }
+			      ]
+			    },
+			    "Fai_has_recaudado": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.recaudado": {
+			          "Target": {
+			            "Entity": "Fai.recaudado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.recaudado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_recaudados"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "Fai.recaudado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "recaudado_indicates_how_expensive_Fai_are"
+			        }
+			      ]
+			    },
+			    "Fai_has_fecha_termino": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.fecha_termino": {
+			          "Target": {
+			            "Entity": "Fai.fecha_termino"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.fecha_termino"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_fecha_terminos"
+			        }
+			      ]
+			    },
+			    "Fai_has_fecha_inicio": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.fecha_inicio": {
+			          "Target": {
+			            "Entity": "Fai.fecha_inicio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.fecha_inicio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_fecha_inicios"
+			        }
+			      ]
+			    },
+			    "Fai_has_hombre": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.hombre": {
+			          "Target": {
+			            "Entity": "Fai.hombre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.hombre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_hombres"
+			        }
+			      ]
+			    },
+			    "Fai_has_mujere": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.mujere": {
+			          "Target": {
+			            "Entity": "Fai.mujere"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.mujere"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_mujeres"
+			        }
+			      ]
+			    },
+			    "Fai_has_institucion_ejecutora": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.institucion_ejecutora": {
+			          "Target": {
+			            "Entity": "Fai.institucion_ejecutora"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.institucion_ejecutora"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_institucion_ejecutoras"
+			        }
+			      ]
+			    },
+			    "Fai_has_clasificacion": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.clasificacion": {
+			          "Target": {
+			            "Entity": "Fai.clasificacion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.clasificacion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_clasificacions"
+			        }
+			      ]
+			    },
+			    "Fai_has_tipo_programa_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.tipo_programa_proyecto": {
+			          "Target": {
+			            "Entity": "Fai.tipo_programa_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.tipo_programa_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_tipo_programa_proyectos"
+			        }
+			      ]
+			    },
+			    "Fai_has_nombre": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.nombre": {
+			          "Target": {
+			            "Entity": "Fai.nombre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.nombre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_nombres"
+			        }
+			      ]
+			    },
+			    "Fai_has_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.categoria": {
+			          "Target": {
+			            "Entity": "Fai.categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_categorias"
+			        }
+			      ]
+			    },
+			    "Fai_has_id_municipio_responsable": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.id_municipio_responsable": {
+			          "Target": {
+			            "Entity": "Fai.id_municipio_responsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.id_municipio_responsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_id_municipio_responsables"
+			        }
+			      ]
+			    },
+			    "Fai_has_id_entidad_responsable": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.id_entidad_responsable": {
+			          "Target": {
+			            "Entity": "Fai.id_entidad_responsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.id_entidad_responsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_id_entidad_responsables"
+			        }
+			      ]
+			    },
+			    "Fai_has_latitud": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.latitud": {
+			          "Target": {
+			            "Entity": "Fai.latitud"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.latitud"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_latituds"
+			        }
+			      ]
+			    },
+			    "Fai_has_longitud": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.longitud": {
+			          "Target": {
+			            "Entity": "Fai.longitud"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.longitud"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_longituds"
+			        }
+			      ]
+			    },
+			    "Fai_has_localidad": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.localidad": {
+			          "Target": {
+			            "Entity": "Fai.localidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.localidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_localidads"
+			        }
+			      ]
+			    },
+			    "Fai_has_nombre_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.nombre_municipio": {
+			          "Target": {
+			            "Entity": "Fai.nombre_municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.nombre_municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_nombre_municipios"
+			        }
+			      ]
+			    },
+			    "Fai_has_porcentaje": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.porcentaje": {
+			          "Target": {
+			            "Entity": "Fai.porcentaje"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.porcentaje"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_porcentajes"
+			        }
+			      ]
+			    },
+			    "Fai_has_avance": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.avance": {
+			          "Target": {
+			            "Entity": "Fai.avance"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.avance"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_avances"
+			        }
+			      ]
+			    },
+			    "Fai_has_meta_modificadau": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.meta_modificadau": {
+			          "Target": {
+			            "Entity": "Fai.meta_modificadau"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.meta_modificadau"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_meta_modificadaus"
+			        }
+			      ]
+			    },
+			    "Fai_has_meta_original": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.meta_original": {
+			          "Target": {
+			            "Entity": "Fai.meta_original"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.meta_original"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_meta_originals"
+			        }
+			      ]
+			    },
+			    "Fai_has_unidad_de_medida": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.unidad_de_medida": {
+			          "Target": {
+			            "Entity": "Fai.unidad_de_medida"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.unidad_de_medida"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_unidad_de_medidas"
+			        }
+			      ]
+			    },
+			    "Fai_has_trimestre_de_avance": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.trimestre_de_avance": {
+			          "Target": {
+			            "Entity": "Fai.trimestre_de_avance"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.trimestre_de_avance"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_trimestre_de_avances"
+			        }
+			      ]
+			    },
+			    "Fai_has_ciclo": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.ciclo": {
+			          "Target": {
+			            "Entity": "Fai.ciclo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.ciclo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_ciclos"
+			        }
+			      ]
+			    },
+			    "Fai_has_MONTO_MODIFICADOc": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.MONTO_MODIFICADOc": {
+			          "Target": {
+			            "Entity": "Fai.MONTO_MODIFICADOc"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.MONTO_MODIFICADOc"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_MONTO_MODIFICADOcs"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "Fai.MONTO_MODIFICADOc"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "MONTO_MODIFICADOc_indicates_how_expensive_Fai_are"
+			        }
+			      ]
+			    },
+			    "Fai_has_MONT_oc": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.MONT_oc": {
+			          "Target": {
+			            "Entity": "Fai.MONT_oc"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.MONT_oc"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_MONT_oc"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "Fai.MONT_oc"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "MONT_oc_indicates_how_expensive_Fai_are"
+			        }
+			      ]
+			    },
+			    "Fai_has_convocante": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.convocante": {
+			          "Target": {
+			            "Entity": "Fai.convocante"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.convocante"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_convocantes"
+			        }
+			      ]
+			    },
+			    "Fai_has_contratista": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.contratista": {
+			          "Target": {
+			            "Entity": "Fai.contratista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.contratista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_contratistas"
+			        }
+			      ]
+			    },
+			    "Fai_has_modificado_a": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.modificado_a": {
+			          "Target": {
+			            "Entity": "Fai.modificado_a"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.modificado_a"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_modificado_a"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "Fai.modificado_a"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modificado_a_indicates_how_expensive_Fai_are"
+			        }
+			      ]
+			    },
+			    "Fai_has_aprobado": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.aprobado": {
+			          "Target": {
+			            "Entity": "Fai.aprobado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.aprobado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_aprobados"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "Fai.aprobado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "aprobado_indicates_how_expensive_Fai_are"
+			        }
+			      ]
+			    },
+			    "Fai_has_programa_presupuestario": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.programa_presupuestario": {
+			          "Target": {
+			            "Entity": "Fai.programa_presupuestario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.programa_presupuestario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_programa_presupuestarios"
+			        }
+			      ]
+			    },
+			    "Fai_has_ramo": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.ramo": {
+			          "Target": {
+			            "Entity": "Fai.ramo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.ramo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_ramos"
+			        }
+			      ]
+			    },
+			    "Fai_has_ciclo_del_recurso": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.ciclo_del_recurso": {
+			          "Target": {
+			            "Entity": "Fai.ciclo_del_recurso"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.ciclo_del_recurso"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_ciclo_del_recursos"
+			        }
+			      ]
+			    },
+			    "Fai_has_folio": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "Fai.folio": {
+			          "Target": {
+			            "Entity": "Fai.folio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "Fai.folio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_folios"
+			        }
+			      ]
+			    },
+			    "Fai_has_medida_proyectos": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "medida.proyectos": {
+			          "Target": {
+			            "Entity": "medida.proyectos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "medida.proyectos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_proyectos"
+			        }
+			      ]
+			    },
+			    "Fai_has_medida_porcentaje_ejecución": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "medida.porcentaje_ejecución": {
+			          "Target": {
+			            "Entity": "medida.porcentaje_ejecución"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "medida.porcentaje_ejecución"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_porcentaje_ejecución"
+			        }
+			      ]
+			    },
+			    "Fai_has_medida_costo_por_proyectos": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "medida.costo_por_proyectos": {
+			          "Target": {
+			            "Entity": "medida.costo_por_proyectos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "medida.costo_por_proyectos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_costo_por_proyectos"
+			        }
+			      ]
+			    },
+			    "Fai_has_medida_costo_por_beneficiario": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "medida.costo_por_beneficiario": {
+			          "Target": {
+			            "Entity": "medida.costo_por_beneficiario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "medida.costo_por_beneficiario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_costo_por_beneficiario"
+			        }
+			      ]
+			    },
+			    "Fai_has_medida_beneficiarios_mujeres": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "medida.beneficiarios_mujeres": {
+			          "Target": {
+			            "Entity": "medida.beneficiarios_mujeres"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "medida.beneficiarios_mujeres"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_beneficiarios_mujeres"
+			        }
+			      ]
+			    },
+			    "Fai_has_medida_beneficiarios_hombres": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "medida.beneficiarios_hombres": {
+			          "Target": {
+			            "Entity": "medida.beneficiarios_hombres"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "medida.beneficiarios_hombres"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_beneficiarios_hombres"
+			        }
+			      ]
+			    },
+			    "Fai_has_medida_beneficiarios": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "medida.beneficiarios": {
+			          "Target": {
+			            "Entity": "medida.beneficiarios"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "medida.beneficiarios"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_beneficiarios"
+			        }
+			      ]
+			    },
+			    "Fai_has_medida_ejecución": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "medida.ejecución": {
+			          "Target": {
+			            "Entity": "medida.ejecución"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "medida.ejecución"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have__ejecución"
+			        }
+			      ]
+			    },
+			    "Fai_has_estado": {
+			      "Binding": {
+			        "ConceptualEntity": "FAIS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "Fai": {
+			          "Target": {
+			            "Entity": "Fai"
+			          }
+			        },
+			        "estado": {
+			          "Target": {
+			            "Entity": "estado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "Fai"
+			            },
+			            "Object": {
+			              "Role": "estado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Fai_have_estado"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "estado"
+			            },
+			            "Object": {
+			              "Role": "Fai"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "estado_have_Fai"
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

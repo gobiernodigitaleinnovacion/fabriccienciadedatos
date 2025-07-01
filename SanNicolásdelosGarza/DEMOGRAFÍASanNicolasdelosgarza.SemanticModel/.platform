@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "DEMOGRAFÍASanNicolasdelosgarza"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d08b5c4a-ad2a-a8a1-4629-7a19a40a9626"
+  }
+}

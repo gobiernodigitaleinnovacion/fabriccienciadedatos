@@ -1,0 +1,400 @@
+{
+  "config": "{\"version\":\"5.51\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY18SU07\",\"version\":\"3.15\",\"type\":2},\"customTheme\":{\"name\":\"Twilight\",\"version\":\"5.54\",\"type\":2}},\"activeSectionIndex\":0,\"bookmarks\":[{\"displayName\":\"ABSOLUTO\",\"name\":\"bf06ebfe7bf194553e78\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"65be77c093bcfc8c22d3\",\"sections\":{\"65be77c093bcfc8c22d3\":{\"visualContainers\":{\"8c00ae0f47444de5cfd4\":{\"filters\":{\"byExpr\":[{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la seguridad social\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a los servicios básicos en la vivienda\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a los servicios de salud\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por calidad y espacios de la vivienda\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Rezago educativo\"}},\"howCreated\":0},{\"type\":\"Categorical\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendario\"}},\"Property\":\"Año\"}},\"howCreated\":0}]},\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"objects\":{},\"orderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"}}}],\"activeProjections\":{\"Category\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendario\"}},\"Property\":\"Año\"}}]}}},\"46ea5c53166090e42f11\":{\"filters\":{\"byExpr\":[{\"type\":\"Categorical\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Estados\"}},\"Property\":\"NOM_ENTIDAD\"}},\"howCreated\":0}]},\"singleVisual\":{\"visualType\":\"slicer\",\"objects\":{\"merge\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Aguascalientes'\"}}]]}}}]}}}}],\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}},\"activeProjections\":{\"Values\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Estados\"}},\"Property\":\"NOM_ENTIDAD\"}}]},\"display\":{\"mode\":\"hidden\"}}},\"faab813cd5599d0fc1c6\":{\"filters\":{\"byExpr\":[{\"type\":\"Categorical\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendario\"}},\"Property\":\"Año\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la seguridad social\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a los servicios básicos en la vivienda\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a los servicios de salud\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por calidad y espacios de la vivienda\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Rezago educativo\"}},\"howCreated\":0}]},\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"objects\":{},\"orderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"}}}],\"activeProjections\":{\"Category\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendario\"}},\"Property\":\"Año\"}}]},\"display\":{\"mode\":\"hidden\"}}},\"800dd68aecb25c81481e\":{\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{}}},\"8b89f1545282bb57db72\":{\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{}}},\"8089f6e701c636d7b882\":{\"singleVisual\":{\"visualType\":\"actionButton\",\"objects\":{}}},\"685d965c07abf8202ea3\":{\"singleVisual\":{\"visualType\":\"actionButton\",\"objects\":{}}}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[],\"suppressData\":true}},{\"displayName\":\"PORCENTAJE\",\"name\":\"0e22f0a3fb656e71266c\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"65be77c093bcfc8c22d3\",\"sections\":{\"65be77c093bcfc8c22d3\":{\"visualContainers\":{\"8c00ae0f47444de5cfd4\":{\"filters\":{\"byExpr\":[{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la seguridad social\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a los servicios básicos en la vivienda\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a los servicios de salud\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por calidad y espacios de la vivienda\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Rezago educativo\"}},\"howCreated\":0},{\"type\":\"Categorical\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendario\"}},\"Property\":\"Año\"}},\"howCreated\":0}]},\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"objects\":{},\"orderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"}}}],\"activeProjections\":{\"Category\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendario\"}},\"Property\":\"Año\"}}]},\"display\":{\"mode\":\"hidden\"}}},\"46ea5c53166090e42f11\":{\"filters\":{\"byExpr\":[{\"type\":\"Categorical\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Estados\"}},\"Property\":\"NOM_ENTIDAD\"}},\"howCreated\":0}]},\"singleVisual\":{\"visualType\":\"slicer\",\"objects\":{\"merge\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Aguascalientes'\"}}]]}}}]}}}}],\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}},\"activeProjections\":{\"Values\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Estados\"}},\"Property\":\"NOM_ENTIDAD\"}}]},\"display\":{\"mode\":\"hidden\"}}},\"faab813cd5599d0fc1c6\":{\"filters\":{\"byExpr\":[{\"type\":\"Categorical\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendario\"}},\"Property\":\"Año\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la seguridad social\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a los servicios básicos en la vivienda\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a los servicios de salud\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por calidad y espacios de la vivienda\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Rezago educativo\"}},\"howCreated\":0}]},\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"objects\":{},\"orderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MEDIDAS\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"}}}],\"activeProjections\":{\"Category\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Calendario\"}},\"Property\":\"Año\"}}]}}},\"800dd68aecb25c81481e\":{\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{}}},\"8b89f1545282bb57db72\":{\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{}}},\"8089f6e701c636d7b882\":{\"singleVisual\":{\"visualType\":\"actionButton\",\"objects\":{}}},\"685d965c07abf8202ea3\":{\"singleVisual\":{\"visualType\":\"actionButton\",\"objects\":{}}}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"8089f6e701c636d7b882\"],\"suppressData\":true}}],\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY18SU07",
+            "path": "BaseThemes/CY18SU07.json",
+            "type": 202
+          },
+          {
+            "name": "Twilight",
+            "path": "BuiltInThemes/Twilight.json",
+            "type": 201
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "POBLACIÓN EN POBREZA MODERADA Y EXTREMA",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "2d9f3d077c60965c8cae",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"22257d57bac4f908640d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.301411024890417,\"y\":156.06709725384508,\"z\":2000,\"width\":551.9446122392083,\"height\":475.8143208958691,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendario.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"MEDIDAS.Población en situación de pobreza extrema\"},{\"queryRef\":\"MEDIDAS.Población en situación de pobreza moderada\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MEDIDAS\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Calendario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"Calendario.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Población en situación de pobreza extrema\"},\"Name\":\"MEDIDAS.Población en situación de pobreza extrema\",\"NativeReferenceName\":\"Población en situación de pobreza extrema\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Población en situación de pobreza moderada\"},\"Name\":\"MEDIDAS.Población en situación de pobreza moderada\",\"NativeReferenceName\":\"Población en situación de pobreza moderada\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 475.81,
+          "width": 551.94,
+          "x": 20.30,
+          "y": 156.07,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"2c8b14ffe1b4abff394e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1134.010567101092,\"y\":47.61113067981684,\"z\":5000,\"width\":50.496653751320885,\"height\":38.954561465304685,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Este gráfico se enfoca en la población que vive en condiciones de pobreza, desglosándola en dos subcategorías:  Población en pobreza extrema: Esta parte del gráfico muestra a las personas que viven en condiciones de pobreza severa, donde sus ingresos son tan bajos que no pueden cubrir las necesidades básicas de alimentación. Esta es la situación más crítica de pobreza.  Población en pobreza moderada: Esta sección representa a las personas que, aunque no viven en condiciones tan críticas como la pobreza extrema, todavía no alcanzan un nivel de ingresos que les permita satisfacer todas sus necesidades básicas adecuadamente.'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 38.95,
+          "width": 50.50,
+          "x": 1134.01,
+          "y": 47.61,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"64771c9e52161bac8088\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":4000,\"width\":57.355866731047804,\"height\":55.378078223080635,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'d78e68c01a6c044b49e8'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 55.38,
+          "width": 57.36,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"ab04d56f7e64675941c2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":234.73506497529544,\"y\":20.301411024890417,\"z\":3000,\"width\":861.5411303687871,\"height\":93.89402599011818,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"TÍTULOS.Título Dinámico 2\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TÍTULOS\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Título Dinámico Pobreza Extrema y Moderada\"},\"Name\":\"TÍTULOS.Título Dinámico 2\",\"NativeReferenceName\":\"Título Dinámico 2\"}]},\"autoSelectVisualType\":true,\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 93.89,
+          "width": 861.54,
+          "x": 234.74,
+          "y": 20.30,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"bd2a0a19f14b0adcabad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":34,\"z\":1000,\"width\":300,\"height\":94,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Estados.NOM_ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"},\"Name\":\"Estados.NOM_ENTIDAD\",\"NativeReferenceName\":\"NOM_ENTIDAD\"}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"NOM_ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filterd156a47c92c278e70141\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Estados\"}},\"Property\":\"NOM_ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 94.00,
+          "width": 300.00,
+          "x": 0.00,
+          "y": 34.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"d0ec807bb945492b3d96\",\"layouts\":[{\"id\":0,\"position\":{\"x\":663.6023728761055,\"y\":164.94896457723465,\"z\":0,\"width\":598.8916252342673,\"height\":466.9324535724796,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"MEDIDAS.Población en situación de pobreza extrema\"},{\"queryRef\":\"MEDIDAS.Población en situación de pobreza moderada\"}],\"Category\":[{\"queryRef\":\"Calendario.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MEDIDAS\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Calendario\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Población en situación de pobreza extrema\"},\"Name\":\"MEDIDAS.Población en situación de pobreza extrema\",\"NativeReferenceName\":\"Población en situación de pobreza extrema\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Población en situación de pobreza moderada\"},\"Name\":\"MEDIDAS.Población en situación de pobreza moderada\",\"NativeReferenceName\":\"Población en situación de pobreza moderada\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"Calendario.Año\",\"NativeReferenceName\":\"Año\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 466.93,
+          "width": 598.89,
+          "x": 663.60,
+          "y": 164.95,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "POBLACIÓN CON CARENCIAS SOCIALES",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "65be77c093bcfc8c22d3",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0bd65592e2b41ca29fef\",\"layouts\":[{\"id\":0,\"position\":{\"x\":159.87361182101202,\"y\":27.914440159224323,\"z\":5000,\"width\":1018.8770658116878,\"height\":73.59261496522775,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"TÍTULOS.Título Dinámico Carencias Sociales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TÍTULOS\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Título Dinámico Carencias Sociales\"},\"Name\":\"TÍTULOS.Título Dinámico Carencias Sociales\",\"NativeReferenceName\":\"Título Dinámico Carencias Sociales\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 73.59,
+          "width": 1018.88,
+          "x": 159.87,
+          "y": 27.91,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"46ea5c53166090e42f11\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":8,\"z\":0,\"width\":230,\"height\":72,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Estados.NOM_ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"},\"Name\":\"Estados.NOM_ENTIDAD\",\"NativeReferenceName\":\"NOM_ENTIDAD\"}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"NOM_ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]}}}}]}}}",
+          "filters": "[{\"name\":\"Filterd156a47c92c278e70141\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Estados\"}},\"Property\":\"NOM_ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 72.00,
+          "width": 230.00,
+          "x": 0.00,
+          "y": 8.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"53f8c05b5cc409ff1031\",\"layouts\":[{\"id\":0,\"position\":{\"x\":176.02317720907774,\"y\":142.40077257363592,\"z\":4000,\"width\":102.84500241429261,\"height\":41.53355866731048,\"tabOrder\":2000}}],\"singleVisualGroup\":{\"displayName\":\"Grupo 2\",\"groupMode\":0}}",
+          "height": 41.53,
+          "width": 102.85,
+          "x": 176.02,
+          "y": 142.40,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"685d965c07abf8202ea3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":99.55054596688974,\"height\":40.39732300105671,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'blank'\"}}}},\"selector\":{\"id\":\"default\"}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}},{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}},\"selector\":{\"id\":\"selected\"}}],\"shadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"glow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}},\"selector\":{\"id\":\"selected\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Botón 2'\"}}}}}],\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Bookmark'\"}}},\"bookmark\":{\"expr\":{\"Literal\":{\"Value\":\"'bf06ebfe7bf194553e78'\"}}}}}]}},\"parentGroupName\":\"882f32096f4fe98208c6\",\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.40,
+          "width": 99.55,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"7571e92948070a1fa570\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1180.1789362451568,\"y\":54.824938358576965,\"z\":7000,\"width\":50.496653751320885,\"height\":40.39732300105671,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Este gráfico presenta la población que enfrenta una o más carencias sociales dentro del estado seleccionado:  Carencias Sociales: Esta sección del gráfico muestra las áreas específicas donde la población está enfrentando carencias. Las carencias pueden incluir falta de acceso a servicios de salud, educación, vivienda de calidad, servicios básicos en la vivienda, alimentación nutritiva, y seguridad social'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.40,
+          "width": 50.50,
+          "x": 1180.18,
+          "y": 54.82,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"800dd68aecb25c81481e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":5.771046143008093,\"z\":0,\"width\":103.87883057414582,\"height\":34.626276858048605,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"PORCENTAJE\"}]}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'TEXTO PORCENTAJE'\"}}}}}]}},\"parentGroupName\":\"53f8c05b5cc409ff1031\"}",
+          "filters": "[]",
+          "height": 34.63,
+          "width": 103.88,
+          "x": 0.00,
+          "y": 5.77,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"8089f6e701c636d7b882\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":99.55054596688974,\"height\":40.39732300105671,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'blank'\"}}}},\"selector\":{\"id\":\"default\"}},{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}},{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}},\"selector\":{\"id\":\"selected\"}}],\"shadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"glow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}},{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}},\"selector\":{\"id\":\"selected\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Botón 1'\"}}}}}],\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Bookmark'\"}}},\"bookmark\":{\"expr\":{\"Literal\":{\"Value\":\"'0e22f0a3fb656e71266c'\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}},\"parentGroupName\":\"53f8c05b5cc409ff1031\",\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.40,
+          "width": 99.55,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"882f32096f4fe98208c6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":660.5813616610333,\"y\":148.33413809753742,\"z\":3000,\"width\":112.73394495412845,\"height\":41.53355866731048,\"tabOrder\":3000}}],\"singleVisualGroup\":{\"displayName\":\"Grupo 1\",\"groupMode\":0}}",
+          "height": 41.53,
+          "width": 112.73,
+          "x": 660.58,
+          "y": 148.33,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"8b89f1545282bb57db72\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.09933075026413,\"y\":5.771046143008093,\"z\":0,\"width\":103.87883057414582,\"height\":34.626276858048605,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"ABSOLUTO\"}]}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'TEXTO ABSOLUTO'\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}},\"parentGroupName\":\"882f32096f4fe98208c6\"}",
+          "filters": "[]",
+          "height": 34.63,
+          "width": 103.88,
+          "x": 10.10,
+          "y": 5.77,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"8c00ae0f47444de5cfd4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":31.64461612747465,\"y\":209.64558184451957,\"z\":1000,\"width\":1208.428778367938,\"height\":482.58039594398844,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"MEDIDAS.Carencia por acceso a la alimentación nutritiva y de calidad\"},{\"queryRef\":\"MEDIDAS.Carencia por acceso a la seguridad social\"},{\"queryRef\":\"MEDIDAS.Carencia por acceso a los servicios básicos en la vivienda\"},{\"queryRef\":\"MEDIDAS.Carencia por acceso a los servicios de salud\"},{\"queryRef\":\"MEDIDAS.Carencia por calidad y espacios de la vivienda\"},{\"queryRef\":\"MEDIDAS.Rezago educativo\"}],\"Category\":[{\"queryRef\":\"Calendario.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MEDIDAS\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Calendario\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"},\"Name\":\"MEDIDAS.Carencia por acceso a la alimentación nutritiva y de calidad\",\"NativeReferenceName\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por acceso a la seguridad social\"},\"Name\":\"MEDIDAS.Carencia por acceso a la seguridad social\",\"NativeReferenceName\":\"Carencia por acceso a la seguridad social\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por acceso a los servicios básicos en la vivienda\"},\"Name\":\"MEDIDAS.Carencia por acceso a los servicios básicos en la vivienda\",\"NativeReferenceName\":\"Carencia por acceso a los servicios básicos en la vivienda\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por acceso a los servicios de salud\"},\"Name\":\"MEDIDAS.Carencia por acceso a los servicios de salud\",\"NativeReferenceName\":\"Carencia por acceso a los servicios de salud\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por calidad y espacios de la vivienda\"},\"Name\":\"MEDIDAS.Carencia por calidad y espacios de la vivienda\",\"NativeReferenceName\":\"Carencia por calidad y espacios de la vivienda\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Rezago educativo\"},\"Name\":\"MEDIDAS.Rezago educativo\",\"NativeReferenceName\":\"Rezago educativo\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"Calendario.Año\",\"NativeReferenceName\":\"Año\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'RightCenter'\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 482.58,
+          "width": 1208.43,
+          "x": 31.64,
+          "y": 209.65,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"cd3d211cef4b52518576\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":6000,\"width\":57.355866731047804,\"height\":55.378078223080635,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'d78e68c01a6c044b49e8'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 55.38,
+          "width": 57.36,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"faab813cd5599d0fc1c6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":41.53355866731048,\"y\":229.42346692419122,\"z\":2000,\"width\":1208.428778367938,\"height\":472.6914534041526,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendario.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"MEDIDAS.Carencia por acceso a la alimentación nutritiva y de calidad\"},{\"queryRef\":\"MEDIDAS.Carencia por acceso a la seguridad social\"},{\"queryRef\":\"MEDIDAS.Carencia por acceso a los servicios básicos en la vivienda\"},{\"queryRef\":\"MEDIDAS.Carencia por acceso a los servicios de salud\"},{\"queryRef\":\"MEDIDAS.Carencia por calidad y espacios de la vivienda\"},{\"queryRef\":\"MEDIDAS.Rezago educativo\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MEDIDAS\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Calendario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"Calendario.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"},\"Name\":\"MEDIDAS.Carencia por acceso a la alimentación nutritiva y de calidad\",\"NativeReferenceName\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por acceso a la seguridad social\"},\"Name\":\"MEDIDAS.Carencia por acceso a la seguridad social\",\"NativeReferenceName\":\"Carencia por acceso a la seguridad social\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por acceso a los servicios básicos en la vivienda\"},\"Name\":\"MEDIDAS.Carencia por acceso a los servicios básicos en la vivienda\",\"NativeReferenceName\":\"Carencia por acceso a los servicios básicos en la vivienda\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por acceso a los servicios de salud\"},\"Name\":\"MEDIDAS.Carencia por acceso a los servicios de salud\",\"NativeReferenceName\":\"Carencia por acceso a los servicios de salud\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por calidad y espacios de la vivienda\"},\"Name\":\"MEDIDAS.Carencia por calidad y espacios de la vivienda\",\"NativeReferenceName\":\"Carencia por calidad y espacios de la vivienda\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Rezago educativo\"},\"Name\":\"MEDIDAS.Rezago educativo\",\"NativeReferenceName\":\"Rezago educativo\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Carencia por acceso a la alimentación nutritiva y de calidad\"}}}]},\"display\":{\"mode\":\"hidden\"},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'RightCenter'\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 472.69,
+          "width": 1208.43,
+          "x": 41.53,
+          "y": 229.42,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "POBLACIÓN CON INGRESO INFERIOR A LA LINEA DE POBREZA ",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "9cd426eda51617a82e0f",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"08d7817bcd663247c228\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":10,\"z\":4000,\"width\":57.355866731047804,\"height\":55.378078223080635,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'d78e68c01a6c044b49e8'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 55.38,
+          "width": 57.36,
+          "x": 10.00,
+          "y": 10.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"4f5dbca8215008b6610b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":106.58240788067468,\"y\":38.065145671669534,\"z\":3000,\"width\":1107.6957390455834,\"height\":93.89402599011818,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"TÍTULOS.Título Dinámico Pobreza Extrema y por Ingreso\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TÍTULOS\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Título Dinámico Pobreza Extrema y por Ingreso\"},\"Name\":\"TÍTULOS.Título Dinámico Pobreza Extrema y por Ingreso\",\"NativeReferenceName\":\"Título Dinámico Pobreza Extrema y por Ingreso\"}]},\"autoSelectVisualType\":true,\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 93.89,
+          "width": 1107.70,
+          "x": 106.58,
+          "y": 38.07,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"50ac10d7035735bda585\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":270,\"height\":70,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Estados.NOM_ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"},\"Name\":\"Estados.NOM_ENTIDAD\",\"NativeReferenceName\":\"NOM_ENTIDAD\"}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"NOM_ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]}}}}]}}}",
+          "filters": "[{\"name\":\"Filterd156a47c92c278e70141\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Estados\"}},\"Property\":\"NOM_ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 70.00,
+          "width": 270.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"9fa258869573d60e4189\",\"layouts\":[{\"id\":0,\"position\":{\"x\":660,\"y\":176,\"z\":0,\"width\":606,\"height\":516,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"MEDIDAS.Población con ingreso inferior a la línea de pobreza extrema por ingresos\"},{\"queryRef\":\"MEDIDAS.Población con ingreso inferior a la línea de pobreza por ingresos\"}],\"Category\":[{\"queryRef\":\"Calendario.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendario\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"MEDIDAS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"Calendario.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Ingreso inferior a la línea de pobreza extrema por ingresos\"},\"Name\":\"MEDIDAS.Población con ingreso inferior a la línea de pobreza extrema por ingresos\",\"NativeReferenceName\":\"Ingreso inferior a la línea de pobreza extrema por ingresos\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Ingreso inferior a la línea de pobreza por ingresos\"},\"Name\":\"MEDIDAS.Población con ingreso inferior a la línea de pobreza por ingresos\",\"NativeReferenceName\":\"Ingreso inferior a la línea de pobreza por ingresos\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showGradientLegend\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 516.00,
+          "width": 606.00,
+          "x": 660.00,
+          "y": 176.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"a7d4772c62ea02269bfd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":176,\"z\":2000,\"width\":606,\"height\":516,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendario.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"MEDIDAS.Población con ingreso inferior a la línea de pobreza extrema por ingresos\"},{\"queryRef\":\"MEDIDAS.Población con ingreso inferior a la línea de pobreza por ingresos\"}],\"Tooltips\":[{\"queryRef\":\"TÍTULOS.Título Dinámico Pobreza Extrema y Moderada\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MEDIDAS\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Calendario\",\"Type\":0},{\"Name\":\"t\",\"Entity\":\"TÍTULOS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"Calendario.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Ingreso inferior a la línea de pobreza extrema por ingresos\"},\"Name\":\"MEDIDAS.Población con ingreso inferior a la línea de pobreza extrema por ingresos\",\"NativeReferenceName\":\"Ingreso inferior a la línea de pobreza extrema por ingresos\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Ingreso inferior a la línea de pobreza por ingresos\"},\"Name\":\"MEDIDAS.Población con ingreso inferior a la línea de pobreza por ingresos\",\"NativeReferenceName\":\"Ingreso inferior a la línea de pobreza por ingresos\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Título Dinámico Pobreza Extrema y Moderada\"},\"Name\":\"TÍTULOS.Título Dinámico Pobreza Extrema y Moderada\",\"NativeReferenceName\":\"Título Dinámico Pobreza Extrema y Moderada\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"enableDetailDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"showGradientLegend\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 516.00,
+          "width": 606.00,
+          "x": 0.00,
+          "y": 176.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"fac36d22b142b7bca133\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1222.0190207819655,\"y\":64.92426910884114,\"z\":5000,\"width\":49.053892215568865,\"height\":40.39732300105671,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Este gráfico ilustra la proporción de la población que tiene ingresos inferiores a la línea de pobreza extrema:  Ingreso inferior a la Línea de Pobreza Extrema: Esta sección muestra a las personas cuyos ingresos están por debajo del umbral de pobreza extrema. Este umbral se define como el nivel de ingresos mínimo necesario para adquirir una canasta básica de alimentos.  Ingreso inferior a la Línea de Pobreza por Ingreso: Esta parte del gráfico incluye a las personas que tienen ingresos insuficientes para cubrir sus necesidades básicas, no solo de alimentos, sino también de otros bienes y servicios esenciales, como vivienda, salud y educación.'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.40,
+          "width": 49.05,
+          "x": 1222.02,
+          "y": 64.92,
+          "z": 5000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "INICIO",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "d78e68c01a6c044b49e8",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"35038e5cb2673f2856d7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":38.90204668355124,\"y\":200.81867342049424,\"z\":0,\"width\":313.3191868026559,\"height\":72.54706003148745,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Estados.NOM_ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"},\"Name\":\"Estados.NOM_ENTIDAD\",\"NativeReferenceName\":\"NOM_ENTIDAD\"}]},\"syncGroup\":{\"groupName\":\"NOM_ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'ENTIDAD'\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filterd156a47c92c278e70141\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Estados\"}},\"Property\":\"NOM_ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 72.55,
+          "width": 313.32,
+          "x": 38.90,
+          "y": 200.82,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"410a3aaf1e868b483d02\",\"layouts\":[{\"id\":0,\"position\":{\"x\":465.6636153834239,\"y\":663.6023728761055,\"z\":3000,\"width\":173.8308319006242,\"height\":55.82888031844865,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Fuente: Coneval\",\"textStyle\":{\"fontSize\":\"12pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 55.83,
+          "width": 173.83,
+          "x": 465.66,
+          "y": 663.60,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"491396bef88d48684be7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":80.9583133684715,\"y\":35.74782668218222,\"z\":2000,\"width\":1080.8460538024506,\"height\":95.67800670819358,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"POBREZA ESTATAL 2016- 2022\",\"textStyle\":{\"fontFamily\":\"Segoe (Bold)\",\"fontSize\":\"32pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.68,
+          "width": 1080.85,
+          "x": 80.96,
+          "y": 35.75,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"b085a797349b9ea9955d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":38.64734299516908,\"y\":408.1159420289855,\"z\":5000,\"width\":371.0144927536232,\"height\":236.52173913043478,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"filledMap\",\"projections\":{\"Category\":[{\"queryRef\":\"Estados.NOM_ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"},\"Name\":\"Estados.NOM_ENTIDAD\",\"NativeReferenceName\":\"NOM_ENTIDAD\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"mapStyles\":[{\"properties\":{\"mapTheme\":{\"expr\":{\"Literal\":{\"Value\":\"'canvasLight'\"}}}}}],\"dataPoint\":[{\"properties\":{\"fillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'minColor'\"}}}},\"max\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'maxColor'\"}}}},\"nullColoringStrategy\":{\"strategy\":{\"expr\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 236.52,
+          "width": 371.01,
+          "x": 38.65,
+          "y": 408.12,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"de8d04e034696905924a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":465.7731535354919,\"y\":182.94476007940312,\"z\":1000,\"width\":779.0923403381478,\"height\":452.1048668628928,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pageNavigator\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}},\"selector\":{\"id\":\"default\"}}],\"pages\":[{\"properties\":{\"showPage\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"d78e68c01a6c044b49e8\"}}],\"layout\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"shadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"glow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"text\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 452.10,
+          "width": 779.09,
+          "x": 465.77,
+          "y": 182.94,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "POBLACIÓN NO POBRE, VULNERABLE Y EN POBREZA",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "fc4bc620804ad79390da",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"13f0e14acede0ef76178\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":56,\"z\":0,\"width\":314,\"height\":72,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Estados.NOM_ENTIDAD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"},\"Name\":\"Estados.NOM_ENTIDAD\",\"NativeReferenceName\":\"NOM_ENTIDAD\"}]},\"display\":{\"mode\":\"hidden\"},\"syncGroup\":{\"groupName\":\"NOM_ENTIDAD\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'ENTIDAD'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filterd156a47c92c278e70141\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Estados\"}},\"Property\":\"NOM_ENTIDAD\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Estados\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"NOM_ENTIDAD\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Michoacán de Ocampo'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false}]",
+          "height": 72.00,
+          "width": 314.00,
+          "x": 20.00,
+          "y": 56.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"17122ef5158e1a491931\",\"layouts\":[{\"id\":0,\"position\":{\"x\":35.52746929355823,\"y\":199.20759568173722,\"z\":1000,\"width\":516.41714294565,\"height\":484.6961882192587,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Calendario.Año\",\"active\":true}],\"Y\":[{\"queryRef\":\"MEDIDAS.Población no pobre y no vulnerable\"},{\"queryRef\":\"MEDIDAS.Población vulnerable por carencias sociales\"},{\"queryRef\":\"MEDIDAS.Población vulnerable por ingresos\"},{\"queryRef\":\"MEDIDAS.Población en situación de pobreza\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Calendario\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"MEDIDAS\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"Calendario.Año\",\"NativeReferenceName\":\"Año\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"No pobre y no vulnerable\"},\"Name\":\"MEDIDAS.Población no pobre y no vulnerable\",\"NativeReferenceName\":\"No pobre y no vulnerable\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Vulnerable por carencias sociales\"},\"Name\":\"MEDIDAS.Población vulnerable por carencias sociales\",\"NativeReferenceName\":\"Vulnerable por carencias sociales\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Vulnerable por ingresos\"},\"Name\":\"MEDIDAS.Población vulnerable por ingresos\",\"NativeReferenceName\":\"Vulnerable por ingresos\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"En pobreza\"},\"Name\":\"MEDIDAS.Población en situación de pobreza\",\"NativeReferenceName\":\"En pobreza\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 484.70,
+          "width": 516.42,
+          "x": 35.53,
+          "y": 199.21,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"17deb36f04dea9323de2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":177.63734646779113,\"y\":27.914440159224323,\"z\":3000,\"width\":941.4779362792931,\"height\":97.70054055728512,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"TÍTULOS.Título Dinámico\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"TÍTULOS\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Título Dinámico\"},\"Name\":\"TÍTULOS.Título Dinámico\",\"NativeReferenceName\":\"Título Dinámico\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 97.70,
+          "width": 941.48,
+          "x": 177.64,
+          "y": 27.91,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"26af5f72f3e101c77ea9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":4000,\"width\":57.355866731047804,\"height\":55.378078223080635,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'d78e68c01a6c044b49e8'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 55.38,
+          "width": 57.36,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"78bc826508102f06c6f8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1162.5468164794008,\"y\":55.1310861423221,\"z\":5000,\"width\":41.947565543071164,\"height\":38.352059925093634,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Drillthrough'\"}}},\"disabledTooltip\":{\"expr\":{\"Literal\":{\"Value\":\"' ChatGPT Entendido. Vamos a ajustar la explicación de la gráfica de la primera medida para incluir las categorías \\\"vulnerables por ingreso\\\" y \\\"vulnerables por carencias sociales\\\".  1. Título Dinámico: \\\"Población no pobre y no vulnerable, en vulnerabilidad y en pobreza en ...\\\" Explicación de la Gráfica Este gráfico muestra la distribución de la población en cuatro categorías principales dentro del estado seleccionado:  Población no pobre y no vulnerable: Esta sección del gráfico representa a las personas que tienen ingresos suficientes y no enfrentan carencias sociales significativas. Estas personas no están en situación de pobreza ni vulnerabilidad.  Población vulnerable por ingresos: Esta parte muestra a las personas que tienen ingresos cercanos a la línea de pobreza y están en riesgo de caer en pobreza debido a cambios económicos o personales. Aunque no se consideran pobres, sus ingresos son inestables o insuficientes para garantizar su bienestar a largo plazo.  Población vulnerable por carencias sociales: Esta sección representa a las personas que, aunque sus ingresos pueden ser adecuados, enfrentan una o más carencias sociales. Estas carencias pueden incluir falta de acceso a servicios básicos, seguridad social, educación, entre otros.  Población en situación de pobreza: Esta parte del gráfico muestra a las personas que viven por debajo de la línea de pobreza. Esta categoría puede estar subdividida en pobreza moderada y extrema, mostrando el grado de severidad de la pobreza que enfrentan.'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 38.35,
+          "width": 41.95,
+          "x": 1162.55,
+          "y": 55.13,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"f124ed0343c856501048\",\"layouts\":[{\"id\":0,\"position\":{\"x\":593.8162724780447,\"y\":199.20759568173722,\"z\":2000,\"width\":686.4414602791072,\"height\":470.73896813964654,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"MEDIDAS.Población vulnerable por ingresos\"},{\"queryRef\":\"MEDIDAS.Población vulnerable por carencias sociales\"},{\"queryRef\":\"MEDIDAS.Población no pobre y no vulnerable\"},{\"queryRef\":\"MEDIDAS.Población en situación de pobreza\"}],\"Category\":[{\"queryRef\":\"Calendario.Año\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MEDIDAS\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Calendario\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Vulnerable por ingresos\"},\"Name\":\"MEDIDAS.Población vulnerable por ingresos\",\"NativeReferenceName\":\"Vulnerable por ingresos\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Vulnerable por carencias sociales\"},\"Name\":\"MEDIDAS.Población vulnerable por carencias sociales\",\"NativeReferenceName\":\"Vulnerable por carencias sociales\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"No pobre y no vulnerable\"},\"Name\":\"MEDIDAS.Población no pobre y no vulnerable\",\"NativeReferenceName\":\"No pobre y no vulnerable\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"En pobreza\"},\"Name\":\"MEDIDAS.Población en situación de pobreza\",\"NativeReferenceName\":\"En pobreza\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"},\"Name\":\"Calendario.Año\",\"NativeReferenceName\":\"Año\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Año\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"ribbonBands\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"borderShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"fillMatchColor\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"layout\":[{\"properties\":{\"ribbonGapSize\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"legend\":[{\"properties\":{\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 470.74,
+          "width": 686.44,
+          "x": 593.82,
+          "y": 199.21,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "Twilight"
+}

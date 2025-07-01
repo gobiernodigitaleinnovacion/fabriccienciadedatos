@@ -1,0 +1,54 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errores en las consultas cargadas en 06/06/2024 03:26:39 p. m..
+queryGroup 'Errores en las consultas: 06/06/2024 03:26:39 p  m'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errores en las consultas cargadas en 06/06/2024 03:30:30 p. m..
+queryGroup 'Errores en las consultas: 06/06/2024 03:30:30 p  m'
+
+	annotation PBI_QueryGroupOrder = 1
+
+/// Errores en las consultas cargadas en 12/06/2024 12:54:21 p. m..
+queryGroup 'Errores en las consultas: 12/06/2024 12:54:21 p  m'
+
+	annotation PBI_QueryGroupOrder = 2
+
+/// Errores en las consultas cargadas en 06/09/2024 02:16:18 p. m..
+queryGroup 'Errores en las consultas: 06/09/2024 02:16:18 p  m'
+
+	annotation PBI_QueryGroupOrder = 3
+
+/// Errores en las consultas cargadas en 06/09/2024 04:30:25 p. m..
+queryGroup 'Errores en las consultas: 06/09/2024 04:30:25 p  m'
+
+	annotation PBI_QueryGroupOrder = 4
+
+annotation PBI_QueryOrder = ["Concentrado estatal","Concentrado municipal","POBREZAMUNICIPAL","Concentrado estatal (2)","POBREZA","ESTADOS","MUNICIPIOS","CALENDARIO","Errores en POBREZA","Errores en MUNICIPIOS","Población","Pobreza (2)","Errores en POBREZA (2)","Moderada y Extrema","Ingreso Inferior","Carencias","Carencias Promedio","Títulos","POBREZA (3)","Errores en POBREZA (3)","Errores en POBREZA (4)"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.140.1476.0 (25.02)+e8c6a85d1d09735c5c055c3244a60ff4076cd2cf
+
+ref table POBREZA
+ref table DateTableTemplate_f2614a42-75ac-488c-80a0-ee94e3a8c991
+ref table ESTADOS
+ref table MUNICIPIOS
+ref table CALENDARIO
+ref table Población
+ref table 'Pobreza (2)'
+ref table 'Moderada y Extrema'
+ref table 'Ingreso Inferior'
+ref table Carencias
+ref table 'Carencias Promedio'
+ref table Títulos
+
+ref cultureInfo es-ES
+

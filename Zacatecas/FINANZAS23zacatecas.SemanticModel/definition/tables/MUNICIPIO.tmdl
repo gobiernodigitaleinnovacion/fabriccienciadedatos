@@ -1,0 +1,57 @@
+table MUNICIPIO
+	lineageTag: 0eabe929-2a20-4c91-94e2-1776b4202070
+
+	column ID
+		dataType: string
+		lineageTag: 62e5e0ea-4dba-42fa-959c-68eae3f051c4
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_ENTIDAD
+		dataType: string
+		lineageTag: 90e76ae8-f738-4034-9025-6861f6505c96
+		summarizeBy: none
+		sourceColumn: ID_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_MUNICIPIO
+		dataType: string
+		lineageTag: 33773381-fc83-4366-93d5-c43e95ca42be
+		summarizeBy: none
+		sourceColumn: ID_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUNICIPIO
+		dataType: string
+		lineageTag: 80a01773-d01e-4a7d-9b64-d95b1b743826
+		summarizeBy: none
+		sourceColumn: MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MUNICIPIO = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\ingresos y gasto municipios\tc_municipio.csv"),[Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"ID_ENTIDAD", Int64.Type}, {"ID_MUNICIPIO", Int64.Type}, {"NOM_MUNICIPIO", type text}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Tipo cambiado", "Personalizado", each Text.PadStart(Text.From([ID_ENTIDAD]), 2, "0") & Text.PadStart(Text.From([ID_MUNICIPIO]), 3, "0")),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Personalizada agregada",{"Personalizado", "ID_ENTIDAD", "ID_MUNICIPIO", "NOM_MUNICIPIO"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas reordenadas",{{"Personalizado", type text}}),
+				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado1", each true),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas filtradas",{{"Personalizado", "ID"}, {"NOM_MUNICIPIO", "MUNICIPIO"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"ID_MUNICIPIO", type text}, {"ID_ENTIDAD", type text}}),
+				    #"Sorted Rows" = Table.Sort(#"Changed Type",{{"ID_ENTIDAD", Order.Ascending}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Sorted Rows", each ([ID_MUNICIPIO] = "0"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

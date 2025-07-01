@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "RAMO33 DURANGO"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a9bc8498-eaa0-b3b4-4436-8ce901c4ead4"
+  }
+}

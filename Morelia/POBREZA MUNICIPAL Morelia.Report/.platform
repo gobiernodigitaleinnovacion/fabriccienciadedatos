@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "POBREZA MUNICIPAL Morelia"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "936429a6-47f5-8fad-4ea1-55623c7144d9"
+  }
+}

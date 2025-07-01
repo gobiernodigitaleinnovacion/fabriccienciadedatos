@@ -1,0 +1,55 @@
+table DimIndicador
+	lineageTag: 588e10ec-d5f2-4c07-9d6c-2894b3cfbbf0
+
+	column id_indicador
+		dataType: int64
+		formatString: 0
+		lineageTag: 12e5f848-b393-44a8-917b-20b5ee2fd920
+		summarizeBy: none
+		sourceColumn: id_indicador
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indicadores
+		dataType: string
+		lineageTag: 25a0c49d-f704-4d85-b2f7-39cc863021fe
+		summarizeBy: none
+		sourceColumn: Indicadores
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidad_medidas
+		dataType: string
+		lineageTag: d9340e59-dc98-4152-bcfb-f30df4376c84
+		summarizeBy: none
+		sourceColumn: unidad_medidas
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tema
+		dataType: string
+		lineageTag: b8663f91-68cf-4f78-8607-72e7f5bd4f4e
+		summarizeBy: none
+		sourceColumn: Tema
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimIndicador = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\InegiArchivos\finalindicadores.xlsx"), null, true),
+				    Tabla1_Table = Origen{[Item="Tabla1",Kind="Table"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Tabla1_Table,{{"id_indicador", Int64.Type}, {"indicador", type text}, {"unidad_medida", type text}, {"Tema", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"indicador", "Indicadores"}, {"unidad_medida", "unidad_medidas"}}),
+				    #"Texto recortado" = Table.TransformColumns(#"Columnas con nombre cambiado",{{"Tema", Text.Trim, type text}}),
+				    #"Texto limpio" = Table.TransformColumns(#"Texto recortado",{{"Tema", Text.Clean, type text}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Texto limpio",{{"id_indicador", type text}}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Tipo cambiado1",{{"id_indicador", Int64.Type}})
+				in
+				    #"Tipo cambiado2"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

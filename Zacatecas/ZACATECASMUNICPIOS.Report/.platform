@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ZACATECASMUNICPIOS"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "551f21c5-a206-8d54-42cd-05d67d986ff2"
+  }
+}

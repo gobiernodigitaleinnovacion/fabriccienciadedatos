@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "DEMOGRAFÍANezahulcoyotl"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "32664a9f-d166-8912-4ea5-54853be4931b"
+  }
+}

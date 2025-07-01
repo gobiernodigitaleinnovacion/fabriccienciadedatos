@@ -1,0 +1,32 @@
+relationship AutoDetected_66204e93-1154-4a6d-b8fb-14d55bd3c1ae
+	fromColumn: CensoHechos.id_indicador
+	toColumn: DimIndicador.id_indicador
+
+relationship 5e9cbbaa-7a16-459e-b50e-6c4638a6a1a2
+	fromColumn: DimMunicipio.EstadoID
+	toColumn: DimEstado.EstadoID
+
+relationship 2279cf05-4b1f-4094-91c1-4f4e628d7056
+	fromColumn: CensoHechos.MunicpioCompuestoID
+	toColumn: DimMunicipio.MunicipioCompuestoID
+
+relationship 24fe661f-12d0-495e-9301-b0d0aa7c94d1
+	isActive: false
+	fromColumn: CensoHechos.cve_entidad
+	toColumn: DimEstado.EstadoID
+
+relationship 4f0c1c82-8c8b-4766-a49f-b50378e62f5f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimCalendario.Date
+	toColumn: LocalDateTable_653094ac-df2c-4b13-a81f-5b68d9225824.Date
+
+relationship 9fb18067-99bb-4baf-8057-fdeca8d35063
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	fromColumn: DimCalendario.Año
+	toColumn: CensosFiltrados.Año
+
+relationship ac52c695-8150-41bb-908d-8d552506bf5f
+	fromColumn: CensoHechos.Año
+	toColumn: DimCalendario.Date
+

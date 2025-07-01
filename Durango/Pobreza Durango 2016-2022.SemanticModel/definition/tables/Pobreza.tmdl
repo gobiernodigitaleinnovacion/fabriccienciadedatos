@@ -1,0 +1,84 @@
+table Pobreza
+	lineageTag: fe2dca1a-3f29-4f22-80db-99d94d2c4b87
+
+	column CVE_Entidad
+		dataType: int64
+		lineageTag: 23801a22-594e-4979-9976-a7fdbc31a628
+		summarizeBy: none
+		sourceColumn: CVE_Entidad
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Indicador
+		dataType: string
+		lineageTag: 00d32ebb-bba3-4199-9a9a-effd6378e217
+		summarizeBy: none
+		sourceColumn: Indicador
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: string
+		lineageTag: 29a5571d-0d47-4908-9b0f-527bf0450f8d
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valor
+		dataType: double
+		lineageTag: d044bfa3-6e9f-450d-8dfe-0224d48c8ed3
+		summarizeBy: sum
+		sourceColumn: Valor
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Pobreza = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\Anexo estadístico entidades 2016 2022 pobreza.xlsx"), null, true),
+				    #"Estados Unidos Mexicanos_Sheet" = Origen{[Item="Estados Unidos Mexicanos",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Estados Unidos Mexicanos_Sheet",{{"Column1", type text}, {"Column2", type any}, {"Column3", type text}, {"Column4", type any}, {"Column5", type number}, {"Column6", type number}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type number}, {"Column11", type number}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type number}, {"Column16", type number}, {"Column17", type any}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}, {"Column21", type any}, {"Column22", type any}, {"Column23", type any}, {"Column24", type any}, {"Column25", type any}, {"Column26", type any}, {"Column27", type any}, {"Column28", type any}, {"Column29", type any}}),
+				    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",6),
+				    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Filas superiores quitadas",6),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Filas inferiores quitadas",{"Column18", "Column19", "Column20", "Column21", "Column22", "Column23", "Column24", "Column25", "Column26", "Column27", "Column28", "Column29", "Column1"}),
+				    #"Errores reemplazados" = Table.ReplaceErrorValues(#"Columnas quitadas", {{"Column2", "Estados Unidos Mexicanos"}}),
+				    #"Errores quitados" = Table.RemoveRowsWithErrors(#"Errores reemplazados", {"Column4"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Errores quitados",{{"Column4", Int64.Type}}),
+				    #"Errores quitados1" = Table.RemoveRowsWithErrors(#"Tipo cambiado1", {"Column4"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Errores quitados1", each ([Column4] <> null)),
+				    #"Texto recortado" = Table.TransformColumns(#"Filas filtradas",{{"Column3", Text.Trim, type text}}),
+				    #"Texto limpio" = Table.TransformColumns(#"Texto recortado",{{"Column3", Text.Clean, type text}}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Texto limpio",{{"Column7", type number}}),
+				    #"Errores reemplazados1" = Table.ReplaceErrorValues(#"Tipo cambiado2", {{"Column7", 2022}}),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Errores reemplazados1",{{"Column12", type number}}),
+				    #"Errores reemplazados2" = Table.ReplaceErrorValues(#"Tipo cambiado3", {{"Column12", 2022}}),
+				    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Errores reemplazados2",{{"Column17", type number}}),
+				    #"Errores reemplazados3" = Table.ReplaceErrorValues(#"Tipo cambiado4", {{"Column17", 2022}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Errores reemplazados3", [PromoteAllScalars=true]),
+				    #"Tipo cambiado5" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type any}, {"Column2", type text}, {"2016", type number}, {"2018", type number}, {"2020", type number}, {"2022", type number}, {"Column7", type any}, {"2016_1", type number}, {"2018_2", type number}, {"2020_3", type number}, {"2022_4", type number}, {"Column12", type any}, {"2016_5", type number}, {"2018_6", type number}, {"2020_7", type number}, {"2022_8", type number}}),
+				    #"Errores reemplazados4" = Table.ReplaceErrorValues(#"Tipo cambiado5", {{"Column1", "Estados Unidos Mexicanos"}}),
+				    #"Tipo cambiado6" = Table.TransformColumnTypes(#"Errores reemplazados4",{{"Column1", type text}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Tipo cambiado6","","Estados Unidos Mexicanos",Replacer.ReplaceValue,{"Column1"}),
+				    #"Tipo cambiado7" = Table.TransformColumnTypes(#"Valor reemplazado",{{"Column1", Int64.Type}}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Tipo cambiado7",null,0,Replacer.ReplaceValue,{"Column1"}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Valor reemplazado1",{"2016", "2018", "2020", "2022", "Column7", "Column12", "2016_5", "2018_6", "2020_7", "2022_8"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas1",{{"2016_1", "2016"}, {"2018_2", "2018"}, {"2020_3", "2020"}, {"2022_4", "2022"}, {"Column2", "Indicador"}, {"Column1", "CVE_Entidad"}}),
+				    #"Consulta anexada" = Table.Combine({#"Columnas con nombre cambiado", Aguascalientes, #"Baja California", #"Baja California Sur", Campeche, Chiapas, Chihuahua, #"Coahuila de Zaragoza", #"Ciudad de México", Colima, Durango, Guanajuato, Guerrero, Hidalgo, Jalisco, México, #"Michoacán de Ocampo", Morelos, Nayarit, #"Nuevo León", Oaxaca, Puebla, Querétaro, #"Quintana Roo", #"San Luis Potosí", Sinaloa, Sonora, Tabasco, Tamaulipas, Tlaxcala, #"Veracruz de Ignacio de la Llave", Yucatán, Zacatecas}),
+				    #"Filas filtradas1" = Table.SelectRows(#"Consulta anexada", each true),
+				    #"Columna de anulación de dinamización" = Table.UnpivotOtherColumns(#"Filas filtradas1", {"CVE_Entidad", "Indicador"}, "Atributo", "Valor"),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columna de anulación de dinamización",{{"Atributo", "Año"}})
+				in
+				    #"Columnas con nombre cambiado1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

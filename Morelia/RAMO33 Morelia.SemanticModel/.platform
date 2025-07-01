@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "RAMO33 Morelia"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "64d70080-cf57-b033-443b-6be813adabc4"
+  }
+}

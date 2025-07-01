@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Pobreza Durango 2016-2022"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0a35158c-3013-9328-408d-a3a4ecae47a2"
+  }
+}

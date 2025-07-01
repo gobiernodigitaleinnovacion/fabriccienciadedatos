@@ -1,0 +1,108 @@
+table CALENDARIO
+	lineageTag: 4b585db1-d6e1-4fe5-9afb-78f4522e8a7f
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b19ac255-31f1-450b-883b-abc626cffa50
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: b775d912-86ee-4f5e-a362-f6f6bd4f64e2
+			defaultHierarchy: LocalDateTable_8f133d7c-133f-4f3d-8cf5-bebff4306552.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: 36f473f3-6e23-41e4-a4fb-7d015c2413f0
+		summarizeBy: sum
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: int64
+		formatString: 0
+		lineageTag: f3aa3efb-660d-4d64-a80f-d2827cca0bff
+		summarizeBy: sum
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Día
+		dataType: int64
+		formatString: 0
+		lineageTag: 97ac3608-ec7e-4410-9820-81c7067f39ad
+		summarizeBy: sum
+		sourceColumn: Día
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: b8dc564a-6a20-4b68-9114-10813df29e27
+		summarizeBy: sum
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre del Mes'
+		dataType: string
+		lineageTag: 40ebb7ea-06ac-4213-b9b2-4aa653fc3453
+		summarizeBy: none
+		sourceColumn: Nombre del Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre del Día'
+		dataType: string
+		lineageTag: 02016181-1674-4d2a-b247-ffcdaba1dfb6
+		summarizeBy: none
+		sourceColumn: Nombre del Día
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes-Año
+		dataType: string
+		lineageTag: 59923009-cb11-4ca5-a039-f9277c2e7a7c
+		summarizeBy: none
+		sourceColumn: Mes-Año
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CALENDARIO = m
+		mode: import
+		source = ```
+				let
+				    // Definir el rango de fechas basadas en la tabla de hechos
+				    FechaInicio = #date(2019, 1, 1),
+				    FechaFin = #date(2022, 12, 31),
+				    
+				    // Crear una lista de fechas desde FechaInicio hasta FechaFin
+				    Dias = List.Dates(FechaInicio, Duration.Days(Duration.From(FechaFin - FechaInicio)) + 1, #duration(1, 0, 0, 0)),
+				    
+				    // Convertir la lista en una tabla
+				    TablaFechas = Table.FromList(Dias, Splitter.SplitByNothing(), {"Fecha"}),
+				    
+				    // Agregar columnas de año, mes, día, trimestre, etc.
+				    InsertarAño = Table.AddColumn(TablaFechas, "Año", each Date.Year([Fecha]), Int64.Type),
+				    InsertarMes = Table.AddColumn(InsertarAño, "Mes", each Date.Month([Fecha]), Int64.Type),
+				    InsertarDia = Table.AddColumn(InsertarMes, "Día", each Date.Day([Fecha]), Int64.Type),
+				    InsertarTrimestre = Table.AddColumn(InsertarDia, "Trimestre", each Date.QuarterOfYear([Fecha]), Int64.Type),
+				    InsertarNombreMes = Table.AddColumn(InsertarTrimestre, "Nombre del Mes", each Date.ToText([Fecha], "MMMM"), type text),
+				    InsertarNombreDia = Table.AddColumn(InsertarNombreMes, "Nombre del Día", each Date.ToText([Fecha], "dddd"), type text),
+				    InsertarMesAño = Table.AddColumn(InsertarNombreDia, "Mes-Año", each Date.ToText([Fecha], "MM-yyyy"), type text),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(InsertarMesAño,{{"Fecha", type date}})
+				in
+				    #"Tipo cambiado"
+				```
+
+	annotation PBI_ResultType = Table
+

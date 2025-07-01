@@ -1,0 +1,119 @@
+table 'HECHO EGRESOS-INGRESOS'
+	lineageTag: 99c07874-64d6-4030-bd0c-979e2ebc614c
+
+	column ID
+		dataType: string
+		lineageTag: d114f579-e7ef-45ef-92cc-3a5b8df14201
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_ENTIDAD
+		dataType: string
+		lineageTag: 197902e3-7914-4b46-93f2-d129eeabaa13
+		summarizeBy: none
+		sourceColumn: ID_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_MUNICIPIO
+		dataType: string
+		lineageTag: 36878e33-cae0-4ac8-8fe7-22d03db0e3f0
+		summarizeBy: none
+		sourceColumn: ID_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column COBERTURA
+		dataType: string
+		lineageTag: 094b0346-5879-46fd-83d3-5f60bc68d84f
+		summarizeBy: none
+		sourceColumn: COBERTURA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEMA
+		dataType: string
+		lineageTag: 7bf75234-bf9a-448f-bdaf-382fadbc5430
+		summarizeBy: none
+		sourceColumn: TEMA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORIA
+		dataType: string
+		lineageTag: 2750a5a7-25af-41d3-9982-313c572c3607
+		summarizeBy: none
+		sourceColumn: CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPCION_CATEGORIA
+		dataType: string
+		lineageTag: ad33e6f9-1883-460e-81a4-edf71a63886d
+		summarizeBy: none
+		sourceColumn: DESCRIPCION_CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALOR
+		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 7aceb813-0eed-41da-a986-78f1531b3740
+		summarizeBy: sum
+		sourceColumn: VALOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTATUS
+		dataType: string
+		lineageTag: 658aaadc-406d-414b-b125-7740ff921313
+		summarizeBy: none
+		sourceColumn: ESTATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: 4024bda0-9159-458f-b68a-80cfa19c9b51
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'TEMA Jerarquía'
+		lineageTag: b4d276e4-300d-471f-8df5-69515a7d7bb0
+
+		level TEMA
+			lineageTag: d72310ee-7872-4edb-a23f-8da1a33ef4d9
+			column: TEMA
+
+		level CATEGORIA
+			lineageTag: 31a113e0-ee47-4b76-ac79-86e331e0c06c
+			column: CATEGORIA
+
+		level DESCRIPCION_CATEGORIA
+			lineageTag: d38e861a-9ace-4dd1-8a20-64ad444f4f1f
+			column: DESCRIPCION_CATEGORIA
+
+	partition 'HECHO EGRESOS-INGRESOS' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.Combine({Anexar2, Anexar1}),
+				    #"Columnas quitadas" = Table.RemoveColumns(Origen,{"Source.Name", "PROD_EST"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas", each true),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Filas filtradas",{{"AÑO", type text}}),
+				    #"Últimos caracteres insertados" = Table.AddColumn(#"Tipo cambiado", "Últimos caracteres", each Text.End([AÑO], 4), type text),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Últimos caracteres insertados",{{"Últimos caracteres", "AÑOS"}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"AÑOS", Int64.Type}}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado1",{"AÑO"}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas quitadas1",{"ID", "ID_ENTIDAD", "ID_MUNICIPIO", "AÑOS", "COBERTURA", "TEMA", "CATEGORIA", "DESCRIPCION_CATEGORIA", "VALOR", "ESTATUS"}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas",{{"AÑOS", "Año"}})
+				in
+				    #"Columnas con nombre cambiado1"
+
+	annotation PBI_ResultType = Table
+

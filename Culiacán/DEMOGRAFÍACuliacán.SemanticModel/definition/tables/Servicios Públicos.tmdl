@@ -1,0 +1,168 @@
+table 'Servicios Públicos'
+	lineageTag: 9f2d095e-d098-438b-aaee-905b7a27b363
+
+	measure 'Energía Electrica_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1003000017,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: e637499a-5c47-4173-8276-a24140eb671b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Agua Red Pública_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1003000018,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 535001d9-b6e6-418a-ab9d-b014226adb5f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Drenaje_2020 = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1003000019,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 0f4bf302-ee5d-4054-a31c-b299b82d3500
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Agua Entubada_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 3114005001,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 41ff3f52-ab2f-433a-bc53-ee1c148fd530
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Electricidad_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 3114006001,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 8ff90edf-fda1-499c-85e8-cacf6a3e0ce0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Drenaje_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6200031290,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 5f9547b8-fb3f-4240-a9d7-97e506d9d833
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Excusado_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6200031291,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: e4b7442c-4393-451f-8dc1-18c4ba718430
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Viviendas, de cada cien que cuentan con electricidad, agua y drenaje' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6200240395,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 2f9adc3c-37f4-4c1b-b97a-a8bb72750b11
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Agua Entubada Dentro_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6207068394,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 67d75249-b917-4c92-a2f0-eaf8eec5e3b6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Viv. Energía Eléctrica' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1003000017
+			)
+			
+			```
+		lineageTag: ad9f4a91-c299-4575-aca7-8cfc0f94c075
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Viv. Agua Red Pública' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1003000018
+			)
+			
+			```
+		lineageTag: c9a6cb09-76fb-4d4e-b233-d19e68fbdc5b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Viv. Drenaje' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1003000019
+			)
+			
+			```
+		lineageTag: 90d9fab6-fabb-438b-b84d-999a26fa1401
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Servicios Públicos' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "POBREZA MUNICIPALSanNicolasdelosgarza"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "19646d47-2449-bdd6-4b76-97dc3d1d83f6"
+  }
+}

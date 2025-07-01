@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "FINANZAS23zacatecas"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9464558f-78aa-af74-483f-66ff0f456980"
+  }
+}

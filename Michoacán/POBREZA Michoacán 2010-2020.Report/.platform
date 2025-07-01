@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "POBREZA Michoacán 2010-2020"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3ec83ec6-a277-a7f2-4779-25f3b8a44d83"
+  }
+}

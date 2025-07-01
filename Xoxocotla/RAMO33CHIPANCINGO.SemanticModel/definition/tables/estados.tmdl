@@ -1,0 +1,34 @@
+table estados
+	lineageTag: e2ddca92-a7b4-4a6c-a28a-9dc2b5101c4b
+
+	column ID_ENTIDAD
+		dataType: string
+		lineageTag: ff1ebba1-a830-42b3-8b74-7cd679156c0f
+		summarizeBy: none
+		sourceColumn: ID_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_ENTIDAD
+		dataType: string
+		lineageTag: 8ab1e7e1-186e-4145-9d13-68ffd468c2de
+		summarizeBy: none
+		sourceColumn: NOM_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition estados = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("C:\Users\hello\OneDrive - JHRJDATA\Informes automatizados\Bases\FINANZAS\FINANZAS 2023\Estatal\catalogos"),
+				    #"C:\Users\hello\OneDrive - JHRJDATA\Informes automatizados\Bases\FINANZAS\FINANZAS 2023\Estatal\catalogos\_tc_entidad csv" = Source{[#"Folder Path"="C:\Users\hello\OneDrive - JHRJDATA\Informes automatizados\Bases\FINANZAS\FINANZAS 2023\Estatal\catalogos\",Name="tc_entidad.csv"]}[Content],
+				    #"Imported CSV" = Csv.Document(#"C:\Users\hello\OneDrive - JHRJDATA\Informes automatizados\Bases\FINANZAS\FINANZAS 2023\Estatal\catalogos\_tc_entidad csv",[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Imported CSV", [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

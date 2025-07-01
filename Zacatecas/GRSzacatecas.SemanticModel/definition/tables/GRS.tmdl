@@ -1,0 +1,89 @@
+table GRS
+	lineageTag: 961f9b26-0d1d-4eb3-88ed-51c98347e2d3
+
+	column ID
+		dataType: string
+		lineageTag: b2319394-a55e-4d5e-8fbb-b3c2676c6702
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_ESTADO
+		dataType: string
+		lineageTag: 360bbbf9-ae6c-4ba7-afd8-4452f00d4a3d
+		summarizeBy: none
+		sourceColumn: CVE_ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTADO
+		dataType: string
+		lineageTag: ce07a073-9e9b-42c0-a727-1d1e0e95f746
+		summarizeBy: none
+		sourceColumn: ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_MUNICIPIO
+		dataType: string
+		lineageTag: a6947cea-8847-44ae-82d7-94b26b82bb3e
+		summarizeBy: none
+		sourceColumn: CVE_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUNICIPIO
+		dataType: string
+		lineageTag: 7c7d5f3c-65a6-459b-9874-6bbb972f2064
+		summarizeBy: none
+		sourceColumn: MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column AÑO
+		dataType: int64
+		formatString: 0
+		lineageTag: 004deaba-552e-4d63-a705-587784e2bb95
+		summarizeBy: none
+		sourceColumn: AÑO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indicador
+		dataType: string
+		lineageTag: 6fc7c85d-0629-40a3-afb0-384683f6cc1d
+		summarizeBy: none
+		sourceColumn: Indicador
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valor
+		dataType: double
+		formatString: 0.00
+		lineageTag: 96d496a1-1a7d-4f03-a828-1e51767e7421
+		summarizeBy: none
+		sourceColumn: Valor
+
+		annotation SummarizationSetBy = User
+
+	partition GRS = m
+		mode: import
+		source =
+				let
+				    Origen = Table.Combine({GRSMUNICPIOS, GRSESTADOS}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(Origen,{"ID", "CVE_ESTADO", "ESTADO", "CVE_MUNICIPIO", "MUNICIPIO", "AÑO", "POBLACIÓN TOTAL", "% Población de 15 años o más analfabeta", "% Población de 6 a 14 años que no asiste a la escuela", "% Población de 15 años y más con educación básica incompleta", "% Población sin derechohabiencia a servicios de salud", "% Viviendas con piso de tierra", "% Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de drenaje", "% Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de lavadora", "% Viviendas que no disponen de refrigerador", "INDICE DE REZAGO SOCIAL", "GRADO DE REZAGO SOCIAL", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}),
+				    #"Columna de anulación de dinamización" = Table.UnpivotOtherColumns(#"Columnas reordenadas", {"ID", "CVE_ESTADO", "ESTADO", "CVE_MUNICIPIO", "MUNICIPIO", "AÑO"}, "Atributo", "Valor"),
+				    #"Filas filtradas" = Table.SelectRows(#"Columna de anulación de dinamización", each ([Atributo] <> "GRADO DE REZAGO SOCIAL")),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Filas filtradas",{{"Valor", type number}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Atributo", "Indicador"}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Columnas con nombre cambiado","POBLACIÓN TOTAL","Población total",Replacer.ReplaceText,{"Indicador"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","INDICE DE REZAGO SOCIAL","Indice de rezago social",Replacer.ReplaceText,{"Indicador"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL","Lugar que ocupa en el contexto nacional",Replacer.ReplaceText,{"Indicador"})
+				in
+				    #"Valor reemplazado2"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

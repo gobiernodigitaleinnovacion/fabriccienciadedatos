@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "POBREZAzacatecas"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c3befff3-bd0c-887b-4ea3-05c8d3b6c83c"
+  }
+}

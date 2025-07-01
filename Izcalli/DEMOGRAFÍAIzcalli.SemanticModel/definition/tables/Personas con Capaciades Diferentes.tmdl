@@ -1,0 +1,147 @@
+table 'Personas con Capaciades Diferentes'
+	lineageTag: 9c299b53-57dd-4d34-a5de-a4f2f342ea4b
+
+	measure PorcentajeDiscapacidad_2020 = ```
+			
+			CALCULATE(
+			    AVERAGE(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6207129638,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 20f88000-7d98-4ec5-b963-e8645199deb9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Limitación Escuchar' = ```
+			
+			IF(
+			    ISBLANK(CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205260)),
+			    "Sin Información",
+			    CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205260)
+			)
+			
+			```
+		lineageTag: 7e5ce987-7512-4860-9c87-c5651d1a163e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Limitación Hablar Comunicarse' = ```
+			
+			IF(
+			    ISBLANK(CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205261)),
+			    "Sin Información",
+			    CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205261)
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 8612db4c-fe1d-4ea1-878f-f2f005cc7dbe
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Limitación Caminar Moverse' = ```
+			
+			IF(
+			    ISBLANK(CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205263)),
+			    "Sin Información",
+			    CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205263)
+			)
+			
+			```
+		lineageTag: 6ad65ee9-1f68-4221-a463-a8872a2b0119
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Limitación Cuidado Personal' = ```
+			
+			IF(
+			    ISBLANK(CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205269)),
+			    "Sin Información",
+			    CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205269)
+			)
+			
+			```
+		formatString: 0
+		lineageTag: c95e5859-8aca-4c5f-b4aa-e2657fee1d77
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Limitación Atención Aprender' = ```
+			
+			IF(
+			    ISBLANK(CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205270)),
+			    "Sin Información",
+			    CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205270)
+			)
+			
+			```
+		lineageTag: 8f7a60e9-7492-48a2-90a6-1fd9ae1968f2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Limitación Ver' = ```
+			
+			IF(
+			    ISBLANK(CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205280)),
+			    "Sin Información",
+			    CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205280)
+			)
+			
+			```
+		lineageTag: 6fbe237f-d74f-4bfc-957e-e20af4f79fc4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Limitación Mental' = ```
+			
+			IF(
+			    ISBLANK(CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205286)),
+			    "Sin Información",
+			    CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205286)
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 399eaf5a-21b0-4d4b-9401-424f826622c3
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Limitación Actividad' = ```
+			
+			IF(
+			    ISBLANK(CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205290)),
+			    "Sin Información",
+			    CALCULATE(SUM(CensoHechos[Valor]), CensoHechos[id_indicador] = 6200205290)
+			)
+			
+			```
+		lineageTag: 7bd424b7-f04e-4cdf-8d80-1778126cef33
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PorcentajeDiscapacidadEdadAvanzada = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6200240458
+			)
+			
+			```
+		lineageTag: a48fa65b-0c13-46d8-8a62-eab8167d08d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Personas con Capaciades Diferentes' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

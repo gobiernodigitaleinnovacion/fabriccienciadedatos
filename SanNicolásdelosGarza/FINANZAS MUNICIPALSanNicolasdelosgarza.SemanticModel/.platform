@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "FINANZAS MUNICIPALSanNicolasdelosgarza"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d4065c18-eee5-821e-4ccb-8af7293767b5"
+  }
+}

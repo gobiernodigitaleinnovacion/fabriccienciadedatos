@@ -1,0 +1,59 @@
+table Títulos
+	lineageTag: a504dee9-86bf-4bf4-8b9d-916c53549c36
+
+	measure 'Titulo Poblacion' = ```
+			
+			"Población en el Estado de " & SELECTEDVALUE(Pobreza[ENTIDAD])
+			
+			```
+		lineageTag: aa8bccb1-0699-4d7e-a735-c534f840ac47
+
+	measure 'Titulo Poblacion No Pobre y Vulnerable' = ```
+			
+			"Población no pobre y no vulnerable, vulnerable por ingresos, vulnerable por carencias y pobre en el Estado de " & SELECTEDVALUE(Pobreza[ENTIDAD])
+			
+			
+			```
+		lineageTag: 5c918844-8e96-4d42-8768-df9ebc8535e2
+
+	measure 'Titulo Pobreza Moderada y Extrema' = ```
+			
+			"Población en Pobreza Moderada y Extrema en el Estado de " & SELECTEDVALUE(Pobreza[ENTIDAD])
+			
+			```
+		lineageTag: 147f5f90-415b-4bf7-ba50-5a5f89b465cc
+
+	measure 'Titulo Ingreso Inferior Linea' = ```
+			
+			"Líneas de Pobreza por Ingresos y Pobreza Extrema por Ingresos en el Estado de " & SELECTEDVALUE(Pobreza[ENTIDAD])
+			
+			```
+		lineageTag: 5c9d4140-3527-44d7-bd35-7a800bbc68a0
+
+	measure 'Titulo Poblacion Carencias' = ```
+			
+			"Población con Carencias en el Estado de " & SELECTEDVALUE(Pobreza[ENTIDAD])
+			
+			
+			```
+		lineageTag: 3e19e0fd-6ea9-466d-a388-424b53766ab9
+
+	measure 'Titulo Carencias Promedio' = ```
+			
+			"Población con Carencias Promedio en el Estado de " & SELECTEDVALUE(Pobreza[ENTIDAD])
+			
+			```
+		lineageTag: a7f09602-3aa3-42cc-803f-dd581d4d4dcf
+
+	partition Títulos = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

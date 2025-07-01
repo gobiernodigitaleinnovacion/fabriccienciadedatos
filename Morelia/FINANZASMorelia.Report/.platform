@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "FINANZASMorelia"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2b76e880-ceec-8ba7-4e78-4487a4152de4"
+  }
+}

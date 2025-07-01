@@ -1,0 +1,27 @@
+table Calendario
+	lineageTag: 8e01767a-eda1-48b1-a1b8-80e5c9f52dcd
+
+	column Año
+		dataType: string
+		lineageTag: 3c2595d9-5825-45fa-b839-91506af3dd7a
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendario = m
+		mode: import
+		source =
+				let
+				    StartYear = 2016,
+				    EndYear = 2022,
+				    ListYears = {2016, 2018, 2020, 2022},
+				    Source = Table.FromList(ListYears, Splitter.SplitByNothing(), {"Año"}),
+				    ChangeType = Table.TransformColumnTypes(Source,{{"Año", type text}})
+				in
+				    ChangeType
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

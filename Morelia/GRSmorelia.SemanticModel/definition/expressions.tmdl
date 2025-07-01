@@ -1,0 +1,337 @@
+expression 2005 =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Estados\IRS_entidades_mpios_2005.xlsx"), null, true),
+		    Estados_Sheet = Origen{[Item="Estados",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Estados_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según entidad federativa, 2005", type any}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type text}, {"Column17", type any}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", type text}, {"Column2", type text}, {"Column3", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column15", type number}, {"Column16", type text}, {"Column17", Int64.Type}}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"Column1", "CVE_ESTADO"}, {"Column2", "ESTADO"}, {"Column3", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column15", "INDICE DE REZAGO SOCIAL"}, {"Column16", "GRADO DE REZAGO SOCIAL"}, {"Column17", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Conservar filas superiores" = Table.FirstN(#"Columnas con nombre cambiado",33),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Conservar filas superiores",null,0,Replacer.ReplaceValue,{"INDICE DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado",null,"no aplica",Replacer.ReplaceValue,{"GRADO DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1",null,0,Replacer.ReplaceValue,{"LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Valor reemplazado2", "Personalizado", each 2005),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Personalizado", Int64.Type}}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Tipo cambiado2",{{"Personalizado", "AÑO"}})
+		in
+		    #"Columnas con nombre cambiado1"
+	lineageTag: 447cae03-3949-4f16-bbe3-662b8e60a611
+	queryGroup: 'ESTATAL GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 2010 =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Estados\IRS_entidades_mpios_2010.xlsx"), null, true),
+		    Estados_Sheet = Origen{[Item="Estados",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Estados_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según entidad federativa, 2010", type any}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type text}, {"Column17", type any}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", type text}, {"Column2", type text}, {"Column3", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column15", type number}, {"Column16", type text}, {"Column17", Int64.Type}}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"Column1", "CVE_ESTADO"}, {"Column2", "ESTADO"}, {"Column3", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column15", "INDICE DE REZAGO SOCIAL"}, {"Column16", "GRADO DE REZAGO SOCIAL"}, {"Column17", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Conservar filas superiores" = Table.FirstN(#"Columnas con nombre cambiado",33),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Conservar filas superiores",null,0,Replacer.ReplaceValue,{"INDICE DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado",null,"no aplica",Replacer.ReplaceValue,{"GRADO DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1",null,0,Replacer.ReplaceValue,{"LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Valor reemplazado2", "Personalizado", each 2010),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Personalizado", Int64.Type}}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Tipo cambiado2",{{"Personalizado", "AÑO"}})
+		in
+		    #"Columnas con nombre cambiado1"
+	lineageTag: 7687cd46-0e4f-4eec-a468-331c75dce72e
+	queryGroup: 'ESTATAL GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 2015 =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Estados\IRS_entidades_mpios_2015.xlsx"), null, true),
+		    Estados_Sheet = Origen{[Item="Estados",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Estados_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"   ", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según entidad federativa, 2015", type any}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type text}, {"Column17", type any}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", type text}, {"Column2", type text}, {"Column3", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column15", type number}, {"Column16", type text}, {"Column17", Int64.Type}}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"Column1", "CVE_ESTADO"}, {"Column2", "ESTADO"}, {"Column3", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column15", "INDICE DE REZAGO SOCIAL"}, {"Column16", "GRADO DE REZAGO SOCIAL"}, {"Column17", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Conservar filas superiores" = Table.FirstN(#"Columnas con nombre cambiado",33),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Conservar filas superiores",null,0,Replacer.ReplaceValue,{"INDICE DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado",null,"no aplica",Replacer.ReplaceValue,{"GRADO DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1",null,0,Replacer.ReplaceValue,{"LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Valor reemplazado2", "Personalizado", each 2015),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Personalizado", Int64.Type}}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Tipo cambiado2",{{"Personalizado", "AÑO"}})
+		in
+		    #"Columnas con nombre cambiado1"
+	lineageTag: cd671114-e82e-4108-8154-2f3b2c3b4783
+	queryGroup: 'ESTATAL GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 2020 =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Estados\IRS_entidades_mpios_2020.xlsx"), null, true),
+		    Estados_Sheet = Origen{[Item="Estados",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Estados_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"    ", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según entidad federativa, 2020", type any}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type text}, {"Column17", type any}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", type text}, {"Column2", type text}, {"Column3", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column15", type number}, {"Column16", type text}, {"Column17", Int64.Type}}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"Column1", "CVE_ESTADO"}, {"Column2", "ESTADO"}, {"Column3", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column15", "INDICE DE REZAGO SOCIAL"}, {"Column16", "GRADO DE REZAGO SOCIAL"}, {"Column17", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Conservar filas superiores" = Table.FirstN(#"Columnas con nombre cambiado",33),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Conservar filas superiores",null,0,Replacer.ReplaceValue,{"INDICE DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado",null,"no aplica",Replacer.ReplaceValue,{"GRADO DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1",null,0,Replacer.ReplaceValue,{"LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Valor reemplazado2", "Personalizado", each 2020),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Personalizado", Int64.Type}}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Tipo cambiado2",{{"Personalizado", "AÑO"}}),
+		    #"Valor reemplazado3" = Table.ReplaceValue(#"Columnas con nombre cambiado1","","no aplica",Replacer.ReplaceValue,{"GRADO DE REZAGO SOCIAL"})
+		in
+		    #"Valor reemplazado3"
+	lineageTag: a573bf69-ef4a-4b77-a28a-09fed5c5be11
+	queryGroup: 'ESTATAL GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 2000 =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Estados\IRS_entidades_mpios_2000.xlsx"), null, true),
+		    Estados_Sheet = Origen{[Item="Estados",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Estados_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"  ", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según entidad federativa, 2000", type any}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type text}, {"Column17", type any}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", type text}, {"Column2", type text}, {"Column3", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column15", type number}, {"Column16", type text}, {"Column17", Int64.Type}}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"Column1", "CVE_ESTADO"}, {"Column2", "ESTADO"}, {"Column3", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column15", "INDICE DE REZAGO SOCIAL"}, {"Column16", "GRADO DE REZAGO SOCIAL"}, {"Column17", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Conservar filas superiores" = Table.FirstN(#"Columnas con nombre cambiado",33),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Conservar filas superiores",null,0,Replacer.ReplaceValue,{"INDICE DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado",null,"no aplica",Replacer.ReplaceValue,{"GRADO DE REZAGO SOCIAL"}),
+		    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1",null,0,Replacer.ReplaceValue,{"LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Valor reemplazado2", "Personalizado", each 2000),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Personalizado", Int64.Type}}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Tipo cambiado2",{{"Personalizado", "AÑO"}})
+		in
+		    #"Columnas con nombre cambiado1"
+	lineageTag: ec49f11f-053c-430b-9806-208b3f15c6c0
+	queryGroup: 'ESTATAL GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 'Municipios 2000' =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Municipios\IRS_entidades_mpios_2000.xlsx"), null, true),
+		    Municipios_Sheet = Origen{[Item="Municipios",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Municipios_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según municipio, 2000", type text}, {"Column4", type text}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type text}, {"Column19", type any}}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Column1", "CVE_ENTIDAD"}, {"Column2", "ENTIDAD"}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según municipio, 2000", "CVE_MUNICIPIO"}, {"Column4", "MUNICIPIO"}, {"Column5", "POBLACIÓN TOTAL"}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Columnas con nombre cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", Int64.Type}, {"Column2", type text}, {"Column3", Int64.Type}, {"Column4", type text}, {"Column5", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column17", type number}, {"Column18", type text}, {"Column19", Int64.Type}}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Tipo cambiado1",{{"Column1", "CVE_ESTADO"}}),
+		    #"Filas superiores quitadas1" = Table.Skip(#"Columnas con nombre cambiado1",1),
+		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Filas superiores quitadas1",{{"Column2", "ESTADO"}, {"Column3", "CVE_MUNICPIO"}, {"Column4", "MUNICIPIO"}, {"Column5", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column17", "INDICE DE REZAGO SOCIAL"}, {"Column18", "GRADO DE REZAGO SOCIAL"}, {"Column19", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado2", "Personalizado", each 2000),
+		    #"Filas filtradas" = Table.SelectRows(#"Personalizada agregada", each true),
+		    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Filas filtradas",5),
+		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Filas inferiores quitadas",{{"Personalizado", "AÑO"}}),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas con nombre cambiado3",{{"AÑO", Int64.Type}}),
+		    #"Columnas con nombre cambiado4" = Table.RenameColumns(#"Tipo cambiado2",{{"CVE_MUNICPIO", "CVE_MUNICIPIO"}}),
+		    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Columnas con nombre cambiado4",{{"CVE_ESTADO", type text}, {"CVE_MUNICIPIO", type text}})
+		in
+		    #"Tipo cambiado3"
+	lineageTag: 3b481114-69de-4188-8fd4-d778448e93c2
+	queryGroup: 'MUNICIPIOS GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 'Municipios 2005' =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Municipios\IRS_entidades_mpios_2005.xlsx"), null, true),
+		    Municipios_Sheet = Origen{[Item="Municipios",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Municipios_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según municipio, 2005", type text}, {"Column4", type text}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type text}, {"Column19", type any}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", Int64.Type}, {"Column2", type text}, {"Column3", Int64.Type}, {"Column4", type text}, {"Column5", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column17", type number}, {"Column18", type text}, {"Column19", Int64.Type}}),
+		    #"Filas superiores quitadas1" = Table.Skip(#"Tipo cambiado1",1),
+		    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Filas superiores quitadas1",4),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas inferiores quitadas",{{"Column1", "CVE_ESTADO"}, {"Column2", "ESTADO"}, {"Column3", "CVE_MUNICIPIO"}, {"Column4", "MUNICIPIO"}, {"Column5", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column17", "INDICE DE REZAGO SOCIAL"}, {"Column18", "GRADO DE REZAGO SOCIAL"}, {"Column19", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado", "AÑO", each 2005),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"AÑO", Int64.Type}}),
+		    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado2", each true),
+		    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Filas filtradas",{{"CVE_ESTADO", type text}, {"CVE_MUNICIPIO", type text}})
+		in
+		    #"Tipo cambiado3"
+	lineageTag: ac1be39d-edd8-490c-ba9c-68aca4afa897
+	queryGroup: 'MUNICIPIOS GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 'Municipios 2010' =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Municipios\IRS_entidades_mpios_2010.xlsx"), null, true),
+		    Municipios_Sheet = Origen{[Item="Municipios",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Municipios_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según municipio, 2010", type text}, {"Column4", type text}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type text}, {"Column19", type any}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", Int64.Type}, {"Column2", type text}, {"Column3", Int64.Type}, {"Column4", type text}, {"Column5", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column17", type number}, {"Column18", type text}, {"Column19", Int64.Type}}),
+		    #"Filas superiores quitadas1" = Table.Skip(#"Tipo cambiado1",1),
+		    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Filas superiores quitadas1",4),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas inferiores quitadas",{{"Column1", "CVE_ESTADO"}, {"Column2", "ESTADO"}, {"Column3", "CVE_MUNICIPIO"}, {"Column4", "MUNICIPIO"}, {"Column5", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column17", "INDICE DE REZAGO SOCIAL"}, {"Column18", "GRADO DE REZAGO SOCIAL"}, {"Column19", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado", "AÑO", each 2010),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"AÑO", Int64.Type}}),
+		    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado2", each true),
+		    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Filas filtradas",{{"CVE_ESTADO", type text}, {"CVE_MUNICIPIO", type text}})
+		in
+		    #"Tipo cambiado3"
+	lineageTag: d2c2eb91-f4c6-4311-9925-0a5abdb9cf1d
+	queryGroup: 'MUNICIPIOS GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 'Municipios 2015' =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Municipios\IRS_entidades_mpios_2015.xlsx"), null, true),
+		    Municipios_Sheet = Origen{[Item="Municipios",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Municipios_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"   ", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según municipio, 2015", type text}, {"Column4", type text}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type text}, {"Column19", type any}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", Int64.Type}, {"Column2", type text}, {"Column3", Int64.Type}, {"Column4", type text}, {"Column5", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column17", type number}, {"Column18", type text}, {"Column19", Int64.Type}}),
+		    #"Filas superiores quitadas1" = Table.Skip(#"Tipo cambiado1",1),
+		    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Filas superiores quitadas1",4),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas inferiores quitadas",{{"Column1", "CVE_ESTADO"}, {"Column2", "ESTADO"}, {"Column3", "CVE_MUNICIPIO"}, {"Column4", "MUNICIPIO"}, {"Column5", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column17", "INDICE DE REZAGO SOCIAL"}, {"Column18", "GRADO DE REZAGO SOCIAL"}, {"Column19", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado", "AÑO", each 2015),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada",{{"AÑO", Int64.Type}}),
+		    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado2", each true),
+		    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Filas filtradas",{{"CVE_ESTADO", type text}, {"CVE_MUNICIPIO", type text}})
+		in
+		    #"Tipo cambiado3"
+	lineageTag: f4aec793-1cba-4aa2-8927-bd03d2255a02
+	queryGroup: 'MUNICIPIOS GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression GRSMUNICPIOS =
+		let
+		    Origen = Table.Combine({#"Municipios 2020", #"Municipios 2000", #"Municipios 2005", #"Municipios 2010", #"Municipios 2015"}),
+		    #"Filas filtradas" = Table.SelectRows(Origen, each true),
+		    #"Personalizada agregada" = Table.AddColumn(#"Filas filtradas", "Personalizado", each Text.PadStart([CVE_ESTADO], 2, "0") & Text.PadStart([CVE_MUNICIPIO], 3, "0")),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Personalizado", type text}}),
+		    #"Columnas reordenadas" = Table.ReorderColumns(#"Tipo cambiado",{"Personalizado", "CVE_ESTADO", "ESTADO", "CVE_MUNICIPIO", "MUNICIPIO", "POBLACIÓN TOTAL", "% Población de 15 años o más analfabeta", "% Población de 6 a 14 años que no asiste a la escuela", "% Población de 15 años y más con educación básica incompleta", "% Población sin derechohabiencia a servicios de salud", "% Viviendas con piso de tierra", "% Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de drenaje", "% Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de lavadora", "% Viviendas que no disponen de refrigerador", "INDICE DE REZAGO SOCIAL", "GRADO DE REZAGO SOCIAL", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL", "AÑO"}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas reordenadas",{{"Personalizado", "ID"}}),
+		    #"Filas filtradas1" = Table.SelectRows(#"Columnas con nombre cambiado", each true),
+		    #"Últimos caracteres extraídos" = Table.TransformColumns(#"Filas filtradas1", {{"CVE_MUNICIPIO", each Text.End(_, 3), type text}}),
+		    #"Filas filtradas2" = Table.SelectRows(#"Últimos caracteres extraídos", each true),
+		    #"Columnas quitadas" = Table.RemoveColumns(#"Filas filtradas2",{"ID"}),
+		    #"Personalizada agregada1" = Table.AddColumn(#"Columnas quitadas", "Personalizado", each Text.PadStart([CVE_ESTADO], 2, "0")),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"Personalizado", type text}}),
+		    #"Personalizada agregada2" = Table.AddColumn(#"Tipo cambiado1", "Personalizado.1", each [Personalizado]&[CVE_MUNICIPIO]),
+		    #"Columnas reordenadas1" = Table.ReorderColumns(#"Personalizada agregada2",{"Personalizado", "CVE_ESTADO", "ESTADO", "CVE_MUNICIPIO", "MUNICIPIO", "POBLACIÓN TOTAL", "% Población de 15 años o más analfabeta", "% Población de 6 a 14 años que no asiste a la escuela", "% Población de 15 años y más con educación básica incompleta", "% Población sin derechohabiencia a servicios de salud", "% Viviendas con piso de tierra", "% Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de drenaje", "% Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de lavadora", "% Viviendas que no disponen de refrigerador", "INDICE DE REZAGO SOCIAL", "GRADO DE REZAGO SOCIAL", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL", "AÑO", "Personalizado.1"}),
+		    #"Filas filtradas3" = Table.SelectRows(#"Columnas reordenadas1", each true),
+		    #"Columnas quitadas1" = Table.RemoveColumns(#"Filas filtradas3",{"CVE_ESTADO"}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas quitadas1",{{"Personalizado", "CVE_ESTADO"}}),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas con nombre cambiado1",{{"Personalizado.1", type text}}),
+		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Tipo cambiado2",{{"Personalizado.1", "ID"}}),
+		    #"Columnas reordenadas2" = Table.ReorderColumns(#"Columnas con nombre cambiado2",{"ID", "CVE_ESTADO", "ESTADO", "CVE_MUNICIPIO", "MUNICIPIO", "POBLACIÓN TOTAL", "% Población de 15 años o más analfabeta", "% Población de 6 a 14 años que no asiste a la escuela", "% Población de 15 años y más con educación básica incompleta", "% Población sin derechohabiencia a servicios de salud", "% Viviendas con piso de tierra", "% Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de drenaje", "% Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de lavadora", "% Viviendas que no disponen de refrigerador", "INDICE DE REZAGO SOCIAL", "GRADO DE REZAGO SOCIAL", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL", "AÑO"}),
+		    #"Filas filtradas4" = Table.SelectRows(#"Columnas reordenadas2", each true),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas4","Distrito Federal","Ciudad de México",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","Coahuila de Zaragoza","Coahuila",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","Coahuila","Coahuila de Zaragoza",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado3" = Table.ReplaceValue(#"Valor reemplazado2","Michoacán de Ocampo","Michoacán",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado4" = Table.ReplaceValue(#"Valor reemplazado3","MIchoacán","MIchoacán de Ocampo",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado5" = Table.ReplaceValue(#"Valor reemplazado4","Michoacán","Michoacán de Ocampo",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado6" = Table.ReplaceValue(#"Valor reemplazado5","Veracruz de Ignacio de la Llave","Veracruz",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado7" = Table.ReplaceValue(#"Valor reemplazado6","Veracruz","Veracruz de Ignacio de la Llave",Replacer.ReplaceText,{"ESTADO"})
+		in
+		    #"Valor reemplazado7"
+	lineageTag: b315d58d-d933-41d9-9d4e-f62a758e02df
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression GRSESTADOS =
+		let
+		    Origen = Table.Combine({#"2000", #"2005", #"2015", #"2010", #"2020"}),
+		    #"Filas filtradas" = Table.SelectRows(Origen, each true),
+		    #"Personalizada agregada" = Table.AddColumn(#"Filas filtradas", "Personalizado", each 000),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Personalizado", type text}}),
+		    #"Columnas reordenadas" = Table.ReorderColumns(#"Tipo cambiado",{"CVE_ESTADO", "ESTADO", "Personalizado", "POBLACIÓN TOTAL", "% Población de 15 años o más analfabeta", "% Población de 6 a 14 años que no asiste a la escuela", "% Población de 15 años y más con educación básica incompleta", "% Población sin derechohabiencia a servicios de salud", "% Viviendas con piso de tierra", "% Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de drenaje", "% Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de lavadora", "% Viviendas que no disponen de refrigerador", "INDICE DE REZAGO SOCIAL", "GRADO DE REZAGO SOCIAL", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL", "AÑO"}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas reordenadas",{{"Personalizado", "CVE-MUNICIPIO"}}),
+		    #"Personalizada agregada1" = Table.AddColumn(#"Columnas con nombre cambiado", "MUNICIPIO", each "ESTATAL"),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"MUNICIPIO", type text}}),
+		    #"Columnas reordenadas1" = Table.ReorderColumns(#"Tipo cambiado1",{"CVE_ESTADO", "ESTADO", "CVE-MUNICIPIO", "MUNICIPIO", "POBLACIÓN TOTAL", "% Población de 15 años o más analfabeta", "% Población de 6 a 14 años que no asiste a la escuela", "% Población de 15 años y más con educación básica incompleta", "% Población sin derechohabiencia a servicios de salud", "% Viviendas con piso de tierra", "% Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de drenaje", "% Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de lavadora", "% Viviendas que no disponen de refrigerador", "INDICE DE REZAGO SOCIAL", "GRADO DE REZAGO SOCIAL", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL", "AÑO"}),
+		    #"Personalizada agregada2" = Table.AddColumn(#"Columnas reordenadas1", "Personalizado", each "000"),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada2",{{"Personalizado", type text}}),
+		    #"Columnas reordenadas2" = Table.ReorderColumns(#"Tipo cambiado2",{"CVE_ESTADO", "ESTADO", "Personalizado", "CVE-MUNICIPIO", "MUNICIPIO", "POBLACIÓN TOTAL", "% Población de 15 años o más analfabeta", "% Población de 6 a 14 años que no asiste a la escuela", "% Población de 15 años y más con educación básica incompleta", "% Población sin derechohabiencia a servicios de salud", "% Viviendas con piso de tierra", "% Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de drenaje", "% Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de lavadora", "% Viviendas que no disponen de refrigerador", "INDICE DE REZAGO SOCIAL", "GRADO DE REZAGO SOCIAL", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL", "AÑO"}),
+		    #"Columnas quitadas" = Table.RemoveColumns(#"Columnas reordenadas2",{"CVE-MUNICIPIO"}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas quitadas",{{"Personalizado", "CVE_MUNICIPIO"}}),
+		    #"Filas filtradas1" = Table.SelectRows(#"Columnas con nombre cambiado1", each true),
+		    #"Personalizada agregada3" = Table.AddColumn(#"Filas filtradas1", "Personalizado", each [CVE_ESTADO]&[CVE_MUNICIPIO]),
+		    #"Columnas reordenadas3" = Table.ReorderColumns(#"Personalizada agregada3",{"Personalizado", "CVE_ESTADO", "ESTADO", "CVE_MUNICIPIO", "MUNICIPIO", "POBLACIÓN TOTAL", "% Población de 15 años o más analfabeta", "% Población de 6 a 14 años que no asiste a la escuela", "% Población de 15 años y más con educación básica incompleta", "% Población sin derechohabiencia a servicios de salud", "% Viviendas con piso de tierra", "% Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de drenaje", "% Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de lavadora", "% Viviendas que no disponen de refrigerador", "INDICE DE REZAGO SOCIAL", "GRADO DE REZAGO SOCIAL", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL", "AÑO"}),
+		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas reordenadas3",{{"Personalizado", "ID"}}),
+		    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Columnas con nombre cambiado2",{{"ID", type text}}),
+		    #"Filas filtradas2" = Table.SelectRows(#"Tipo cambiado3", each true),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas2","Distrito Federal","Ciudad de México",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","Coahuila","Coahuila de Zaragoza",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","Coahuila de Zaragoza de Zaragoza","Coahuila de Zaragoza",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado3" = Table.ReplaceValue(#"Valor reemplazado2","Michoacán de Ocampo","Michoacán",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado4" = Table.ReplaceValue(#"Valor reemplazado3","Michoacán","Michoacán de Ocampo",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado5" = Table.ReplaceValue(#"Valor reemplazado4","Veracruz de Ignacio de la Llave","Veracruz",Replacer.ReplaceText,{"ESTADO"}),
+		    #"Valor reemplazado6" = Table.ReplaceValue(#"Valor reemplazado5","Veracruz","Veracruz de Ignacio de la Llave",Replacer.ReplaceText,{"ESTADO"})
+		in
+		    #"Valor reemplazado6"
+	lineageTag: 263cf00a-cb8b-4fcb-81db-1505ff1f8213
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 'Municipios 2020' =
+		let
+		    Origen = Excel.Workbook(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\JHRJDATA\Bases\Coneval\IRS\Municipios\IRS_entidades_mpios_2020.xlsx"), null, true),
+		    Municipios_Sheet = Origen{[Item="Municipios",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Municipios_Sheet, [PromoteAllScalars=true]),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{" ", type text}, {"Column2", type text}, {"Población total, indicadores, índice y grado de rezago social, #(lf)según municipio, 2020", type text}, {"Column4", type text}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type text}, {"Column19", type any}}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Tipo cambiado",4),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"Column1", Int64.Type}, {"Column2", type text}, {"Column3", Int64.Type}, {"Column4", type text}, {"Column5", Int64.Type}, {"Población de 15 años o más analfabeta", type number}, {"Población de 6 a 14 años que no asiste a la escuela", type number}, {"Población de 15 años y más con educación básica incompleta", type number}, {"Población sin derechohabiencia a servicios de salud", type number}, {"Viviendas con piso de tierra", type number}, {"Viviendas que no disponen de excusado o sanitario", type number}, {"Viviendas que no disponen de agua entubada de la red pública", type number}, {"Viviendas que no disponen de drenaje", type number}, {"Viviendas que no disponen de energía eléctrica", type number}, {"Viviendas que no disponen de lavadora", type number}, {"Viviendas que no disponen de refrigerador", type number}, {"Column17", type number}, {"Column18", type text}, {"Column19", Int64.Type}}),
+		    #"Filas superiores quitadas1" = Table.Skip(#"Tipo cambiado1",1),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas superiores quitadas1",{{"Column1", "CVE_ESTADO"}, {"Column3", "CVE_MUNICIPIO"}, {"Column2", "ESTADO"}, {"Column4", "MUNICIPIO"}, {"Column5", "POBLACIÓN TOTAL"}, {"Población de 15 años o más analfabeta", "% Población de 15 años o más analfabeta"}, {"Población de 6 a 14 años que no asiste a la escuela", "% Población de 6 a 14 años que no asiste a la escuela"}, {"Población de 15 años y más con educación básica incompleta", "% Población de 15 años y más con educación básica incompleta"}, {"Población sin derechohabiencia a servicios de salud", "% Población sin derechohabiencia a servicios de salud"}, {"Viviendas con piso de tierra", "% Viviendas con piso de tierra"}, {"Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de excusado o sanitario"}, {"Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de agua entubada de la red pública"}, {"Viviendas que no disponen de drenaje", "% Viviendas que no disponen de drenaje"}, {"Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de energía eléctrica"}, {"Viviendas que no disponen de lavadora", "% Viviendas que no disponen de lavadora"}, {"Viviendas que no disponen de refrigerador", "% Viviendas que no disponen de refrigerador"}, {"Column17", "INDICE DE REZAGO SOCIAL"}, {"Column18", "GRADO DE REZAGO SOCIAL"}, {"Column19", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL"}}),
+		    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Columnas con nombre cambiado",8),
+		    #"Filas filtradas" = Table.SelectRows(#"Filas inferiores quitadas", each true),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Filas filtradas",{{"CVE_ESTADO", type text}, {"CVE_MUNICIPIO", type text}}),
+		    #"Filas filtradas1" = Table.SelectRows(#"Tipo cambiado2", each true),
+		    #"Personalizada agregada" = Table.AddColumn(#"Filas filtradas1", "AÑO", each 2020),
+		    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Personalizada agregada",{{"AÑO", Int64.Type}})
+		in
+		    #"Tipo cambiado3"
+	lineageTag: fc7093e4-b0b0-4168-a06a-f067b9575116
+	queryGroup: 'MUNICIPIOS GRS 2000-2020'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

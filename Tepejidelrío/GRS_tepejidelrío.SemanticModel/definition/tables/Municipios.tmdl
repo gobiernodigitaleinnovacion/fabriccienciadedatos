@@ -1,0 +1,51 @@
+table Municipios
+	lineageTag: 4614bd8c-907b-41c9-ab9e-13bb2a173fc6
+
+	column ID
+		dataType: string
+		lineageTag: a35c9cfd-162f-4d8c-a46a-4956f274a242
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_ESTADO
+		dataType: string
+		lineageTag: b039dfe6-be18-459a-b0c6-ebed173e31d2
+		summarizeBy: none
+		sourceColumn: CVE_ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_MUNICIPIO
+		dataType: string
+		lineageTag: 51c93609-eefe-4b3a-a2b4-548ddcdbd1c3
+		summarizeBy: none
+		sourceColumn: CVE_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUNICIPIO
+		dataType: string
+		lineageTag: befa9de8-b0f5-4256-9631-4b67305e5885
+		summarizeBy: none
+		sourceColumn: MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Municipios = m
+		mode: import
+		source =
+				let
+				    Origen = Table.Combine({GRSMUNICPIOS, GRSESTADOS}),
+				    #"Duplicados quitados" = Table.Distinct(Origen, {"ID"}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Duplicados quitados",{"POBLACIÓN TOTAL", "% Población de 15 años o más analfabeta", "% Población de 6 a 14 años que no asiste a la escuela", "% Población de 15 años y más con educación básica incompleta", "% Población sin derechohabiencia a servicios de salud", "% Viviendas con piso de tierra", "% Viviendas que no disponen de excusado o sanitario", "% Viviendas que no disponen de agua entubada de la red pública", "% Viviendas que no disponen de drenaje", "% Viviendas que no disponen de energía eléctrica", "% Viviendas que no disponen de lavadora", "% Viviendas que no disponen de refrigerador", "INDICE DE REZAGO SOCIAL", "GRADO DE REZAGO SOCIAL", "LUGAR QUE OCUPA EN EL CONTEXTO NACIONAL", "AÑO"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas", each true),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Filas filtradas",{"ESTADO"})
+				in
+				    #"Columnas quitadas1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

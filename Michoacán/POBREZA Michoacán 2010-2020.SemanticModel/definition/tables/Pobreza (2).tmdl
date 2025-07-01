@@ -1,0 +1,195 @@
+table 'Pobreza (2)'
+	lineageTag: a3229d4c-0ec9-4dec-808b-426f9f127f34
+
+	measure Pobres = ```
+			
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        Pobreza,
+			        Pobreza[INDICADORES] IN {
+			            "POBREZA PERSONAS 2010",
+			            "POBREZA PERSONAS 2015",
+			            "POBREZA PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] = "Estatal"
+			    )
+			)
+			
+			```
+		lineageTag: d0765323-820f-4d0d-a0bb-2c0db7556782
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'No Pobre y No Vulnerable' = ```
+			
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        Pobreza,
+			        Pobreza[INDICADORES] IN {
+			            "NO POBRE Y NO VULNERABLE PERSONAS 2010",
+			            "NO POBRE Y NO VULNERABLE PERSONAS 2015",
+			            "NO POBRE Y NO VULNERABLE PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] = "Estatal"
+			    )
+			)
+			
+			```
+		lineageTag: e89e3902-9adf-41f6-b428-1015aaa3e118
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Vulnerables por Ingreso' = ```
+			
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        Pobreza,
+			        Pobreza[INDICADORES] IN {
+			            "VULNERABLES POR INGRESO PERSONAS 2010",
+			            "VULNERABLES POR INGRESO PERSONAS 2015",
+			            "VULNERABLES POR INGRESO PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] = "Estatal"
+			    )
+			)
+			
+			```
+		lineageTag: 8170f539-75d2-4bfc-a7df-c1684c17c3e2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Vulnerables por Carencia Social' = ```
+			
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        Pobreza,
+			        Pobreza[INDICADORES] IN {
+			            "VULNERABLES POR CARENCIA SOCIAL PERSONAS 2010",
+			            "VULNERABLES POR CARENCIA SOCIAL PERSONAS 2015",
+			            "VULNERABLES POR CARENCIA SOCIAL PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] = "Estatal"
+			    )
+			)
+			
+			```
+		lineageTag: f23bc618-5994-4172-a8f9-0ff57975bbbd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Pobreza Personas Estatal' = ```
+			
+			VAR EstadoCVE = LEFT(SELECTEDVALUE(Pobreza[CVE_MUNICIPIO]), 2)
+			VAR AnoSeleccionado = SELECTEDVALUE(Pobreza[AÑO])
+			RETURN
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        ALL(Pobreza),
+			        Pobreza[INDICADORES] IN {
+			            "POBREZA PERSONAS 2010",
+			            "POBREZA PERSONAS 2015",
+			            "POBREZA PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] = "Estatal" &&
+			        LEFT(Pobreza[CVE_MUNICIPIO], 2) = EstadoCVE &&
+			        Pobreza[AÑO] = AnoSeleccionado
+			    )
+			)
+			
+			```
+		lineageTag: 834d8aef-7d43-4e73-b9cd-be3393457669
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'No Pobre y No Vulnerable Estatal' = ```
+			
+			VAR EstadoCVE = LEFT(SELECTEDVALUE(Pobreza[CVE_MUNICIPIO]), 2)
+			VAR AnoSeleccionado = SELECTEDVALUE(Pobreza[AÑO])
+			RETURN
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        ALL(Pobreza),
+			        Pobreza[INDICADORES] IN {
+			            "NO POBRE Y NO VULNERABLE PERSONAS 2010",
+			            "NO POBRE Y NO VULNERABLE PERSONAS 2015",
+			            "NO POBRE Y NO VULNERABLE PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] = "Estatal" &&
+			        LEFT(Pobreza[CVE_MUNICIPIO], 2) = EstadoCVE &&
+			        Pobreza[AÑO] = AnoSeleccionado
+			    )
+			)
+			
+			```
+		lineageTag: f706a60e-d6ca-43b0-9232-04db95df299d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Vulnerables por Ingreso Estatal' = ```
+			
+			VAR EstadoCVE = LEFT(SELECTEDVALUE(Pobreza[CVE_MUNICIPIO]), 2)
+			VAR AnoSeleccionado = SELECTEDVALUE(Pobreza[AÑO])
+			RETURN
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        ALL(Pobreza),
+			        Pobreza[INDICADORES] IN {
+			            "VULNERABLES POR INGRESO PERSONAS 2010",
+			            "VULNERABLES POR INGRESO PERSONAS 2015",
+			            "VULNERABLES POR INGRESO PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] = "Estatal" &&
+			        LEFT(Pobreza[CVE_MUNICIPIO], 2) = EstadoCVE &&
+			        Pobreza[AÑO] = AnoSeleccionado
+			    )
+			)
+			
+			```
+		lineageTag: f2dee54f-518a-493e-9950-f25116330685
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Vulnerables por Carencia Social Estatal' = ```
+			
+			VAR EstadoCVE = LEFT(SELECTEDVALUE(Pobreza[CVE_MUNICIPIO]), 2)
+			VAR AnoSeleccionado = SELECTEDVALUE(Pobreza[AÑO])
+			RETURN
+			CALCULATE(
+			    SUM(Pobreza[VALOR]),
+			    FILTER(
+			        ALL(Pobreza),
+			        Pobreza[INDICADORES] IN {
+			            "VULNERABLES POR CARENCIA SOCIAL PERSONAS 2010",
+			            "VULNERABLES POR CARENCIA SOCIAL PERSONAS 2015",
+			            "VULNERABLES POR CARENCIA SOCIAL PERSONAS 2020"
+			        } &&
+			        Pobreza[MUNICIPIO] = "Estatal" &&
+			        LEFT(Pobreza[CVE_MUNICIPIO], 2) = EstadoCVE &&
+			        Pobreza[AÑO] = AnoSeleccionado
+			    )
+			)
+			
+			```
+		lineageTag: 3045944d-a5b7-40d6-b146-c5cbdb5775a9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Pobreza (2)' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

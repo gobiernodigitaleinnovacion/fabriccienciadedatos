@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "POBREZA MUNICIPALIzcalli"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c0dbb221-3695-ae61-4cf0-06d64e3e846a"
+  }
+}

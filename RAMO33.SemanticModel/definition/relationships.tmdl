@@ -1,0 +1,4 @@
+relationship 580e5b92-edcd-300b-f7c3-837f7600fec0
+	fromColumn: FAIS.NOMBRE_ENTIDAD
+	toColumn: estados.NOM_ENTIDAD
+
