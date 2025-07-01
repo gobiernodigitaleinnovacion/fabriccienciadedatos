@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "pruebaonedrive"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3340814b-21f3-9c53-4928-fe5c06ca07b3"
+  }
+}

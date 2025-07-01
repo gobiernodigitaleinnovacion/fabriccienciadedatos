@@ -1050,6 +1050,8 @@ for var in categorical_variables:
 
 print("Los gráficos se han mostrado en el notebook. Guarda cada gráfico manualmente haciendo clic derecho sobre ellos y seleccionando 'Guardar imagen como...' en tu máquina local (por ejemplo, en C:\\Users\\hello\\Downloads\\). Luego, súbelos a Files/results/ en Fabric.")
 
+please upload to lakehouse
+
 # METADATA ********************
 
 # META {

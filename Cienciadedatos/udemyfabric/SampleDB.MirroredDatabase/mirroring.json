@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "source": {
+      "type": "CosmosDb",
+      "typeProperties": {
+        "connection": "ea7f4925-5bfc-42a6-a751-a2937669b818",
+        "database": "SampleDB"
+      }
+    },
+    "target": {
+      "type": "MountedRelationalDatabase",
+      "typeProperties": {
+        "defaultSchema": "dbo",
+        "format": "Delta"
+      }
+    }
+  }
+}
