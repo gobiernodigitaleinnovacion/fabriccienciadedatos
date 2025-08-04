@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "FINANZAS MUNICIPALtemixco"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d8cae23b-13a3-a268-4ab9-0c798b006ffc"
+  }
+}

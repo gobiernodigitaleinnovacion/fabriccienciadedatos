@@ -1,0 +1,48 @@
+table CategoriaGasto
+	lineageTag: 1bad0c4a-7c23-4e67-a56b-b80a2d2edf24
+
+	column Categoria
+		lineageTag: a6690c1b-7e07-4724-b76f-cc027d113890
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Categoria]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Icono
+		lineageTag: 0719a1e4-cb55-4f63-ae9d-393450a81692
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Icono]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden
+		formatString: 0
+		lineageTag: 33e0749f-3db2-421f-aa6e-2f008e8e69d3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Orden]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CategoriaGasto = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Categoria", STRING,
+				    "Icono", STRING,
+				    "Orden", INTEGER,
+				    {
+				        {"Alimentos", "🍽️", 1},
+				        {"Vivienda", "🏠", 2},
+				        {"Transporte", "🚗", 3},
+				        {"Educacion", "🎓", 4},
+				        {"Salud", "🏥", 5},
+				        {"Vestido", "👔", 6}
+				    }
+				)
+
+	annotation PBI_Id = dc7e8c516a5c493f96d5b02f9a17a05a
+

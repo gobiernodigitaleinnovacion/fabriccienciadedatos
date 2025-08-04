@@ -1,0 +1,159 @@
+table Educación
+	lineageTag: 23ba1023-f02f-469c-8d23-da2183babe32
+
+	measure '% Alfabetas' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000041
+			)
+			
+			```
+		lineageTag: 005ac4cc-7aa3-4304-97b6-a88342ab6036
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tasa Alfabetización' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000050
+			)
+			
+			```
+		lineageTag: 500a0dd1-11b5-4fe2-aaa2-3666a0743178
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población Asiste Escuela' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1005000012
+			)
+			
+			```
+		lineageTag: a2e7f635-2d20-479a-a5b3-6fd787802eed
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Grado Escolaridad' = ```
+			
+			CALCULATE(
+			    AVERAGE(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1005000038
+			)
+			
+			```
+		lineageTag: b31e42ed-63b7-4dcc-b051-915be0c4f4e4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Asiste Escuela' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6207049068
+			)
+			
+			```
+		lineageTag: f860bd68-14e6-4356-815b-a0312795a12f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Asiste 3 a 5' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6207019024
+			)
+			
+			```
+		lineageTag: c2c10a10-b8bd-4f88-8471-de12eb2da9e3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Asiste 6 a 11' =
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6207019026
+			)
+		lineageTag: 46a0625d-13af-4c11-8c1f-b296bb4c3c2e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Asiste 12 a 14' =
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6207019028
+			)
+		lineageTag: 4ed7a1b7-9ae9-49f0-b29f-597ce057388a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Alfabetas2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1002000041,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 35f92940-2406-4720-8ea1-89b0f77a8eaa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población Asiste Escuela2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1005000012,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 646f399e-60a8-48d5-ba0d-1e8c53f0d844
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Grado Escolaridad_2020' = ```
+			
+			CALCULATE(
+			    AVERAGE(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 1005000038,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: e16e94b3-acd9-45f2-962c-a856b5b51c94
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Población No Lee ni Escribe_2020' = ```
+			
+			CALCULATE(
+			    SUM(CensoHechos[Valor]),
+			    CensoHechos[id_indicador] = 6207049067,
+			    CensoHechos[Año] = 2020
+			)
+			
+			```
+		lineageTag: 7f615ffc-7fb3-4713-8b95-c528a22be8df
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Educación = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

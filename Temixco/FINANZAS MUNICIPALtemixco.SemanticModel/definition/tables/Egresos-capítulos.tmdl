@@ -1,0 +1,159 @@
+table Egresos-capítulos
+	lineageTag: c5983c24-1cce-4e5d-bb77-31772e91e1b0
+
+	measure 'Materiales y suministros' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Materiales y suministros"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 445088f7-b302-4d38-82aa-fd9489e92684
+
+	measure 'Servicios Personales' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Servicios personales"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 4baf4b7f-b594-4d46-97b9-f99132e626bd
+
+	measure 'Bienes muebles, inmuebles e intangibles' =
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Bienes muebles, inmuebles e intangibles"
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: f29493f3-479d-4eb0-a560-3b9599a5ee83
+
+	measure 'Otros egresos' =
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Otros egresos"
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 609da6d6-0508-45df-952c-aea72a219649
+
+	measure 'Servicios generales' =
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Servicios generales"
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: c94c99f2-e39c-4bab-8b94-2836f3cf3079
+
+	measure 'Inversión Pública' =
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Inversión pública"
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1f0da100-9792-4159-8a77-884326a7dd5e
+
+	measure 'Deuda pública' =
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Deuda pública"
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 05cea56b-32e4-41a2-acab-744e02e8931b
+
+	measure 'Disponilibilidad final' =
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Disponibilidad final"
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e2e49c64-0163-4904-8b5c-3775a378af7c
+
+	measure 'Transferencias, asignaciones, subsidios y otras ayudas' =
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Transferencias, asignaciones, subsidios y otras ayudas"
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 647d4d4a-625e-4443-ac30-87a65e008d76
+
+	measure Egresos-Capítulo = [Bienes muebles, inmuebles e intangibles]+[Deuda pública]+[Disponilibilidad final]+[Inversión Pública]+[Materiales y suministros]+[Otros egresos]+[Servicios generales]+[Servicios Personales]+[Transferencias, asignaciones, subsidios y otras ayudas]
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3480774a-266e-410c-91d8-1af41ccc2355
+
+	measure 'Inversiones Financieras y Otras Provisiones' =
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Inversiones financieras y otras provisiones"
+			    )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: bd030a6e-2948-4977-b98d-0fd461b48ec4
+
+	measure 'Recursos Asignados a Municipios' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Recursos asignados a municipios"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ba4cbfa5-69b4-4b09-b49c-8da9a67a0d07
+
+	measure 'Recursos Asignados a Alcaldías y Sector Paraestatal' = ```
+			
+			CALCULATE(
+			    SUM('HECHO EGRESOS-INGRESOS'[VALOR]),
+			    'HECHO EGRESOS-INGRESOS'[TEMA] = "Egresos",
+			    'HECHO EGRESOS-INGRESOS'[CATEGORIA] = "Capítulo",
+			    'HECHO EGRESOS-INGRESOS'[DESCRIPCION_CATEGORIA] = "Recursos asignados a alcaldías de la Ciudad de México y sector paraestatal"
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: cd237cf0-5e57-4f93-8229-b9a194c228fd
+
+	partition Egresos-capítulos = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

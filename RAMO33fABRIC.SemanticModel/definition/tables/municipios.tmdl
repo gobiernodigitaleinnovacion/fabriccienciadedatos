@@ -1,0 +1,40 @@
+table municipios
+	lineageTag: edf9cd71-5275-49cc-a548-ec239331b293
+
+	column ID_ENTIDAD
+		dataType: string
+		lineageTag: aa3affc1-138d-481d-a9c9-867d02a2354a
+		summarizeBy: none
+		sourceColumn: ID_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_MUNICIPIO
+		dataType: string
+		lineageTag: b7f7076a-a08b-490d-952f-4029a32f3c5a
+		summarizeBy: none
+		sourceColumn: ID_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_MUNICIPIO
+		dataType: string
+		lineageTag: fd136d32-6a60-45fa-bc4b-0aa357feadcd
+		summarizeBy: none
+		sourceColumn: NOM_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition municipios = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\hello\OneDrive - JHRJDATA\Informes automatizados\Bases\FINANZAS\FINANZAS 2023\Municipal\catalogos\municipios.csv"),[Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

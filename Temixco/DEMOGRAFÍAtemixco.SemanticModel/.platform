@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "DEMOGRAFÍAtemixco"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0ceee21f-a112-966a-4a94-a817894c4193"
+  }
+}

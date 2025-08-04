@@ -1,0 +1,606 @@
+cultureInfo es-ES
+
+	linguisticMetadata =
+			{
+			  "Version": "3.5.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "estado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "estados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "estado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "estado.id_entidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "estados",
+			          "ConceptualProperty": "ID_ENTIDAD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id entidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ID_ENTIDAD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "estado.nom_entidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "estados",
+			          "ConceptualProperty": "NOM_ENTIDAD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nom entidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NOM_ENTIDAD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipios"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "municipio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "municipio.id_entidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipios",
+			          "ConceptualProperty": "ID_ENTIDAD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id entidad": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ID_ENTIDAD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential entidad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "municipio.id_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipios",
+			          "ConceptualProperty": "ID_MUNICIPIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id municipio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ID_MUNICIPIO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification municipio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity municipio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier municipio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential municipio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "municipio.nom_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipios",
+			          "ConceptualProperty": "NOM_MUNICIPIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nom municipio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NOM_MUNICIPIO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.cumplimiento_metas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "% Cumplimiento Metas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% cumplimiento metas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage cumplimiento meta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct cumplimiento meta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "medida.proyectos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "PROYECTOS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "proyectos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.porcentaje_ejecución": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "PORCENTAJE EJECUCIÓN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "porcentaje ejecución": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.costo_por_proyectos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Costo por proyectos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "costo por proyectos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.costo_por_beneficiario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Costo por Beneficiario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "costo por beneficiario": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.beneficiarios_mujeres": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Beneficiarios Mujeres"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "beneficiarios mujeres": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.beneficiarios_hombres": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Beneficiarios Hombres"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "beneficiarios hombres": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.beneficiarios": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Beneficiarios"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "beneficiarios": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "estado_has_id_entidad": {
+			      "Binding": {
+			        "ConceptualEntity": "estados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "estado": {
+			          "Target": {
+			            "Entity": "estado"
+			          }
+			        },
+			        "estado.id_entidad": {
+			          "Target": {
+			            "Entity": "estado.id_entidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "estado"
+			            },
+			            "Object": {
+			              "Role": "estado.id_entidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "estado_have_id_entidads"
+			        }
+			      ]
+			    },
+			    "estado_has_nom_entidad": {
+			      "Binding": {
+			        "ConceptualEntity": "estados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "estado": {
+			          "Target": {
+			            "Entity": "estado"
+			          }
+			        },
+			        "estado.nom_entidad": {
+			          "Target": {
+			            "Entity": "estado.nom_entidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "estado"
+			            },
+			            "Object": {
+			              "Role": "estado.nom_entidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "estado_have_nom_entidads"
+			        }
+			      ]
+			    },
+			    "municipio_has_id_entidad": {
+			      "Binding": {
+			        "ConceptualEntity": "municipios"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "municipio": {
+			          "Target": {
+			            "Entity": "municipio"
+			          }
+			        },
+			        "municipio.id_entidad": {
+			          "Target": {
+			            "Entity": "municipio.id_entidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Object": {
+			              "Role": "municipio.id_entidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_have_id_entidads"
+			        }
+			      ]
+			    },
+			    "municipio_has_id_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "municipios"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "municipio": {
+			          "Target": {
+			            "Entity": "municipio"
+			          }
+			        },
+			        "municipio.id_municipio": {
+			          "Target": {
+			            "Entity": "municipio.id_municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Object": {
+			              "Role": "municipio.id_municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_have_id_municipios"
+			        }
+			      ]
+			    },
+			    "municipio_has_nom_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "municipios"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "municipio": {
+			          "Target": {
+			            "Entity": "municipio"
+			          }
+			        },
+			        "municipio.nom_municipio": {
+			          "Target": {
+			            "Entity": "municipio.nom_municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Object": {
+			              "Role": "municipio.nom_municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_have_nom_municipios"
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

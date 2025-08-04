@@ -1,0 +1,383 @@
+table FAIS
+	lineageTag: dd9f8873-7ad2-4b2b-b3d2-51f38aefa7f3
+
+	column FOLIO
+		dataType: string
+		lineageTag: 8ef9c83f-54aa-4189-8430-36003a3db8b3
+		summarizeBy: none
+		sourceColumn: FOLIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CICLO_DEL_RECURSO
+		dataType: int64
+		formatString: 0
+		lineageTag: db035d33-d1e1-4d2f-8b22-f456f24f6651
+		summarizeBy: sum
+		sourceColumn: CICLO_DEL_RECURSO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RAMO
+		dataType: string
+		lineageTag: 6dab99dd-7392-48a7-a9c1-74824cb5b446
+		summarizeBy: none
+		sourceColumn: RAMO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROGRAMA_PRESUPUESTARIO
+		dataType: string
+		lineageTag: 41cd60f5-d162-490d-b042-0acfc0aa9906
+		summarizeBy: none
+		sourceColumn: PROGRAMA_PRESUPUESTARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column APROBADO
+		dataType: double
+		lineageTag: 0c0922f9-df04-4c6b-b412-5674cab6f0b8
+		summarizeBy: sum
+		sourceColumn: APROBADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MODIFICADO_A
+		dataType: double
+		lineageTag: 08cd3dfa-0a45-4eb2-a8dd-5197c7829590
+		summarizeBy: sum
+		sourceColumn: MODIFICADO_A
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRATISTA
+		dataType: string
+		lineageTag: faeb524b-63c4-4602-af09-e61f5a38729b
+		summarizeBy: none
+		sourceColumn: CONTRATISTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONVOCANTE
+		dataType: string
+		lineageTag: ffb2e8ef-6731-4b50-b472-938f3a7baec2
+		summarizeBy: none
+		sourceColumn: CONVOCANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTOc
+		dataType: double
+		lineageTag: 5298cb84-cf8a-463b-b203-fca05e114b80
+		summarizeBy: sum
+		sourceColumn: MONTOc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTO_MODIFICADO_C
+		dataType: double
+		lineageTag: 23d244c6-016e-4fcb-acea-3e2f69467b10
+		summarizeBy: sum
+		sourceColumn: MONTO_MODIFICADO_C
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CICLO
+		dataType: int64
+		formatString: 0
+		lineageTag: c9035342-189b-4d9f-89de-f19bbbb1bad4
+		summarizeBy: sum
+		sourceColumn: CICLO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRIMESTRE_DE_AVANCE
+		dataType: int64
+		formatString: 0
+		lineageTag: f20cada4-2ade-4b99-92c8-44c90e596340
+		summarizeBy: sum
+		sourceColumn: TRIMESTRE_DE_AVANCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIDAD_DE_MEDIDA
+		dataType: string
+		lineageTag: bcb17037-1826-4e88-8f03-aba9f2c03e7a
+		summarizeBy: none
+		sourceColumn: UNIDAD_DE_MEDIDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column META_ORIGINAL
+		dataType: double
+		lineageTag: 8f1cc697-3517-4505-bf62-ae12c010072d
+		summarizeBy: sum
+		sourceColumn: META_ORIGINAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column META_MODIFICADA_U
+		dataType: double
+		lineageTag: 482dd60b-47bf-4d26-b3c8-478b9b95c112
+		summarizeBy: sum
+		sourceColumn: META_MODIFICADA_U
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AVANCE
+		dataType: double
+		lineageTag: 47503e71-d987-454d-a89e-2dc73923c26d
+		summarizeBy: sum
+		sourceColumn: AVANCE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PORCENTAJE
+		dataType: double
+		lineageTag: f9e5887d-dca9-4096-82fa-a867c1df3d10
+		summarizeBy: sum
+		sourceColumn: PORCENTAJE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOMBRE_ENTIDAD
+		dataType: string
+		lineageTag: b496285a-d5d8-47a3-b133-a41ade86822f
+		summarizeBy: none
+		sourceColumn: NOMBRE_ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE_MUNICIPIO
+		dataType: string
+		lineageTag: 241d6d2e-96e2-4155-84c0-122b7f2d9e97
+		summarizeBy: none
+		sourceColumn: NOMBRE_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOCALIDAD
+		dataType: string
+		lineageTag: 5d43ef5f-a07b-45a9-8cab-264608e34843
+		summarizeBy: none
+		sourceColumn: LOCALIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column LONGITUD
+		dataType: double
+		lineageTag: eb790b39-fa75-499a-98c1-8ef1e689701c
+		summarizeBy: sum
+		sourceColumn: LONGITUD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LATITUD
+		dataType: double
+		lineageTag: 7937fdfe-fd0e-4c96-9599-19fbebe4358a
+		summarizeBy: sum
+		sourceColumn: LATITUD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ID_ENTIDAD_RESPONSABLE
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ac51adc-fbfa-4c64-b243-e6453ec05f6e
+		summarizeBy: sum
+		sourceColumn: ID_ENTIDAD_RESPONSABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_MUNICIPIO_RESPONSABLE
+		dataType: int64
+		formatString: 0
+		lineageTag: d47ab0be-348e-4520-a349-f83453b3a728
+		summarizeBy: sum
+		sourceColumn: ID_MUNICIPIO_RESPONSABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORIA
+		dataType: string
+		lineageTag: 45b13d19-fbb1-4c33-88bd-5580802ef42e
+		summarizeBy: none
+		sourceColumn: CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRE
+		dataType: string
+		lineageTag: 0de0c83f-7c7d-4c52-ace6-34e995a20f9d
+		summarizeBy: none
+		sourceColumn: NOMBRE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_PROGRAMA_PROYECTO
+		dataType: string
+		lineageTag: db17406b-09fa-47b3-aa2d-709049d39729
+		summarizeBy: none
+		sourceColumn: TIPO_PROGRAMA_PROYECTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASIFICACION
+		dataType: string
+		lineageTag: 7804a92a-1141-42f4-a9eb-8b5411728831
+		summarizeBy: none
+		sourceColumn: CLASIFICACION
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSTITUCION_EJECUTORA
+		dataType: string
+		lineageTag: 1594e540-a6b3-4a2e-beed-d1466a823af9
+		summarizeBy: none
+		sourceColumn: INSTITUCION_EJECUTORA
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUJERES
+		dataType: int64
+		formatString: 0
+		lineageTag: aaaa4aba-c546-4ade-ba9d-eb93c642b1f0
+		summarizeBy: sum
+		sourceColumn: MUJERES
+
+		annotation SummarizationSetBy = Automatic
+
+	column HOMBRES
+		dataType: int64
+		formatString: 0
+		lineageTag: dd376f8e-0631-4660-977f-7e81c26bfe7e
+		summarizeBy: sum
+		sourceColumn: HOMBRES
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_INICIO
+		dataType: string
+		lineageTag: 97ee9d42-058d-4cd9-9c2f-b8f92509ef7d
+		summarizeBy: none
+		sourceColumn: FECHA_INICIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_TERMINO
+		dataType: string
+		lineageTag: 2badf407-a400-434b-ac21-c982e1a6ef9a
+		summarizeBy: none
+		sourceColumn: FECHA_TERMINO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECAUDADO
+		dataType: double
+		lineageTag: 658138bf-615f-4bb3-8c4a-e89658d6c35a
+		summarizeBy: sum
+		sourceColumn: RECAUDADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COMPROMETIDO
+		dataType: double
+		lineageTag: 28c92312-7d65-435e-88cd-1d4792238830
+		summarizeBy: sum
+		sourceColumn: COMPROMETIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DEVENGADO
+		dataType: double
+		lineageTag: 822ec1ec-9969-4013-a32e-7cbdfd43764e
+		summarizeBy: sum
+		sourceColumn: DEVENGADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EJERCIDO
+		dataType: double
+		lineageTag: 8ba20a41-98ea-45e4-a7c8-8dbf3658b0ea
+		summarizeBy: sum
+		sourceColumn: EJERCIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PAGADO
+		dataType: double
+		lineageTag: 0d83c5ee-7f2c-4484-a889-b8e3e4ef045b
+		summarizeBy: sum
+		sourceColumn: PAGADO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ESTATUS
+		dataType: string
+		lineageTag: 14d71d7b-503d-45b3-8a53-a7403bcea05a
+		summarizeBy: none
+		sourceColumn: ESTATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column AÑO
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c75980c-a87b-4938-83bb-1c0092c2a03b
+		summarizeBy: sum
+		sourceColumn: AÑO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRIMESTRE
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e3c36d3-1fa5-462c-8fb8-7400f8e30635
+		summarizeBy: sum
+		sourceColumn: TRIMESTRE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FAIS = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("qihyhmenysou5otulys7x473hm-potaykwgtevuvcfaz4bb2ottzy.datawarehouse.fabric.microsoft.com", "LH_FAIS_HACIENDA_MX"),
+				    dbo_base_integrada_fais = Source{[Schema="dbo",Item="base_integrada_fais"]}[Data]
+				in
+				    dbo_base_integrada_fais
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

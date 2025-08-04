@@ -1,0 +1,1400 @@
+table Medidas
+	lineageTag: a417b919-7e9d-4f0e-85ba-9a6f5dea2120
+
+	measure Ahorro_Promedio_Estado = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[ahorro_promedio]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		lineageTag: 5c0d4725-753d-4012-b72c-bf91189e2f89
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Capacidad_Ahorro = ```
+			
+			        IF(
+			            [Ahorro_Promedio_Estado] > 0,
+			            "🟢 Positiva",
+			            "🔴 Negativa"
+			        )
+			    
+			    
+			```
+		lineageTag: a51b951e-71cc-4620-ae97-f0a81879d45c
+
+	measure Color_Desarrollo = ```
+			
+			        VAR Nivel = [Nivel_Desarrollo]
+			        RETURN
+			            SWITCH(
+			                Nivel,
+			                "Muy Alto", "#1f4e79",  // Azul oscuro
+			                "Alto", "#70ad47",      // Verde
+			                "Medio", "#f39c12",     // Naranja
+			                "Bajo", "#e67e22",      // Naranja oscuro
+			                "Muy Bajo", "#e74c3c",  // Rojo
+			                "#7f7f7f"               // Gris por defecto
+			            )
+			    
+			    
+			```
+		lineageTag: e85869e8-70bc-49a8-b9e9-9b68d07aaf8a
+
+	measure Color_Ranking = ```
+			
+			        VAR RankingActual = [Ranking_Poblacional]
+			        RETURN
+			            IF(
+			                RankingActual <= 10, "#70ad47",  // Verde (Top 10)
+			                IF(RankingActual <= 20, "#f39c12",  // Amarillo (11-20)
+			                   "#e74c3c")  // Rojo (21-32)
+			            )
+			    
+			    
+			```
+		lineageTag: 3e6e3e39-b2e1-4ed8-a173-777cf936683b
+
+	measure Diferencia_Gasto_vs_Nacional = ```
+			
+			        [Gasto_Promedio_Estado] - [Gasto_Nacional_Promedio]
+			
+			    
+			```
+		lineageTag: 60265b94-fcdb-489e-8992-88b83a07285b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Diferencia_Ingreso_vs_Nacional = ```
+			
+			        [Ingreso_Promedio_Estado] - [Ingreso_Nacional_Promedio]
+			    
+			    
+			```
+		lineageTag: d8cba2f9-52b5-4056-8b84-fdc35910fa7c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Diferencia_Integrantes_vs_Nacional = ```
+			
+			        [Integrantes_Por_Hogar] - [Integrantes_Nacional]
+			    
+			    
+			```
+		lineageTag: 46a40ccc-1f42-49f1-8587-15b560e36db2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Gasto_Nacional_Promedio = ```
+			
+			        DIVIDE(
+			            SUMX(ALL(resumen_estatal_informe_integral_2024), 
+			                 resumen_estatal_informe_integral_2024[gasto_promedio] * resumen_estatal_informe_integral_2024[total_hogares_reales]),
+			            SUMX(ALL(resumen_estatal_informe_integral_2024), 
+			                 resumen_estatal_informe_integral_2024[total_hogares_reales])
+			        )
+			    
+			    
+			```
+		lineageTag: 1cfe9aff-1e03-4ab8-9d6d-d4ae0695a74d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Gasto_Promedio_Estado = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		lineageTag: 93ecc2c2-8325-4b57-8a98-2d5a4cbe2add
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Hogares_Nacional = ```
+			
+			        SUMX(
+			            ALL(resumen_estatal_informe_integral_2024),
+			            resumen_estatal_informe_integral_2024[total_hogares_reales]
+			        )
+			    
+			    
+			```
+		formatString: 0
+		lineageTag: 11ecd80e-99a5-4259-9e1b-ad01ea4217e6
+
+	measure Indice_vs_Nacional = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[indice_ingreso_vs_nacional]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		lineageTag: 12ad3233-17ce-4db4-a2f1-36764844066d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Ingreso_Nacional_Promedio = ```
+			
+			        DIVIDE(
+			            SUMX(ALL(resumen_estatal_informe_integral_2024), 
+			                 resumen_estatal_informe_integral_2024[ingreso_promedio] * resumen_estatal_informe_integral_2024[total_hogares_reales]),
+			            SUMX(ALL(resumen_estatal_informe_integral_2024), 
+			                 resumen_estatal_informe_integral_2024[total_hogares_reales])
+			        )
+			    
+			    
+			```
+		lineageTag: ddbe17c6-e4fd-4d5d-bb36-799e5ba776ce
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Ingreso_Promedio_Estado = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[ingreso_promedio]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		lineageTag: d76485bb-7266-4c45-9f80-adb78ebd3a99
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Ingreso_Trabajo = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[ingreso_trabajo_promedio]),
+			            BLANK()
+			        )
+			
+			    
+			```
+		lineageTag: 267142ef-0cf7-4325-bfee-99845ec7b364
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Integrantes_Nacional = ```
+			
+			        DIVIDE(
+			            SUMX(ALL(resumen_estatal_informe_integral_2024), 
+			                 resumen_estatal_informe_integral_2024[poblacion_total]),
+			            SUMX(ALL(resumen_estatal_informe_integral_2024), 
+			                 resumen_estatal_informe_integral_2024[total_hogares_reales])
+			        )
+			    
+			    
+			```
+		lineageTag: 304912b9-d575-4527-9c0a-ea6c9fd9a599
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Integrantes_Por_Hogar = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[promedio_integrantes_hogar]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		lineageTag: e76fe0f5-05d2-4d71-bd3e-c6a4bb7568e0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Nivel_Desarrollo = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[nivel_desarrollo_economico]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		lineageTag: f2701dca-3e61-4704-b3ce-0edd8143aa0a
+
+	measure Pct_Estado_vs_Nacional = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            DIVIDE([Poblacion_Total_Estado], [Poblacion_Nacional]) * 100,
+			            BLANK()
+			        )
+			
+			    
+			```
+		lineageTag: 1a6f7db1-85b1-4965-836b-43acbd272b9a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Pct_Hogares_con_Deficit = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            DIVIDE(
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[hogares_con_deficit]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[total_hogares_reales])
+			            ) * 100,
+			            BLANK()
+			        )
+			    
+			    
+			```
+		lineageTag: d781f00b-8bd3-47b9-b702-96da78290e9b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Poblacion_Nacional = ```
+			
+			        SUMX(
+			            ALL(resumen_estatal_informe_integral_2024),
+			            resumen_estatal_informe_integral_2024[poblacion_total]
+			        )
+			    
+			    
+			```
+		lineageTag: 79fa8837-a766-4a1e-96d7-ed9d5f6f3886
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Poblacion_Total_Estado = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[poblacion_total]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		lineageTag: a90e0c3b-9165-45e1-bc9a-5d2fce51b67b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Porcentaje_Hombres = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_poblacion_hombres]),
+			            BLANK()
+			        )
+			
+			    
+			```
+		lineageTag: 0df73364-ce14-417e-b351-897afa8e2f96
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Propension_Consumo = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[propension_consumo_pct]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		lineageTag: 56e59d0e-2eba-4e20-a841-02f790948b11
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Ranking_Ingreso_Estado = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[ranking_ingreso]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		formatString: 0
+		lineageTag: 57a95115-0f6b-4684-b83a-3aeaf6596493
+
+	measure Ranking_Poblacional = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[ranking_poblacion]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		formatString: 0
+		lineageTag: 0dc0e3e6-d2eb-436f-a1cf-a128e4b137bb
+
+	measure Semaforo_Deficit = ```
+			
+			        VAR PctDeficit = [Pct_Hogares_con_Deficit]
+			        RETURN
+			            IF(
+			                PctDeficit < 10, "🟢 Bajo Riesgo",
+			                IF(PctDeficit < 20, "🟡 Riesgo Medio",
+			                   "🔴 Alto Riesgo")
+			            )
+			
+			
+			```
+		lineageTag: 98c9a27d-f781-4074-99dd-5918c74ba0e1
+
+	measure Semaforo_Poblacion = ```
+			
+			        VAR PoblacionEstado = [Poblacion_Total_Estado]
+			        RETURN
+			            IF(
+			                PoblacionEstado > 5000000, "🟢 Estado Grande",
+			                IF(PoblacionEstado > 2000000, "🟡 Estado Mediano",
+			                   "🔴 Estado Pequeño")
+			            )
+			
+			    
+			```
+		lineageTag: 2fdd654c-3be8-4b0c-95a9-48541f28c3b9
+
+	measure Texto_Ranking = ```
+			
+			        VAR RankingActual = [Ranking_Poblacional]
+			        RETURN
+			            "Posición " & RankingActual & " de 32"
+			    
+			    
+			```
+		lineageTag: 7d9590eb-7f9f-4aa3-a31e-35c1d8bd44c8
+
+	measure Texto_Ranking_Economico = ```
+			
+			        VAR RankingActual = [Ranking_Ingreso_Estado]
+			        RETURN
+			            "Lugar " & RankingActual & " de 32"
+			    
+			    
+			```
+		lineageTag: 66cb8b26-8dcc-4023-b774-0c3fa2911463
+
+	measure Total_Hogares_Estado = ```
+			
+			        IF(
+			            HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[total_hogares_reales]),
+			            BLANK()
+			        )
+			    
+			    
+			```
+		formatString: 0
+		lineageTag: dae89f31-7bde-44bb-b6c4-4a3f98a18fcd
+
+	measure KPI_Ahorro_Capacidad = ```
+			
+			        VAR AhorroEst = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[ahorro_promedio]),
+			                BLANK()
+			            )
+			        RETURN
+			            IF(
+			                AhorroEst > 30000, "💎 $" & FORMAT(AhorroEst, "#.0", "es-MX") & " EXCELENTE",
+			                IF(AhorroEst > 15000, "💰 $" & FORMAT(AhorroEst, "#.0", "es-MX") & " BUENO",
+			                   IF(AhorroEst > 0, "💵 $" & FORMAT(AhorroEst, "#.0", "es-MX") & " BÁSICO",
+			                      "⚠️ $" & FORMAT(AhorroEst, "#.0", "es-MX") & " DÉFICIT"))
+			            )
+			    
+			    
+			```
+		lineageTag: b376d157-1478-4ab1-b4bd-3f0bd89c7dd1
+
+	measure KPI_Indice_Nacional = ```
+			
+			        VAR IndiceEst = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[indice_ingreso_vs_nacional]),
+			                BLANK()
+			            )
+			        RETURN
+			            IF(
+			                IndiceEst >= 120, "🚀 " & FORMAT(IndiceEst, "0.0", "es-MX") & "% SUPERIOR",
+			                IF(IndiceEst >= 100, "📈 " & FORMAT(IndiceEst, "0.0", "es-MX") & "% SOBRE MEDIA",
+			                   IF(IndiceEst >= 80, "⚖️ " & FORMAT(IndiceEst, "0.0", "es-MX") & "% PROMEDIO",
+			                      "📉 " & FORMAT(IndiceEst, "0.0", "es-MX") & "% BAJO MEDIA"))
+			            )
+			    
+			    
+			```
+		lineageTag: acfadd0d-6483-4b81-bbc1-fca9774b3227
+
+	measure KPI_Ingreso_Promedio = ```
+			
+			        VAR IngresoEstado = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[ingreso_promedio]),
+			                BLANK()
+			            )
+			        RETURN
+			            "💰 $" & FORMAT(IngresoEstado, "#.0", "es-MX") & " MXN"
+			    
+			    
+			```
+		lineageTag: 21941276-2a95-4e78-9316-4e70d6cad50e
+
+	measure KPI_Ingreso_Trabajo = ```
+			
+			        VAR IngresoTrab = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[ingreso_trabajo_promedio]),
+			                BLANK()
+			            )
+			        RETURN
+			            "👷‍♂️ $" & FORMAT(IngresoTrab, "#.0", "es-MX") & " TRABAJO"
+			
+			
+			```
+		lineageTag: 67f3518b-e44e-4ade-b502-6c7b3d44035e
+
+	measure KPI_Nivel_Desarrollo = ```
+			
+			        VAR NivelDev = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[nivel_desarrollo_economico]),
+			                BLANK()
+			            )
+			        RETURN
+			            SWITCH(
+			                NivelDev,
+			                "Muy Alto", "🔥 MUY ALTO",
+			                "Alto", "🚀 ALTO", 
+			                "Medio", "⚖️ MEDIO",
+			                "Bajo", "⚠️ BAJO",
+			                "Muy Bajo", "🔻 MUY BAJO",
+			                "❓ SIN CLASIFICAR"
+			            )
+			    
+			    
+			```
+		lineageTag: 6065563d-dfef-47da-9f14-f7d09c3cdbd2
+
+	measure KPI_Propension_Consumo = ```
+			
+			        VAR PropConsumo = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[propension_consumo_pct]),
+			                BLANK()
+			            )
+			        RETURN
+			            IF(
+			                PropConsumo < 60, "💎 " & FORMAT(PropConsumo, "0.0", "es-MX") & "% AHORRADOR",
+			                IF(PropConsumo < 75, "💰 " & FORMAT(PropConsumo, "0.0", "es-MX") & "% EQUILIBRADO",
+			                   IF(PropConsumo < 85, "⚠️ " & FORMAT(PropConsumo, "0.0", "es-MX") & "% ALTO GASTO",
+			                      "🚨 " & FORMAT(PropConsumo, "0.0", "es-MX") & "% SOBREENDEUDADO"))
+			            )
+			    
+			    
+			```
+		lineageTag: 5c7ccf22-0324-41dc-9bb6-810152028712
+
+	measure KPI_Ranking_Economico = ```
+			
+			        VAR RankingEcon = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[ranking_ingreso]),
+			                BLANK()
+			            )
+			        RETURN
+			            IF(
+			                RankingEcon <= 5, "🥇 TOP 5 - Lugar " & RankingEcon,
+			                IF(RankingEcon <= 10, "🥈 TOP 10 - Lugar " & RankingEcon,
+			                   IF(RankingEcon <= 20, "🥉 MEDIO - Lugar " & RankingEcon,
+			                      "📊 LUGAR " & RankingEcon & " DE 32"))
+			            )
+			    
+			    
+			```
+		lineageTag: 62f3d4a9-6b4f-44ff-8c23-b2a1cbb1aa2f
+
+	measure Nivel_Desarrollo_Con_Iconos = ```
+			
+			        VAR NivelBase = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[nivel_desarrollo_economico]),
+			                BLANK()
+			            )
+			        RETURN
+			            SWITCH(
+			                NivelBase,
+			                "Muy Alto", "🔥 MUY ALTO",
+			                "Alto", "🚀 ALTO", 
+			                "Medio", "⚖️ MEDIO",
+			                "Bajo", "⚠️ BAJO",
+			                "Muy Bajo", "🔻 MUY BAJO",
+			                "❓ Sin Clasificar"
+			            )
+			
+			    
+			```
+		lineageTag: 428a4868-dacc-4ce2-86a5-7d430961f06b
+
+	measure Estrellas_Desarrollo = ```
+			
+			        VAR NivelBase = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[nivel_desarrollo_economico]),
+			                BLANK()
+			            )
+			        RETURN
+			            SWITCH(
+			                NivelBase,
+			                "Muy Alto", "⭐⭐⭐⭐⭐ CINCO ESTRELLAS",
+			                "Alto", "⭐⭐⭐⭐⚪ CUATRO ESTRELLAS", 
+			                "Medio", "⭐⭐⭐⚪⚪ TRES ESTRELLAS",
+			                "Bajo", "⭐⭐⚪⚪⚪ DOS ESTRELLAS",
+			                "Muy Bajo", "⭐⚪⚪⚪⚪ UNA ESTRELLA",
+			                "⚫⚫⚫⚫⚫ SIN CALIFICAR"
+			            )
+			
+			    
+			```
+		lineageTag: 1c764702-6446-4080-92f7-9b43f3bea7fc
+
+	measure Emoji_Desarrollo = ```
+			
+			        VAR NivelBase = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[nivel_desarrollo_economico]),
+			                BLANK()
+			            )
+			        RETURN
+			            SWITCH(
+			                NivelBase,
+			                "Muy Alto", "🏆 CAMPEÓN",
+			                "Alto", "🥇 ORO", 
+			                "Medio", "🥈 PLATA",
+			                "Bajo", "🥉 BRONCE",
+			                "Muy Bajo", "📉 A MEJORAR",
+			                "🤷‍♂️ SIN DATOS"
+			            )
+			
+			
+			```
+		lineageTag: 97904eda-8fc4-44b7-baca-d45711f3196b
+
+	measure Semaforo_Desarrollo = ```
+			
+			        VAR NivelBase = 
+			            IF(
+			                HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			                SELECTEDVALUE(resumen_estatal_informe_integral_2024[nivel_desarrollo_economico]),
+			                BLANK()
+			            )
+			        RETURN
+			            SWITCH(
+			                NivelBase,
+			                "Muy Alto", "🟢🟢🟢 EXCELENTE",
+			                "Alto", "🟢🟢⚪ MUY BUENO", 
+			                "Medio", "🟡🟡⚪ REGULAR",
+			                "Bajo", "🟠🟠⚪ NECESITA MEJORA",
+			                "Muy Bajo", "🔴🔴🔴 CRÍTICO",
+			                "⚫⚫⚫ SIN DATOS"
+			            )
+			
+			    
+			```
+		lineageTag: a8bd5885-643c-47a8-af5c-f6a01c2b837a
+
+	measure Valor_Gasto_Categoria =
+			
+			IF(
+			    HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			    SWITCH(
+			        SELECTEDVALUE(CategoriaGasto[Categoria]),
+			        "Alimentos", SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_alimentos_promedio]),
+			        "Vivienda", SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_vivienda_promedio]),
+			        "Transporte", SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_transporte_promedio]),
+			        "Educacion", SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_educacion_promedio]),
+			        "Salud", SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_salud_promedio]),
+			        "Vestido", SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_vestido_promedio]),
+			        BLANK()
+			    ),
+			    BLANK()
+			)
+		lineageTag: 05e7f5ac-ce8b-4ba8-8995-89bdb42964fc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure KPI_Gasto_Alimentos = ```
+			
+			        VAR GastoAlim = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_alimentos_promedio]), BLANK())
+			        VAR GastoTotal = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio]), BLANK())
+			        VAR PctReal = DIVIDE(GastoAlim, GastoTotal) * 100
+			        RETURN "🍽️ $" & FORMAT(GastoAlim, "#.0", "es-MX") & " (" & FORMAT(PctReal, "0.1") & "%)"
+			    
+			    
+			```
+		lineageTag: aa60a230-8840-468b-b1bc-f4a884dabfc7
+
+	measure KPI_Gasto_Educacion = ```
+			
+			        VAR GastoEdu = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_educacion_promedio]), BLANK())
+			        VAR GastoTotal = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio]), BLANK())
+			        VAR PctReal = DIVIDE(GastoEdu, GastoTotal) * 100
+			        RETURN "🎓 $" & FORMAT(GastoEdu, "#.0", "es-MX") & " (" & FORMAT(PctReal, "0.1") & "%)"
+			    
+			    
+			```
+		lineageTag: 29719bc1-aa66-4c16-bba9-f6b6d95e44ee
+
+	measure KPI_Gasto_Salud = ```
+			
+			        VAR GastoSalud = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_salud_promedio]), BLANK())
+			        VAR GastoTotal = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio]), BLANK())
+			        VAR PctReal = DIVIDE(GastoSalud, GastoTotal) * 100
+			        RETURN "🏥 $" & FORMAT(GastoSalud, "#.0", "es-MX") & " (" & FORMAT(PctReal, "0.1") & "%)"
+			    
+			    
+			```
+		lineageTag: 31ab0d31-a19c-48d7-96d5-247cb17a5c9c
+
+	measure KPI_Gasto_Total = ```
+			
+			        VAR GastoEst = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio]), BLANK())
+			        RETURN "🛒 $" & FORMAT(GastoEst, "#.0", "es-MX") & " MXN"
+			    
+			    
+			```
+		lineageTag: 0a99f60b-0885-4f32-92c7-8166108f3197
+
+	measure KPI_Gasto_Transporte = ```
+			
+			        VAR GastoTrans = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_transporte_promedio]), BLANK())
+			        VAR GastoTotal = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio]), BLANK())
+			        VAR PctReal = DIVIDE(GastoTrans, GastoTotal) * 100
+			        RETURN "🚗 $" & FORMAT(GastoTrans, "#.0", "es-MX") & " (" & FORMAT(PctReal, "0.1", "es-MX") & "%)"
+			    
+			    
+			```
+		lineageTag: 5782b698-0a98-42cc-aeea-71b9fa3e1fb3
+
+	measure KPI_Gasto_Vivienda = ```
+			
+			        VAR GastoViv = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_vivienda_promedio]), BLANK())
+			        VAR GastoTotal = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio]), BLANK())
+			        VAR PctReal = DIVIDE(GastoViv, GastoTotal) * 100
+			        RETURN "🏠 $" & FORMAT(GastoViv, "#.0", "es-MX") & " (" & FORMAT(PctReal, "0.1") & "%)"
+			    
+			    
+			```
+		lineageTag: 3c293b84-f0f1-4265-b483-61b638c189e2
+
+	measure KPI_Perfil_Consumo = ```
+			
+			        VAR Perfil = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[perfil_consumo_alimentario]), BLANK())
+			        RETURN
+			            SWITCH(Perfil,
+			                "Subsistencia", "🔴 SUBSISTENCIA",
+			                "Básico", "🟡 BÁSICO",
+			                "Equilibrado", "🟢 EQUILIBRADO",
+			                "Diversificado", "💎 DIVERSIFICADO",
+			                "❓ SIN CLASIFICAR")
+			    
+			    
+			```
+		lineageTag: 9e808d39-5233-45fd-bba6-f32223323175
+
+	measure KPI_Ranking_Gasto = ```
+			
+			        VAR RankingGasto = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[ranking_gasto_alimentos]), BLANK())
+			        RETURN
+			            IF(RankingGasto <= 5, "🥇 TOP 5 - Lugar " & RankingGasto,
+			               IF(RankingGasto <= 10, "🥈 TOP 10 - Lugar " & RankingGasto,
+			                  "📊 LUGAR " & RankingGasto & " DE 32"))
+			
+			
+			```
+		lineageTag: b8a2aa22-d148-4818-baf1-61d01409e215
+
+	measure KPI_Diversidad_Alimentaria = ```
+			
+			        VAR Diversidad = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[diversidad_alimentaria_promedio]), BLANK())
+			        RETURN
+			            IF(Diversidad >= 2000, "🌟 " & FORMAT(Diversidad, "#,##0") & " ALTA",
+			               IF(Diversidad >= 1500, "⭐ " & FORMAT(Diversidad, "#,##0") & " MEDIA",
+			                  "⚠️ " & FORMAT(Diversidad, "#,##0") & " BAJA"))
+			    
+			    
+			```
+		lineageTag: aae4e683-1627-4a04-880a-fd2f41e108c3
+
+	measure KPI_Gasto_Alimentario_Total = ```
+			
+			        VAR GastoAlim = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_alimentos_promedio]), BLANK())
+			        RETURN "🍽️ $" & FORMAT(GastoAlim, "#,##0") & " MXN"
+			    
+			    
+			```
+		lineageTag: 01b4ec21-6891-4f8f-8499-37f20345059e
+
+	measure KPI_Gasto_Carnes = ```
+			
+			        VAR GastoCarnes = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_carnes_promedio]), BLANK())
+			        RETURN "🥩 $" & FORMAT(GastoCarnes, "#.0","es-MX") & " PROTEÍNAS"
+			
+			
+			```
+		lineageTag: 6f8ab495-bfca-4d3b-b438-55fef6bdddd0
+
+	measure KPI_Gasto_Cereales = ```
+			
+			        VAR GastoCereales = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_cereales_promedio]), BLANK())
+			        RETURN "🌾 $" & FORMAT(GastoCereales, "#.0", "es-MX") & " CARBOHIDRATOS"
+			    
+			    
+			```
+		lineageTag: 5a79e788-7be5-4291-a01b-e0db0090760c
+
+	measure KPI_Gasto_Frutas = ```
+			
+			        VAR GastoFrutas = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_frutas_promedio]), BLANK())
+			        RETURN "🍎 $" & FORMAT(GastoFrutas, "#.0", "es-MX") & " MINERALES"
+			    
+			    
+			```
+		lineageTag: e8147b3d-6631-4438-af6c-ccb1248da888
+
+	measure KPI_Gasto_Verduras = ```
+			
+			        VAR GastoVerduras = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_verduras_promedio]), BLANK())
+			        RETURN "🥬 $" & FORMAT(GastoVerduras, "#.0", "es-MX") & " VITAMINAS"
+			    
+			    
+			```
+		lineageTag: 487d2782-9ebe-4dad-9358-da57b904894e
+
+	measure KPI_Pct_Gasto_Alimentario = ```
+			
+			        VAR GastoAlim = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_alimentos_promedio]), BLANK())
+			        VAR GastoTotal = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio]), BLANK())
+			        VAR PctReal = DIVIDE(GastoAlim, GastoTotal) * 100
+			        RETURN
+			            IF(PctReal < 25, "💎 " & FORMAT(PctReal, "0.1", "es-MX") & "% EXCELENTE",
+			               IF(PctReal < 35, "🟢 " & FORMAT(PctReal, "0.1", "es-MX") & "% BUENO",
+			                  IF(PctReal < 50, "🟡 " & FORMAT(PctReal, "0.1") & "% REGULAR",
+			                     "🔴 " & FORMAT(PctReal, "0.1", "es-MX") & "% ALTO")))
+			    
+			    
+			```
+		lineageTag: 8a496ee8-21c4-4e8d-833d-8b10fb58c163
+
+	measure KPI_Pct_Gasto_Alimentario_Mejorado = ```
+			
+			        VAR GastoAlim = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_alimentos_promedio]), BLANK())
+			        VAR GastoTotal = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio]), BLANK())
+			        VAR PctReal = DIVIDE(GastoAlim, GastoTotal) * 100
+			        RETURN
+			            IF(PctReal < 28, "💎 " & FORMAT(PctReal, "0.1") & "% CLASE ALTA",
+			               IF(PctReal < 38, "🟢 " & FORMAT(PctReal, "0.1") & "% CLASE MEDIA",
+			                  IF(PctReal < 45, "🟡 " & FORMAT(PctReal, "0.1") & "% CLASE TRABAJADORA",
+			                     "🔴 " & FORMAT(PctReal, "0.1") & "% VULNERABLE")))
+			    
+			    
+			```
+		lineageTag: 55b749f6-9480-44d1-ba97-6de4b726e15d
+
+	measure KPI_Ranking_Alimentario = ```
+			
+			        VAR RankingAlim = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[ranking_gasto_alimentos]), BLANK())
+			        RETURN
+			            IF(RankingAlim <= 5, "🥇 TOP 5 - Lugar " & RankingAlim,
+			               IF(RankingAlim <= 10, "🥈 TOP 10 - Lugar " & RankingAlim,
+			                  "📊 LUGAR " & RankingAlim & " DE 32"))
+			
+			
+			```
+		lineageTag: 8183abfb-d4fc-48d3-a30e-b02fa1cc7f1c
+
+	measure KPI_Seguridad_Alimentaria_Compuesta = ```
+			
+			        VAR PctAlim = DIVIDE(
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_alimentos_promedio]),
+			            SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_promedio])
+			        ) * 100
+			        VAR Diversidad = SELECTEDVALUE(resumen_estatal_informe_integral_2024[diversidad_alimentaria_promedio])
+			        VAR ScoreGasto = 
+			            IF(PctAlim < 28, 50,
+			               IF(PctAlim < 38, 35,
+			                  IF(PctAlim < 45, 20, 5)))
+			        VAR ScoreDiversidad = 
+			            IF(Diversidad >= 2000, 50,
+			               IF(Diversidad >= 1500, 30, 10))
+			        VAR ScoreTotal = ScoreGasto + ScoreDiversidad
+			        RETURN
+			            IF(ScoreTotal >= 80, "🟢 SEGURIDAD ALTA",
+			               IF(ScoreTotal >= 60, "🟡 SEGURIDAD MEDIA",
+			                  IF(ScoreTotal >= 40, "🟠 INSEGURIDAD LEVE",
+			                     "🔴 INSEGURIDAD SEVERA")))
+			
+			    
+			```
+		lineageTag: 09988e09-e2a6-4bcf-822c-7346cfc43e4e
+
+	measure KPI_Distribucion_Sexo = ```
+			
+			        VAR PctHombres = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_poblacion_hombres]), BLANK())
+			        VAR PctMujeres = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_poblacion_mujeres]), BLANK())
+			        RETURN "👨 " & FORMAT(PctHombres, "0.0", "es-MX") & "% / 👩 " & FORMAT(PctMujeres, "0.0", "es-MX") & "%"
+			    
+			    
+			```
+		lineageTag: 14497996-2928-475f-9495-9a48d2a3e2a4
+
+	measure KPI_Edad_Promedio_Jefe = ```
+			
+			        VAR EdadJefe = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[edad_promedio_jefe]), BLANK())
+			        RETURN
+			            IF(EdadJefe < 45, "🟢 " & FORMAT(EdadJefe, "0.0", "es-MX") & " AÑOS JOVEN",
+			               IF(EdadJefe < 55, "🟡 " & FORMAT(EdadJefe, "0.0", "es-MX") & " AÑOS MADURO",
+			                  "🔴 " & FORMAT(EdadJefe, "0.0") & " AÑOS ENVEJECIDO"))
+			    
+			    
+			```
+		lineageTag: 2b61ee7b-a58a-4e16-a41d-019445037884
+
+	measure KPI_Hogares_Nucleares = ```
+			
+			        VAR PctNuclear = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_hogares_nucleares]), BLANK())
+			        RETURN "👪 " & FORMAT(PctNuclear, "0.0") & "% HOGARES NUCLEARES"
+			    
+			    
+			```
+		lineageTag: f33eb785-f6c5-4f25-b0c0-122f60b0d252
+
+	measure KPI_Hogares_Numerosos = ```
+			
+			        VAR PctNumer = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_hogares_numerosos]), BLANK())
+			        RETURN "👨‍👩‍👧‍👦 " & FORMAT(PctNumer, "0.0") & "% FAMILIAS GRANDES"
+			    
+			    
+			```
+		lineageTag: d5f73a8f-4260-4b8f-8a09-ea5d630f6289
+
+	measure KPI_Hogares_Unipersonales = ```
+			
+			        VAR PctUniper = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_hogares_unipersonales]), BLANK())
+			        RETURN "🏠 " & FORMAT(PctUniper, "0.0") & "% VIVEN SOLOS"
+			    
+			    
+			```
+		lineageTag: f5187556-271b-449e-bf40-aa6817fab687
+
+	measure KPI_Integrantes_Hogar = ```
+			
+			        VAR IntegPromedio = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[promedio_integrantes_hogar]), BLANK())
+			        RETURN "👥 " & FORMAT(IntegPromedio, "0.0", "es-MX") & " PERSONAS/HOGAR"
+			
+			
+			```
+		lineageTag: f7f286eb-92ac-46d4-9999-a6301168cf3b
+
+	measure KPI_Jefatura_Hogar = ```
+			
+			        VAR PctJefeH = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_jefe_hombre]), BLANK())
+			        VAR PctJefeM = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_jefe_mujer]), BLANK())
+			        RETURN
+			            IF(PctJefeH > 70, "👨 " & FORMAT(PctJefeH, "0.0", "es-MX") & "% PREDOMINIO MASCULINO",
+			               IF(PctJefeH < 60, "⚖️ " & FORMAT(PctJefeH, "0.0", "es-MX") & "% EQUILIBRADO",
+			                  "👨 " & FORMAT(PctJefeH, "0.0", "es-MX") & "% MAYORÍA MASCULINA"))
+			    
+			    
+			```
+		lineageTag: 229efb2c-792b-4dbf-be8f-23556e6d6ef8
+
+	measure KPI_Poblacion_Total = ```
+			
+			        VAR PoblacionEst = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[poblacion_total]), BLANK())
+			        RETURN "👥 " & FORMAT(PoblacionEst/1000000, "0.0", "es-MX") & " MILLONES"
+			    
+			    
+			```
+		lineageTag: c342c3b6-133e-4f78-81ad-da72c8e25f52
+
+	measure Resto_Vivienda =
+			
+			VAR GastoTotal = SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_vivienda_total_promedio])
+			VAR GastoAgua = SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_agua_promedio])
+			VAR GastoEnergia = SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_energia_promedio])
+			RETURN GastoTotal - GastoAgua - GastoEnergia
+		lineageTag: 71521726-4665-413f-83c8-261f70533cb0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure KPI_Calidad_Habitacional = ```
+			
+			        VAR GastoViv = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_vivienda_total_promedio]), BLANK())
+			        VAR GastoAgua = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_agua_promedio]), BLANK())
+			        VAR GastoEnergia = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_energia_promedio]), BLANK())
+			        VAR IndiceCalidad = GastoViv + GastoAgua + GastoEnergia
+			        RETURN
+			            IF(IndiceCalidad >= 8000, "🌟 CALIDAD ALTA",
+			               IF(IndiceCalidad >= 5000, "⭐ CALIDAD MEDIA",
+			                  "⚠️ CALIDAD BÁSICA"))
+			    
+			    
+			```
+		lineageTag: 00f38677-f312-4ccd-b01b-c858e3d0c741
+
+	measure KPI_Carga_Habitacional_Oficial = ```
+			
+			        VAR PctViv = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_ingreso_vivienda]), BLANK())
+			        RETURN
+			            IF(PctViv < 20, "🟢 " & FORMAT(PctViv, "0.1", "es-MX") & "% CARGA BAJA",
+			               IF(PctViv < 30, "🟡 " & FORMAT(PctViv, "0.1", "es-MX") & "% CARGA MEDIA",
+			                  "🔴 " & FORMAT(PctViv, "0.1", "es-MX") & "% CARGA ALTA"))
+			    
+			    
+			```
+		lineageTag: 1fbc1abb-39d5-432e-857f-4751466ff781
+
+	measure KPI_Esfuerzo_Habitacional = ```
+			
+			        VAR PctViv = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_ingreso_vivienda]), BLANK())
+			        RETURN
+			            IF(PctViv < 15, "💎 ESFUERZO MÍNIMO",
+			               IF(PctViv < 25, "🟢 ESFUERZO NORMAL",
+			                  IF(PctViv < 35, "🟡 ESFUERZO ALTO",
+			                     "🔴 SOBREESFUERZO")))
+			
+			
+			```
+		lineageTag: 297ba09e-c633-4db9-bc7a-4b937b0a31ef
+
+	measure KPI_Gasto_Agua = ```
+			
+			        VAR GastoAgua = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_agua_promedio]), BLANK())
+			        RETURN "💧 $" & FORMAT(GastoAgua, "#.0", "es-MX") & "AGUA"
+			    
+			    
+			```
+		lineageTag: 1f654a48-fe9a-47a8-b2ba-cbdcb8033b56
+
+	measure KPI_Gasto_Energia = ```
+			
+			        VAR GastoEnergia = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_energia_promedio]), BLANK())
+			        RETURN "⚡ $" & FORMAT(GastoEnergia, "#.0", "es-MX") & " ENERGÍA"
+			    
+			    
+			```
+		lineageTag: 276502a7-075b-4136-b9e3-16e83066e71b
+
+	measure KPI_Gasto_Vivienda_Total = ```
+			
+			        VAR GastoViv = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_vivienda_total_promedio]), BLANK())
+			        RETURN "🏠 $" & FORMAT(GastoViv,  "#.0", "es-MX") & " MXN"
+			    
+			    
+			```
+		lineageTag: 8166a793-c38f-4309-9d1c-188dd1e81331
+
+	measure KPI_Pct_Ingreso_Vivienda = ```
+			
+			        VAR PctViv = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_ingreso_vivienda]), BLANK())
+			        RETURN
+			            IF(PctViv < 20, "🟢 " & FORMAT(PctViv, "0.1") & "% CARGA BAJA",
+			               IF(PctViv < 30, "🟡 " & FORMAT(PctViv, "0.1") & "% CARGA MEDIA",
+			                  "🔴 " & FORMAT(PctViv, "0.1") & "% CARGA ALTA"))
+			    
+			    
+			```
+		lineageTag: dce867d3-112d-4445-9769-00817612b8f4
+
+	measure KPI_Servicios_Basicos = ```
+			
+			        VAR GastoAgua = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_agua_promedio]), BLANK())
+			        VAR GastoEnergia = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_energia_promedio]), BLANK())
+			        VAR IndiceServicios = GastoAgua + GastoEnergia
+			        RETURN
+			            IF(IndiceServicios >= 2500, "🌟 SERVICIOS COMPLETOS",
+			               IF(IndiceServicios >= 1500, "⭐ SERVICIOS BÁSICOS",
+			                  "⚠️ SERVICIOS LIMITADOS"))
+			
+			
+			```
+		lineageTag: 48f60936-350f-40e2-9bc3-1ddc6044dcff
+
+	measure KPI_Vs_Promedio_Nacional = ```
+			
+			        VAR GastoViv = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_vivienda_total_promedio]), BLANK())
+			        VAR PromedioNacional = 4346 // Dato oficial ENIGH 2024
+			        VAR Indice = DIVIDE(GastoViv, PromedioNacional) * 100
+			        RETURN
+			            IF(Indice >= 120, "💎 " & FORMAT(Indice, "0") & "% SUPERIOR",
+			               IF(Indice >= 80, "🟢 " & FORMAT(Indice, "0") & "% PROMEDIO",
+			                  "🟡 " & FORMAT(Indice, "0") & "% INFERIOR"))
+			    
+			    
+			```
+		lineageTag: bd75390c-de2b-405a-9973-93ab53860e42
+
+	measure KPI_Eficiencia_Educativa = ```
+			
+			        VAR GastoEdu = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_educacion_total_promedio]), BLANK())
+			        VAR Integrantes = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[promedio_integrantes_hogar]), BLANK())
+			        VAR GastoPerCapita = DIVIDE(GastoEdu, Integrantes)
+			        RETURN "👨‍🎓 $" & FORMAT(GastoPerCapita, "#,##0") & " PER CÁPITA"
+			
+			
+			```
+		lineageTag: 497717f7-5aea-446d-9658-36eb4eb6dcdf
+
+	measure KPI_Gasto_Educacion_Total = ```
+			
+			        VAR GastoEdu = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_educacion_total_promedio]), BLANK())
+			        RETURN "🎓 $" & FORMAT(GastoEdu, "#.0", "es-MX") & " MXN"
+			    
+			    
+			```
+		lineageTag: 35c14f5c-ec41-4fd5-ab6c-a8cfd0cb78b0
+
+	measure KPI_Hogares_Invierten_Educacion = ```
+			
+			        VAR PctHogares = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_hogares_invierten_educacion]), BLANK())
+			        RETURN "👨‍👩‍👧‍👦 " & FORMAT(PctHogares, "0.0", "es-MX") & "% HOGARES INVIERTEN"
+			    
+			    
+			```
+		lineageTag: 5900ac19-05b2-4952-97e2-361396f44825
+
+	measure KPI_Pct_Ingreso_Educacion = ```
+			
+			        VAR PctEdu = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_ingreso_educacion]), BLANK())
+			        RETURN
+			            IF(PctEdu >= 8, "🌟 " & FORMAT(PctEdu, "0.1", "es-MX") & "% INVERSIÓN ALTA",
+			               IF(PctEdu >= 5, "⭐ " & FORMAT(PctEdu, "0.1", "es-MX") & "% INVERSIÓN MEDIA",
+			                  "⚠️ " & FORMAT(PctEdu, "0.1", "es-MX") & "% INVERSIÓN BAJA"))
+			    
+			    
+			```
+		lineageTag: 82727c55-fedb-4516-8446-468ced9bb126
+
+	measure KPI_Prioridad_Educativa = ```
+			
+			        VAR PctEdu = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_ingreso_educacion]), BLANK())
+			        VAR PctHogares = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_hogares_invierten_educacion]), BLANK())
+			        VAR ScoreEducativo = (PctEdu * 5) + (PctHogares * 0.5)
+			        RETURN
+			            IF(ScoreEducativo >= 60, "🌟 PRIORIDAD MUY ALTA",
+			               IF(ScoreEducativo >= 40, "⭐ PRIORIDAD ALTA",
+			                  IF(ScoreEducativo >= 25, "🟡 PRIORIDAD MEDIA",
+			                     "🔴 PRIORIDAD BAJA")))
+			
+			
+			```
+		lineageTag: c33231ba-c423-49dc-bfd1-ae4b44fb0fd3
+
+	measure KPI_Prioridad_Educativa_Mejorado = ```
+			
+			        VAR PctEdu = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_ingreso_educacion]), BLANK())
+			        VAR PctHogares = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_hogares_invierten_educacion]), BLANK())
+			        // Ponderación mejorada: 60% esfuerzo económico, 40% cobertura
+			        VAR ScoreEducativo = (PctEdu * 0.6) + (PctHogares * 0.4)
+			        RETURN
+			            IF(ScoreEducativo >= 8, "🌟 PRIORIDAD MUY ALTA (" & FORMAT(ScoreEducativo, "0.1", "es-MX") & ")",
+			               IF(ScoreEducativo >= 6, "⭐ PRIORIDAD ALTA (" & FORMAT(ScoreEducativo, "0.1", "es-MX") & ")",
+			                  IF(ScoreEducativo >= 4, "🟡 PRIORIDAD MEDIA (" & FORMAT(ScoreEducativo, "0.1", "es-MX") & ")",
+			                     "🔴 PRIORIDAD BAJA (" & FORMAT(ScoreEducativo, "0.1", "es-MX") & ")")))
+			    
+			    
+			```
+		lineageTag: 6eba86aa-b5a6-4a19-b0a3-5f91dba38118
+
+	measure KPI_Ranking_Educativo = ```
+			
+			        VAR RankingEdu = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[ranking_educacion]), BLANK())
+			        RETURN
+			            IF(RankingEdu <= 5, "🥇 TOP 5 - Lugar " & RankingEdu,
+			               IF(RankingEdu <= 10, "🥈 TOP 10 - Lugar " & RankingEdu,
+			                  "📊 LUGAR " & RankingEdu & " DE 32"))
+			    
+			    
+			```
+		lineageTag: b49a20f8-bf27-40f1-b120-b397e2fd1ce6
+
+	measure KPI_Vs_Nacional_Educacion = ```
+			
+			        VAR GastoEdu = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_educacion_total_promedio]), BLANK())
+			        VAR PromedioNacional = 2903 // Dato oficial ENIGH 2024
+			        VAR Indice = DIVIDE(GastoEdu, PromedioNacional) * 100
+			        RETURN
+			            IF(Indice >= 150, "💎 " & FORMAT(Indice, "0") & "% SUPERIOR",
+			               IF(Indice >= 80, "🟢 " & FORMAT(Indice, "0") & "% PROMEDIO",
+			                  "🟡 " & FORMAT(Indice, "0") & "% INFERIOR"))
+			    
+			    
+			```
+		lineageTag: e55ef9b4-9a51-4e84-8ca0-6b7d170f657c
+
+	measure KPI_Vs_Nacional_Educacion_Dinamico = ```
+			
+			        VAR GastoEdu = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_educacion_total_promedio]), BLANK())
+			        VAR PromedioNacional = 
+			            CALCULATE(
+			                AVERAGE(resumen_estatal_informe_integral_2024[gasto_educacion_total_promedio]),
+			                ALL(resumen_estatal_informe_integral_2024[nombre_entidad])
+			            )
+			        VAR Indice = DIVIDE(GastoEdu, PromedioNacional) * 100
+			        RETURN
+			            IF(Indice >= 150, "💎 " & FORMAT(Indice, "0", "es-MX") & "% SUPERIOR",
+			               IF(Indice >= 80, "🟢 " & FORMAT(Indice, "0", "es-MX") & "% PROMEDIO",
+			                  "🟡 " & FORMAT(Indice, "0", "es-MX") & "% INFERIOR"))
+			    
+			    
+			```
+		lineageTag: 50c77c0a-f3f2-4498-aec6-af6537b6d1a2
+
+	measure KPI_Cobertura_Hogares = ```
+			
+			        VAR PctHogares = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_hogares_gastan_salud]), BLANK())
+			        RETURN "👨‍👩‍👧‍👦 " & FORMAT(PctHogares, "0.0") & "% COBERTURA"
+			    
+			    
+			```
+		lineageTag: 2d91d6ac-45b4-4b21-a12b-aea858247b9a
+
+	measure KPI_Gasto_Per_Capita_Suficiencia = ```
+			
+			VAR GastoPC = 
+			    IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			       SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_salud_per_capita]), BLANK())
+			VAR MinRecomendado = 1500 // Mínimo recomendado ajustado
+			RETURN
+			    IF(GastoPC >= MinRecomendado, 
+			       "🟢 $" & FORMAT(GastoPC, "#.0", "es-MX") & " SUFICIENTE",
+			       "🔴 $" & FORMAT(GastoPC, "#.0", "es-MX") & " INSUFICIENTE")
+			```
+		lineageTag: e2c07e7a-14ff-45b6-b31d-514e8fcbc2bf
+
+	measure KPI_Gasto_Salud_Total = ```
+			
+			VAR GastoSalud = 
+			    IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			        SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_salud_total_promedio]), BLANK())
+			RETURN "🏥 $" & FORMAT(GastoSalud, "#.0", "es-MX") & " MXN"
+			    
+			```
+		lineageTag: 4761605c-6d7e-4570-b792-c97fa0e2cf19
+
+	measure KPI_Ranking_Salud = ```
+			
+			        VAR RankingSalud = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[ranking_salud]), BLANK())
+			        RETURN
+			            IF(RankingSalud <= 5, "🥇 TOP 5 - Lugar " & RankingSalud,
+			               IF(RankingSalud <= 10, "🥈 TOP 10 - Lugar " & RankingSalud,
+			                  "📊 LUGAR " & RankingSalud & " DE 32"))
+			    
+			    
+			```
+		lineageTag: 90c00c6d-cfab-40b2-84f0-dd3951a39464
+
+	measure KPI_Riesgo_Financiero_OMS = ```
+			
+			        VAR PctSalud = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_ingreso_salud]), BLANK())
+			        VAR LineaRiesgo = 10 // Umbral OMS para gasto catastrófico
+			        RETURN
+			            IF(PctSalud > LineaRiesgo, 
+			               "🔴 GASTO CATASTRÓFICO " & FORMAT(PctSalud, "0.1") & "%",
+			               IF(PctSalud >= 5, "🟡 CARGA ALTA " & FORMAT(PctSalud, "0.1") & "%",
+			                  "🟢 PROTEGIDOS " & FORMAT(PctSalud, "0.1") & "%"))
+			    
+			    
+			```
+		lineageTag: 4156657c-05ad-4e6a-b1da-242e5cabc136
+
+	measure KPI_Salud_Integral_Normalizado = ```
+			
+			        VAR GastoPC = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[gasto_salud_per_capita]), BLANK())
+			        VAR Cobertura = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_hogares_gastan_salud]), BLANK())
+			        VAR Carga = 
+			            IF(HASONEFILTER(resumen_estatal_informe_integral_2024[nombre_entidad]),
+			               SELECTEDVALUE(resumen_estatal_informe_integral_2024[pct_ingreso_salud]), BLANK())
+			        
+			        // Scores normalizados 0-100
+			        VAR ScoreGasto = MIN(100, DIVIDE(GastoPC, 2500) * 100)
+			        VAR ScoreCobertura = MIN(100, Cobertura * 1.25)
+			        VAR ScoreCarga = MAX(0, 100 - (Carga * 10))
+			        
+			        // Ponderación OMS: 40% gasto, 35% cobertura, 25% protección
+			        VAR ScoreTotal = 
+			            (ScoreGasto * 0.4) + 
+			            (ScoreCobertura * 0.35) + 
+			            (ScoreCarga * 0.25)
+			        
+			        RETURN
+			            IF(ScoreTotal >= 85, "🏅 EXCELENTE (" & ROUND(ScoreTotal,0) & ")",
+			               IF(ScoreTotal >= 70, "🟢 ADECUADA (" & ROUND(ScoreTotal,0) & ")",
+			                  IF(ScoreTotal >= 50, "🟡 REGULAR (" & ROUND(ScoreTotal,0) & ")",
+			                     "🔴 DEFICIENTE (" & ROUND(ScoreTotal,0) & ")")))
+			
+			
+			```
+		lineageTag: 280d0cc5-3fd9-4526-9a5c-b3ed70424578
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Columna1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

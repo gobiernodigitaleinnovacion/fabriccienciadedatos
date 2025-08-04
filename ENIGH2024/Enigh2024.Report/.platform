@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Enigh2024"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3975c5d6-f067-94e9-4d5c-7ca3872e6807"
+  }
+}
