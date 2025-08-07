@@ -1,0 +1,22 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.145.1602.0 (25.07)+10647c9fa319b5e39936cdb21328038c371d1fe4
+
+annotation PBI_QueryOrder = ["Medidas","censo_ageb_2020_nacional_coordenadas","Totales_Estatales"]
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop"]
+
+ref table Medidas
+ref table censo_ageb_2020_nacional_coordenadas
+ref table Totales_Estatales
+
+ref cultureInfo es-ES
+

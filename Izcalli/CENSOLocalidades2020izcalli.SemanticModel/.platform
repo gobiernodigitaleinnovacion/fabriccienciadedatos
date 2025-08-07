@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "CENSOLocalidades2020izcalli"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "62e3dcb7-4c48-ab57-4888-07a90c0afa00"
+  }
+}

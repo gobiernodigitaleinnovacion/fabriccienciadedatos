@@ -1,0 +1,12 @@
+expression denue_empresas_mexico_final =
+		let
+		    Source = Sql.Database("qihyhmenysou5otulys7x473hm-wmsh36vm2hsepif26nl54mytlu.datawarehouse.fabric.microsoft.com", "lh_lokus_denue"),
+		    dbo_denue_empresas_mexico_final = Source{[Schema="dbo",Item="denue_empresas_mexico_final"]}[Data]
+		in
+		    dbo_denue_empresas_mexico_final
+	lineageTag: 352e0351-fc6f-4e41-bc38-363077ae3f08
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

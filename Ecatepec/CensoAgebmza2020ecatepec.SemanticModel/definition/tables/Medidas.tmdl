@@ -1,0 +1,1256 @@
+table Medidas
+	lineageTag: f09ec0fe-4f98-45a7-9d01-169ebb246887
+
+	measure 'Total Entidades' = ```
+			
+			    COUNTROWS(SUMMARIZE(Totales_Estatales, Totales_Estatales[CVE_ENT]))
+			
+			
+			```
+		formatString: 0
+		lineageTag: a7eb14d8-5db9-4835-ae5c-03335827167e
+
+	measure 'Poblacion Total Nacional' = ```
+			
+			    SUM(Totales_Estatales[POBTOT])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 525c51a4-e6f8-4696-af8f-dbe899836506
+
+	measure 'Habitantes Promedio por AGEB' =
+			
+			DIVIDE(
+			    SUM(censo_ageb_2020_nacional_coordenadas[POBTOT]),
+			    COUNTROWS(
+			        SUMMARIZE(
+			            censo_ageb_2020_nacional_coordenadas,
+			            censo_ageb_2020_nacional_coordenadas[CVE_ENT],
+			            censo_ageb_2020_nacional_coordenadas[CVE_MUN],
+			            censo_ageb_2020_nacional_coordenadas[CVE_LOC],
+			            censo_ageb_2020_nacional_coordenadas[CVE_AGEB]
+			        )
+			    ),
+			    0
+			)
+		lineageTag: c5423656-1fcf-4b4a-870a-63d2c31afd2b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Habitantes por Manzana' = ```
+			
+			    DIVIDE(
+			        SUM(censo_ageb_2020_nacional_coordenadas[POBTOT]),
+			        COUNTROWS(censo_ageb_2020_nacional_coordenadas),
+			        0
+			    )
+			
+			
+			```
+		lineageTag: 8fd81287-9b04-4a7b-b18a-9bf55f88bdf5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Poblacion Femenina' = ```
+			
+			    SUM(censo_ageb_2020_nacional_coordenadas[POBFEM])
+			
+			
+			```
+		formatString: 0
+		lineageTag: df3b1ece-31b5-4dac-9e55-8d5742d99e1f
+
+	measure 'Poblacion Masculina' = ```
+			
+			    SUM(censo_ageb_2020_nacional_coordenadas[POBMAS])
+			
+			
+			```
+		formatString: 0
+		lineageTag: f9f941b2-2fe9-459d-831a-8fb1861157ea
+
+	measure 'Poblacion Urbana Nacional' = ```
+			
+			    SUM(censo_ageb_2020_nacional_coordenadas[POBTOT])
+			
+			
+			```
+		formatString: 0
+		lineageTag: ce4a7b67-eb2f-4f36-93bb-9fa54dd974f6
+
+	measure 'Porcentaje Urbanizacion' = ```
+			
+			VAR PoblacionUrbanaFiltrada = SUM(censo_ageb_2020_nacional_coordenadas[POBTOT])
+			VAR EstadoSeleccionado = SELECTEDVALUE(censo_ageb_2020_nacional_coordenadas[CVE_ENT])
+			VAR PoblacionEstatalTotal = 
+			    CALCULATE(
+			        SUM(Totales_Estatales[POBTOT]),
+			        Totales_Estatales[CVE_ENT] = EstadoSeleccionado
+			    )
+			RETURN
+			DIVIDE(PoblacionUrbanaFiltrada, PoblacionEstatalTotal, 0) * 100
+			
+			```
+		lineageTag: be6fad83-44c1-47cd-87ac-7f14290ffa14
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total AGEBs Urbanas' = ```
+			
+			    COUNTROWS(
+			        SUMMARIZE(
+			            censo_ageb_2020_nacional_coordenadas,
+			            censo_ageb_2020_nacional_coordenadas[CVE_ENT],
+			            censo_ageb_2020_nacional_coordenadas[CVE_MUN],
+			            censo_ageb_2020_nacional_coordenadas[CVE_LOC],
+			            censo_ageb_2020_nacional_coordenadas[CVE_AGEB]
+			        )
+			    )
+			
+			
+			```
+		formatString: 0
+		lineageTag: 139ae1cd-5973-49ee-bf3d-b14ff5a3915d
+
+	measure 'Total Localidades Urbanas' = ```
+			
+			    COUNTROWS(
+			        SUMMARIZE(
+			            censo_ageb_2020_nacional_coordenadas,
+			            censo_ageb_2020_nacional_coordenadas[CVE_ENT],
+			            censo_ageb_2020_nacional_coordenadas[CVE_MUN],
+			            censo_ageb_2020_nacional_coordenadas[CVE_LOC]
+			        )
+			    )
+			
+			
+			```
+		formatString: 0
+		lineageTag: f2b5bee4-46a8-45c4-8e46-caf43312a0bf
+
+	measure 'Total Manzanas Urbanas' = ```
+			
+			    COUNTROWS(censo_ageb_2020_nacional_coordenadas)
+			
+			
+			```
+		formatString: 0
+		lineageTag: a96a6999-d0e0-483f-ad5e-974f245b5c5a
+
+	measure 'Total Municipios Urbanos' = ```
+			
+			    COUNTROWS(
+			        SUMMARIZE(
+			            censo_ageb_2020_nacional_coordenadas,
+			            censo_ageb_2020_nacional_coordenadas[CVE_ENT],
+			            censo_ageb_2020_nacional_coordenadas[CVE_MUN]
+			        )
+			    )
+			
+			
+			```
+		formatString: 0
+		lineageTag: 42384957-a15e-40a9-935c-644e9ac873e4
+
+	measure 'Escolaridad Promedio' = ```
+			
+			VAR PoblacionConEscolaridad = 
+			    SUMX(
+			        FILTER(
+			            censo_ageb_2020_nacional_coordenadas,
+			            censo_ageb_2020_nacional_coordenadas[GRAPROES] > 0 && 
+			            NOT ISBLANK(censo_ageb_2020_nacional_coordenadas[GRAPROES])
+			        ),
+			        censo_ageb_2020_nacional_coordenadas[GRAPROES] * censo_ageb_2020_nacional_coordenadas[POBTOT]
+			    )
+			VAR PoblacionTotal = 
+			    SUMX(
+			        FILTER(
+			            censo_ageb_2020_nacional_coordenadas,
+			            censo_ageb_2020_nacional_coordenadas[GRAPROES] > 0 && 
+			            NOT ISBLANK(censo_ageb_2020_nacional_coordenadas[GRAPROES])
+			        ),
+			        censo_ageb_2020_nacional_coordenadas[POBTOT]
+			    )
+			RETURN
+			DIVIDE(PoblacionConEscolaridad, PoblacionTotal, BLANK())
+			
+			
+			```
+		lineageTag: 19f5dadf-af39-4ecc-bb0d-326ddb9eb31a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Jerarquia Completa' = ```
+			
+			VAR Estado = SELECTEDVALUE(censo_ageb_2020_nacional_coordenadas[NOM_ENT])
+			VAR Municipio = SELECTEDVALUE(censo_ageb_2020_nacional_coordenadas[NOM_MUN])
+			VAR CodLocalidad = SELECTEDVALUE(censo_ageb_2020_nacional_coordenadas[CVE_LOC])
+			VAR AGEB = SELECTEDVALUE(censo_ageb_2020_nacional_coordenadas[CVE_AGEB])
+			VAR Manzana = SELECTEDVALUE(censo_ageb_2020_nacional_coordenadas[CVE_MZA])
+			RETURN
+			Estado & " > " & Municipio & " > LOC:" & CodLocalidad & " > AGEB:" & AGEB & " > MZA:" & Manzana
+			
+			
+			```
+		lineageTag: 05320de2-cddb-4cea-b133-3063191ad8cd
+
+	measure 'PEA Total' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[PEA])
+			
+			
+			```
+		formatString: 0
+		lineageTag: c3bf0477-cbd6-4a20-b839-422c596de2a2
+
+	measure 'Poblacion Total' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[POBTOT])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 39b5ae8a-e17d-4c62-82f4-1a400e4ee8a8
+
+	measure 'Porcentaje Electricidad' = ```
+			
+			VAR Electricidad = SUM(censo_ageb_2020_nacional_coordenadas[VPH_C_ELEC])
+			VAR Viviendas = SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			RETURN
+			IF(
+			    Viviendas = 0 || ISBLANK(Viviendas) || Electricidad = 0,
+			    BLANK(),
+			    DIVIDE(Electricidad, Viviendas, 0) * 100
+			)
+			
+			
+			```
+		lineageTag: eebda0d4-e1a3-47c7-944f-41068fa48c1e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Internet' = ```
+			
+			VAR Internet = SUM(censo_ageb_2020_nacional_coordenadas[VPH_INTER])
+			VAR Viviendas = SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			RETURN
+			IF(
+			    Viviendas = 0 || ISBLANK(Viviendas) || Internet = 0,
+			    BLANK(),
+			    DIVIDE(Internet, Viviendas, 0) * 100
+			)
+			
+			
+			```
+		lineageTag: 7b880532-3767-4ad6-b828-54f3dd0eb57b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ranking Densidad' = ```
+			
+			RANKX(
+			    ALL(censo_ageb_2020_nacional_coordenadas[CVE_AGEB]),
+			    [Poblacion Total],
+			    ,
+			    DESC
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: 3a99e5e7-21d5-4458-bc31-5866abeb2540
+
+	measure 'Viviendas con Electricidad' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[VPH_C_ELEC])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 3e5fdc89-737e-4d43-9e8a-b6d7cabc2c26
+
+	measure 'Viviendas con Internet' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[VPH_INTER])
+			
+			
+			```
+		formatString: 0
+		lineageTag: d4f04f0a-9f7b-485a-83eb-81593e5db81f
+
+	measure 'Viviendas Habitadas' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 32ae5caf-cc93-44c6-95e0-8ab59fd29c59
+
+	measure 'Indice Servicios Basicos' = ```
+			
+			VAR PctElectricidad = [Porcentaje Electricidad] / 100
+			VAR PctDrenaje = [Porcentaje Drenaje] / 100
+			VAR PctAgua = [Porcentaje Agua Entubada] / 100
+			RETURN
+			IF(
+			    NOT ISBLANK(PctElectricidad) && NOT ISBLANK(PctDrenaje) && NOT ISBLANK(PctAgua),
+			    (PctElectricidad + PctDrenaje + PctAgua) / 3 * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: a6113176-3e2e-4cde-8c97-b804073191e6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nivel Desarrollo' = ```
+			
+			VAR ServiciosBasicos = [Indice Servicios Basicos]
+			VAR Escolaridad = [Escolaridad Promedio]
+			VAR Internet = [Porcentaje Internet]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ServiciosBasicos >= 85 && Escolaridad >= 10 && Internet >= 60, "Alto",
+			    ServiciosBasicos >= 70 && Escolaridad >= 8 && Internet >= 40, "Medio-Alto",
+			    ServiciosBasicos >= 50 && Escolaridad >= 6 && Internet >= 20, "Medio",
+			    ServiciosBasicos >= 30 && Escolaridad >= 4 && Internet >= 10, "Medio-Bajo",
+			    "Bajo"
+			)
+			
+			
+			```
+		lineageTag: 3df4ac95-86e6-4dde-ac87-fd6601ee41dd
+
+	measure 'Porcentaje Agua Entubada' = ```
+			
+			VAR AguaEntubada = [Viviendas con Agua Entubada]
+			VAR TotalViviendas = [Viviendas Habitadas]
+			RETURN
+			IF(
+			    TotalViviendas > 0 && NOT ISBLANK(AguaEntubada),
+			    DIVIDE(AguaEntubada, TotalViviendas, 0) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 17805cca-598f-4811-a4b7-99263cc04819
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Drenaje' = ```
+			
+			VAR Drenaje = [Viviendas con Drenaje]
+			VAR TotalViviendas = [Viviendas Habitadas]
+			RETURN
+			IF(
+			    TotalViviendas > 0 && NOT ISBLANK(Drenaje),
+			    DIVIDE(Drenaje, TotalViviendas, 0) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 098e1f5b-4e6f-4384-b9cf-3aea78a2ff6b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ranking Escolaridad' = ```
+			
+			RANKX(
+			    ALL(censo_ageb_2020_nacional_coordenadas[CVE_MZA]),
+			    [Escolaridad Promedio],
+			    ,
+			    DESC
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: 61377af6-0683-4e8b-9eed-1450b1d71cd0
+
+	measure 'Total AGEBs Filtradas' = ```
+			
+			DISTINCTCOUNT(censo_ageb_2020_nacional_coordenadas[CVE_AGEB])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 157ffb99-14bb-4e0a-a9ed-7d8be1f84931
+
+	measure 'Total Manzanas Filtradas' = ```
+			
+			COUNTROWS(censo_ageb_2020_nacional_coordenadas)
+			
+			
+			```
+		formatString: 0
+		lineageTag: e5c0760e-eccc-4111-8c80-0bbfb6ef9e5a
+
+	measure 'Viviendas con Agua Entubada' = ```
+			
+			VAR TotalViviendas = SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			VAR SinAguaFuera = SUM(censo_ageb_2020_nacional_coordenadas[VPH_AGUAFV])
+			RETURN
+			TotalViviendas - SinAguaFuera
+			
+			
+			```
+		formatString: 0
+		lineageTag: da5861da-83bf-4cd8-ba28-de7cedfdd7ea
+
+	measure 'Viviendas con Drenaje' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[VPH_DRENAJ])
+			
+			
+			```
+		formatString: 0
+		lineageTag: d83a6825-d13e-45b7-99de-3c879c8039f6
+
+	measure 'Indice Potencial Mercado' = ```
+			
+			VAR PctRefri = [Porcentaje Refrigerador] / 100
+			VAR PctAuto = [Porcentaje Automovil] / 100
+			VAR PctInternet = [Porcentaje Internet] / 100
+			VAR PctCompu = [Porcentaje Computadora] / 100
+			VAR PctPEA = [Porcentaje PEA] / 100
+			RETURN
+			(PctRefri * 0.25 + PctAuto * 0.25 + PctInternet * 0.25 + PctCompu * 0.1 + PctPEA * 0.15) * 100
+			
+			
+			```
+		lineageTag: 6fc07de5-caa2-464f-bea6-cefed9f56409
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nivel Equipamiento' = ```
+			
+			VAR IndiceIntegrado = [Indice Potencial Mercado]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    IndiceIntegrado >= 80, "🏆 PREMIUM",
+			    IndiceIntegrado >= 60, "💎 ALTO",
+			    IndiceIntegrado >= 40, "🏠 MEDIO",
+			    IndiceIntegrado >= 20, "📊 BÁSICO",
+			    "💰 POPULAR"
+			)
+			
+			
+			```
+		lineageTag: 4a3f6886-b18c-480c-a4e9-4defbaaea512
+
+	measure 'Porcentaje Automovil' = ```
+			
+			DIVIDE(
+			    SUM(censo_ageb_2020_nacional_coordenadas[VPH_AUTOM]),
+			    SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB]),
+			    0
+			) * 100
+			
+			
+			```
+		lineageTag: 61a9f716-8081-4b78-ab78-0c0c6a1cbd37
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Computadora' = ```
+			
+			DIVIDE(
+			    SUM(censo_ageb_2020_nacional_coordenadas[VPH_PC]),
+			    SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB]),
+			    0
+			) * 100
+			
+			
+			```
+		lineageTag: 87b6677a-137f-4a06-bc4e-aaf97658adee
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje PEA' =
+			
+			DIVIDE(
+			    SUM(censo_ageb_2020_nacional_coordenadas[PEA]),
+			    SUM(censo_ageb_2020_nacional_coordenadas[P_12YMAS]),
+			    0
+			) * 100
+		lineageTag: 341513b0-9a23-4ecf-a841-294a8cfddd01
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Refrigerador' = ```
+			
+			DIVIDE(
+			    SUM(censo_ageb_2020_nacional_coordenadas[VPH_REFRI]),
+			    SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB]),
+			    0
+			) * 100
+			
+			
+			```
+		lineageTag: 620b1311-461c-4696-94f2-9ae000818147
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Viviendas Totales' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 8556b422-87d4-418e-920a-fec6ee42abd7
+
+	measure 'Escolaridad Formateada' = ```
+			
+			FORMAT([Grado Promedio Escolaridad], "0.0") & " años"
+			
+			
+			```
+		lineageTag: ddfac35c-73df-451c-86ed-da87323038d4
+
+	measure 'Grado Promedio Escolaridad' = ```
+			
+			VAR TotalPonderado = SUMX(
+			    censo_ageb_2020_nacional_coordenadas,
+			    censo_ageb_2020_nacional_coordenadas[GRAPROES] * censo_ageb_2020_nacional_coordenadas[P_15YMAS]
+			)
+			VAR TotalPoblacion = SUM(censo_ageb_2020_nacional_coordenadas[P_15YMAS])
+			RETURN
+			IF(
+			    TotalPoblacion >= 20,
+			    DIVIDE(TotalPonderado, TotalPoblacion, BLANK()),
+			    BLANK()
+			)
+			
+			```
+		lineageTag: 305314e9-9a76-4fed-bdd2-43e0be1fe8fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Indice Vulnerabilidad Social' = ```
+			
+			VAR PctDiscapacidad = [Porcentaje Con Discapacidad]
+			VAR PctIndigena = [Porcentaje Poblacion Indigena]
+			VAR PctSinSalud = 100 - [Porcentaje Con Salud]
+			VAR PctAnalfabetismo = [Porcentaje Analfabetismo]
+			VAR EscolaridadBaja = IF([Grado Promedio Escolaridad] < 6, 25, 0)
+			RETURN
+			(PctDiscapacidad * 0.2 + PctIndigena * 0.2 + PctSinSalud * 0.25 + PctAnalfabetismo * 0.25 + EscolaridadBaja * 0.1)
+			
+			
+			```
+		lineageTag: da6a7fd7-3f17-4117-8f09-b630a4afdcb7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nivel Desarrollo Social' = ```
+			
+			VAR Vulnerabilidad = [Indice Vulnerabilidad Social]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    Vulnerabilidad <= 10, "🟢 ALTO DESARROLLO",
+			    Vulnerabilidad <= 25, "🟡 DESARROLLO MEDIO",
+			    Vulnerabilidad <= 40, "🟠 DESARROLLO BAJO",
+			    "🔴 ALTA VULNERABILIDAD"
+			)
+			
+			
+			```
+		lineageTag: ac19fa59-d64e-4789-9ac5-ca622386a3b3
+
+	measure 'Poblacion Total Social' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[POBTOT])
+			
+			
+			```
+		formatString: 0
+		lineageTag: fa8dfe23-5a5a-40bf-bf0b-9226a0462192
+
+	measure 'Porcentaje Analfabetismo' = ```
+			
+			DIVIDE(
+			    SUM(censo_ageb_2020_nacional_coordenadas[P15YM_AN]),
+			    SUM(censo_ageb_2020_nacional_coordenadas[P_15YMAS]),
+			    0
+			) * 100
+			
+			
+			```
+		lineageTag: e2d81968-3538-4df0-ac2e-b5a89f298c92
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Con Salud' = ```
+			
+			DIVIDE(
+			    SUM(censo_ageb_2020_nacional_coordenadas[POBTOT]) - SUM(censo_ageb_2020_nacional_coordenadas[PSINDER]),
+			    SUM(censo_ageb_2020_nacional_coordenadas[POBTOT]),
+			    0
+			) * 100
+			
+			
+			```
+		lineageTag: 30fafe39-ccb6-4578-9cb1-f0da6cde602f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Poblacion Indigena' = ```
+			
+			DIVIDE(
+			    SUM(censo_ageb_2020_nacional_coordenadas[P3YM_HLI]),
+			    SUM(censo_ageb_2020_nacional_coordenadas[P_3YMAS]),
+			    0
+			) * 100
+			
+			
+			```
+		lineageTag: 1531353c-d207-4099-8855-20a477c006ff
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Vulnerabilidad Formateada' = ```
+			
+			FORMAT([Indice Vulnerabilidad Social], "0.0") & "%"
+			
+			
+			```
+		lineageTag: 9c3fe835-2d41-4726-b44c-aae8953c645a
+
+	measure 'Brecha Genero Laboral' = ```
+			
+			VAR PEA_Masculina = SUM(censo_ageb_2020_nacional_coordenadas[PEA_M])
+			VAR PEA_Femenina = SUM(censo_ageb_2020_nacional_coordenadas[PEA_F])
+			VAR PobMas12 = SUM(censo_ageb_2020_nacional_coordenadas[P_12YMAS_M])
+			VAR PobFem12 = SUM(censo_ageb_2020_nacional_coordenadas[P_12YMAS_F])
+			VAR ParticipacionMasculina = DIVIDE(PEA_Masculina, PobMas12, 0)
+			VAR ParticipacionFemenina = DIVIDE(PEA_Femenina, PobFem12, 0)
+			RETURN
+			IF(
+			    PobMas12 >= 10 && PobFem12 >= 10,
+			    ABS(ParticipacionMasculina - ParticipacionFemenina) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: f414e21f-b444-4147-a335-bd41c6c04476
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Desempleo Formateado' = ```
+			
+			IF(
+			    NOT ISBLANK([Tasa Desempleo]),
+			    FORMAT([Tasa Desempleo], "0.1") & "%",
+			    "N/D"
+			)
+			
+			
+			```
+		lineageTag: 511979a6-b029-4b2a-806e-10f90cd42672
+
+	measure 'Dinamismo Formateado' = ```
+			
+			IF(
+			    NOT ISBLANK([Indice Dinamismo Laboral]),
+			    FORMAT([Indice Dinamismo Laboral], "0.1") & "%",
+			    "N/D"
+			)
+			
+			
+			```
+		lineageTag: dfbcfc74-1b6f-4f3b-a61b-f369356c3472
+
+	measure 'Estado Mercado Laboral' = ```
+			
+			VAR Dinamismo = [Indice Dinamismo Laboral]
+			RETURN
+			IF(
+			    NOT ISBLANK(Dinamismo),
+			    SWITCH(
+			        TRUE(),
+			        Dinamismo >= 85, "🎯 EXCELENTE",
+			        Dinamismo >= 70, "✅ BUENO", 
+			        Dinamismo >= 55, "⚠️ REGULAR",
+			        Dinamismo >= 40, "📉 BAJO",
+			        "🚨 CRÍTICO"
+			    ),
+			    "📊 SIN DATOS"
+			)
+			
+			
+			```
+		lineageTag: 0ee70e04-acf5-4798-9388-e8308f841ee1
+
+	measure 'Indice Dinamismo Laboral' = ```
+			
+			VAR TasaParticipacion = [Tasa Participacion Laboral] / 100
+			VAR TasaOcupacion = [Tasa Ocupacion] / 100
+			VAR EquidadGenero = 1 - ([Brecha Genero Laboral] / 100)
+			RETURN
+			IF(
+			    NOT ISBLANK(TasaParticipacion) && NOT ISBLANK(TasaOcupacion) && NOT ISBLANK(EquidadGenero),
+			    (TasaParticipacion * 0.4 + TasaOcupacion * 0.4 + EquidadGenero * 0.2) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: c4e48f0c-6815-4930-9877-2e0d1db69d35
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Participacion Formateada' = ```
+			
+			IF(
+			    NOT ISBLANK([Tasa Participacion Laboral]),
+			    FORMAT([Tasa Participacion Laboral], "0.1") & "%",
+			    "N/D"
+			)
+			
+			
+			```
+		lineageTag: 6eb0d0cb-08be-4ac3-8145-fd1669189015
+
+	measure 'Poblacion 12 y Mas' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[P_12YMAS])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 2ccb4241-2e01-4824-a095-61d101cb9e5e
+
+	measure 'Poblacion Ocupada Total' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[POCUPADA])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 87294a3d-0916-4208-b287-03c8f8385f05
+
+	measure 'Problema Datos Laborales' = ```
+			
+			VAR PEA_Total = SUM(censo_ageb_2020_nacional_coordenadas[PEA])
+			VAR Ocupados = SUM(censo_ageb_2020_nacional_coordenadas[POCUPADA])
+			RETURN
+			IF(Ocupados > PEA_Total, "⚠️ POCUPADA > PEA", "✅ OK")
+			
+			
+			```
+		lineageTag: 31c9ba51-b081-4585-8d96-46feed623b2a
+
+	measure 'Tasa Desempleo' = ```
+			
+			VAR Desocupados = SUM(censo_ageb_2020_nacional_coordenadas[PDESOCUP])
+			VAR PEA_Total = SUM(censo_ageb_2020_nacional_coordenadas[PEA])
+			RETURN
+			IF(
+			    PEA_Total >= 10 && Desocupados <= PEA_Total,
+			    DIVIDE(Desocupados, PEA_Total, 0) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: f3fad63d-c383-436e-b2ad-b4b4e3102d7f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tasa Inactividad' = ```
+			
+			VAR Inactivos = SUM(censo_ageb_2020_nacional_coordenadas[PE_INAC])
+			VAR Pob12Mas = SUM(censo_ageb_2020_nacional_coordenadas[P_12YMAS])
+			RETURN
+			IF(
+			    Pob12Mas >= 20 && Inactivos <= Pob12Mas,
+			    DIVIDE(Inactivos, Pob12Mas, 0) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: b4687c75-7171-4fc4-a47d-f1620bc9759e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tasa Ocupacion' = ```
+			
+			VAR Ocupados = SUM(censo_ageb_2020_nacional_coordenadas[POCUPADA])
+			VAR PEA_Total = SUM(censo_ageb_2020_nacional_coordenadas[PEA])
+			VAR OcupadosCorregidos = MIN(Ocupados, PEA_Total) // NO puede ser mayor que PEA
+			RETURN
+			IF(
+			    PEA_Total >= 10 && Ocupados > 0,
+			    DIVIDE(OcupadosCorregidos, PEA_Total, 0) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 27202867-e3ef-4455-ad53-7a58953f9619
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tasa Participacion Laboral' = ```
+			
+			VAR PEA_Total = SUM(censo_ageb_2020_nacional_coordenadas[PEA])
+			VAR Pob12Mas = SUM(censo_ageb_2020_nacional_coordenadas[P_12YMAS])
+			RETURN
+			IF(
+			    Pob12Mas >= 20 && PEA_Total <= Pob12Mas && PEA_Total > 0,
+			    DIVIDE(PEA_Total, Pob12Mas, 0) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: bd7e2469-5105-4b9b-84ab-74916f4e9091
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Validacion Laboral' = ```
+			
+			VAR PEA_Total = SUM(censo_ageb_2020_nacional_coordenadas[PEA])
+			VAR Ocupados = SUM(censo_ageb_2020_nacional_coordenadas[POCUPADA])  
+			VAR Desocupados = SUM(censo_ageb_2020_nacional_coordenadas[PDESOCUP])
+			VAR SumaPEA = Ocupados + Desocupados
+			VAR DiferenciaPct = IF(PEA_Total > 0, ABS(PEA_Total - SumaPEA) / PEA_Total, 1)
+			VAR OcupadosMayorPEA = Ocupados > PEA_Total
+			RETURN
+			IF(
+			    PEA_Total > 0,
+			    SWITCH(
+			        TRUE(),
+			        OcupadosMayorPEA, "🚨 OCUPADOS > PEA",
+			        DiferenciaPct <= 0.05, "✅ VÁLIDO",
+			        DiferenciaPct <= 0.15, "⚠️ REVISAR", 
+			        "❌ INCONSISTENTE"
+			    ),
+			    "📊 SIN PEA"
+			)
+			
+			
+			```
+		lineageTag: f86e01a1-2230-4eab-86ce-35ce1f5b1e63
+
+	measure 'Grado Promedio Escolaridad Femenina' =
+			
+			VAR TotalPonderado = SUMX(
+			    censo_ageb_2020_nacional_coordenadas,
+			    censo_ageb_2020_nacional_coordenadas[GRAPROES_F] * censo_ageb_2020_nacional_coordenadas[P_15YMAS_F]
+			)
+			VAR TotalPoblacion = SUM(censo_ageb_2020_nacional_coordenadas[P_15YMAS_F])
+			RETURN
+			IF(
+			    TotalPoblacion >= 10 && NOT ISBLANK(TotalPonderado),
+			    DIVIDE(TotalPoblacion, TotalPoblacion, BLANK()),
+			    BLANK()
+			)
+		lineageTag: 537f63da-c8c5-4abc-8c4e-34192cfbf0ec
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Grado Promedio Escolaridad Masculina' =
+			
+			VAR TotalPonderado = SUMX(
+			    censo_ageb_2020_nacional_coordenadas,
+			    censo_ageb_2020_nacional_coordenadas[GRAPROES_M] * censo_ageb_2020_nacional_coordenadas[P_15YMAS_M]
+			)
+			VAR TotalPoblacion = SUM(censo_ageb_2020_nacional_coordenadas[P_15YMAS_M])
+			RETURN
+			IF(
+			    TotalPoblacion >= 10 && NOT ISBLANK(TotalPonderado),
+			    DIVIDE(TotalPonderado, TotalPoblacion, BLANK()),
+			    BLANK()
+			)
+		lineageTag: 733ae27c-2eba-47a9-a057-6c21d20ed58b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Educacion Superior' = ```
+			
+			VAR GradoPromedio = [Grado Promedio Escolaridad]
+			VAR Poblacion15Mas = SUM(censo_ageb_2020_nacional_coordenadas[P_15YMAS])
+			VAR FactorSuperior = 
+			    SWITCH(
+			        TRUE(),
+			        GradoPromedio >= 15, 0.45,  // 45% con educación superior
+			        GradoPromedio >= 12, 0.25,  // 25% con educación superior
+			        GradoPromedio >= 9, 0.10,   // 10% con educación superior
+			        GradoPromedio >= 6, 0.03,   // 3% con educación superior
+			        0.01                        // 1% con educación superior
+			    )
+			RETURN
+			IF(
+			    NOT ISBLANK(GradoPromedio) && Poblacion15Mas >= 20,
+			    FactorSuperior * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 66374826-2511-413d-b610-7380c4adf129
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Sin Educacion' = ```
+			
+			VAR SinEducacion = SUM(censo_ageb_2020_nacional_coordenadas[P15YM_SE])
+			VAR Poblacion15Mas = SUM(censo_ageb_2020_nacional_coordenadas[P_15YMAS])
+			RETURN
+			IF(
+			    Poblacion15Mas >= 20 && SinEducacion <= Poblacion15Mas,
+			    DIVIDE(SinEducacion, Poblacion15Mas, 0) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 854d9ed3-25e0-4a43-846b-36065a330afe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Poblacion 15 y Mas Educacion' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[P_15YMAS])
+			
+			
+			```
+		formatString: 0
+		lineageTag: eda577cc-8c85-40da-9ba1-2532ccc482f4
+
+	measure 'Poblacion Educacion Basica' = ```
+			
+			VAR Poblacion15Mas = SUM(censo_ageb_2020_nacional_coordenadas[P_15YMAS])
+			VAR SinEducacion = SUM(censo_ageb_2020_nacional_coordenadas[P15YM_SE])
+			VAR Analfabetos = SUM(censo_ageb_2020_nacional_coordenadas[P15YM_AN])
+			VAR ConEducacionBasica = Poblacion15Mas - SinEducacion - Analfabetos
+			RETURN
+			IF(
+			    Poblacion15Mas >= 20,
+			    MAX(ConEducacionBasica, 0),
+			    BLANK()
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: 01317671-8b3d-4b66-822f-6db4bc8db721
+
+	measure 'Indice Educativo Formateado' = ```
+			
+			IF(
+			    NOT ISBLANK([Indice Educativo]),
+			    FORMAT([Indice Educativo], "0.1") & "%",
+			    "N/D"
+			)
+			
+			
+			```
+		lineageTag: 9c01701f-20e8-475b-adc4-727500a31df5
+
+	measure 'Indice Educativo' = ```
+			
+			VAR GradoNormalizado = MIN([Grado Promedio Escolaridad] / 16, 1)
+			VAR AnalfabetismoInverso = 1 - ([Porcentaje Analfabetismo] / 100)
+			VAR SinEducacionInverso = 1 - ([Porcentaje Sin Educacion] / 100)
+			VAR EducacionSuperior = [Porcentaje Educacion Superior] / 100
+			RETURN
+			IF(
+			    NOT ISBLANK(GradoNormalizado) && NOT ISBLANK(AnalfabetismoInverso) && NOT ISBLANK(SinEducacionInverso),
+			    (GradoNormalizado * 0.4 + AnalfabetismoInverso * 0.3 + SinEducacionInverso * 0.2 + EducacionSuperior * 0.1) * 100,
+			    BLANK()
+			)
+			
+			```
+		lineageTag: ee1ea7c9-6ef0-4b80-82d5-ca273689838d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Clasificacion Educativa' = ```
+			
+			VAR IndiceEducativo = [Indice Educativo]
+			RETURN
+			IF(
+			    NOT ISBLANK(IndiceEducativo),
+			    SWITCH(
+			        TRUE(),
+			        IndiceEducativo >= 85, "🎯 EXCELENTE",
+			        IndiceEducativo >= 70, "✅ BUENO",
+			        IndiceEducativo >= 55, "⚠️ REGULAR",
+			        IndiceEducativo >= 40, "📉 BAJO",
+			        "🚨 CRÍTICO"
+			    ),
+			    "📊 SIN DATOS"
+			)
+			
+			
+			```
+		lineageTag: abdc406a-1b58-419a-9f54-c8b69d304102
+
+	measure 'Brecha Educativa Genero' = ```
+			
+			VAR EscolaridadMasculina = AVERAGE(censo_ageb_2020_nacional_coordenadas[GRAPROES_M])
+			VAR EscolaridadFemenina = AVERAGE(censo_ageb_2020_nacional_coordenadas[GRAPROES_F])
+			RETURN
+			IF(
+			    NOT ISBLANK(EscolaridadMasculina) && NOT ISBLANK(EscolaridadFemenina),
+			    ABS(EscolaridadMasculina - EscolaridadFemenina),
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 8c24639d-576c-414d-8d65-36c1b3ef2186
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Analfabetismo Formateado' = ```
+			
+			IF(
+			    NOT ISBLANK([Porcentaje Analfabetismo]),
+			    FORMAT([Porcentaje Analfabetismo], "0.1") & "%",
+			    "N/D"
+			)
+			
+			
+			```
+		lineageTag: 54506bd4-3349-4775-9346-626431da4ef5
+
+	measure 'Total Analfabetos' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[P15YM_AN])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 76b28c6a-597a-4c8c-9fe5-af4494698ae6
+
+	measure 'Total Sin Educacion' = ```
+			
+			SUM(censo_ageb_2020_nacional_coordenadas[P15YM_SE])
+			
+			
+			```
+		formatString: 0
+		lineageTag: 305c41e3-f7d7-4a01-b20a-d852077988c4
+
+	measure 'Validacion Educativa' = ```
+			
+			VAR GradoPromedio = [Grado Promedio Escolaridad]
+			VAR Analfabetismo = [Porcentaje Analfabetismo]
+			VAR SinEducacion = [Porcentaje Sin Educacion]
+			VAR SumaProblemas = Analfabetismo + SinEducacion
+			RETURN
+			IF(
+			    NOT ISBLANK(GradoPromedio),
+			    SWITCH(
+			        TRUE(),
+			        GradoPromedio < 0 || GradoPromedio > 20, "❌ GRADO INVÁLIDO",
+			        SumaProblemas > 80, "⚠️ ALTA VULNERABILIDAD",
+			        Analfabetismo > 15, "📚 ANALFABETISMO ALTO",
+			        "✅ VÁLIDO"
+			    ),
+			    "📊 SIN DATOS"
+			)
+			
+			
+			```
+		lineageTag: 92900a0e-3ec0-431d-9a91-ac20b04adf9d
+
+	measure 'Brecha Digital' = ```
+			
+			VAR IndiceDigital = [Indice Digital]
+			RETURN
+			IF(
+			    NOT ISBLANK(IndiceDigital),
+			    100 - IndiceDigital,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: a66f64e6-5b78-4814-8a59-6f0ca53aa4c5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Clasificacion Digital' = ```
+			
+			VAR IndiceDigital = [Indice Digital]
+			RETURN
+			IF(
+			    NOT ISBLANK(IndiceDigital),
+			    SWITCH(
+			        TRUE(),
+			        IndiceDigital >= 80, "🚀 ALTA CONECTIVIDAD",
+			        IndiceDigital >= 60, "✅ BUENA CONECTIVIDAD",
+			        IndiceDigital >= 40, "⚠️ CONECTIVIDAD MEDIA",
+			        IndiceDigital >= 20, "📉 BAJA CONECTIVIDAD",
+			        "🚨 MUY BAJA CONECTIVIDAD"
+			    ),
+			    "📊 SIN DATOS"
+			)
+			
+			
+			```
+		lineageTag: 335a36a3-fb1b-4f6a-b9ce-c54f3e2f24ab
+
+	measure 'Indice Digital' = ```
+			
+			VAR PctInternet = [Porcentaje Internet] / 100
+			VAR PctPC = [Porcentaje PC] / 100
+			VAR PctCelular = [Porcentaje Celular] / 100
+			VAR PctSinTIC = [Porcentaje Sin TIC] / 100
+			VAR PctConTIC = 1 - PctSinTIC
+			RETURN
+			IF(
+			    NOT ISBLANK(PctInternet) && NOT ISBLANK(PctPC) && 
+			    NOT ISBLANK(PctCelular) && NOT ISBLANK(PctSinTIC),
+			    (PctInternet * 0.4 + PctPC * 0.3 + PctCelular * 0.2 + PctConTIC * 0.1) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 7a3639b0-fc02-4740-ae86-e929df67d3f6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Celular' = ```
+			
+			VAR TotalViviendas = SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			VAR ViviendasConCelular = SUM(censo_ageb_2020_nacional_coordenadas[VPH_CEL])
+			RETURN
+			IF(
+			    TotalViviendas >= 10,
+			    DIVIDE(ViviendasConCelular, TotalViviendas, BLANK()) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: e69f9968-bafa-4c0b-b677-fbf1407aebdc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje PC' = ```
+			
+			VAR TotalViviendas = SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			VAR ViviendasConPC = SUM(censo_ageb_2020_nacional_coordenadas[VPH_PC])
+			RETURN
+			IF(
+			    TotalViviendas >= 10,
+			    DIVIDE(ViviendasConPC, TotalViviendas, BLANK()) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: d616ae5a-0891-4ce3-acc3-e2094dc4e53e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Piso Firme' = ```
+			
+			VAR TotalViviendas = SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			VAR ViviendasPisoTierra = SUM(censo_ageb_2020_nacional_coordenadas[VPH_PISOTI])
+			RETURN
+			IF(
+			    TotalViviendas >= 10,
+			    DIVIDE(TotalViviendas - ViviendasPisoTierra, TotalViviendas, BLANK()) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 6c3cb99b-5607-407e-a62f-bbb27a9f6c15
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Porcentaje Sin TIC' = ```
+			
+			VAR TotalViviendas = SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			VAR ViviendasSinTIC = SUM(censo_ageb_2020_nacional_coordenadas[VPH_SINTIC])
+			RETURN
+			IF(
+			    TotalViviendas >= 10,
+			    DIVIDE(ViviendasSinTIC, TotalViviendas, BLANK()) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 4e98a54d-95ff-4464-809d-c7e2520f319b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Validacion TIC' = ```
+			
+			VAR TotalViviendas = SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			VAR ConInternet = SUM(censo_ageb_2020_nacional_coordenadas[VPH_INTER])
+			VAR ConPC = SUM(censo_ageb_2020_nacional_coordenadas[VPH_PC])
+			VAR ConCelular = SUM(censo_ageb_2020_nacional_coordenadas[VPH_CEL])
+			VAR SinTIC = SUM(censo_ageb_2020_nacional_coordenadas[VPH_SINTIC])
+			RETURN
+			IF(
+			    TotalViviendas >= 10,
+			    SWITCH(
+			        TRUE(),
+			        ConInternet > TotalViviendas, "❌ INTERNET > TOTAL",
+			        ConPC > TotalViviendas, "❌ PC > TOTAL",
+			        ConCelular > TotalViviendas, "❌ CELULAR > TOTAL",
+			        SinTIC > TotalViviendas, "❌ SIN TIC > TOTAL",
+			        (ConInternet + ConPC + ConCelular) = 0 && SinTIC < TotalViviendas, "⚠️ REVISAR LÓGICA",
+			        "✅ VÁLIDO"
+			    ),
+			    "📊 POCOS DATOS"
+			)
+			
+			
+			```
+		lineageTag: 2a699cfd-7f5d-4e5c-a3c7-a71d7059b788
+
+	measure 'Viviendas Conectividad Completa' = ```
+			
+			VAR TotalViviendas = SUM(censo_ageb_2020_nacional_coordenadas[TVIVHAB])
+			VAR ConInternet = SUM(censo_ageb_2020_nacional_coordenadas[VPH_INTER])
+			VAR ConPC = SUM(censo_ageb_2020_nacional_coordenadas[VPH_PC])
+			VAR ConectividadCompleta = MIN(ConInternet, ConPC)
+			RETURN
+			IF(
+			    TotalViviendas >= 10,
+			    DIVIDE(ConectividadCompleta, TotalViviendas, BLANK()) * 100,
+			    BLANK()
+			)
+			
+			
+			```
+		lineageTag: 4bccab6b-6c7d-46bf-9d86-f6e4bec231ba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Columna1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

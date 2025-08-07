@@ -1,0 +1,207 @@
+table 'model columnas'
+	lineageTag: 047c5fdc-fec3-4bb5-9379-35ba5ea5c08c
+
+	column ID
+		formatString: 0
+		lineageTag: b6ad1857-4864-4f48-92be-0db5eb548278
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: [ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		lineageTag: fcfb36fc-7f4a-44d1-9ff8-8fd74fed0019
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Table
+		lineageTag: 9f190fcf-c212-4863-85ca-ca9739f2c322
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Table]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataType
+		lineageTag: 10b4aa0f-3eb4-4164-b2e6-23a1e00e5dfa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DataType]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataCategory
+		lineageTag: e3277c69-ce0a-4b66-8c11-74a9bb9fc842
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DataCategory]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		lineageTag: 1a5bdf58-24af-471b-af95-4b6337d13c44
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Description]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: df9dccb7-d4e9-4f12-9a51-383f152eb390
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsHidden]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsUnique
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e2d1a39a-9dde-4845-a3d5-a447adfbcbe0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsUnique]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsKey
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a8b7ee8b-0192-4065-a946-598535548f80
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNullable
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e2eea87c-772a-4a2d-afa8-e4314c3d5da6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsNullable]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Alignment
+		lineageTag: fa53d1a2-429e-4f2c-af02-a629b4b4089b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Alignment]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SummarizeBy
+		lineageTag: 844e6d6c-8f56-46a1-b33b-31e24945e88b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SummarizeBy]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ColumnStorage
+		lineageTag: 5b313f35-4a73-435e-a0ac-ed0c075dc839
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ColumnStorage]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		lineageTag: 3312c116-63d9-43af-8879-f1736d6efb52
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceColumn
+		lineageTag: 28b67835-c99b-492e-85a4-2516d947169a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SourceColumn]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Expression
+		lineageTag: 4523ed33-a8ae-41da-9d45-fb6cea7ec925
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Expression]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormatString
+		lineageTag: 4e6b6c85-dbea-4326-850f-ebd272178fc2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [FormatString]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAvailableInMDX
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: eb289e73-1173-4a70-8a0f-3c81a041ccf8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsAvailableInMDX]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortByColumn
+		lineageTag: 97b65256-c374-4760-b2a4-353337da179e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SortByColumn]
+
+		annotation SummarizationSetBy = Automatic
+
+	column GroupingBehavior
+		lineageTag: 1af66f55-566a-4142-945e-b2dc4f926b91
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [GroupingBehavior]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceProviderType
+		lineageTag: 3c40288f-fc9e-42b4-9b81-1af9da516fbe
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SourceProviderType]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisplayFolder
+		lineageTag: 03cd57cf-02bd-4ec1-aaf8-8a6e0ed8a9cd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DisplayFolder]
+
+		annotation SummarizationSetBy = Automatic
+
+	column AlternateOf
+		lineageTag: 5b0e153a-b47f-4806-99e6-e4124b39b4d8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [AlternateOf]
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineageTag
+		lineageTag: 6c2b1887-03cb-4af2-aabe-2194fd05f63b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [LineageTag]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'model columnas' = calculated
+		mode: import
+		source = INFO.VIEW.COLUMNS()
+
+	annotation PBI_Id = 4ba3bebafb46410696cf84b4e1d27c4c
+

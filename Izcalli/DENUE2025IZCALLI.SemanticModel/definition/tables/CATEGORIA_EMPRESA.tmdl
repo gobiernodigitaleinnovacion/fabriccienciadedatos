@@ -1,0 +1,86 @@
+table CATEGORIA_EMPRESA
+	lineageTag: 7f8604be-7258-4d4c-bfc6-a8cf72bb1914
+
+	column id
+		dataType: string
+		isHidden
+		lineageTag: 0e884edd-c54b-48c1-be26-dd9487408f7c
+		summarizeBy: none
+		sourceColumn: id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column per_ocu
+		dataType: string
+		lineageTag: 72ac97bd-3b8a-4e19-8679-756dcd203774
+		summarizeBy: none
+		sourceColumn: per_ocu
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria_empresa
+		dataType: string
+		lineageTag: 905fbd54-de72-45bc-9422-448e669afa12
+		summarizeBy: none
+		sourceColumn: categoria_empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_tamaño
+		dataType: string
+		isHidden
+		lineageTag: 14f50e3a-eb1d-4071-8352-ec2d0107afcf
+		summarizeBy: none
+		sourceColumn: id_tamaño
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Tamaño Empresa'
+		lineageTag: 6608bf13-5cb7-491f-ac79-b91fe658caa1
+
+		level categoria_empresa
+			lineageTag: 7f1fdcd3-04d2-4a44-801a-6c51c8b235ba
+			column: categoria_empresa
+
+		level per_ocu
+			lineageTag: 8f3e669b-3eb0-4ccf-81cd-64160c2d3ae8
+			column: per_ocu
+
+	partition CATEGORIA_EMPRESA = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("qihyhmenysou5otulys7x473hm-wmsh36vm2hsepif26nl54mytlu.datawarehouse.fabric.microsoft.com", "lh_lokus_denue"),
+				    dbo_denue_empresas_mexico_final = Source{[Schema="dbo",Item="denue_empresas_mexico_final"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(dbo_denue_empresas_mexico_final,{"tipo_vial", "nom_vial", "tipo_v_e_1", "nom_v_e_1", "tipo_v_e_2", "nom_v_e_2", "tipo_v_e_3", "nom_v_e_3", "numero_ext", "letra_ext", "edificio", "edificio_e", "numero_int", "letra_int", "archivo_origen", "nom_CenCom", "num_local", "telefono", "correoelec", "www", "tipoUniEco", "clee", "nom_estab", "raz_social", "codigo_act", "nombre_act", "tipo_asent", "nomb_asent", "tipoCenCom", "cod_postal", "cve_ent", "entidad", "cve_mun", "municipio", "cve_loc", "localidad", "ageb", "manzana", "latitud", "longitud", "fecha_alta", "sector_codigo", "sector_nombre"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Personalizado", each if [per_ocu] = "0 a 5 personas" then "Micro"
+				  else if [per_ocu] = "6 a 10 personas" then "Micro"
+				  else if [per_ocu] = "11 a 30 personas" then "Pequeña"
+				  else if [per_ocu] = "31 a 50 personas" then "Pequeña"
+				  else if [per_ocu] = "51 a 100 personas" then "Mediana"
+				  else if [per_ocu] = "101 a 250 personas" then "Mediana"
+				  else if [per_ocu] = "251 y más personas" then "Grande"
+				  else "Sin clasificar"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom",{{"Personalizado", "categoria_empresa"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"categoria_empresa", type text}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"per_ocu"}),
+				    #"Added Custom1" = Table.AddColumn(#"Removed Duplicates", "Personalizado", each if [per_ocu] = "0 a 5 personas" then 1
+				  else if [per_ocu] = "6 a 10 personas" then 2
+				  else if [per_ocu] = "11 a 30 personas" then 3
+				  else if [per_ocu] = "31 a 50 personas" then 4
+				  else if [per_ocu] = "51 a 100 personas" then 5
+				  else if [per_ocu] = "101 a 250 personas" then 6
+				  else if [per_ocu] = "251 y más personas" then 7
+				  else 0),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Custom1",{{"Personalizado", "id_tamaño"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

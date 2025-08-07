@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "CensoAgebmza2020ecatepec"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3e27f2d7-16b6-bbc0-4955-d83633462ec9"
+  }
+}

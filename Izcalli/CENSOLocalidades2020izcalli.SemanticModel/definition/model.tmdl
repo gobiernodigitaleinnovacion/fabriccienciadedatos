@@ -6,16 +6,16 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["estados","municipios","MEDIDAS","FAIS"]
-
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBIDesktopVersion = 2.145.1602.0 (25.07)+10647c9fa319b5e39936cdb21328038c371d1fe4
 
-ref table estados
-ref table municipios
-ref table MEDIDAS
-ref table FAIS
+annotation PBI_QueryOrder = ["censo2020_mexico_limpio","censo2020","DIM_GEOGRAFIA","FACT_CENSO","MEDIDAD"]
+
+ref table DIM_GEOGRAFIA
+ref table FACT_CENSO
+ref table MEDIDAD
+ref table 'model columnas'
 
 ref cultureInfo es-ES
 

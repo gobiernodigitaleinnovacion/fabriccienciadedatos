@@ -1,0 +1,24 @@
+relationship AutoDetected_7dd19f6d-67b3-4887-bcfa-94937fb7a3ba
+	fromColumn: FACTDENUE2025.codigo_act
+	toColumn: ACTIVIDAD_ECONOMICA.codigo_act
+
+relationship AutoDetected_354a178a-7953-43bd-9678-a3b935285697
+	fromColumn: FACTDENUE2025.per_ocu
+	toColumn: CATEGORIA_EMPRESA.per_ocu
+
+relationship AutoDetected_0ed60259-7265-45ea-8f9f-b057ef508196
+	fromColumn: MUNICIPIOS.cve_ent
+	toColumn: ENTIDAD.cve_ent
+
+relationship a098994e-609f-85cb-53a2-51ab66f873c7
+	fromColumn: FACTDENUE2025.id
+	toColumn: MUNICIPIOS.id
+
+relationship 0d9b55b4-1dc8-4664-ac46-14671f0909a0
+	fromColumn: FACTDENUE2025.fecha_alta
+	toColumn: FECHA.fecha_alta
+
+relationship 5357dc93-1557-a965-a21c-7a6150d88fc1
+	fromColumn: ACTIVIDAD_ECONOMICA.sector_agrupado
+	toColumn: SECTOR_CATALOGO.sector_codigo
+

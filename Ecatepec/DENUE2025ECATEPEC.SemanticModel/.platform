@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "DENUE2025ECATEPEC"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "02bc42b0-acf6-a589-48ed-db934a7c2234"
+  }
+}

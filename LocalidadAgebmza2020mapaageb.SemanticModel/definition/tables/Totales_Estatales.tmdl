@@ -1,0 +1,2209 @@
+table Totales_Estatales
+	lineageTag: 0d903e20-630d-4afd-a074-60d404272ab3
+
+	measure 'Porcentaje Con Discapacidad' = ```
+			
+			DIVIDE(
+			    SUM(censo_ageb_2020_nacional_coordenadas[PCON_DISC]),
+			    SUM(censo_ageb_2020_nacional_coordenadas[POBTOT]),
+			    0
+			) * 100
+			
+			
+			```
+		lineageTag: 283d6575-54d1-4163-b3f5-2debf8897c00
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CVE_ENT
+		dataType: string
+		lineageTag: a7882681-6a27-48fe-b4e5-5667c5817786
+		summarizeBy: none
+		sourceColumn: CVE_ENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_MUN
+		dataType: string
+		lineageTag: 6a17e88b-66ba-4312-bd43-6fdcea09dd17
+		summarizeBy: none
+		sourceColumn: CVE_MUN
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_LOC
+		dataType: string
+		lineageTag: 0cad1ee8-1693-47a9-9d27-98b196a0e2df
+		summarizeBy: none
+		sourceColumn: CVE_LOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENTIDAD
+		dataType: string
+		lineageTag: 51793c48-717b-472d-9660-a5d310195185
+		summarizeBy: none
+		sourceColumn: ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_ENT
+		dataType: string
+		lineageTag: 56fd4edc-3cd6-4575-b198-64e8b40b562a
+		summarizeBy: none
+		sourceColumn: NOM_ENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUN
+		dataType: string
+		lineageTag: 027eb249-49e0-403d-b5a4-2e5a4056d1e0
+		summarizeBy: none
+		sourceColumn: MUN
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_MUN
+		dataType: string
+		lineageTag: 84c81678-cdc7-46f7-8ef7-631f3a23188f
+		summarizeBy: none
+		sourceColumn: NOM_MUN
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOC
+		dataType: string
+		lineageTag: 4db4a516-d3c8-4018-b900-e0e4926f5f41
+		summarizeBy: none
+		sourceColumn: LOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_LOC
+		dataType: string
+		lineageTag: 3310580d-be21-442d-b104-ee2768ae88e3
+		summarizeBy: none
+		sourceColumn: NOM_LOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGEB
+		dataType: string
+		lineageTag: 12c523aa-c76b-45e5-b50d-02b2227fbb30
+		summarizeBy: none
+		sourceColumn: AGEB
+
+		annotation SummarizationSetBy = Automatic
+
+	column MZA
+		dataType: string
+		lineageTag: b55f0535-13c1-4ed4-ba85-55ba65a8e9f6
+		summarizeBy: none
+		sourceColumn: MZA
+
+		annotation SummarizationSetBy = Automatic
+
+	column POBTOT
+		dataType: int64
+		formatString: 0
+		lineageTag: c7a890b5-ad81-4339-8855-2a35bf154708
+		summarizeBy: none
+		sourceColumn: POBTOT
+
+		annotation SummarizationSetBy = Automatic
+
+	column POBFEM
+		dataType: int64
+		formatString: 0
+		lineageTag: b185e69f-967a-474a-a86a-dc29f47b4542
+		summarizeBy: none
+		sourceColumn: POBFEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column POBMAS
+		dataType: int64
+		formatString: 0
+		lineageTag: 61ac6cc4-ea2d-4ef1-865f-b98491fdc679
+		summarizeBy: none
+		sourceColumn: POBMAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_0A2
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e8350cf-991c-4084-8336-33927624fa60
+		summarizeBy: none
+		sourceColumn: P_0A2
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_0A2_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 0818e642-dd78-4a86-8bad-2b1a53a507be
+		summarizeBy: none
+		sourceColumn: P_0A2_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_0A2_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 476bb806-ccd8-45a3-9316-9de74a376998
+		summarizeBy: none
+		sourceColumn: P_0A2_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_3YMAS
+		dataType: int64
+		formatString: 0
+		lineageTag: f6c55d61-e5b5-46a3-9d7b-faf8f669bc05
+		summarizeBy: none
+		sourceColumn: P_3YMAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_3YMAS_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 546eada5-3a69-414a-86e4-8156371f4ef0
+		summarizeBy: none
+		sourceColumn: P_3YMAS_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_3YMAS_M
+		dataType: int64
+		formatString: 0
+		lineageTag: d155302f-4356-4c24-b5a1-178a8a655d2d
+		summarizeBy: none
+		sourceColumn: P_3YMAS_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_5YMAS
+		dataType: int64
+		formatString: 0
+		lineageTag: 42a8cb61-4540-4b8a-b3a1-fbf7f59475da
+		summarizeBy: none
+		sourceColumn: P_5YMAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_5YMAS_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 4611b2c3-f061-42d7-8a0a-4d243acc8a1c
+		summarizeBy: none
+		sourceColumn: P_5YMAS_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_5YMAS_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f1b24a1-d43c-4c62-86d0-5fe3dfa9e906
+		summarizeBy: none
+		sourceColumn: P_5YMAS_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_12YMAS
+		dataType: int64
+		formatString: 0
+		lineageTag: 8a21106b-4fb2-4290-a871-9f366bf25da7
+		summarizeBy: none
+		sourceColumn: P_12YMAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_12YMAS_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 865f1c0c-05eb-453c-a2a0-bf0494948045
+		summarizeBy: none
+		sourceColumn: P_12YMAS_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_12YMAS_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 38b17755-c5e9-42d3-8e38-af7bb7d5b579
+		summarizeBy: none
+		sourceColumn: P_12YMAS_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_15YMAS
+		dataType: int64
+		formatString: 0
+		lineageTag: 84ba082a-1e63-4b80-83d6-9e1c48d9b90a
+		summarizeBy: none
+		sourceColumn: P_15YMAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_15YMAS_F
+		dataType: int64
+		formatString: 0
+		lineageTag: bc06209d-53e5-483c-a463-68e0ffbc3e6e
+		summarizeBy: none
+		sourceColumn: P_15YMAS_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_15YMAS_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 35e6b253-3f30-4368-add9-3d2326f3a807
+		summarizeBy: none
+		sourceColumn: P_15YMAS_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_18YMAS
+		dataType: int64
+		formatString: 0
+		lineageTag: a2232c75-32d9-4e7c-85d0-b0f9d85522fa
+		summarizeBy: none
+		sourceColumn: P_18YMAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_18YMAS_F
+		dataType: int64
+		formatString: 0
+		lineageTag: ee83e8eb-4ee4-477a-9ba7-8a60f42a34ff
+		summarizeBy: none
+		sourceColumn: P_18YMAS_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_18YMAS_M
+		dataType: int64
+		formatString: 0
+		lineageTag: b7bc59b1-b666-46a6-be95-d49351c642c4
+		summarizeBy: none
+		sourceColumn: P_18YMAS_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_3A5
+		dataType: int64
+		formatString: 0
+		lineageTag: 6884c28e-0f4c-4118-9fef-d7177c8e95bf
+		summarizeBy: none
+		sourceColumn: P_3A5
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_3A5_F
+		dataType: int64
+		formatString: 0
+		lineageTag: ae1f12e0-2d80-45fc-83e0-9c572dee88af
+		summarizeBy: none
+		sourceColumn: P_3A5_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_3A5_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f8ca81a-5387-4ae2-bea0-ff951188a337
+		summarizeBy: none
+		sourceColumn: P_3A5_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_6A11
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f823aa4-1d7f-4005-bc9a-232921089d51
+		summarizeBy: none
+		sourceColumn: P_6A11
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_6A11_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 2fed0642-fe1c-47fc-9f18-a41cd53cd0cf
+		summarizeBy: none
+		sourceColumn: P_6A11_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_6A11_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 45092b80-3713-4547-827d-423f8cb154df
+		summarizeBy: none
+		sourceColumn: P_6A11_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_8A14
+		dataType: int64
+		formatString: 0
+		lineageTag: 90124a24-bb35-41d6-b308-9b25d61e1711
+		summarizeBy: none
+		sourceColumn: P_8A14
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_8A14_F
+		dataType: int64
+		formatString: 0
+		lineageTag: fc189a0e-3a62-4a24-96b7-d7cead443ed7
+		summarizeBy: none
+		sourceColumn: P_8A14_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_8A14_M
+		dataType: int64
+		formatString: 0
+		lineageTag: b6c72a41-9257-4cd3-8e66-559aa9b977b6
+		summarizeBy: none
+		sourceColumn: P_8A14_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_12A14
+		dataType: int64
+		formatString: 0
+		lineageTag: 436ca888-fa47-4824-b1db-f65e6c7a88a4
+		summarizeBy: none
+		sourceColumn: P_12A14
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_12A14_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 0a19861b-45a5-4a06-b217-9af17328f134
+		summarizeBy: none
+		sourceColumn: P_12A14_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_12A14_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 29cb8bee-9d0c-4266-9586-47abe6881aff
+		summarizeBy: none
+		sourceColumn: P_12A14_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_15A17
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c455ccd-1d4c-4799-a5cf-cb2bf5f771c5
+		summarizeBy: none
+		sourceColumn: P_15A17
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_15A17_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 51fc3350-6d30-4d2b-a183-3d3b784d32b3
+		summarizeBy: none
+		sourceColumn: P_15A17_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_15A17_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 2bdf85e9-f2d6-4b1a-bbe1-ae801992e6d3
+		summarizeBy: none
+		sourceColumn: P_15A17_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_18A24
+		dataType: int64
+		formatString: 0
+		lineageTag: 934342ed-17e1-4f39-ab0a-6cf8ac8392a3
+		summarizeBy: none
+		sourceColumn: P_18A24
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_18A24_F
+		dataType: int64
+		formatString: 0
+		lineageTag: ba37061e-ac29-478c-a3c7-cda22715699d
+		summarizeBy: none
+		sourceColumn: P_18A24_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_18A24_M
+		dataType: int64
+		formatString: 0
+		lineageTag: ac28a4dd-237c-4ce9-bbe1-0b558495b5a2
+		summarizeBy: none
+		sourceColumn: P_18A24_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_15A49_F
+		dataType: int64
+		formatString: 0
+		lineageTag: c2b07b2c-512c-4835-a882-aa8c201a3b61
+		summarizeBy: none
+		sourceColumn: P_15A49_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_60YMAS
+		dataType: int64
+		formatString: 0
+		lineageTag: 242cf71e-80d8-45fd-a7c9-337fb2c88c62
+		summarizeBy: none
+		sourceColumn: P_60YMAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_60YMAS_F
+		dataType: int64
+		formatString: 0
+		lineageTag: ec95dd76-9106-40a5-b735-81f075135d37
+		summarizeBy: none
+		sourceColumn: P_60YMAS_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P_60YMAS_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f44d7aa-19fc-44cc-941a-92b828b0c977
+		summarizeBy: none
+		sourceColumn: P_60YMAS_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column REL_H_M
+		dataType: double
+		lineageTag: 32604200-8b1b-4f52-a642-7c2b555f88ee
+		summarizeBy: none
+		sourceColumn: REL_H_M
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column POB0_14
+		dataType: int64
+		formatString: 0
+		lineageTag: 028429c9-d646-480b-b106-03f469c4fa5b
+		summarizeBy: none
+		sourceColumn: POB0_14
+
+		annotation SummarizationSetBy = Automatic
+
+	column POB15_64
+		dataType: int64
+		formatString: 0
+		lineageTag: f9c45523-546d-46c9-81bc-0f3f28bf3007
+		summarizeBy: none
+		sourceColumn: POB15_64
+
+		annotation SummarizationSetBy = Automatic
+
+	column POB65_MAS
+		dataType: int64
+		formatString: 0
+		lineageTag: a2c58943-021d-4a63-b829-1c28dfae48fc
+		summarizeBy: none
+		sourceColumn: POB65_MAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROM_HNV
+		dataType: double
+		lineageTag: 4bb5b28a-d240-4550-87fb-4f343d16ad12
+		summarizeBy: none
+		sourceColumn: PROM_HNV
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PNACENT
+		dataType: int64
+		formatString: 0
+		lineageTag: b27d0f67-302a-4beb-892b-5c95b1a3a5d8
+		summarizeBy: none
+		sourceColumn: PNACENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PNACENT_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 9993cb98-9ed4-47e7-82f6-dc4d14506df7
+		summarizeBy: none
+		sourceColumn: PNACENT_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column PNACENT_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 0859317e-3ff7-4653-b271-670b31e80787
+		summarizeBy: none
+		sourceColumn: PNACENT_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column PNACOE
+		dataType: int64
+		formatString: 0
+		lineageTag: b5bd9ffa-d65f-4c54-a066-1c4ad38782a8
+		summarizeBy: none
+		sourceColumn: PNACOE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PNACOE_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 31805ab5-5945-4b9c-80f2-43cec5e4ca5e
+		summarizeBy: none
+		sourceColumn: PNACOE_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column PNACOE_M
+		dataType: int64
+		formatString: 0
+		lineageTag: cdd1e97d-511a-4cda-bb8a-88aeb468073c
+		summarizeBy: none
+		sourceColumn: PNACOE_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRES2015
+		dataType: int64
+		formatString: 0
+		lineageTag: 619a567a-9d6e-486c-9dd0-4ecc4a9ee5cb
+		summarizeBy: none
+		sourceColumn: PRES2015
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRES2015_F
+		dataType: int64
+		formatString: 0
+		lineageTag: a6b93444-fda6-4432-b32f-bdee2e407972
+		summarizeBy: none
+		sourceColumn: PRES2015_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRES2015_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 30d0a1e0-abb3-483a-b69d-f0bc691366a0
+		summarizeBy: none
+		sourceColumn: PRES2015_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRESOE15
+		dataType: int64
+		formatString: 0
+		lineageTag: 7734e03e-92bf-497c-bdb1-65fdc26db1c5
+		summarizeBy: none
+		sourceColumn: PRESOE15
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRESOE15_F
+		dataType: int64
+		formatString: 0
+		lineageTag: be1d01ef-3278-4d63-9508-c307931bc013
+		summarizeBy: none
+		sourceColumn: PRESOE15_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRESOE15_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ebc68a7-377e-48b2-9907-603654dd568b
+		summarizeBy: none
+		sourceColumn: PRESOE15_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3YM_HLI
+		dataType: int64
+		formatString: 0
+		lineageTag: 2796f763-dd44-4d0b-afbf-b88763d9f6f6
+		summarizeBy: none
+		sourceColumn: P3YM_HLI
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3YM_HLI_F
+		dataType: int64
+		formatString: 0
+		lineageTag: b40c71a8-2052-4088-ab8b-b0cc85e38769
+		summarizeBy: none
+		sourceColumn: P3YM_HLI_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3YM_HLI_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 725edbe2-ad7d-4beb-9f85-de5c68f1f1d6
+		summarizeBy: none
+		sourceColumn: P3YM_HLI_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3HLINHE
+		dataType: int64
+		formatString: 0
+		lineageTag: bb383f59-ee24-46cf-b043-8024d5380915
+		summarizeBy: none
+		sourceColumn: P3HLINHE
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3HLINHE_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 45a6dbb6-430c-483d-be66-2f0f559d708d
+		summarizeBy: none
+		sourceColumn: P3HLINHE_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3HLINHE_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 71accf57-5cd5-42df-8634-041d1a698b9a
+		summarizeBy: none
+		sourceColumn: P3HLINHE_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3HLI_HE
+		dataType: int64
+		formatString: 0
+		lineageTag: 57a42c71-7152-4239-a451-b9e591ab219a
+		summarizeBy: none
+		sourceColumn: P3HLI_HE
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3HLI_HE_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 15027b7b-4c4b-432a-9ceb-6def49bf274e
+		summarizeBy: none
+		sourceColumn: P3HLI_HE_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3HLI_HE_M
+		dataType: int64
+		formatString: 0
+		lineageTag: c6eecadd-5ad2-42af-b746-ce1e774b7594
+		summarizeBy: none
+		sourceColumn: P3HLI_HE_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P5_HLI
+		dataType: int64
+		formatString: 0
+		lineageTag: 80b11db4-1f3a-4d6e-b0dc-3573e295d863
+		summarizeBy: none
+		sourceColumn: P5_HLI
+
+		annotation SummarizationSetBy = Automatic
+
+	column P5_HLI_NHE
+		dataType: int64
+		formatString: 0
+		lineageTag: dea56612-bfb2-4bb4-beff-18b162741afb
+		summarizeBy: none
+		sourceColumn: P5_HLI_NHE
+
+		annotation SummarizationSetBy = Automatic
+
+	column P5_HLI_HE
+		dataType: int64
+		formatString: 0
+		lineageTag: 093afb33-210d-466b-99b3-0fd14a377c00
+		summarizeBy: none
+		sourceColumn: P5_HLI_HE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHOG_IND
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c8438d8-5a8e-46ce-8636-286462062b1b
+		summarizeBy: none
+		sourceColumn: PHOG_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column POB_AFRO
+		dataType: int64
+		formatString: 0
+		lineageTag: 83b40d7c-2270-4110-9cff-03eb878a0845
+		summarizeBy: none
+		sourceColumn: POB_AFRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column POB_AFRO_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 88a1459e-43ec-40df-a901-7e659d654dc5
+		summarizeBy: none
+		sourceColumn: POB_AFRO_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column POB_AFRO_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 003030fd-c73c-4fa5-9439-ea1809dcd342
+		summarizeBy: none
+		sourceColumn: POB_AFRO_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCON_DISC
+		dataType: int64
+		formatString: 0
+		lineageTag: 4cec4f56-7492-4bbb-b886-dd3fde9c2700
+		summarizeBy: none
+		sourceColumn: PCON_DISC
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCDISC_MOT
+		dataType: int64
+		formatString: 0
+		lineageTag: a64e3f3c-84f9-4232-8623-d3c2af3cdfd8
+		summarizeBy: none
+		sourceColumn: PCDISC_MOT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCDISC_VIS
+		dataType: int64
+		formatString: 0
+		lineageTag: d128145c-885b-4502-93fc-8b2d67831a20
+		summarizeBy: none
+		sourceColumn: PCDISC_VIS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCDISC_LENG
+		dataType: int64
+		formatString: 0
+		lineageTag: f663502a-d9f3-45cc-83fa-6bb2b10f540e
+		summarizeBy: none
+		sourceColumn: PCDISC_LENG
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCDISC_AUD
+		dataType: int64
+		formatString: 0
+		lineageTag: fba46975-b7a0-45ae-85ae-9badcb3c27d0
+		summarizeBy: none
+		sourceColumn: PCDISC_AUD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCDISC_MOT2
+		dataType: int64
+		formatString: 0
+		lineageTag: ebdd0c13-37ca-419e-963f-38a63fca7b04
+		summarizeBy: none
+		sourceColumn: PCDISC_MOT2
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCDISC_MEN
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d981809-4c7b-4298-9193-f5c9f8ac1132
+		summarizeBy: none
+		sourceColumn: PCDISC_MEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCON_LIMI
+		dataType: int64
+		formatString: 0
+		lineageTag: a42d867a-588b-4ceb-baa5-81fdf6065dbc
+		summarizeBy: none
+		sourceColumn: PCON_LIMI
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCLIM_CSB
+		dataType: int64
+		formatString: 0
+		lineageTag: 56d3be56-4d86-4b2b-961b-ce9fe73bc03e
+		summarizeBy: none
+		sourceColumn: PCLIM_CSB
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCLIM_VIS
+		dataType: int64
+		formatString: 0
+		lineageTag: 63a4a65a-bd62-4974-91c3-3185507b6bbf
+		summarizeBy: none
+		sourceColumn: PCLIM_VIS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCLIM_HACO
+		dataType: int64
+		formatString: 0
+		lineageTag: fc1396d4-39ff-4d60-9e2c-17b754a076e3
+		summarizeBy: none
+		sourceColumn: PCLIM_HACO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCLIM_OAUD
+		dataType: int64
+		formatString: 0
+		lineageTag: dc316174-eebf-4387-96ed-f829ef4800ab
+		summarizeBy: none
+		sourceColumn: PCLIM_OAUD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCLIM_MOT2
+		dataType: int64
+		formatString: 0
+		lineageTag: 4589cb7d-3e07-4a1f-9e57-70eb68ec20b9
+		summarizeBy: none
+		sourceColumn: PCLIM_MOT2
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCLIM_RE_CO
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b6777df-4d0b-49a4-b146-3d9381bf135c
+		summarizeBy: none
+		sourceColumn: PCLIM_RE_CO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCLIM_PMEN
+		dataType: int64
+		formatString: 0
+		lineageTag: da0253d4-1fe9-4e66-8047-ea59df5ab73c
+		summarizeBy: none
+		sourceColumn: PCLIM_PMEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PSIND_LIM
+		dataType: int64
+		formatString: 0
+		lineageTag: fd7a3dc1-6fce-459a-accf-983cb3ddaeeb
+		summarizeBy: none
+		sourceColumn: PSIND_LIM
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3A5_NOA
+		dataType: int64
+		formatString: 0
+		lineageTag: 780b62ce-9c13-4dde-8c85-ecb06c1778ef
+		summarizeBy: none
+		sourceColumn: P3A5_NOA
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3A5_NOA_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e2d6845-6cd4-4109-9c9a-28cc5e6711c7
+		summarizeBy: none
+		sourceColumn: P3A5_NOA_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P3A5_NOA_M
+		dataType: int64
+		formatString: 0
+		lineageTag: dac7e7b2-4ae1-4fc9-b747-3cb00079f119
+		summarizeBy: none
+		sourceColumn: P3A5_NOA_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P6A11_NOA
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e2d52ee-0a53-4960-926f-2adac08a5a41
+		summarizeBy: none
+		sourceColumn: P6A11_NOA
+
+		annotation SummarizationSetBy = Automatic
+
+	column P6A11_NOAF
+		dataType: int64
+		formatString: 0
+		lineageTag: 1850986d-035e-442d-a2a1-e72fbd6ae9e3
+		summarizeBy: none
+		sourceColumn: P6A11_NOAF
+
+		annotation SummarizationSetBy = Automatic
+
+	column P6A11_NOAM
+		dataType: int64
+		formatString: 0
+		lineageTag: 545e2774-ed4b-432f-a5e9-40266bb1ada4
+		summarizeBy: none
+		sourceColumn: P6A11_NOAM
+
+		annotation SummarizationSetBy = Automatic
+
+	column P12A14NOA
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b9b06e8-a9f3-4dfc-a32d-139899b1711d
+		summarizeBy: none
+		sourceColumn: P12A14NOA
+
+		annotation SummarizationSetBy = Automatic
+
+	column P12A14NOAF
+		dataType: int64
+		formatString: 0
+		lineageTag: eb9c28a8-fed6-4cb0-bbe3-bb3663b08635
+		summarizeBy: none
+		sourceColumn: P12A14NOAF
+
+		annotation SummarizationSetBy = Automatic
+
+	column P12A14NOAM
+		dataType: int64
+		formatString: 0
+		lineageTag: 9efdddac-de4a-4029-b2a5-8a4183235be2
+		summarizeBy: none
+		sourceColumn: P12A14NOAM
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15A17A
+		dataType: int64
+		formatString: 0
+		lineageTag: bdde35f3-5483-4471-8942-bb266fef8a00
+		summarizeBy: none
+		sourceColumn: P15A17A
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15A17A_F
+		dataType: int64
+		formatString: 0
+		lineageTag: ba616698-61a3-4a2d-b0a4-39faf4479e2c
+		summarizeBy: none
+		sourceColumn: P15A17A_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15A17A_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 269f3a4d-9701-440a-bbb2-868b0bbb4d1a
+		summarizeBy: none
+		sourceColumn: P15A17A_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P18A24A
+		dataType: int64
+		formatString: 0
+		lineageTag: 94cdff25-8f09-4590-9f0c-338f5edc5e2d
+		summarizeBy: none
+		sourceColumn: P18A24A
+
+		annotation SummarizationSetBy = Automatic
+
+	column P18A24A_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 895964ba-2333-438e-ab6b-7f4f3a5d568a
+		summarizeBy: none
+		sourceColumn: P18A24A_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P18A24A_M
+		dataType: int64
+		formatString: 0
+		lineageTag: fd95646a-e02d-4f36-bab5-01cb9f7d089e
+		summarizeBy: none
+		sourceColumn: P18A24A_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P8A14AN
+		dataType: int64
+		formatString: 0
+		lineageTag: 2cc9ce84-8a0e-465c-a1c0-06a64e0a9a4b
+		summarizeBy: none
+		sourceColumn: P8A14AN
+
+		annotation SummarizationSetBy = Automatic
+
+	column P8A14AN_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 4805e6c2-d254-4aa5-8871-7207167d3549
+		summarizeBy: none
+		sourceColumn: P8A14AN_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P8A14AN_M
+		dataType: int64
+		formatString: 0
+		lineageTag: dbf2f357-725c-411d-af4e-dd1b2f227e3d
+		summarizeBy: none
+		sourceColumn: P8A14AN_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15YM_AN
+		dataType: int64
+		formatString: 0
+		lineageTag: e8b1aad2-20b5-43b2-8a7b-fc0f8a856971
+		summarizeBy: none
+		sourceColumn: P15YM_AN
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15YM_AN_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c26296a-b6b4-4f0e-af46-d8d5b675850e
+		summarizeBy: none
+		sourceColumn: P15YM_AN_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15YM_AN_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 517408b2-03b9-4797-b78e-d5fa0e414792
+		summarizeBy: none
+		sourceColumn: P15YM_AN_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15YM_SE
+		dataType: int64
+		formatString: 0
+		lineageTag: 9dd7de42-1257-4341-a6fe-519b9cde320e
+		summarizeBy: none
+		sourceColumn: P15YM_SE
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15YM_SE_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 96deed8e-a6fa-4ebc-87fb-4851af2a1867
+		summarizeBy: none
+		sourceColumn: P15YM_SE_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15YM_SE_M
+		dataType: int64
+		formatString: 0
+		lineageTag: b9bad021-0913-4239-bed7-967ee33cd70f
+		summarizeBy: none
+		sourceColumn: P15YM_SE_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15PRI_IN
+		dataType: int64
+		formatString: 0
+		lineageTag: afb06d9d-7b6b-42c2-bb30-4188f57b0b1a
+		summarizeBy: none
+		sourceColumn: P15PRI_IN
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15PRI_INF
+		dataType: int64
+		formatString: 0
+		lineageTag: e26c3cb3-1f61-43ed-8307-685e9c5a8adc
+		summarizeBy: none
+		sourceColumn: P15PRI_INF
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15PRI_INM
+		dataType: int64
+		formatString: 0
+		lineageTag: 13495b0a-8e2c-4396-8acb-93ea2ed99197
+		summarizeBy: none
+		sourceColumn: P15PRI_INM
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15PRI_CO
+		dataType: int64
+		formatString: 0
+		lineageTag: 11818a16-e8e5-42e2-b091-6c144f724cb2
+		summarizeBy: none
+		sourceColumn: P15PRI_CO
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15PRI_COF
+		dataType: int64
+		formatString: 0
+		lineageTag: a96af7e6-07b5-4a58-8dd6-9b55cb325424
+		summarizeBy: none
+		sourceColumn: P15PRI_COF
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15PRI_COM
+		dataType: int64
+		formatString: 0
+		lineageTag: b4489da8-d616-4ef5-8e9b-6989911aa60a
+		summarizeBy: none
+		sourceColumn: P15PRI_COM
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15SEC_IN
+		dataType: int64
+		formatString: 0
+		lineageTag: 06993585-d4e8-42a7-8917-27757cc3503c
+		summarizeBy: none
+		sourceColumn: P15SEC_IN
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15SEC_INF
+		dataType: int64
+		formatString: 0
+		lineageTag: 75782953-9d36-4426-91d0-887b83bd742d
+		summarizeBy: none
+		sourceColumn: P15SEC_INF
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15SEC_INM
+		dataType: int64
+		formatString: 0
+		lineageTag: 495aba45-2200-4966-9ba0-8a7209b6777c
+		summarizeBy: none
+		sourceColumn: P15SEC_INM
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15SEC_CO
+		dataType: int64
+		formatString: 0
+		lineageTag: fcb43d96-b2c9-404b-8643-610575774a63
+		summarizeBy: none
+		sourceColumn: P15SEC_CO
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15SEC_COF
+		dataType: int64
+		formatString: 0
+		lineageTag: 06e9273a-00af-45b7-b688-6fe90063252e
+		summarizeBy: none
+		sourceColumn: P15SEC_COF
+
+		annotation SummarizationSetBy = Automatic
+
+	column P15SEC_COM
+		dataType: int64
+		formatString: 0
+		lineageTag: 7308553b-2eec-4fb6-8274-90c49a6a8cdc
+		summarizeBy: none
+		sourceColumn: P15SEC_COM
+
+		annotation SummarizationSetBy = Automatic
+
+	column P18YM_PB
+		dataType: int64
+		formatString: 0
+		lineageTag: ad206236-3cbc-48a3-aa19-f454de1ced30
+		summarizeBy: none
+		sourceColumn: P18YM_PB
+
+		annotation SummarizationSetBy = Automatic
+
+	column P18YM_PB_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 4653d9e4-8aa1-4bfc-9f22-331e669f2dd5
+		summarizeBy: none
+		sourceColumn: P18YM_PB_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column P18YM_PB_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 1614690d-2c97-44f0-8d16-e21d56ce7bb0
+		summarizeBy: none
+		sourceColumn: P18YM_PB_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRAPROES
+		dataType: double
+		lineageTag: cff48dd2-0749-40c5-96e3-41f9644d306d
+		summarizeBy: none
+		sourceColumn: GRAPROES
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GRAPROES_F
+		dataType: double
+		lineageTag: 98c4d3f2-624b-47de-8559-950f5468f778
+		summarizeBy: none
+		sourceColumn: GRAPROES_F
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GRAPROES_M
+		dataType: double
+		lineageTag: b8bd68c2-b80f-49fa-af91-340ca5ff36cd
+		summarizeBy: none
+		sourceColumn: GRAPROES_M
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PEA
+		dataType: int64
+		formatString: 0
+		lineageTag: 061bd717-5bb5-4681-aef2-e6d93bf79fa7
+		summarizeBy: none
+		sourceColumn: PEA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PEA_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ab7e04b-aeb5-42ff-b823-0e167692010d
+		summarizeBy: none
+		sourceColumn: PEA_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column PEA_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e4f3058-a1aa-458d-8b7a-b2848d491cc6
+		summarizeBy: none
+		sourceColumn: PEA_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column PE_INAC
+		dataType: int64
+		formatString: 0
+		lineageTag: 94bbe67e-aa83-4fe5-8d18-03410ac31eda
+		summarizeBy: none
+		sourceColumn: PE_INAC
+
+		annotation SummarizationSetBy = Automatic
+
+	column PE_INAC_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 97565331-5576-4c4c-ba9d-0a8748309598
+		summarizeBy: none
+		sourceColumn: PE_INAC_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column PE_INAC_M
+		dataType: int64
+		formatString: 0
+		lineageTag: e0d9d8ea-7d73-49aa-9d60-04b8ad28bdc3
+		summarizeBy: none
+		sourceColumn: PE_INAC_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCUPADA
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f1f94d3-3e85-4578-bfd8-6c85399f1840
+		summarizeBy: none
+		sourceColumn: POCUPADA
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCUPADA_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 8224570f-28a9-42c2-b312-d5dd59d60e24
+		summarizeBy: none
+		sourceColumn: POCUPADA_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCUPADA_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 329224b5-3882-4762-8a04-88e882441804
+		summarizeBy: none
+		sourceColumn: POCUPADA_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column PDESOCUP
+		dataType: int64
+		formatString: 0
+		lineageTag: 02ec4e51-4d00-4855-8ec8-dadc3ed7da15
+		summarizeBy: none
+		sourceColumn: PDESOCUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PDESOCUP_F
+		dataType: int64
+		formatString: 0
+		lineageTag: 21d6c67d-93b2-47bd-a604-da24f08b5c62
+		summarizeBy: none
+		sourceColumn: PDESOCUP_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column PDESOCUP_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 8726e78c-b88f-4e09-90e0-283b17f58246
+		summarizeBy: none
+		sourceColumn: PDESOCUP_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column PSINDER
+		dataType: int64
+		formatString: 0
+		lineageTag: e70d4d9c-1af8-4ab1-9e09-7a9496c1a556
+		summarizeBy: none
+		sourceColumn: PSINDER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PDER_SS
+		dataType: int64
+		formatString: 0
+		lineageTag: 40e6e458-8784-4ef6-b786-9b135837b5a7
+		summarizeBy: none
+		sourceColumn: PDER_SS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PDER_IMSS
+		dataType: int64
+		formatString: 0
+		lineageTag: e36430a2-ad95-4610-a255-4ceb46f93dbe
+		summarizeBy: none
+		sourceColumn: PDER_IMSS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PDER_ISTE
+		dataType: int64
+		formatString: 0
+		lineageTag: cb80b108-9817-47d6-947c-70c19f77840e
+		summarizeBy: none
+		sourceColumn: PDER_ISTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PDER_ISTEE
+		dataType: int64
+		formatString: 0
+		lineageTag: 973ba15f-fe61-4341-919a-5cc0ea763019
+		summarizeBy: none
+		sourceColumn: PDER_ISTEE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAFIL_PDOM
+		dataType: int64
+		formatString: 0
+		lineageTag: 3387c8ef-a23e-4230-b810-51cf0e8b0cb2
+		summarizeBy: none
+		sourceColumn: PAFIL_PDOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column PDER_SEGP
+		dataType: int64
+		formatString: 0
+		lineageTag: b6014a63-7991-439a-b928-0b8fc5b0d13b
+		summarizeBy: none
+		sourceColumn: PDER_SEGP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PDER_IMSSB
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e165cc1-89c2-4f65-9b0a-1f6ce50febed
+		summarizeBy: none
+		sourceColumn: PDER_IMSSB
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAFIL_IPRIV
+		dataType: int64
+		formatString: 0
+		lineageTag: 92531119-ae96-4ce1-b217-c7a244474598
+		summarizeBy: none
+		sourceColumn: PAFIL_IPRIV
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAFIL_OTRAI
+		dataType: int64
+		formatString: 0
+		lineageTag: 6cac6c8b-68cf-48a0-b345-c1442d1201c2
+		summarizeBy: none
+		sourceColumn: PAFIL_OTRAI
+
+		annotation SummarizationSetBy = Automatic
+
+	column P12YM_SOLT
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c73f553-0040-449e-9d95-1fcfb05cf95e
+		summarizeBy: none
+		sourceColumn: P12YM_SOLT
+
+		annotation SummarizationSetBy = Automatic
+
+	column P12YM_CASA
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c66eb25-895c-4f77-8a46-b77c09758e88
+		summarizeBy: none
+		sourceColumn: P12YM_CASA
+
+		annotation SummarizationSetBy = Automatic
+
+	column P12YM_SEPA
+		dataType: int64
+		formatString: 0
+		lineageTag: 60aea3f8-4c94-4a24-a436-46b69d781de7
+		summarizeBy: none
+		sourceColumn: P12YM_SEPA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCATOLICA
+		dataType: int64
+		formatString: 0
+		lineageTag: b820c6b3-51c0-4cbf-a132-84a18353387b
+		summarizeBy: none
+		sourceColumn: PCATOLICA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRO_CRIEVA
+		dataType: int64
+		formatString: 0
+		lineageTag: 331db387-ca0a-4a4d-a6b0-3d4cb1654b4a
+		summarizeBy: none
+		sourceColumn: PRO_CRIEVA
+
+		annotation SummarizationSetBy = Automatic
+
+	column POTRAS_REL
+		dataType: int64
+		formatString: 0
+		lineageTag: a959deba-bee3-420b-b69f-48236ffcd9b9
+		summarizeBy: none
+		sourceColumn: POTRAS_REL
+
+		annotation SummarizationSetBy = Automatic
+
+	column PSIN_RELIG
+		dataType: int64
+		formatString: 0
+		lineageTag: 279f6293-a71a-42a0-8ddf-344f6b4a56d2
+		summarizeBy: none
+		sourceColumn: PSIN_RELIG
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOTHOG
+		dataType: int64
+		formatString: 0
+		lineageTag: d8223afb-676f-4115-a714-455fe1ab4c34
+		summarizeBy: none
+		sourceColumn: TOTHOG
+
+		annotation SummarizationSetBy = Automatic
+
+	column HOGJEF_F
+		dataType: int64
+		formatString: 0
+		lineageTag: aa18eb33-5184-46c6-bc7e-a30b90791d64
+		summarizeBy: none
+		sourceColumn: HOGJEF_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column HOGJEF_M
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b795f37-eb20-4d68-baf9-6db93cd76c3b
+		summarizeBy: none
+		sourceColumn: HOGJEF_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column POBHOG
+		dataType: int64
+		formatString: 0
+		lineageTag: e796c784-0161-4b53-bb3c-964c4288154c
+		summarizeBy: none
+		sourceColumn: POBHOG
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHOGJEF_F
+		dataType: int64
+		formatString: 0
+		lineageTag: aaec3a97-bd42-442d-b7a4-075e75e45b35
+		summarizeBy: none
+		sourceColumn: PHOGJEF_F
+
+		annotation SummarizationSetBy = Automatic
+
+	column PHOGJEF_M
+		dataType: int64
+		formatString: 0
+		lineageTag: a1d9bce4-1170-4694-b1ad-028dde346a4e
+		summarizeBy: none
+		sourceColumn: PHOGJEF_M
+
+		annotation SummarizationSetBy = Automatic
+
+	column VIVTOT
+		dataType: int64
+		formatString: 0
+		lineageTag: bda3af57-f6d6-4ba1-b98b-f22a72f705c1
+		summarizeBy: none
+		sourceColumn: VIVTOT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TVIVHAB
+		dataType: int64
+		formatString: 0
+		lineageTag: fac16fa9-b272-45eb-b7e9-7049b7f6c7e6
+		summarizeBy: none
+		sourceColumn: TVIVHAB
+
+		annotation SummarizationSetBy = Automatic
+
+	column TVIVPAR
+		dataType: int64
+		formatString: 0
+		lineageTag: 574410f8-527c-421b-8ea1-befc7b2b1a1b
+		summarizeBy: none
+		sourceColumn: TVIVPAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column VIVPAR_HAB
+		dataType: int64
+		formatString: 0
+		lineageTag: 403506ea-f6a4-4b21-9300-8caa20310fc8
+		summarizeBy: none
+		sourceColumn: VIVPAR_HAB
+
+		annotation SummarizationSetBy = Automatic
+
+	column VIVPARH_CV
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d86993e-a099-42c2-9953-135f2692082e
+		summarizeBy: none
+		sourceColumn: VIVPARH_CV
+
+		annotation SummarizationSetBy = Automatic
+
+	column TVIVPARHAB
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ab4d412-7a14-4a34-b8ed-db323f19d02c
+		summarizeBy: none
+		sourceColumn: TVIVPARHAB
+
+		annotation SummarizationSetBy = Automatic
+
+	column VIVPAR_DES
+		dataType: int64
+		formatString: 0
+		lineageTag: 459b0c46-d917-4219-ae2b-d3c71e10d291
+		summarizeBy: none
+		sourceColumn: VIVPAR_DES
+
+		annotation SummarizationSetBy = Automatic
+
+	column VIVPAR_UT
+		dataType: int64
+		formatString: 0
+		lineageTag: 81c51db6-e426-4e99-a428-5d933fa15052
+		summarizeBy: none
+		sourceColumn: VIVPAR_UT
+
+		annotation SummarizationSetBy = Automatic
+
+	column OCUPVIVPAR
+		dataType: int64
+		formatString: 0
+		lineageTag: e6d9a64f-b767-4cba-a67b-86edf433df19
+		summarizeBy: none
+		sourceColumn: OCUPVIVPAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROM_OCUP
+		dataType: double
+		lineageTag: 45ae9a47-27f0-4ae7-a489-904dce6d0dba
+		summarizeBy: none
+		sourceColumn: PROM_OCUP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRO_OCUP_C
+		dataType: double
+		lineageTag: 68dceabe-3510-4327-bc4d-778a48491756
+		summarizeBy: none
+		sourceColumn: PRO_OCUP_C
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VPH_PISODT
+		dataType: int64
+		formatString: 0
+		lineageTag: 56485167-fc50-49c3-b6c1-d776c77b5347
+		summarizeBy: none
+		sourceColumn: VPH_PISODT
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_PISOTI
+		dataType: int64
+		formatString: 0
+		lineageTag: ae46beee-b720-4ac6-bf91-9d782368e329
+		summarizeBy: none
+		sourceColumn: VPH_PISOTI
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_1DOR
+		dataType: int64
+		formatString: 0
+		lineageTag: 626a879b-cf9b-4f91-bc86-3de0c5f063df
+		summarizeBy: none
+		sourceColumn: VPH_1DOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_2YMASD
+		dataType: int64
+		formatString: 0
+		lineageTag: 11659cb6-f4fc-4e31-bceb-04923dd63397
+		summarizeBy: none
+		sourceColumn: VPH_2YMASD
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_1CUART
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cc60613-a209-442d-9348-947e3dca05e1
+		summarizeBy: none
+		sourceColumn: VPH_1CUART
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_2CUART
+		dataType: int64
+		formatString: 0
+		lineageTag: e31590bb-7e50-43f3-843c-7277a9432d75
+		summarizeBy: none
+		sourceColumn: VPH_2CUART
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_3YMASC
+		dataType: int64
+		formatString: 0
+		lineageTag: c0c4b900-2937-40b8-a56f-11ae7fceb0dc
+		summarizeBy: none
+		sourceColumn: VPH_3YMASC
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_C_ELEC
+		dataType: int64
+		formatString: 0
+		lineageTag: 0bf658ea-02e0-4e29-bbcb-c29daf828cfa
+		summarizeBy: none
+		sourceColumn: VPH_C_ELEC
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_S_ELEC
+		dataType: int64
+		formatString: 0
+		lineageTag: c02bc0ce-1f9e-4191-b792-ec7386a43bb1
+		summarizeBy: none
+		sourceColumn: VPH_S_ELEC
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_AGUADV
+		dataType: int64
+		formatString: 0
+		lineageTag: 7448f95f-db38-4fc1-9e69-8de80c8e169b
+		summarizeBy: none
+		sourceColumn: VPH_AGUADV
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_AEASP
+		dataType: int64
+		formatString: 0
+		lineageTag: 289f27d3-6b23-4f0d-9cbb-91a9f5ee4e55
+		summarizeBy: none
+		sourceColumn: VPH_AEASP
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_AGUAFV
+		dataType: int64
+		formatString: 0
+		lineageTag: 87c9028d-4a8f-48a3-999b-1f3cc9f8ba90
+		summarizeBy: none
+		sourceColumn: VPH_AGUAFV
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_TINACO
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b93a399-3f81-4a7c-a6fa-ce31c69d6cc5
+		summarizeBy: none
+		sourceColumn: VPH_TINACO
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_CISTER
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bda5ccd-7ccf-4186-890f-3932f2ab1da0
+		summarizeBy: none
+		sourceColumn: VPH_CISTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_EXCSA
+		dataType: int64
+		formatString: 0
+		lineageTag: 79b994fd-df31-4550-b0ed-1a845a40b91d
+		summarizeBy: none
+		sourceColumn: VPH_EXCSA
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_LETR
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a1172e6-18a2-4ad3-8a15-30d2a022911e
+		summarizeBy: none
+		sourceColumn: VPH_LETR
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_DRENAJ
+		dataType: int64
+		formatString: 0
+		lineageTag: 97191009-5bdf-4f1b-98f3-563111be033e
+		summarizeBy: none
+		sourceColumn: VPH_DRENAJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_NODREN
+		dataType: int64
+		formatString: 0
+		lineageTag: bbee7f27-bee3-44ca-bea6-db763720bc1a
+		summarizeBy: none
+		sourceColumn: VPH_NODREN
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_C_SERV
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e711e37-e240-48ea-bc5c-2900b560e652
+		summarizeBy: none
+		sourceColumn: VPH_C_SERV
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_NDEAED
+		dataType: int64
+		formatString: 0
+		lineageTag: c2183134-56f2-49b8-a376-b4b716182e56
+		summarizeBy: none
+		sourceColumn: VPH_NDEAED
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_DSADMA
+		dataType: int64
+		formatString: 0
+		lineageTag: c009c469-0639-40a6-9f18-61c9e440a840
+		summarizeBy: none
+		sourceColumn: VPH_DSADMA
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_NDACMM
+		dataType: int64
+		formatString: 0
+		lineageTag: 634836ee-ec38-4df6-bc3a-3656f9e42ea0
+		summarizeBy: none
+		sourceColumn: VPH_NDACMM
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_SNBIEN
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c54f10e-ac38-4e41-959e-96c6fdbfe73e
+		summarizeBy: none
+		sourceColumn: VPH_SNBIEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_REFRI
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e760cf7-b484-4d70-8e08-3fac142dfa27
+		summarizeBy: none
+		sourceColumn: VPH_REFRI
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_LAVAD
+		dataType: int64
+		formatString: 0
+		lineageTag: bcba3ca5-d2ae-4bde-87e1-34530d660f35
+		summarizeBy: none
+		sourceColumn: VPH_LAVAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_HMICRO
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c4e9953-86eb-492b-b517-f092bb76a9a7
+		summarizeBy: none
+		sourceColumn: VPH_HMICRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_AUTOM
+		dataType: int64
+		formatString: 0
+		lineageTag: 857c0a61-5e45-4a2c-9f40-ef828e3cfac1
+		summarizeBy: none
+		sourceColumn: VPH_AUTOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_MOTO
+		dataType: int64
+		formatString: 0
+		lineageTag: 31bc8220-ef0c-459d-82df-a6ffed51ba32
+		summarizeBy: none
+		sourceColumn: VPH_MOTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_BICI
+		dataType: int64
+		formatString: 0
+		lineageTag: 57fb8c50-3c51-4285-9072-1c334c6138a5
+		summarizeBy: none
+		sourceColumn: VPH_BICI
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_RADIO
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b8b5852-d356-4e6f-8bb8-3730b988fc65
+		summarizeBy: none
+		sourceColumn: VPH_RADIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_TV
+		dataType: int64
+		formatString: 0
+		lineageTag: 4fe23149-39a3-4fba-935d-7e833def965c
+		summarizeBy: none
+		sourceColumn: VPH_TV
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_PC
+		dataType: int64
+		formatString: 0
+		lineageTag: 5afb0c39-eee9-44d7-b2e9-cee4b2881c76
+		summarizeBy: none
+		sourceColumn: VPH_PC
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_TELEF
+		dataType: int64
+		formatString: 0
+		lineageTag: 2bdd8e2d-5d91-4f47-821b-9dd8f1c83342
+		summarizeBy: none
+		sourceColumn: VPH_TELEF
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_CEL
+		dataType: int64
+		formatString: 0
+		lineageTag: 31ee7365-c21d-4143-8bf5-f21f4367d490
+		summarizeBy: none
+		sourceColumn: VPH_CEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_INTER
+		dataType: int64
+		formatString: 0
+		lineageTag: 54e3a356-a98f-4db3-9656-6677b3ba97c4
+		summarizeBy: none
+		sourceColumn: VPH_INTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_STVP
+		dataType: int64
+		formatString: 0
+		lineageTag: 88292832-5004-42f4-b3ff-e71a2e066e4d
+		summarizeBy: none
+		sourceColumn: VPH_STVP
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_SPMVPI
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ef6d5ec-ff93-4321-afb2-b0b6b7c14df6
+		summarizeBy: none
+		sourceColumn: VPH_SPMVPI
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_CVJ
+		dataType: int64
+		formatString: 0
+		lineageTag: 94eabd72-8cd0-4bcb-8b28-58d187188085
+		summarizeBy: none
+		sourceColumn: VPH_CVJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_SINRTV
+		dataType: int64
+		formatString: 0
+		lineageTag: d420ac3c-1d3b-43ce-b5fd-041e0400919e
+		summarizeBy: none
+		sourceColumn: VPH_SINRTV
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_SINLTC
+		dataType: int64
+		formatString: 0
+		lineageTag: f8350efa-526a-4223-9660-35e315a769cd
+		summarizeBy: none
+		sourceColumn: VPH_SINLTC
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_SINCINT
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c1e7cdc-4758-4288-bc80-3e162713d64d
+		summarizeBy: none
+		sourceColumn: VPH_SINCINT
+
+		annotation SummarizationSetBy = Automatic
+
+	column VPH_SINTIC
+		dataType: int64
+		formatString: 0
+		lineageTag: bdb776b1-44d6-4a81-9938-f91174dedaa5
+		summarizeBy: none
+		sourceColumn: VPH_SINTIC
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_AGEB
+		dataType: string
+		lineageTag: 06837d5c-6ab4-4edf-bf0c-98c6a83469f4
+		summarizeBy: none
+		sourceColumn: CVE_AGEB
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_MZA
+		dataType: string
+		lineageTag: 088dc085-86a1-4916-b866-32897d182192
+		summarizeBy: none
+		sourceColumn: CVE_MZA
+
+		annotation SummarizationSetBy = Automatic
+
+	column clave_ageb_mza
+		dataType: string
+		lineageTag: 4852d041-8421-42e4-9645-d5de9f3f6f23
+		summarizeBy: none
+		sourceColumn: clave_ageb_mza
+
+		annotation SummarizationSetBy = Automatic
+
+	column clave_ageb
+		dataType: string
+		lineageTag: caf11562-2196-4fa2-af38-d8704588c1b8
+		summarizeBy: none
+		sourceColumn: clave_ageb
+
+		annotation SummarizationSetBy = Automatic
+
+	column archivo_origen
+		dataType: string
+		lineageTag: 3bf31fd8-645f-4a1e-8893-1bc7d0ed8571
+		summarizeBy: none
+		sourceColumn: archivo_origen
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_procesamiento
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 10aa9b23-a8b7-4688-9d6a-db13afcf82de
+		summarizeBy: none
+		sourceColumn: fecha_procesamiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_LOC_ITER
+		dataType: string
+		lineageTag: ca4ebae9-adf9-48b0-9df3-2b0492d9fcba
+		summarizeBy: none
+		sourceColumn: NOM_LOC_ITER
+
+		annotation SummarizationSetBy = Automatic
+
+	column LONGITUD
+		dataType: double
+		lineageTag: cc1b8239-e0c6-46d3-80d4-817b7c945f42
+		summarizeBy: none
+		sourceColumn: LONGITUD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LATITUD
+		dataType: double
+		lineageTag: 29c7e966-28b0-4246-8f95-51a458bdb90f
+		summarizeBy: none
+		sourceColumn: LATITUD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ALTITUD
+		dataType: string
+		lineageTag: cb86fdce-1bad-4d7e-81d1-eccb064656b5
+		summarizeBy: none
+		sourceColumn: ALTITUD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Totales_Estatales = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("qihyhmenysou5otulys7x473hm-wmsh36vm2hsepif26nl54mytlu.datawarehouse.fabric.microsoft.com", "lh_lokus_censo_2020AGEB"),
+				    dbo_censo_ageb_2020_nacional_coordenadas = Source{[Schema="dbo",Item="censo_ageb_2020_nacional_coordenadas"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_censo_ageb_2020_nacional_coordenadas, each ([MUN] = "000"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

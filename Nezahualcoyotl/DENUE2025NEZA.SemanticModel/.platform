@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "DENUE2025NEZA"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0695afdd-900d-973a-402a-def909a11c49"
+  }
+}

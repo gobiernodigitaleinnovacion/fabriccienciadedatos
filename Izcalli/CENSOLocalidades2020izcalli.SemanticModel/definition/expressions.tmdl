@@ -1,0 +1,60 @@
+expression censo2020_mexico_limpio =
+		let
+		    Source = Sql.Database("qihyhmenysou5otulys7x473hm-wmsh36vm2hsepif26nl54mytlu.datawarehouse.fabric.microsoft.com", "lh_lokus_censo2020_Nacional"),
+		    dbo_censo2020_mexico_limpio = Source{[Schema="dbo",Item="censo2020_mexico_limpio"]}[Data]
+		in
+		    dbo_censo2020_mexico_limpio
+	lineageTag: 63930ed9-c84d-4dbd-8a31-13db5bdcde09
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression censo2020 =
+		let
+		    Source = Sql.Database("qihyhmenysou5otulys7x473hm-wmsh36vm2hsepif26nl54mytlu.datawarehouse.fabric.microsoft.com", "lh_lokus_censo2020_Nacional"),
+		    dbo_censo2020_mexico_limpio = Source{[Schema="dbo",Item="censo2020_mexico_limpio"]}[Data],
+		    #"Filtered Rows" = Table.SelectRows(dbo_censo2020_mexico_limpio, each ([LOC] <> 0 and [LOC] <> 9998 and [LOC] <> 9999)),
+		    #"Added Custom" = Table.AddColumn(#"Filtered Rows", "LONGITUD_DECIMAL", each let
+		    coord = [LONGITUD],
+		    // Quitar comillas y espacios
+		    limpio = Text.Replace(Text.Replace(coord, """", ""), " ", ""),
+		    // Separar por °
+		    partes1 = Text.Split(limpio, "°"),
+		    grados = Number.FromText(partes1{0}),
+		    // Separar minutos y segundos
+		    resto = partes1{1},
+		    partes2 = Text.Split(resto, "'"),
+		    minutos = Number.FromText(partes2{0}),
+		    // Extraer segundos
+		    segs_texto = Text.Replace(partes2{1}, "W", ""),
+		    segundos = Number.FromText(segs_texto),
+		    // Calcular decimal
+		    decimal = grados + (minutos/60) + (segundos/3600),
+		    // Hacer negativo porque es W
+		    resultado = -decimal
+		in
+		    resultado),
+		    #"Added Custom1" = Table.AddColumn(#"Added Custom", "LATITUD_DECIMAL", each let
+		    coord = [LATITUD],
+		    limpio = Text.Replace(Text.Replace(coord, """", ""), " ", ""),
+		    partes1 = Text.Split(limpio, "°"),
+		    grados = Number.FromText(partes1{0}),
+		    resto = partes1{1},
+		    partes2 = Text.Split(resto, "'"),
+		    minutos = Number.FromText(partes2{0}),
+		    segs_texto = Text.Replace(partes2{1}, "N", ""),
+		    segundos = Number.FromText(segs_texto),
+		    decimal = grados + (minutos/60) + (segundos/3600),
+		    resultado = decimal
+		in
+		    resultado),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom1",{{"LONGITUD_DECIMAL", type number}, {"LATITUD_DECIMAL", type number}})
+		in
+		    #"Changed Type"
+	lineageTag: 564cb352-dd61-4084-a215-2d914bede41f
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

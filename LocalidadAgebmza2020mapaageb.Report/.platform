@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "LocalidadAgebmza2020mapaageb"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a0e729ea-33ae-9dce-48e7-26e0a9f02f52"
+  }
+}

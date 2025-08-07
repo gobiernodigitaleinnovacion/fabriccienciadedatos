@@ -1,0 +1,168 @@
+table DIM_GEOGRAFIA
+	lineageTag: 3711001d-cca0-40cb-b030-ea1d5b577f51
+
+	column ENTIDAD
+		dataType: int64
+		formatString: 0
+		lineageTag: cc04c3b1-cd1b-4f54-9bfa-3c35871844df
+		summarizeBy: sum
+		sourceColumn: ENTIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_ENT
+		dataType: string
+		lineageTag: 6d34fcda-5d6e-4d23-bf29-f1791ed6b872
+		summarizeBy: none
+		sourceColumn: NOM_ENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column MUN
+		dataType: int64
+		formatString: 0
+		lineageTag: d9a6e4ce-82f4-470b-aac9-eb9b2391a0bc
+		summarizeBy: sum
+		sourceColumn: MUN
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_MUN
+		dataType: string
+		lineageTag: b9090674-4e08-479e-bfe0-8ee0cb848459
+		summarizeBy: none
+		sourceColumn: NOM_MUN
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOC
+		dataType: int64
+		formatString: 0
+		lineageTag: c440441a-6e28-4389-81e5-0348c9fbfdf9
+		summarizeBy: sum
+		sourceColumn: LOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOM_LOC
+		dataType: string
+		lineageTag: 759d0d85-daa3-45d6-82a0-d2142cb3844d
+		summarizeBy: none
+		sourceColumn: NOM_LOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALTITUD
+		dataType: int64
+		formatString: 0
+		lineageTag: 55e05e2b-129d-48d0-8641-9904f1197eef
+		summarizeBy: sum
+		sourceColumn: ALTITUD
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAMLOC
+		dataType: int64
+		formatString: 0
+		lineageTag: 46e2f8bf-68eb-4139-9c9d-876d610fa7a2
+		summarizeBy: sum
+		sourceColumn: TAMLOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column LONGITUD_DECIMAL
+		dataType: double
+		lineageTag: c6815547-2b53-4496-8703-d2dac624fb01
+		summarizeBy: sum
+		sourceColumn: LONGITUD_DECIMAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LATITUD_DECIMAL
+		dataType: double
+		lineageTag: 82f08465-01b2-4a38-b09a-5fbd8c619bd7
+		summarizeBy: sum
+		sourceColumn: LATITUD_DECIMAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLAVE_GEOGRAFIA
+		dataType: string
+		lineageTag: 8a0579cc-25b9-4be4-b5db-dda5ff792745
+		summarizeBy: none
+		sourceColumn: CLAVE_GEOGRAFIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_LOCALIDAD
+		dataType: string
+		lineageTag: 2af66711-0d60-496a-969e-67f9e9eacdc9
+		summarizeBy: none
+		sourceColumn: TIPO_LOCALIDAD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_GEOGRAFIA = m
+		mode: import
+		source = ```
+				let
+				    Source = Sql.Database("qihyhmenysou5otulys7x473hm-wmsh36vm2hsepif26nl54mytlu.datawarehouse.fabric.microsoft.com", "lh_lokus_censo2020_Nacional"),
+				    dbo_censo2020_mexico_limpio = Source{[Schema="dbo",Item="censo2020_mexico_limpio"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_censo2020_mexico_limpio, each ([LOC] <> 0 and [LOC] <> 9998 and [LOC] <> 9999)),
+				    #"Added Custom" = Table.AddColumn(#"Filtered Rows", "LONGITUD_DECIMAL", each let
+				    coord = [LONGITUD],
+				    // Quitar comillas y espacios
+				    limpio = Text.Replace(Text.Replace(coord, """", ""), " ", ""),
+				    // Separar por °
+				    partes1 = Text.Split(limpio, "°"),
+				    grados = Number.FromText(partes1{0}),
+				    // Separar minutos y segundos
+				    resto = partes1{1},
+				    partes2 = Text.Split(resto, "'"),
+				    minutos = Number.FromText(partes2{0}),
+				    // Extraer segundos
+				    segs_texto = Text.Replace(partes2{1}, "W", ""),
+				    segundos = Number.FromText(segs_texto),
+				    // Calcular decimal
+				    decimal = grados + (minutos/60) + (segundos/3600),
+				    // Hacer negativo porque es W
+				    resultado = -decimal
+				in
+				    resultado),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "LATITUD_DECIMAL", each let
+				    coord = [LATITUD],
+				    limpio = Text.Replace(Text.Replace(coord, """", ""), " ", ""),
+				    partes1 = Text.Split(limpio, "°"),
+				    grados = Number.FromText(partes1{0}),
+				    resto = partes1{1},
+				    partes2 = Text.Split(resto, "'"),
+				    minutos = Number.FromText(partes2{0}),
+				    segs_texto = Text.Replace(partes2{1}, "N", ""),
+				    segundos = Number.FromText(segs_texto),
+				    decimal = grados + (minutos/60) + (segundos/3600),
+				    resultado = decimal
+				in
+				    resultado),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom1",{{"LONGITUD_DECIMAL", type number}, {"LATITUD_DECIMAL", type number}}),
+				    #"Added Custom2" = Table.AddColumn(#"Changed Type", "CLAVE_GEOGRAFIA", each Text.PadStart(Text.From([ENTIDAD]), 2, "0") & 
+				Text.PadStart(Text.From([MUN]), 3, "0") & 
+				Text.PadStart(Text.From([LOC]), 4, "0")),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom2",{{"CLAVE_GEOGRAFIA", type text}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type1",{"ENTIDAD", "NOM_ENT", "MUN", "NOM_MUN", "LOC", "NOM_LOC", "ALTITUD", "TAMLOC", "LONGITUD_DECIMAL", "LATITUD_DECIMAL", "CLAVE_GEOGRAFIA"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Custom3" = Table.AddColumn(#"Removed Duplicates", "TIPO_LOCALIDAD", each if [TAMLOC] <= 4 then "Rural"
+				else if [TAMLOC] <= 7 then "Urbana_Pequeña"  
+				else if [TAMLOC] <= 10 then "Urbana_Media"
+				else "Urbana_Grande")
+				in
+				    #"Added Custom3"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

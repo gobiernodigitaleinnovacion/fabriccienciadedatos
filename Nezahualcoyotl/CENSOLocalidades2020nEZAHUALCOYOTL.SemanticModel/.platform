@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "CENSOLocalidades2020nEZAHUALCOYOTL"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e2ffc09c-9032-94db-4e72-dcfe4abc7c10"
+  }
+}

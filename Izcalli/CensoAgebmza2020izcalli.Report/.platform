@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "CensoAgebmza2020izcalli"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "56b06c5e-baa7-810f-46b3-0bf86a4863fc"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "CENSOLocalidades2020ecatepec"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e86b91fb-b4e3-9e20-4bb3-07750887debc"
+  }
+}

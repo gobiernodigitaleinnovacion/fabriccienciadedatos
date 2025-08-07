@@ -1,0 +1,75 @@
+table ACTIVIDAD_ECONOMICA
+	lineageTag: 89383cbb-350c-49cb-9145-66d7981721dd
+
+	column id
+		dataType: string
+		isHidden
+		lineageTag: c7c62d06-b3d6-4a3f-a64a-d68e6c4dccac
+		summarizeBy: none
+		sourceColumn: id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_act
+		dataType: string
+		lineageTag: 22f5a83f-f4e2-4bf9-b653-a95088d67ff7
+		summarizeBy: none
+		sourceColumn: codigo_act
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_act
+		dataType: string
+		lineageTag: d8646650-2590-4f11-879e-2e5a82700dc6
+		summarizeBy: none
+		sourceColumn: nombre_act
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector_puro
+		dataType: string
+		lineageTag: 323dc844-5298-4ce2-8621-0a704909b1b9
+		summarizeBy: none
+		sourceColumn: sector_puro
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector_agrupado =
+			
+			IF(ACTIVIDAD_ECONOMICA[sector_puro] IN {"31", "32", "33"}, "31-33",
+			IF(ACTIVIDAD_ECONOMICA[sector_puro] IN {"48", "49"}, "48-49",
+			   ACTIVIDAD_ECONOMICA[sector_puro]))
+		lineageTag: 68561826-8dd9-4af7-beb6-b94e3b1f6cab
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Actividad Económica'
+		lineageTag: 8286cc58-dde6-43b9-aca1-b7acb1a52c8a
+
+		level sector_agrupado
+			lineageTag: 620d877e-2ea8-4d4e-bb8a-0b797e2e9595
+			column: sector_agrupado
+
+		level nombre_act
+			lineageTag: 83168c3a-4938-40d3-ba93-cce91fb8634f
+			column: nombre_act
+
+	partition ACTIVIDAD_ECONOMICA = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("qihyhmenysou5otulys7x473hm-wmsh36vm2hsepif26nl54mytlu.datawarehouse.fabric.microsoft.com", "lh_lokus_denue"),
+				    dbo_denue_empresas_mexico_final = Source{[Schema="dbo",Item="denue_empresas_mexico_final"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(dbo_denue_empresas_mexico_final,{"tipo_vial", "nom_vial", "tipo_v_e_1", "nom_v_e_1", "tipo_v_e_2", "nom_v_e_2", "tipo_v_e_3", "nom_v_e_3", "numero_ext", "letra_ext", "edificio", "edificio_e", "numero_int", "letra_int", "archivo_origen", "nom_CenCom", "num_local", "telefono", "correoelec", "www", "tipoUniEco", "clee", "nom_estab", "raz_social", "per_ocu", "tipo_asent", "nomb_asent", "tipoCenCom", "cod_postal", "cve_ent", "entidad", "cve_mun", "municipio", "cve_loc", "localidad", "ageb", "manzana", "latitud", "longitud", "fecha_alta", "sector_codigo", "sector_nombre"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns", {"codigo_act"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "sector_puro", each Text.Start([codigo_act], 2))
+				in
+				    #"Added Custom"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

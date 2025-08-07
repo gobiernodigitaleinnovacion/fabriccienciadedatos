@@ -1,0 +1,52 @@
+table SECTOR_CATALOGO
+	lineageTag: 3c3eed66-f789-488e-a5c7-f59910e96461
+
+	column sector_codigo
+		lineageTag: a869a0e6-c85e-4713-bd9b-6d47984dfd0b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [sector_codigo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector_nombre
+		lineageTag: dfcaf0c9-491c-4d13-a3f7-60fc644ebba0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [sector_nombre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SECTOR_CATALOGO = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "sector_codigo", STRING,
+				    "sector_nombre", STRING,
+				    {
+				        {"11", "Agricultura, cría y explotación de animales"},
+				        {"21", "Minería"},
+				        {"22", "Generación, transmisión y distribución de energía eléctrica"},
+				        {"23", "Construcción"},
+				        {"31-33", "Industrias manufactureras"},
+				        {"43", "Comercio al por mayor"},
+				        {"46", "Comercio al por menor"},
+				        {"48-49", "Transportes, correos y almacenamiento"},
+				        {"51", "Información en medios masivos"},
+				        {"52", "Servicios financieros y de seguros"},
+				        {"53", "Servicios inmobiliarios y de alquiler"},
+				        {"54", "Servicios profesionales, científicos y técnicos"},
+				        {"55", "Dirección y administración de grupos empresariales"},
+				        {"56", "Servicios de apoyo a los negocios"},
+				        {"61", "Servicios educativos"},
+				        {"62", "Servicios de salud y de asistencia social"},
+				        {"71", "Servicios de esparcimiento culturales y deportivos"},
+				        {"72", "Servicios de alojamiento temporal y de alimentos"},
+				        {"81", "Otros servicios excepto actividades gubernamentales"},
+				        {"93", "Actividades legislativas, gubernamentales"}
+				    }
+				)
+
+	annotation PBI_Id = 85a884b64334414aa6c4f9dd6f3ee069
+

@@ -1,0 +1,68 @@
+table ENTIDAD
+	lineageTag: 8b6d37e8-f9a2-487f-8de3-81427e111f82
+
+	measure 'Crecimiento Anual' =
+			
+			VAR EmpresasActual = CALCULATE([Total Empresas], FECHA[AÑO] = MAX(FECHA[AÑO]))
+			VAR EmpresasAnterior = CALCULATE([Total Empresas], FECHA[AÑO] = MAX(FECHA[AÑO]) - 1)
+			RETURN DIVIDE(EmpresasActual - EmpresasAnterior, EmpresasAnterior, 0)
+		lineageTag: 14fcdac3-fa62-4e39-906d-87ac938bdc2a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column id
+		dataType: string
+		isHidden
+		lineageTag: 00664185-93a7-4f73-94a4-45b7cc2bce68
+		summarizeBy: none
+		sourceColumn: id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cve_ent
+		dataType: string
+		lineageTag: 02e3c9e9-911d-468d-8aef-d85972a3e860
+		summarizeBy: none
+		sourceColumn: cve_ent
+
+		annotation SummarizationSetBy = Automatic
+
+	column entidad
+		dataType: string
+		lineageTag: 82395803-2902-4edd-bac3-29ec64d7e56e
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: entidad
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'entidad Jerarquía'
+		lineageTag: 07bbdd7c-9958-432e-9306-52d700f2eb2d
+
+		level entidad
+			lineageTag: 398c28bb-ec00-4e44-b544-0c512891501f
+			column: entidad
+
+	partition ENTIDAD = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("qihyhmenysou5otulys7x473hm-wmsh36vm2hsepif26nl54mytlu.datawarehouse.fabric.microsoft.com", "lh_lokus_denue"),
+				    dbo_denue_empresas_mexico_final = Source{[Schema="dbo",Item="denue_empresas_mexico_final"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(dbo_denue_empresas_mexico_final,{"tipo_vial", "nom_vial", "tipo_v_e_1", "nom_v_e_1", "tipo_v_e_2", "nom_v_e_2", "tipo_v_e_3", "nom_v_e_3", "numero_ext", "letra_ext", "edificio", "edificio_e", "numero_int", "letra_int", "archivo_origen", "nom_CenCom", "num_local", "telefono", "correoelec", "www", "tipoUniEco", "clee", "nom_estab", "raz_social", "codigo_act", "nombre_act", "per_ocu", "tipo_asent", "nomb_asent", "tipoCenCom", "cod_postal", "cve_mun", "municipio", "cve_loc", "localidad", "ageb", "manzana", "latitud", "longitud", "fecha_alta", "sector_codigo", "sector_nombre"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Personalizado", each Text.PadStart(Text.From([cve_ent]), 2, "0")),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Added Custom",{"cve_ent"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns1",{{"Personalizado", "cve_ent"}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Renamed Columns", {"cve_ent"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Removed Duplicates",{"id", "cve_ent", "entidad"}),
+				    #"Sorted Rows" = Table.Sort(#"Reordered Columns",{{"cve_ent", Order.Ascending}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Sorted Rows",{{"cve_ent", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "DENUE2025IZCALLI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "631c7adc-3b5d-8b38-4aeb-8ac0440db560"
+  }
+}
