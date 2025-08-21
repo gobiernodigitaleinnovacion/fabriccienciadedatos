@@ -1,4 +1,0 @@
-relationship AutoDetected_46b4bf67-aad5-4af7-b6ee-613b8f023463
-	fromColumn: censo_ageb_2020_nacional_coordenadas.CVE_ENT
-	toColumn: Totales_Estatales.CVE_ENT
-
