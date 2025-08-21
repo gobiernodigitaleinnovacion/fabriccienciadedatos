@@ -1,8 +1,0 @@
-relationship 408b1e38-7659-f65e-c1dc-bb4a3e5ebcc2
-	fromColumn: Canasta2025pormes.FECHA
-	toColumn: Fecha.FECHA
-
-relationship 06a7d721-f618-c49c-2d87-e62920b913bd
-	fromColumn: Canasta2025pormes.PRODUCTO
-	toColumn: Productos.PRODUCTO
-
