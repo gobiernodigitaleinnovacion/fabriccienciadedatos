@@ -1,8 +1,0 @@
-relationship AutoDetected_6ea66ab7-5bc8-4444-91a2-d9c4123a05a6
-	fromColumn: Pobreza.Año
-	toColumn: Calendario.Año
-
-relationship 05798654-77d9-9b48-ad40-f0fc37c06a36
-	fromColumn: Pobreza.CVE_Entidad
-	toColumn: Estados.ID_ENTIDAD
-
