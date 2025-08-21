@@ -1,6 +1,0 @@
-relationship AutoDetected_a99b1044-b26a-4f42-96fc-75fe975aabb8
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
-	fromColumn: FACT_CENSO.CLAVE_GEOGRAFIA
-	toColumn: DIM_GEOGRAFIA.CLAVE_GEOGRAFIA
-
